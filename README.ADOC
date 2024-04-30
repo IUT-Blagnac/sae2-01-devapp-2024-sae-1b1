@@ -6,7 +6,7 @@
 ==== Répartition des tâches et état d'avancement
 [options="header,footer"]
 |=======================
-|version|rôle     |use case   |cas...                 |   Etudiant 1 | Etudiant 2  |   Etudiant 3 | Etudiant 4
+|version|rôle     |use case   |cas...                 |  Yassir | Titouan  |  Clara  | Wissal
 |1    |Chef d’Agence    |CRUD employé  |C| | | |
 |1    |Chef d’Agence    |CRUD employé  |R| | | |
 |1    |Chef d’Agence |CRUD employé  |U| | | |
