@@ -1,4 +1,4 @@
-===Exemple readme étudiant
+=== Exemple readme étudiant
 
 ==== Présentation de l'équipe et rôles respectifs
 
