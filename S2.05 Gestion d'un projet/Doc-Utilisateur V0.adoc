@@ -111,7 +111,7 @@ ____
 
 == IV/ Résultats
 
-=== IV.I - Fonctionnalité 1
+=== IV/I - Fonctionnalité 1
 
 ==== IV.I a - Fonctionnement
 
