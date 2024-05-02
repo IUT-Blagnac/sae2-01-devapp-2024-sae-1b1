@@ -64,7 +64,7 @@ ____
 link:#iv-résultats[*IV/ Résultats*]
 
 ____
-link:++#iv.i---fonctionnalité-1++[IV/I - Fonctionnalité 1] 
+link:++#iv.i---fonctionnalité-1++[IV.I - Fonctionnalité 1] 
 
 link:++#iv.i-a---fonctionnement++[IV.I a - Fonctionnement]
 
@@ -111,7 +111,7 @@ ____
 
 == IV/ Résultats
 
-=== IV/I - Fonctionnalité 1
+=== IV.I - Fonctionnalité 1
 
 ==== IV.I a - Fonctionnement
 
