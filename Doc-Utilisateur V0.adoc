@@ -31,51 +31,50 @@ link:#i.iii-prérequis[I.III – Prérequis] 3
 ____
 
 link:#ii-installation-et-utilisation[*II/ Installation et Utilisation*]
-*3*
+
 
 ____
-link:#ii.i-installation-classique[II.I – Installation classique] 3
+link:#ii.i-installation-classique[II.I – Installation classique]
 
 link:#ii.ii-installation-à-partir-des-sources[II.II – Installation à
-partir des sources] 3
+partir des sources]
 ____
 
-link:#iii-fonctionnement[*III/ Fonctionnement*] *3*
+link:#iii-fonctionnement[*III/ Fonctionnement*] 
 
 ____
-link:++#iii.i---guichetier++[III.I - Guichetier] 4
+link:++#iii.i---guichetier++[III.I - Guichetier]
 
 link:++#iii.ii-a---modifier-des-informations-client++[III.II a -
-Modifier des Informations Client] 4
+Modifier des Informations Client]
 
 link:++#iii.ii-b---créer-un-nouveau-client++[III.II b - Créer un Nouveau
-Client] 4
+Client]
 
 link:++#iii.ii-c---consulter-un-compte++[III.II c - Consulter un Compte]
-4
 
-link:++#iii.ii-d---débiter-un-compte++[III.II d - Débiter un Compte] 4
+link:++#iii.ii-d---débiter-un-compte++[III.II d - Débiter un Compte]
 
-link:++#iii.ii---chef-dagence++[III.II - Chef D’agence] 4
+link:++#iii.ii---chef-dagence++[III.II - Chef D’agence]
 
 link:++#iii.ii-a---rendre-inactif-un-client++[III.II a - Rendre inactif
-un Client] 4
+un Client]
 ____
 
-link:#iv-résultats[*IV/ Résultats*] *4*
+link:#iv-résultats[*IV/ Résultats*]
 
 ____
-link:++#iv.i---fonctionnalité-1++[IV.I - Fonctionnalité 1] 4
+link:++#iv.i---fonctionnalité-1++[IV.I - Fonctionnalité 1] 
 
-link:++#iv.i-a---fonctionnement++[IV.I a - Fonctionnement] 4
+link:++#iv.i-a---fonctionnement++[IV.I a - Fonctionnement]
 
-link:++#iv.i-b---tests-effectués++[IV.I b - Tests Effectués] 4
+link:++#iv.i-b---tests-effectués++[IV.I b - Tests Effectués]
 
-link:++#iv.ii---fonctionnalité-2++[IV.II - Fonctionnalité 2] 4
+link:++#iv.ii---fonctionnalité-2++[IV.II - Fonctionnalité 2]
 
-link:++#iv.i-a---fonctionnement-1++[IV.I a - Fonctionnement] 4
+link:++#iv.i-a---fonctionnement-1++[IV.I a - Fonctionnement] 
 
-link:++#iv.i-b---tests-effectués-1++[IV.I b - Tests Effectués] 4
+link:++#iv.i-b---tests-effectués-1++[IV.I b - Tests Effectués] 
 ____
 
 == I/ L’application DailyBank
