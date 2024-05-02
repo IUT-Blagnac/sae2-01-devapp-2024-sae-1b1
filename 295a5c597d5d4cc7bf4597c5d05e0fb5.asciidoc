@@ -1,0 +1,129 @@
+image:vertopal_295a5c597d5d4cc7bf4597c5d05e0fb5/media/image1.jpg[image,width=97,height=137]
+
+Université de Toulouse
+
+IUT de Blagnac
+
+Département Informatique
+
+SAE 2.05
+
+image:vertopal_295a5c597d5d4cc7bf4597c5d05e0fb5/media/image2.png[image,width=474,height=361]
+
+____
+*_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
+Clara_*
+____
+
+_Informatique 1^ière^ Année_
+
+Table Des Matières
+
+link:#i-lapplication-dailybank[*I/ L’application DailyBank*] *3*
+
+____
+link:#i.i-définitions-contexte-et-historique[I.I – Définitions&#44; contexte
+et historique] 3
+
+link:#i.ii-spécifications[I.II – Spécifications] 3
+
+link:#i.iii-prérequis[I.III – Prérequis] 3
+____
+
+link:#ii-installation-et-utilisation[*II/ Installation et Utilisation*]
+*3*
+
+____
+link:#ii.i-installation-classique[II.I – Installation classique] 3
+
+link:#ii.ii-installation-à-partir-des-sources[II.II – Installation à
+partir des sources] 3
+____
+
+link:#iii-fonctionnement[*III/ Fonctionnement*] *3*
+
+____
+link:++#iii.i---guichetier++[III.I - Guichetier] 4
+
+link:++#iii.ii-a---modifier-des-informations-client++[III.II a -
+Modifier des Informations Client] 4
+
+link:++#iii.ii-b---créer-un-nouveau-client++[III.II b - Créer un Nouveau
+Client] 4
+
+link:++#iii.ii-c---consulter-un-compte++[III.II c - Consulter un Compte]
+4
+
+link:++#iii.ii-d---débiter-un-compte++[III.II d - Débiter un Compte] 4
+
+link:++#iii.ii---chef-dagence++[III.II - Chef D’agence] 4
+
+link:++#iii.ii-a---rendre-inactif-un-client++[III.II a - Rendre inactif
+un Client] 4
+____
+
+link:#iv-résultats[*IV/ Résultats*] *4*
+
+____
+link:++#iv.i---fonctionnalité-1++[IV.I - Fonctionnalité 1] 4
+
+link:++#iv.i-a---fonctionnement++[IV.I a - Fonctionnement] 4
+
+link:++#iv.i-b---tests-effectués++[IV.I b - Tests Effectués] 4
+
+link:++#iv.ii---fonctionnalité-2++[IV.II - Fonctionnalité 2] 4
+
+link:++#iv.i-a---fonctionnement-1++[IV.I a - Fonctionnement] 4
+
+link:++#iv.i-b---tests-effectués-1++[IV.I b - Tests Effectués] 4
+____
+
+== I/ L’application DailyBank
+
+=== I.I – Définitions, contexte et historique
+
+=== I.II – Spécifications 
+
+=== I.III – Prérequis
+
+== II/ Installation et Utilisation
+
+=== II.I – Installation classique 
+
+=== II.II – Installation à partir des sources 
+
+== III/ Fonctionnement
+
+=== III.I - Guichetier
+
+==== III.II a - Modifier des Informations Client
+
+==== III.II b - Créer un Nouveau Client
+
+==== III.II c - Consulter un Compte 
+
+==== III.II d - Débiter un Compte
+
+=== III.II - Chef D’agence
+
+==== III.II a - Rendre inactif un Client
+
+== 
+
+== IV/ Résultats
+
+=== IV.I - Fonctionnalité 1
+
+==== IV.I a - Fonctionnement
+
+==== 
+
+==== IV.I b - Tests Effectués
+
+=== IV.II - Fonctionnalité 2
+
+==== IV.I a - Fonctionnement
+
+==== 
+
+==== IV.I b - Tests Effectués
