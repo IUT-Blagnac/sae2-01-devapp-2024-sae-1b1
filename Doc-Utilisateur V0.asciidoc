@@ -1,4 +1,4 @@
-image:vertopal_295a5c597d5d4cc7bf4597c5d05e0fb5/media/image1.jpg[image,width=97,height=137]
+image:media/image1.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
