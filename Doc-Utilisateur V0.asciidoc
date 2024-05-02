@@ -8,7 +8,7 @@ Département Informatique
 
 SAE 2.05
 
-image:media/image2.png[image,width=474,height=361]
+image:media/image2.png[Tiger,200,200,float="right",align="center"]
 
 ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
