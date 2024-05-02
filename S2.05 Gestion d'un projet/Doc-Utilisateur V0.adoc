@@ -22,7 +22,7 @@ Table Des Matières
 link:#i-lapplication-dailybank[*I/ L’application DailyBank*]
 
 ____
-link:#i/i-définitions-contexte-et-historique[I/I – Définitions contexte
+link:#i.i-définitions-contexte-et-historique[I/I – Définitions contexte
 et historique] 
 
 link:#i.ii-spécifications[I.II – Spécifications]
