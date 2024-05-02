@@ -19,15 +19,15 @@ _Informatique 1^ière^ Année_
 
 Table Des Matières
 
-link:#i-lapplication-dailybank[*I/ L’application DailyBank*] *3*
+link:#i-lapplication-dailybank[*I/ L’application DailyBank*]
 
 ____
 link:#i.i-définitions-contexte-et-historique[I.I – Définitions&#44; contexte
-et historique] 3
+et historique] 
 
-link:#i.ii-spécifications[I.II – Spécifications] 3
+link:#i.ii-spécifications[I.II – Spécifications]
 
-link:#i.iii-prérequis[I.III – Prérequis] 3
+link:#i.iii-prérequis[I.III – Prérequis]
 ____
 
 link:#ii-installation-et-utilisation[*II/ Installation et Utilisation*]
