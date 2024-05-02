@@ -1,4 +1,4 @@
-image:media/image1.jpg[image,width=97,height=137]
+image:/media/image1.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
