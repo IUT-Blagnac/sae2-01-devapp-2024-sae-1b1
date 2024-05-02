@@ -1,4 +1,4 @@
-image:/media/image1.jpg[image,width=97height=137]
+image:/media/image_univ.jpg[image,width=97height=137]
 
 Université de Toulouse
 
@@ -8,7 +8,7 @@ Département Informatique
 
 SAE 2.05
 
-image:/media/image2.png[Tiger,200,200,float="right",align="center"]
+image:/media/image_docu.png[Tiger,200,200,float="right",align="center"]
 
 ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
