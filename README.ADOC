@@ -2,7 +2,8 @@
 
 ==== Présentation de l'équipe et rôles respectifs
 Chef de projet : BOULOUIHA GNAOUI Yassir
-Responsabilités à définir plus tard.
+
+Responsabilités des autres membres à définir plus tard.
 
 ==== Répartition des tâches et état d'avancement
 [options="header,footer"]
