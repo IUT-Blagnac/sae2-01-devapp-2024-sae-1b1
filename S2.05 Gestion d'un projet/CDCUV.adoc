@@ -159,14 +159,13 @@ image:vertopal_00d0b273145f4630a2fbce914b373919/media/usecase.png[image,width=52
 == Analyse des contraintes 
 
 ____
-Techniques
 
+Techniques
+____
 L'application doit être compatible avec les systèmes existants de la
 banque, notamment ceux utilisant Java et Oracle, pour assurer une
 intégration fluide. En raison de la sensibilité des informations
-financières,
-
-l'application doit garantir un niveau élevé de sécurité pour protéger
+financières, l'application doit garantir un niveau élevé de sécurité pour protéger
 les données des clients contre tout accès non autorisé ou toute
 violation de la confidentialité. L'application doit être capable de
 gérer un volume élevé de transactions tout en maintenant des temps de
