@@ -187,6 +187,8 @@ nouvelle application et des procédures à suivre.
 
 
 [#_heading=h.w4ar2elfmq55 .anchor]##*Conclusion*
+____
+
 En conclusion, ce cahier des charges fournit un cadre solide pour le 
 développement de l'application de gestion des comptes clients pour BANKUniv. 
 En abordant les aspects techniques, organisationnels et fonctionnels du projet, 
