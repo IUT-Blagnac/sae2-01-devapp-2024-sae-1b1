@@ -17,7 +17,7 @@ ____
 
 _Informatique 1^ière^ Année_
 
-Table Des Matières
+= Table Des Matières
 :toc:
 
 == I/ L’application DailyBank
