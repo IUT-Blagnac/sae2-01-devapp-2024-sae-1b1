@@ -1,9 +1,15 @@
-=== Exemple readme étudiant
+=== Readme
 
-==== Présentation de l'équipe et rôles respectifs
-Chef de projet : BOULOUIHA GNAOUI Yassir
+Notre équipe est chargée de mettre à jour et d'améliorer l'application bancaire de DailyBank dont les fonctionnalités ne répondent plus au  besoin.
+L'équipe comporte trois membres:
 
-Responsabilités des autres membres à définir plus tard.
+- FIGUERAS Clara
+- HANKI Wissal
+- DELAPLAGNE Titouan 
+
+Menés par un Chef de projet : BOULOUIHA GNAOUI Yassir
+
+Les différentes responsabilités des autres membres à définir plus tard.
 
 ==== Répartition des tâches et état d'avancement
 [options="header,footer"]
