@@ -19,63 +19,7 @@ _Informatique 1^ière^ Année_
 
 Table Des Matières
 
-link:#i-lapplication-dailybank[*I/ L’application DailyBank*]
-
-____
-link:#i.i-définitions-contexte-et-historique[*I/I – Définitions contexte
-et historique*] 
-
-link:#i.ii-spécifications[I.II – Spécifications]
-
-link:#i.iii-prérequis[I.III – Prérequis]
-____
-
-link:#ii-installation-et-utilisation[*II/ Installation et Utilisation*]
-
-
-____
-link:#ii.i-installation-classique[II.I – Installation classique]
-
-link:#ii.ii-installation-à-partir-des-sources[II.II – Installation à
-partir des sources]
-____
-
-link:#iii-fonctionnement[*III/ Fonctionnement*] 
-
-____
-link:++#iii.i---guichetier++[III.I - Guichetier]
-
-link:++#iii.ii-a---modifier-des-informations-client++[III.II a -
-Modifier des Informations Client]
-
-link:++#iii.ii-b---créer-un-nouveau-client++[III.II b - Créer un Nouveau
-Client]
-
-link:++#iii.ii-c---consulter-un-compte++[III.II c - Consulter un Compte]
-
-link:++#iii.ii-d---débiter-un-compte++[III.II d - Débiter un Compte]
-
-link:++#iii.ii---chef-dagence++[III.II - Chef D’agence]
-
-link:++#iii.ii-a---rendre-inactif-un-client++[III.II a - Rendre inactif
-un Client]
-____
-
-link:#iv-résultats[*IV/ Résultats*]
-
-____
-link:++#iv.i---fonctionnalité-1++[IV.I - Fonctionnalité 1] 
-
-link:++#iv.i-a---fonctionnement++[IV.I a - Fonctionnement]
-
-link:++#iv.i-b---tests-effectués++[IV.I b - Tests Effectués]
-
-link:++#iv.ii---fonctionnalité-2++[IV.II - Fonctionnalité 2]
-
-link:++#iv.i-a---fonctionnement-1++[IV.I a - Fonctionnement] 
-
-link:++#iv.i-b---tests-effectués-1++[IV.I b - Tests Effectués] 
-____
+:toc:
 
 == I/ L’application DailyBank
 
