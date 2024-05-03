@@ -1,20 +1,14 @@
 image::../media/image_univ.jpg[]
 
-Université de Toulouse
+Université de Toulouse, IUT de Blagnac
 
-IUT de Blagnac
-
-Département Informatique
-
-_Informatique 1^ière^ Année_
-
-
-# Cahier des charges V1
+Département Informatique 1^ière^ Année
 
 Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
 Clara
 
 
+# Cahier des charges V1
 
 ## Table des matières :
 
