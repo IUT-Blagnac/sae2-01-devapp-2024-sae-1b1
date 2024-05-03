@@ -46,11 +46,11 @@ Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a dév
 [cols="1,2,2,5",options=header]
 |===
 | Date    | Nom         |  Lien                             | Retour
-| Sem.18  | CDC V1      |         link:/S2-05_Gestion_Projet/CDCUV0.adoc[CDCV1]                          |           
+| Sem.18  | CDC V1      |         link:/S2-05_Gestion_Projet/CDCUV0.adoc[ici]                          |           
 |         |Gantt V1 Prévu|                                  |
 | 07/05  | CdC V2final|                                     |  
 |         | Doc. Tec. V0 |        |    
-|         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur_V0.asciidoc[Doc_UtilV0] |
+|         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur_V0.asciidoc[ici] |
 |         | Recette V0  |                      | 
 | 31/05   | Gantt V1  réalisé    |       | 
 |         | Doc. Util. V1 |         |         
