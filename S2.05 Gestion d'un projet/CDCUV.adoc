@@ -158,8 +158,8 @@ image:vertopal_00d0b273145f4630a2fbce914b373919/media/usecase.png[image,width=52
 
 == Analyse des contraintes 
 
-____
 
+____
 Techniques
 ____
 L'application doit être compatible avec les systèmes existants de la
@@ -174,6 +174,7 @@ doit être conçue de manière à pouvoir évoluer facilement pour intégrer
 de nouvelles fonctionnalités ou s'adapter à l'évolution des besoins de
 la banque sans perturber les opérations existantes.
 
+____
 Organisationnelles
 ____
 
@@ -184,7 +185,7 @@ claire et efficace doit être établie au sein de l'organisation pour
 informer le personnel des changements à venir, des avantages de la
 nouvelle application et des procédures à suivre.
 
-
+____
 [#_heading=h.w4ar2elfmq55 .anchor]##*Conclusion*
 ____
 
