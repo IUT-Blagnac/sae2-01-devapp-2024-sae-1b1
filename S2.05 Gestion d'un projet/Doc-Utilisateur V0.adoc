@@ -18,28 +18,7 @@ ____
 _Informatique 1^ière^ Année_
 
 = Table Des Matières
-** I - L’application DailyBank
-*** I.I – Définitions, contexte et historique
-*** I.II – Spécifications 
-*** I.III – Prérequis
-** II - Installation et Utilisation
-*** II.I – Installation classique 
-*** II.II – Installation à partir des sources 
-** III - Fonctionnement
-*** III.I - Guichetier
-**** III.II a - Modifier des Informations Client
-**** III.II b - Créer un Nouveau Client
-**** III.II c - Consulter un Compte 
-**** III.II d - Débiter un Compte
-*** III.II - Chef D’agence
-**** III.II a - Rendre inactif un Client
-** IV. Résultats
-*** IV.I - Fonctionnalité 1
-**** IV.I a - Fonctionnement
-**** IV.I b - Tests Effectués
-*** IV.II - Fonctionnalité 2
-**** IV.I a - Fonctionnement
-**** IV.I b - Tests Effectués
+:toc:
 
 
 
