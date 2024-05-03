@@ -1,5 +1,3 @@
-Je m'excuse pour la confusion précédente. Sur GitHub, vous pouvez utiliser du HTML pour centrer des éléments dans un fichier README.md. Voici comment vous pourriez le faire en utilisant du code HTML pour centrer les éléments :
-
 ```html
 <div style="text-align:center;">
 
@@ -20,7 +18,8 @@ SAE 2.05
 
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
 
-</div>'''
+</div>
+```
 
 = Table Des Matières
 * I - L’application DailyBank
