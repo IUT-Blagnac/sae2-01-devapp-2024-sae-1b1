@@ -1,5 +1,9 @@
-[.center]
-image:/media/image_univ.jpg[imagewidth=97height=137]
+Je m'excuse pour la confusion précédente. Sur GitHub, vous pouvez utiliser du HTML pour centrer des éléments dans un fichier README.md. Voici comment vous pourriez le faire en utilisant du code HTML pour centrer les éléments :
+
+```html
+<div style="text-align:center;">
+
+![Logo](/media/image_univ.jpg)
 
 Université de Toulouse
 
@@ -9,14 +13,14 @@ Département Informatique
 
 SAE 2.05
 
-image:/media/image_docu.png[Tiger,float="right",align="center"]
+![Tiger](/media/image_docu.png)
+<br>
 
-____
+---
+
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
-____
 
-
-_Informatique 1^ière^ Année_
+</div>'''
 
 = Table Des Matières
 * I - L’application DailyBank
