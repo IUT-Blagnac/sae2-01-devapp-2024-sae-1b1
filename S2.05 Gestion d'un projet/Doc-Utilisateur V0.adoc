@@ -1,7 +1,6 @@
 image:/media/image_univ.jpg[imagewidth=97height=137]
 
-[text-center]
-Université de Toulouse
+[text-center] Université de Toulouse
 
 IUT de Blagnac
 
