@@ -1,4 +1,4 @@
-=== Readme
+= Readme
 
 Notre équipe est chargée de mettre à jour et d'améliorer l'application bancaire de DailyBank dont les fonctionnalités ne répondent plus au  besoin.
 L'équipe comporte trois membres:
