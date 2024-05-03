@@ -72,7 +72,7 @@ _Informatique 1^ière^ Année_
 
 ==== III.II a - Rendre inactif un Client
 
-== 
+
 
 == IV. Résultats
 
@@ -80,7 +80,7 @@ _Informatique 1^ière^ Année_
 
 ==== IV.I a - Fonctionnement
 
-==== 
+
 
 ==== IV.I b - Tests Effectués
 
@@ -88,6 +88,6 @@ _Informatique 1^ière^ Année_
 
 ==== IV.I a - Fonctionnement
 
-==== 
+
 
 ==== IV.I b - Tests Effectués
