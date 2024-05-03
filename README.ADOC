@@ -47,7 +47,7 @@ Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a dév
 |===
 | Date    | Nom         |  Lien                             | Retour
 | Sem.18  | CDC V1      |         link:/S2-05_Gestion_Projet/CDCUV0.adoc[ici]                          |           
-|         |Gantt V1 Prévu|       link:/S2-05_Gestion_Projet/GantV1_prev[ici]                              |
+|         |Gantt V1 Prévu|       link:/S2-05_Gestion_Projet/GantV1_prev.pdf[ici]                              |
 | 07/05  | CdC V2final|                                     |  
 |         | Doc. Tec. V0 |        |    
 |         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur_V0.asciidoc[ici] |
