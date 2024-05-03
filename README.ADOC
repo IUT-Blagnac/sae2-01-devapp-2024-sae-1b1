@@ -51,7 +51,7 @@ Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a dév
 | 07/05  | CdC V2final|                                     |  
 |         | Doc. Tec. V0 |        |    
 |         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur_V0.asciidoc[ici] |
-|         | Recette V0  |                      | 
+|         | Recette V0  |        link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]              | 
 | 31/05   | Gantt V1  réalisé    |       | 
 |         | Doc. Util. V1 |         |         
 |         | Doc. Tec. V1 |                |     
