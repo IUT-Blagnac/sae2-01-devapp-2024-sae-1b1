@@ -1,4 +1,4 @@
-image:vertopal_00d0b273145f4630a2fbce914b373919/media/image2.jpg[image,width=97,height=137]
+image:/media/image2.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
@@ -13,7 +13,7 @@ _Informatique 1^ière^ Année_
 # SAE 2.05 Cahier des charges V1
 
 
-image:vertopal_00d0b273145f4630a2fbce914b373919/media/image5.png[image,width=463,height=325]
+image:/media/image5.png[image,width=463,height=325]
 
 ____
 Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
