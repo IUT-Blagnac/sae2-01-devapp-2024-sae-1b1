@@ -1,4 +1,4 @@
-image:vertopal_00d0b273145f4630a2fbce914b373919/media/image2.jpg[image,width=97,height=137]
+image::../media/image_univ.jpg[]
 
 Université de Toulouse
 
@@ -9,16 +9,11 @@ Département Informatique
 _Informatique 1^ière^ Année_
 
 
+# Cahier des charges V1
 
-# SAE 2.05 Cahier des charges V1
-
-
-image:vertopal_00d0b273145f4630a2fbce914b373919/media/image5.png[image,width=463,height=325]
-
-____
 Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
 Clara
-____
+
 
 
 ## Table des matières :
@@ -43,8 +38,7 @@ ____
 
 == Présentation du sujet 
 
-=== Présentation du domaine de
-BANKUniv
+*_Présentation du domaine de BANKUniv_*
 
 Le secteur bancaire traditionnel étant en pleine mutation face à l’essor
 des applications financières et à l’arrivée de nouveaux acteurs
@@ -70,7 +64,7 @@ pour remplacer plusieurs de leurs outils obsolètes. Ce développement
 s'inscrit dans le cadre de restructuration de ses services bancaires et
 l’application sera déployée dans les 100 agences que compte son réseau.
 
-[#_heading=h.6swamsgl81b5 .anchor]##*_Problématique_*
+*_Problématique_*
 
 La problématique de BANKUniv est donc de développer une application de
 gestion de comptes clients performante et sécurisée afin de remplacer
@@ -86,10 +80,9 @@ d’argent entre deux comptes distincts mais domiciliés dans le réseau
 bancaire, soit par une personne physique se présentant devant un
 guichet.
 
-*Analyse de l’existant*
+== Analyse de l’existant
 
-____
-[#_heading=h.dabw0wkx4ter .anchor]##*_Présentation de la solution déjà
+*_Présentation de la solution déjà
 existante_*
 
 BANKUniv possède déjà une application bancaire nommée “ Daily Bank “.
@@ -97,45 +90,27 @@ Cependant cette version est assez limitée et doit être adaptée pour
 répondre aux nouveaux besoins de la banque.
 
 Dans cette version de l’application peut permettre au guichetier :
-____
 
-* {blank}
-+
-____
-Modifier les informations des clients tels que leurs numéro de téléphone
-ou encore leurs adresses.
-____
-* {blank}
-+
-____
-Créer un nouveau client.
-____
-* {blank}
-+
-____
-Consulter un compte.
-____
-* {blank}
-+
-____
-Débiter un compte.
-____
+** Modifier les informations des clients tels que leurs numéro de téléphone ou encore leurs adresses.
+
+** Créer un nouveau client.
+
+** Consulter un compte.
+
+** Débiter un compte.
+
 
 Le chef d'agence peut également rendre inactif un client.
 
-____
-[#_heading=h.kb1boasxxxho .anchor]##*_Différents utilisateurs_*
-____
+*_Différents utilisateurs_*
 
 Voici le diagramme des cas d’utilisation initial :
 
-image:vertopal_00d0b273145f4630a2fbce914b373919/media/image3.png[image,width=422,height=382]
+image::../media/DiagrammeCasUti.png[]
 
 == Analyse des besoins 
 
-[#_heading=h.d7a2n9v2wz .anchor]##
-
-=== link:#_heading=h.hybkx11zt3g9[User Story]
+*_User Story_*
 
 [.underline]#User Story 1:#
 
@@ -152,23 +127,19 @@ gérer les employés, et, dans le cas où seules les spécifications le
 permettent, effectuer un débit exceptionnel, simuler un emprunt et
 simuler une assurance emprunt.
 
-link:#_heading=h.7scuzdxch2td[*Use Case*]
+*_Use Case_*
 
-image:vertopal_00d0b273145f4630a2fbce914b373919/media/image1.png[image,width=524,height=588]
-
-== 
+image::../media/UseCase.png[]
 
 == Analyse des contraintes 
 
-____
-Techniques
+
+*_Techniques_*
 
 L'application doit être compatible avec les systèmes existants de la
 banque, notamment ceux utilisant Java et Oracle, pour assurer une
 intégration fluide. En raison de la sensibilité des informations
-financières,
-
-l'application doit garantir un niveau élevé de sécurité pour protéger
+financières,l'application doit garantir un niveau élevé de sécurité pour protéger
 les données des clients contre tout accès non autorisé ou toute
 violation de la confidentialité. L'application doit être capable de
 gérer un volume élevé de transactions tout en maintenant des temps de
@@ -177,8 +148,7 @@ doit être conçue de manière à pouvoir évoluer facilement pour intégrer
 de nouvelles fonctionnalités ou s'adapter à l'évolution des besoins de
 la banque sans perturber les opérations existantes.
 
-Organisationnelles
-____
+*_Organisationnelles_*
 
 La mise en œuvre de la nouvelle application nécessitera une formation
 adéquate du personnel des agences bancaires pour garantir une adoption
@@ -187,4 +157,4 @@ claire et efficace doit être établie au sein de l'organisation pour
 informer le personnel des changements à venir, des avantages de la
 nouvelle application et des procédures à suivre.
 
-[#_heading=h.w4ar2elfmq55 .anchor]##*Conclusion*
+*_Conclusion_*
