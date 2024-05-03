@@ -19,10 +19,8 @@ ____
 
 _Informatique 1^ière^ Année_
 
-== 
 
-== 
-= Cahier De Recette - DailyBankApp
+=== Cahier De Recette - DailyBankApp
 :toc:
 :toc-title: Sommaire
 
