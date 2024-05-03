@@ -140,10 +140,10 @@ image:vertopal_00d0b273145f4630a2fbce914b373919/media/image3.png[image,width=422
 [.underline]#User Story 1:#
 
 En tant que Guichetier, je souhaite avoir accès à la modification des
-
-informations des clients, à la création de nouveaux comptes, à la
-consultation des comptes, ainsi qu'à la possibilité d'effectuer des
-virements entre comptes et de débiter un compte.
+informations des clients, à la création de nouveaux comptes, à la consultation 
+des comptes, ainsi qu'à la possibilité d'effectuer des virements entre comptes 
+et de débiter un compte. De plus, je souhaite pouvoir générer un relevé mensuel 
+d'un compte en format PDF et gérer les prélèvements automatiques.
 
 [.underline]#User Story 2:#
 
