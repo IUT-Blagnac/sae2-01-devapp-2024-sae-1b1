@@ -36,7 +36,7 @@ Les différentes responsabilités des autres membres à définir plus tard.
 
 |=======================
 
-Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a développé la fonctionnalité, il y est indiqué indiquant
+Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a développé la fonctionnalité, il y est indiqué
 
 *	*F* pour fonctionnel ou
 *	*D* pour encore en Développement
