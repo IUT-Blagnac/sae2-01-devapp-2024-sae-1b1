@@ -1,6 +1,6 @@
 = Readme
 
-Notre équipe est chargée de mettre à jour et d'améliorer l'application bancaire de DailyBank dont les fonctionnalités ne répondent plus au  besoin.
+Notre équipe est chargée de mettre à jour et d'améliorer l'application bancaire de l'entreprise DailyBank dont les fonctionnalités ne répondent plus aux besoins de cette dernière.
 L'équipe comporte trois membres:
 
 - FIGUERAS Clara
