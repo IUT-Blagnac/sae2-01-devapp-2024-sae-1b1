@@ -50,7 +50,7 @@ Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a dév
 |         |Gantt V1 Prévu|                                  |
 | 07/05  | CdC V2final|                                     |  
 |         | Doc. Tec. V0 |        |    
-|         | Doc User V0    |      Image:/S2.05 Gestion d'un projet/Doc-Utilisateur V0.asciidoc[Voiture]  |
+|         | Doc User V0    |      image:/S2.05 Gestion d'un projet/Doc-Utilisateur V0.asciidoc[Voiture]  |
 |         | Recette V0  |                      | 
 | 31/05   | Gantt V1  réalisé    |       | 
 |         | Doc. Util. V1 |         |         
