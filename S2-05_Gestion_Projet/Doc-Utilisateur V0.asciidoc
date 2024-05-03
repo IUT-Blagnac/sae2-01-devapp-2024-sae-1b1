@@ -1,7 +1,5 @@
-```html
-<div style="text-align:center;">
-
-![Logo](/media/image_univ.jpg)
+[.center]
+image:/media/image_univ.jpg[imagewidth=97height=137]
 
 Université de Toulouse
 
@@ -11,15 +9,12 @@ Département Informatique
 
 SAE 2.05
 
-![Tiger](/media/image_docu.png)
-<br>
+image:/media/image_docu.png[Tiger,float="right",align="center"]
 
----
-
+____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
+____
 
-</div>
-```
 
 = Table Des Matières
 * I - L’application DailyBank
