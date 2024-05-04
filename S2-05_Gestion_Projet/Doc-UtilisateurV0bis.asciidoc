@@ -3,14 +3,10 @@
 
 = SAE 2.05
 
-image::/media/image_docu.png[Image de document]
+image:/media/image_univ.jpg[Logo UT2J,100,150]
 Université de Toulouse
-
 IUT de Blagnac
-
 Département Informatique
-
-SAE 2.05
 
 ifdef::env-github[]
 ++++
