@@ -1,20 +1,30 @@
-
 :toc:
 
+= SAE 2.05
 
 Université de Toulouse
-
 IUT de Blagnac
-
 Département Informatique
-
 SAE 2.05
 
-image:/media/image_docu.png[Tiger,600,600,float="right"]
+ifdef::env-github[]
+++++
+<p align="center">
+  <img width="460" height="300" src="/media/image_docu.png">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::/media/image_docu.png[Image de document, 350, align=center]
+endif::[]
+
 
 ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
 ____
+
+
 
 == I - L’application DailyBank
 
