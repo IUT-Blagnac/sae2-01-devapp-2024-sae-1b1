@@ -1,7 +1,48 @@
 
 :toc:
 
+== I - L’application DailyBank
 
-= titre 1
+=== I.I – Définitions, contexte et historique
 
-== titre 2
+=== I.II – Spécifications 
+
+=== I.III – Prérequis
+
+== II - Installation et Utilisation
+
+=== II.I – Installation classique 
+
+=== II.II – Installation à partir des sources 
+
+== III - Fonctionnement
+
+=== III.I - Guichetier
+
+==== III.II a - Modifier des Informations Client
+
+==== III.II b - Créer un Nouveau Client
+
+==== III.II c - Consulter un Compte 
+
+==== III.II d - Débiter un Compte
+
+=== III.II - Chef D’agence
+
+==== III.II a - Rendre inactif un Client
+
+
+
+== IV. Résultats
+
+=== IV.I - Fonctionnalité 1
+
+==== IV.I a - Fonctionnement
+
+
+
+==== IV.I b - Tests Effectués
+
+=== IV.II - Fonctionnalité 2
+
+==== IV.I a - Fonctionnement
