@@ -1,5 +1,4 @@
-[.center]
-image:media/Page de garde mise en forme.png
+image:media/Page de garde mise en forme.png[Image]
 
 Université de Toulouse
 
