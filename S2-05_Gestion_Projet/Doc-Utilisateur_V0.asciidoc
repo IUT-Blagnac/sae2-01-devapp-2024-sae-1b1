@@ -16,7 +16,7 @@ ____
 
 
 = Table Des Matières
-:toc:
+:toc: preamble
 * I - L’application DailyBank
 ** I.I – Définitions, contexte et historique
 ** I.II – Spécifications 
