@@ -1,16 +1,21 @@
-:toc:
+:toc: preamble
+:toc-title: Table des matières
 
 = SAE 2.05
 
+image::/media/image_docu.png[Image de document]
 Université de Toulouse
+
 IUT de Blagnac
+
 Département Informatique
+
 SAE 2.05
 
 ifdef::env-github[]
 ++++
 <p align="center">
-  <img width="460" height="300" src="/media/image_docu.png">
+  <img width="600" height="600" src="/media/image_docu.png">
 </p>
 ++++
 endif::[]
