@@ -1,5 +1,5 @@
 [.center]
-image:/media/image_univ.jpg[imagewidth=97height=137]
+image:media/Page de garde mise en forme.png
 
 Université de Toulouse
 
