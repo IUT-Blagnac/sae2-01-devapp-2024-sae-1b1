@@ -1,4 +1,6 @@
 
+= Cahier des Charges application DailyBank
+
 image::../media/image_univ.jpg[]
 
 Université de Toulouse
@@ -9,10 +11,12 @@ Département Informatique
 
 _Informatique 1^ière^ Année_
 
-Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
+Noms : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
 Clara
 
-# SAE 2.05 Cahier des charges V1
+Version 1.1
+
+Pour l'entreprise DailyBank
 
 ## Table des matières :
 
