@@ -106,7 +106,14 @@ En tant que Chef d’Agence, je souhaite pouvoir rendre inactif un client, gére
 
 === Use Case
 
+==== Use case V0 :
+
+image::../media/usecaseV0.png[]
+
+==== Use case V1 :
+
 image::../media/usecaseV1.png[]
+
 
 == Analyse des contraintes 
 
