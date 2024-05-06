@@ -98,31 +98,17 @@ image::../media/DiagrammeCasUti.png[]
 
 [.underline]#User Story 1:#
 
-Version 1:
-En tant que Guichetier, je souhaite avoir accès à la création de nouveaux comptes, 
-à la consultation des comptes, ainsi qu'à la possibilité d'effectuer des virements 
-entre comptes et de débiter un compte si je suis devant le client.
-
-Version 2:
-En tant que Guichetier, je souhaite pouvoir générer un relevé mensuel 
-d'un compte en format PDF et gérer les prélèvements automatiques.
+En tant que Guichetier, je souhaite avoir accès à la modification des informations du client, à la création de nouveaux comptes, à la consultation des comptes,ainsi qu'à la possibilité d'effectuer des virements entre comptes et de débiter un compte si je suis devant le client, générer un relevé mensuel d'un compte en format PDF et gérer les prélèvements automatiques.
 
 [.underline]#User Story 2:#
 
-Version 1:
-En tant que Chef d’Agence, je souhaite pouvoir gérer les employés.
-
-Version 2:
-En tant que Chef d'Agence, je souhaite pourvoir effectuer un débit exceptionnel dans 
-le cas où seules les spécifications le permettent, simuler un emprunt et simuler une assurance emprunt.
+En tant que Chef d’Agence, je souhaite pouvoir rendre inactif un client, gérer les employés, dans le cas où seules les spécifications le permettent, effectuer un débit exceptionnel simuler un emprunt et simuler une assurance emprunt.
 
 === Use Case
 
 image::../media/usecase.png[]
 
 == Analyse des contraintes 
-
-
 
 === Techniques
 
@@ -149,15 +135,17 @@ claire et efficace doit être établie au sein de l'organisation pour
 informer le personnel des changements à venir, des avantages de la
 nouvelle application et des procédures à suivre.
 
+
 === Étapes du projet et livraisons
 
 -Semaine 18: Cahier de charge version 1 et Gantt version 1;
 
--07/05: Cahier de charge version 2 final, doc.technique V0, doc user version 0 et recette version 0
+-07/05: Cahier de charge version 2 final, doc.technique V0, doc user version 0 et recette version 0;
 
 -31/05: Gantt version 1 réalisé, doc. utilisateur version 1, doc. technique Version 1, code version 1, recette version 1 et Gantt version 2;
 
 -14/06: Gantt version 2 réalisé, doc. utilisateur V2, doc. technique version 2, code version 2, recette version 2.
+
 
 == Conclusion
 
