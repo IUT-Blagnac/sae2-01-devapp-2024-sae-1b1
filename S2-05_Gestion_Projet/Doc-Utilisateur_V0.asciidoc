@@ -1,7 +1,7 @@
 :toc: preamble
 :toc-title: Table des matières
 
-
+= SAE 2.05
 
 image:/media/image_univ.jpg[Logo UT2J,100,150]
 Université de Toulouse
@@ -16,7 +16,7 @@ ifdef::env-github[]
 ++++
 endif::[]
 
-= SAE 2.05
+
 
 ifndef::env-github[]
 image::/media/image_docu.png[Image de document, 350, align=center]
