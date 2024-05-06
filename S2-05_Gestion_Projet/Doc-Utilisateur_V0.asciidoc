@@ -34,7 +34,11 @@ ____
 
 === I.I – Définitions, contexte et historique
 
-L'application DailyBank répond au besoin croissant de competitivité des agences bancaires
+L'application DailyBank répond au besoin croissant de competitivité des agences bancaires. En effet de nos jours les Banques se numérisent de plus en plus et, afin de rester attrayant auprès de jeunes consommateurs, les banques traditionnelles se doivent de se doter d'une application mobile pratique, esthétique et ergonomique.
+
+Aussi en fin de mois d'Avril 2024, L'agence DailyBank a contacté notre équipe pour moderniser leur application bancaire déjà existante, aujourd'hui bancale et incomplète.
+
+ 
 
 === I.II – Spécifications 
 
