@@ -151,6 +151,14 @@ nouvelle application et des procédures à suivre.
 
 === Étapes du projet et livraisons
 
+-Semaine 18: Cahier de charge version 1 et Gantt version 1;
+
+-07/05: Cahier de charge version 2 final, doc.technique V0, doc user version 0 et recette version 0
+
+-31/05: Gantt version 1 réalisé, doc. utilisateur version 1, doc. technique Version 1, code version 1, recette version 1 et Gantt version 2;
+
+-14/06: Gantt version 2 réalisé, doc. utilisateur V2, doc. technique version 2, code version 2, recette version 2.
+
 == Conclusion
 
 En conclusion, ce cahier des charges fournit un cadre solide pour le 
