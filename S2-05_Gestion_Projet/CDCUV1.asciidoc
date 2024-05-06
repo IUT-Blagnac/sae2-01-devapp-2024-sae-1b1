@@ -149,6 +149,7 @@ claire et efficace doit être établie au sein de l'organisation pour
 informer le personnel des changements à venir, des avantages de la
 nouvelle application et des procédures à suivre.
 
+=== Étapes du projet et livraisons
 
 == Conclusion
 
