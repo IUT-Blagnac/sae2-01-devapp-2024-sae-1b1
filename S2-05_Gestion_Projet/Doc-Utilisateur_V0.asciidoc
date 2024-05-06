@@ -36,7 +36,7 @@ ____
 
 L'application DailyBank répond au besoin croissant de competitivité des agences bancaires. En effet de nos jours les Banques se numérisent de plus en plus et, afin de rester attrayant auprès de jeunes consommateurs, les banques traditionnelles se doivent de se doter d'une application mobile pratique, esthétique et ergonomique.
 
-Aussi en fin de mois d'Avril 2024, L'agence DailyBank a contacté notre équipe pour moderniser leur application bancaire déjà existante, aujourd'hui bancale et incomplète. L'objectif principal du projet était donc de rectifier les lacunes actuelles de l'application, assurer la sécurité des données stockées, et permettre ainsi de redynamiser l'agence en la 
+Aussi en fin de mois d'Avril 2024, L'agence DailyBank a contacté notre équipe pour moderniser leur application bancaire déjà existante, aujourd'hui bancale et incomplète. L'objectif principal du projet était donc de rectifier les lacunes actuelles de l'application, assurer la sécurité des données stockées, et permettre ainsi de redynamiser DailyBank, avec cet outil aujourd'hui essentiel à toute agence bancaire qui se respecte.
 
 === I.II – Spécifications 
 
