@@ -1,3 +1,7 @@
+:toc: preamble
+:toc-title: Table des Matières
+= Cahier de Tests application DailyBank
+
 image:/media/image_univ.jpg[image,width=97,height=137]
 
 Université de Toulouse
@@ -19,19 +23,17 @@ ____
 
 _Informatique 1^ière^ Année_
 
+Version 1.1
 
-=== Cahier De Recette - DailyBankApp
+A destination l'entreprise DailyBank
+
 :toc:
 :toc-title: Sommaire
 
 :Entreprise: DailyBank
 :Equipe:  
 
-Créé par : BOULOUIHA GNAOUI Yassir, DELAPLAGNE Titouan, HANKI Wissal, FIGUERAS Clara
 Créé pour :  Philippe Gaconnet et Yahn Formanczac
-
- 
-
 
 
 == I. Introduction
@@ -44,7 +46,7 @@ Ce document a été produit dans le cadre d'un projet d'élaboration d'une appli
 [.text-justify]
 L'exécution des tests spécifiés au chapitre suivant requiert :
 
-* Une base de données installée (référence document technique).
+* Une base de données installée (cf link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]).
 * L'environnement de test tel que spécifié dans la partie "Environnement de test" de ce document.
 * Les fiches de tests. *À vérifier*
 
