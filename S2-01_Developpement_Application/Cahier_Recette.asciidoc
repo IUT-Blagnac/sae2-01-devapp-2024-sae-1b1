@@ -2,7 +2,7 @@
 :toc-title: Table des Matières
 = Cahier de Tests application DailyBank
 
-image:/media/image_univ.jpg[image,width=97,height=137]
+image:../media/image_univ.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
@@ -14,7 +14,7 @@ Cahier Recettes
 
 SAE 2.01
 
-image:/media/image_recette.png[image,width=565,height=374]
+image:../media/image_doc_tech.jpg[image,width=565,height=374]
 
 ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
@@ -23,7 +23,7 @@ ____
 
 _Informatique 1^ière^ Année_
 
-Version 1.1
+Version 0.1
 
 A destination l'entreprise DailyBank
 
@@ -58,11 +58,11 @@ Les éléments testés concernent les Use-Cases spécifiés dans la *documentati
 
 === 2. Environnement de test :
 [.text-justify]
-Ordinateur sous Windows ou OS équivalent.
+Ordinateur sous Windows ou OS équivalent avec l'utilisation de JAVA et du frameword Junit pour les tests.
 
 
 
-== III. Cas de test :
+== III. Exemples de Cas de test :
 === 1. Fonctionnalités des guichetiers :
 ==== 1.1 Gestion des clients :
 
