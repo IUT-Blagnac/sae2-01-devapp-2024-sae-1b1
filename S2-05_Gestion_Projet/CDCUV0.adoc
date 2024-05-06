@@ -117,16 +117,23 @@ image::../media/DiagrammeCasUti.png[]
 
 [.underline]#User Story 1:#
 
+Version 1:
 En tant que Guichetier, je souhaite avoir accès à la création de nouveaux comptes, 
 à la consultation des comptes, ainsi qu'à la possibilité d'effectuer des virements 
-entre comptes et de débiter un compte. De plus, je souhaite pouvoir générer un relevé mensuel 
+entre comptes et de débiter un compte si je suis devant le client.
+
+Version 2:
+En tant que Guichetier, je souhaite pouvoir générer un relevé mensuel 
 d'un compte en format PDF et gérer les prélèvements automatiques.
 
 [.underline]#User Story 2:#
 
-En tant que Chef d’Agence, je souhaite pouvoir gérer les employés, 
-et, dans le cas où seules les spécifications le permettent, 
-effectuer un débit exceptionnel, simuler un emprunt et simuler une assurance emprunt.
+Version 1:
+En tant que Chef d’Agence, je souhaite pouvoir gérer les employés.
+
+Version 2:
+En tant que Chef d'Agence, je souhaite pourvoir effectuer un débit exceptionnel dans 
+le cas où seules les spécifications le permettent, simuler un emprunt et simuler une assurance emprunt.
 
 *_Use Case_*
 
