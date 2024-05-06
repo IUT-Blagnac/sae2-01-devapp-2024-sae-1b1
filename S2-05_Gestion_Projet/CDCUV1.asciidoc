@@ -40,7 +40,7 @@ innovants, et ainsi toucher de nouveaux marchés, notamment les jeunes et
 les consommateurs technophiles. L’avenir du secteur bancaire se jouera
 donc sur la capacité à l’ère du numérique.
 
-===Contexte
+=== Contexte
 
 Dans le contexte de la SAE S2.01 et 05 la banque BANKUniv souhaite
 développer une application JAVA-Oracle de gestion des comptes clients
@@ -48,13 +48,13 @@ pour remplacer plusieurs de leurs outils obsolètes. Ce développement
 s'inscrit dans le cadre de restructuration de ses services bancaires et
 l’application sera déployée dans les 100 agences que compte son réseau.
 
-===Problématique
+=== Problématique
 
 La problématique de BANKUniv est donc de développer une application de
 gestion de comptes clients performante et sécurisée afin de remplacer
 ses outils obsolètes et répondre aux exigences bancaires modernes.
 
-===Objectifs
+=== Objectifs
 
 L’objectif primordial à atteindre pour ce projet est de développer une
 application permettant de gérer des comptes bancaires de dépôt pour des
@@ -64,9 +64,9 @@ d’argent entre deux comptes distincts mais domiciliés dans le réseau
 bancaire, soit par une personne physique se présentant devant un
 guichet.
 
-==Analyse de l’existant
+== Analyse de l’existant
 
-==Présentation de la solution déjà
+== Présentation de la solution déjà
 existante
 
 BANKUniv possède déjà une application bancaire nommée “ Daily Bank “.
@@ -95,7 +95,7 @@ image::../media/DiagrammeCasUti.png[]
 
 == Analyse des besoins 
 
-===User Story
+=== User Story
 
 [.underline]#User Story 1:#
 
@@ -117,7 +117,7 @@ Version 2:
 En tant que Chef d'Agence, je souhaite pourvoir effectuer un débit exceptionnel dans 
 le cas où seules les spécifications le permettent, simuler un emprunt et simuler une assurance emprunt.
 
-===Use Case
+=== Use Case
 
 image::../media/usecase.png[]
 
@@ -125,7 +125,7 @@ image::../media/usecase.png[]
 
 
 
-===Techniques
+=== Techniques
 
 L'application doit être compatible avec les systèmes existants de la
 banque, notamment ceux utilisant Java et Oracle, pour assurer une
@@ -140,7 +140,7 @@ de nouvelles fonctionnalités ou s'adapter à l'évolution des besoins de
 la banque sans perturber les opérations existantes.
 
 
-===Organisationnelles
+=== Organisationnelles
 
 
 La mise en œuvre de la nouvelle application nécessitera une formation
@@ -151,7 +151,7 @@ informer le personnel des changements à venir, des avantages de la
 nouvelle application et des procédures à suivre.
 
 
-==Conclusion
+== Conclusion
 
 En conclusion, ce cahier des charges fournit un cadre solide pour le 
 développement de l'application de gestion des comptes clients pour BANKUniv. 
