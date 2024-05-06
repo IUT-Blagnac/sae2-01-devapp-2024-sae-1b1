@@ -19,25 +19,6 @@ Version 1.1
 
 Pour l'entreprise DailyBank
 
-## Table des matières :
-
-* Présentation du sujet
-** Présentation du domaine de BANKUniv 
-** Contexte 
-** Problématique
-** Objectifs
-* Analyse de l'existant 
-** Présentation de la solution déjà existante 
-** Différents utilisateurs
-* Analyse des besoins 
-** User Story 
-** Use Case 
-* Analyse des contraintes 
-** Techniques 
-** Organisationnelles 
-** Conclusion
-
-
 
 == Présentation du sujet 
 
