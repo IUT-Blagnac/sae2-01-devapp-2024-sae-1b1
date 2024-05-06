@@ -66,8 +66,7 @@ guichet.
 
 == Analyse de l’existant
 
-== Présentation de la solution déjà
-existante
+=== Présentation de la solution déjà existante
 
 BANKUniv possède déjà une application bancaire nommée “ Daily Bank “.
 Cependant cette version est assez limitée et doit être adaptée pour
@@ -87,7 +86,7 @@ ou encore leurs adresses.
 
 Le chef d'agence peut également rendre inactif un client.
 
-===Différents utilisateurs
+=== Différents utilisateurs
 
 Voici le diagramme des cas d’utilisation initial :
 
