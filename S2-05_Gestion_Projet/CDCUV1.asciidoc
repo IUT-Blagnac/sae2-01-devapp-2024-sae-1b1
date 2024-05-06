@@ -119,17 +119,7 @@ image::../media/usecaseV1.png[]
 
 === Techniques
 
-L'application doit être compatible avec les systèmes existants de la
-banque, notamment ceux utilisant Java et Oracle, pour assurer une
-intégration fluide. En raison de la sensibilité des informations
-financières, l'application doit garantir un niveau élevé de sécurité pour protéger
-les données des clients contre tout accès non autorisé ou toute
-violation de la confidentialité. L'application doit être capable de
-gérer un volume élevé de transactions tout en maintenant des temps de
-réponse courts pour assurer une expérience utilisateur optimale. Elle
-doit être conçue de manière à pouvoir évoluer facilement pour intégrer
-de nouvelles fonctionnalités ou s'adapter à l'évolution des besoins de
-la banque sans perturber les opérations existantes.
+L'application doit être conçue pour être compatible avec les infrastructures existantes de la banque, notamment celles basées sur Java et Oracle, afin d'assurer une intégration harmonieuse. Elle doit répondre à des exigences de sécurité rigoureuses pour protéger les données financières des clients contre toute intrusion non autorisée ou violation de confidentialité. Pour garantir une expérience utilisateur optimale, l'application doit être capable de traiter efficacement un volume élevé de transactions tout en maintenant des temps de réponse courts. De plus, elle doit être flexible et évolutive afin de pouvoir facilement intégrer de nouvelles fonctionnalités et s'adapter aux besoins changeants de la banque sans perturber les opérations existantes. En outre, il est nécessaire d'inclure des règles de gestion spécifiques, telles que les conditions pour les transactions exceptionnelles, afin de couvrir tous les aspects opérationnels. Enfin, des contraintes spécifiques telles que les langages de développement et les exigences de sécurité doivent être définies de manière claire et précise pour orienter le processus de développement de l'application.
 
 
 === Organisationnelles
