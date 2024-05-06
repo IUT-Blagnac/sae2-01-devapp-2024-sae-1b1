@@ -3,28 +3,29 @@
 
 = SAE 2.05
 
-image:/media/image_univ.jpg[Logo UT2J,100,150]
+image:../media/image_univ.jpg[Logo UT2J,100,150]
+
 Université de Toulouse
+
 IUT de Blagnac
+
 Département Informatique
 
 ifdef::env-github[]
 ++++
 <p align="center">
-  <img width="600" height="600" src="/media/image_docu.png">
+  <img width="600" height="600" src="../media/image_docu.png">
 </p>
 ++++
 endif::[]
 
-
-
 ifndef::env-github[]
-image::/media/image_docu.png[Image de document, 350, align=center]
+image::../media/image_docu.png[Image de document, 350, align=center]
 endif::[]
 
 
 ____
-*_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
+*_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPLAGNE Titouan, FIGUERAS Clara_*
 ____
 
 
@@ -32,6 +33,8 @@ ____
 == I - L’application DailyBank
 
 === I.I – Définitions, contexte et historique
+
+L'application DailyBank répond au besoin croissant de competitivité des agences bancaires
 
 === I.II – Spécifications 
 
