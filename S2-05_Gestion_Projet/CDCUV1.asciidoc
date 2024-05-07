@@ -98,11 +98,11 @@ image::../media/DiagrammeCasUti.png[]
 
 [.underline]#User Story 1:#
 
-En tant que Guichetier, je souhaite avoir accès à la modification des informations du client, à la création de nouveaux comptes, à la consultation des comptes,ainsi qu'à la possibilité d'effectuer des virements entre comptes et de débiter un compte si je suis devant le client, générer un relevé mensuel d'un compte en format PDF et gérer les prélèvements automatiques.
+En tant que Guichetier, je souhaite avoir accès à la modification des informations du client, à la création de nouveaux comptes, à la consultation des comptes,ainsi qu'à la possibilité d'effectuer des virements entre comptes et de débiter un compte, générer un relevé mensuel d'un compte en format PDF et gérer les prélèvements automatiques.
 
 [.underline]#User Story 2:#
 
-En tant que Chef d’Agence, je souhaite pouvoir rendre inactif un client, gérer les employés, dans le cas où seules les spécifications le permettent, effectuer un débit exceptionnel simuler un emprunt et simuler une assurance emprunt.
+En tant que Chef d’Agence, je souhaite pouvoir rendre inactif un client, gérer les employés, dans le cas où seules les spécifications le permettent, effectuer un débit exceptionnel, simuler un emprunt et simuler une assurance emprunt.
 
 === Use Case
 
