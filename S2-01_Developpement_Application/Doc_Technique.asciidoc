@@ -2,7 +2,7 @@
 :toc-title: Table des Matières
 = Documentation Technique application Daily Bank
 
-image:/media/image_univ.jpg[image,width=97,height=137]
+image:../media/image_univ.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
@@ -10,11 +10,11 @@ IUT de Blagnac
 
 Département Informatique
 
-Cahier Recettes
+Documentation Technique
 
 SAE 2.01
 
-image:/media/image_recette.png[image,width=565,height=374]
+image:../media/image_recette.png[image,width=565,height=374]
 
 ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
@@ -27,6 +27,22 @@ Version 1.1
 
 A destination l'entreprise DailyBank
 
-== Titre d'exemple 1
+== L'application DailyBank
 
-=== Titre d'exemple 2
+== Architecture
+
+== Fonctionnalités
+
+=== F1
+
+==== F1 a Use Case
+
+==== F1 b Diagramme de classes
+
+=== F2
+
+==== F2 a Use Case
+
+==== F2 b Use Case
+
+== Code Commentés
