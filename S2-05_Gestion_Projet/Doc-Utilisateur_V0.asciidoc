@@ -58,11 +58,11 @@ L'ordinateur vous imposera ici de selectionner l'emplacement de l'installeur jav
 
 Le guichetier n'utilise l'application que pour s'occuper de clients. Aussi les interactions de guichetier nécessite après connexion d'accéder à l'interface de gestion des clients en appuyant 'Gestion'->'Client', comme sur l'image ci-dessous.
 
-image:..\media\Tutoriels utilisation\GestionComptesClient.png[AccesGuichetier,300,300]
+image:..\media\Tutoriels_utilisation\GestionComptesClient.png[AccesGuichetier,300,300]
 
 Le guichetier accède ainsi a l'écran de gestion des clients (voir ci-dessous).
 
-image:..\media\Tutoriels utilisation\EcranGestionClient.png[GestionClient,400,500]
+image:..\media\Tutoriels_utilisation\EcranGestionClient.png[GestionClient,400,500]
 
 D'où il pourra gérer les données des clients de la banque.
 
@@ -81,11 +81,11 @@ Du client.(Champs encadrés en rouge dans l'image)
 
 Les clients correspondant seront listés et accessible dans l'espace en dessous. (encadré en vert dans l'image)
 
-image:..\media\Tutoriels utilisation\RechercheClient.png[ChampsRecherche]
+image:..\media\Tutoriels_utilisation\RechercheClient.png[ChampsRecherche]
 
 Maintenant il suffit de cliquer sur le bouton 'Modifier client' pour modifier les information du client l'application ouvre cette page:
 
-image:..\media\Tutoriels utilisation\ModifClient.png[ModifClient]
+image:..\media\Tutoriels_utilisation\ModifClient.png[ModifClient]
 
 Ici les informations du client peuvent être directement modifiées, sauf bien sur son id qui est unique et définitive. Après les modifications le guichetier peut conserver celles-ci en appuyant sur 'Modifier' ou bien annuler les changements à l'aide du bouton 'Annuler'.
 
@@ -96,7 +96,7 @@ Pour consulter les informations d'un client le guichetier doit d'abord trouver l
 
 Après cela il suffit d'appuyer sur le bouton 'Comptes client', celui-ci nous amène sur cette page:
 
-image:..\media\Tutoriels utilisation\ConsulterComptes.png[ConsultCompte]
+image:..\media\Tutoriels_utilisation\ConsulterComptes.png[ConsultCompte]
 
 On y voit la situation de ses différents comptes bancaires.
 
