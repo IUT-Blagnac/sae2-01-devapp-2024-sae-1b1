@@ -15,13 +15,13 @@ _Informatique 1^ière^ Année_
 ifdef::env-github[]
 ++++
 <p align="center">
-  <img width="600" height="600" src="../media/image_docu.png">
+  <img width="600" height="600" src="../media/CahierCharges.png">
 </p>
 ++++
 endif::[]
 
 ifndef::env-github[]
-image::../media/image_docu.png[Image de document, 350, align=center]
+image::../media/CahierCharges.png[Image de document, 350, align=center]
 endif::[]
 
 ____
