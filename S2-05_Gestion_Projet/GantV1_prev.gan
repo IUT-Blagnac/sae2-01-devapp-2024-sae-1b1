@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Application DailyBank " company="Groupe 1B1" webLink="http://" view-date="2024-04-29" view-index="0" gantt-divider-location="419" resource-divider-location="300" version="3.3.3307" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Application DailyBank " company="Groupe 1B1" webLink="http://" view-date="2024-04-22" view-index="1" gantt-divider-location="404" resource-divider-location="300" version="3.3.3307" locale="fr_FR">
     <description/>
     <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="230" order="0"/>
-        <field id="tpd4" name="Date de début" width="86" order="1"/>
-        <field id="tpd5" name="Date de fin" width="87" order="2"/>
+        <field id="tpd3" name="Nom" width="221" order="0"/>
+        <field id="tpd4" name="Date de début" width="83" order="1"/>
+        <field id="tpd5" name="Date de fin" width="84" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="taskLabelUp" value="length"/>
         <option id="taskLabelDown" value="resources"/>
@@ -43,7 +43,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" uid="5a237eb4f5c94da2870c40473bbe4859" name="Rendus &amp; Oraux" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2024-05-07" duration="30" complete="0" expand="true">
+        <task id="0" uid="5a237eb4f5c94da2870c40473bbe4859" name="Rendus &amp; Oraux" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2024-05-07" duration="30" complete="0" expand="false">
             <notes><![CDATA[Catégorie regroupant toutes les dates de rendus et Oraux de groupe concernant le projet]]></notes>
             <task id="2" uid="3c018d0e100746af9439a201de7ac9c4" name="Rendu CdC V2, Doc Tec. V0, Doc User V0, Recette V0" meeting="true" start="2024-05-07" duration="0" complete="0" expand="true"/>
             <task id="3" uid="6c041659119942f7abe6571b2a808e08" name="Rendu Doc. Util. V1, Doc Tec. V1, Code V1, Recette V1, GantV2 prévu" meeting="true" start="2024-05-31" duration="0" complete="0" expand="true"/>
@@ -64,7 +64,7 @@
         <task id="31" uid="8154569797f4437bb0ebf5c3d683e190" name="Semaine IHM" meeting="false" start="2024-05-13" duration="5" complete="0" expand="true">
             <depend id="11" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="11" uid="73e6e15819c64d12a6391283210e097f" name="Fonctionnalités" color="#990000" meeting="false" start="2024-05-20" duration="15" complete="0" expand="true">
+        <task id="11" uid="73e6e15819c64d12a6391283210e097f" name="Fonctionnalités" color="#990000" meeting="false" start="2024-05-20" duration="15" complete="0" expand="false">
             <task id="28" uid="024a559be5234fa2a8a623b73eb03956" name="Chef d'agence" color="#666600" meeting="false" start="2024-05-20" duration="10" complete="0" expand="true">
                 <task id="47" uid="a0aa5f5920e44233b37606c8efae3638" name="V1" meeting="false" start="2024-05-20" duration="5" complete="0" expand="true">
                     <depend id="49" type="2" difference="0" hardness="Strong"/>
@@ -268,10 +268,18 @@
         </task>
     </tasks>
     <resources>
-        <resource id="0" name="Yassir" function="Default:1" contacts="yassir.boulouiha.iut@gmail.com" phone=""/>
-        <resource id="1" name="Titouan" function="Default:0" contacts="titouan.delaplagne@etu.univ-tlse2.fr" phone=""/>
-        <resource id="2" name="Clara" function="Default:0" contacts="clara.figueras@etu.univ-tlse2.fr" phone=""/>
-        <resource id="3" name="Wissal" function="Default:0" contacts="wissal.hanki@etu.univ-tlse2.fr" phone=""/>
+        <resource id="0" name="Yassir" function="Default:1" contacts="yassir.boulouiha.iut@gmail.com" phone="">
+            <rate name="standard" value="22"/>
+        </resource>
+        <resource id="1" name="Titouan" function="Default:0" contacts="titouan.delaplagne@etu.univ-tlse2.fr" phone="">
+            <rate name="standard" value="22"/>
+        </resource>
+        <resource id="2" name="Clara" function="Default:0" contacts="clara.figueras@etu.univ-tlse2.fr" phone="">
+            <rate name="standard" value="16.83"/>
+        </resource>
+        <resource id="3" name="Wissal" function="Default:0" contacts="wissal.hanki@etu.univ-tlse2.fr" phone="">
+            <rate name="standard" value="16.83"/>
+        </resource>
     </resources>
     <allocations>
         <allocation task-id="7" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
