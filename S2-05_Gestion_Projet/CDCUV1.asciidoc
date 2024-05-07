@@ -12,8 +12,9 @@ Département Informatique
 
 _Informatique 1^ière^ Année_
 
-Noms : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
-Clara
+___
+*_Noms : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
+___
 
 Version 1.1
 
