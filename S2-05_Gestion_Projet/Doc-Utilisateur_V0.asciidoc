@@ -42,12 +42,9 @@ Aussi en fin de mois d'Avril 2024, L'agence DailyBank a contacté notre équipe 
 
 === I.III – Prérequis
 
-Notre nouvelle version de l'application DailyBank, tout comme son prédécesseur, est développée en Java. Aussi, l'application néssecite l'installation préalable du link:https://www.java.com/en/download/manual.jsp[Java Runtime Environment]. Une fois link:https://www.java.com/en/download/manual.jsp[le lien] cliqué, vous serez redirigé vers la page de téléchargement officiel de Java. Il ne vous reste plus qu'à selectionner le lien de téléchargement correspondant à votre système d'exploitation. 
+Notre nouvelle version de l'application DailyBank, tout comme son prédécesseur, est développée en Java. Aussi, l'application néssecite link:https://www.java.com/fr/download/help/windows_manual_download.html[l'installation préalable] du link:https://www.java.com/en/download/manual.jsp[Java Runtime Environment]. Une fois link:https://www.java.com/en/download/manual.jsp[le lien] cliqué, vous serez redirigé vers la page de téléchargement officiel de Java. Il ne vous reste plus qu'à selectionner le lien de téléchargement correspondant à votre système d'exploitation. 
 
-L'ordinateur vous imposera ici de selectionner l'emplacement de l'installeur java, une fois selectionné le téléchargement démarre et vous devez maintenant lancer l'installeur, Cliquez sur "Installer", et l'installation est maintenant terminée.
-
-
-
+L'ordinateur vous imposera ici de selectionner l'emplacement de l'installeur java, une fois selectionné le téléchargement démarre, et vous devez maintenant lancer l'installeur, Cliquez sur "Installer", et l'installation est maintenant terminée.
 
 == II - Installation et Utilisation
 
@@ -59,11 +56,49 @@ L'ordinateur vous imposera ici de selectionner l'emplacement de l'installeur jav
 
 === III.I - Guichetier
 
-==== III.II a - Modifier des Informations Client
+Le guichetier n'utilise l'application que pour s'occuper de clients. Aussi les interactions de guichetier nécessite après connexion d'accéder à l'interface de gestion des clients en appuyant 'Gestion'->'Client', comme sur l'image ci-dessous.
 
-==== III.II b - Créer un Nouveau Client
+image:..\media\Tutoriels utilisation\GestionComptesClient.png[AccesGuichetier,300,300]
+
+Le guichetier accède ainsi a l'écran de gestion des clients (voir ci-dessous).
+
+image:..\media\Tutoriels utilisation\EcranGestionClient.png[GestionClient,400,500]
+
+D'où il pourra gérer les données des clients de la banque.
+
+
+==== III.II a - Créer un Nouveau Client
+
+==== III.II b - Modifier des Informations Client
+
+Pour modifier les informations d'un client le guichetier doit d'abord trouver le client. Cette recherche se fait par:
+
+ *** Le numéro
+ *** Le nom
+ *** Le prénom
+
+Du client.(Champs encadrés en rouge dans l'image)
+
+Les clients correspondant seront listés et accessible dans l'espace en dessous. (encadré en vert dans l'image)
+
+image:..\media\Tutoriels utilisation\RechercheClient.png[ChampsRecherche]
+
+Maintenant il suffit de cliquer sur le bouton 'Modifier client' pour modifier les information du client l'application ouvre cette page:
+
+image:..\media\Tutoriels utilisation\ModifClient.png[ModifClient]
+
+Ici les informations du client peuvent être directement modifiées, sauf bien sur son id qui est unique et définitive. Après les modifications le guichetier peut conserver celles-ci en appuyant sur 'Modifier' ou bien annuler les changements à l'aide du bouton 'Annuler'.
+
 
 ==== III.II c - Consulter un Compte 
+
+Pour consulter les informations d'un client le guichetier doit d'abord trouver le client. Le procédé est le même que quand on veut <<III.II b - Modifier des Informations Client, le modifier>>.
+
+Après cela il suffit d'appuyer sur le bouton 'Comptes client', celui-ci nous amène sur cette page:
+
+image:..\media\Tutoriels utilisation\ConsulterComptes.png[ConsultCompte]
+
+On y voit la situation de ses différents comptes bancaires.
 
 ==== III.II d - Débiter un Compte
 
