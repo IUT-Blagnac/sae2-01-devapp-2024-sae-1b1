@@ -12,25 +12,13 @@ Département Informatique
 
 _Informatique 1^ière^ Année_
 
-ifdef::env-github[]
-++++
-<p align="center">
-  <img width="500" height="500" src="../media/CahierCharges.png">
-</p>
-++++
-endif::[]
+____
 
-ifndef::env-github[]
-image::../media/CahierCharges.png[Image de document, 350, align=center]
-endif::[]
+*_Noms : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
 
 ____
 
-*_Noms : BOULOUIHA Yassir, HANKI Wissal, DELAPLAGNE Titouan, FIGUERAS Clara_*
-
-____
-
-Version 2.0
+Version 1.1
 
 Pour l'entreprise DailyBank
 
@@ -65,19 +53,17 @@ l’application sera déployée dans les 100 agences que compte son réseau.
 
 === 1.3 Problématique
 
-La problématique de BANKUniv est donc de développer une application de
-gestion de comptes clients performante et sécurisée afin de remplacer
-ses outils obsolètes et répondre aux exigences bancaires modernes.
+Comment développer une application de gestion de comptes clients performante pour répondre aux exigences bancaires modernes ? 
 
 === 1.4 Objectifs
+ 
+L'application DailyBank doit répondre aux exigeances des clients, pour cela nous avons plusieurs objectifs qui sont : 
 
-L’objectif primordial à atteindre pour ce projet est de développer une
-application permettant de gérer des comptes bancaires de dépôt pour des
-clients préalablement créés. Elle devra également permettre de débiter,
-créditer un compte soit par virement, cela signifie donc un échange
-d’argent entre deux comptes distincts mais domiciliés dans le réseau
-bancaire, soit par une personne physique se présentant devant un
-guichet.
+** La gestion des compte : nous devons fournir un aperçu clair et complet de tous les comptes, du solde et des transactions récentes. 
+
+** La gestion des transactions : il est primordial de faciliter les transactions de débit ainsi que de crédit.
+
+** Fonctionnalités de virement : Permettre aux utilisateurs d'effectuer facilement des virements entre leurs propres comptes de dépot et autoriser les virements vers des comptes au sein de de la meme institution bancaire.
 
 == 2.Analyse de l’existant
 
