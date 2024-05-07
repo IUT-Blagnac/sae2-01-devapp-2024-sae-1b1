@@ -1,6 +1,6 @@
 :toc: preamble
 :toc-title: Table des Matières
-= Cahier des Charges application DailyBank
+= Cahier des Charges application DailyBank v2
 
 image::../media/image_univ.jpg[]
 
