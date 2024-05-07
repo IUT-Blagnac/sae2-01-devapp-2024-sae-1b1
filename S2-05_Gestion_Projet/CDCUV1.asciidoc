@@ -2,7 +2,7 @@
 :toc-title: Table des Matières
 = Cahier des Charges application DailyBank
 
-image::../media/image_univ.jpg[]
+image:../media/image_univ.jpg[Logo UT2J,100,150]
 
 Université de Toulouse
 
