@@ -12,13 +12,25 @@ Département Informatique
 
 _Informatique 1^ière^ Année_
 
+ifdef::env-github[]
+++++
+<p align="center">
+  <img width="500" height="500" src="../media/CahierCharges.png">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::../media/CahierCharges.png[Image de document, 350, align=center]
+endif::[]
+
 ____
 
-*_Noms : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
+*_Noms : BOULOUIHA Yassir, HANKI Wissal, DELAPLAGNE Titouan, FIGUERAS Clara_*
 
 ____
 
-Version 1.1
+Version 2.0
 
 Pour l'entreprise DailyBank
 
