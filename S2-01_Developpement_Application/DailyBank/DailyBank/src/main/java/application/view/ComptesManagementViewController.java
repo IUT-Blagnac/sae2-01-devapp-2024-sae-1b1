@@ -51,8 +51,7 @@ public class ComptesManagementViewController {
 		this.lvComptes.getFocusModel().focus(-1);
 		this.lvComptes.getSelectionModel().selectedItemProperty().addListener(e -> this.validateComponentState());
 
-		info = this.clientDesComptes.nom + "  " + this.clientDesComptes.prenom + "  (id : "
-				+ this.clientDesComptes.idNumCli + ")";
+		info = this.clientDesComptes.nom + "  " + this.clientDesComptes.prenom + "  (id : " + this.clientDesComptes.idNumCli + ")";
 		this.lblInfosClient.setText(info);
 
 		this.loadList();
@@ -101,10 +100,12 @@ public class ComptesManagementViewController {
 
 	@FXML
 	private void doModifierCompte() {
+
 	}
 
 	@FXML
 	private void doSupprimerCompte() {
+
 	}
 
 	@FXML
