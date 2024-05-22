@@ -97,10 +97,17 @@ public class OperationsManagementViewController {
 
 	@FXML
 	private void doCredit() {
+		
 	}
 
 	@FXML
 	private void doAutre() {
+		Operation op=this.omDialogController.enregistrerVirement();
+
+		if(op!=null){
+			this.updateInfoCompteClient();
+			this.validateComponentState();
+		}
 	}
 
 	private void validateComponentState() {
