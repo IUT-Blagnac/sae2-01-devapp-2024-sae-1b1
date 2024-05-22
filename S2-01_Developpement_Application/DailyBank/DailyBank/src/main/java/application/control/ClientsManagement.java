@@ -24,6 +24,7 @@ public class ClientsManagement {
 	private ClientsManagementViewController cmViewController;
 
 	public ClientsManagement(Stage _parentStage, DailyBankState _dbstate) {
+		
 		this.dailyBankState = _dbstate;
 		try {
 			FXMLLoader loader = new FXMLLoader(ClientsManagementViewController.class.getResource("clientsmanagement.fxml"));

@@ -199,6 +199,7 @@ public class ClientEditorPaneViewController {
 		this.clientEdite.adressePostale = this.txtAdr.getText().trim();
 		this.clientEdite.telephone = this.txtTel.getText().trim();
 		this.clientEdite.email = this.txtMail.getText().trim();
+		
 		if (this.rbActif.isSelected()) {
 			this.clientEdite.estInactif = ConstantesIHM.CLIENT_ACTIF;
 		} else {
