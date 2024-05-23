@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.data.Client;
+
 import model.data.CompteCourant;
 import model.data.Employe;
 

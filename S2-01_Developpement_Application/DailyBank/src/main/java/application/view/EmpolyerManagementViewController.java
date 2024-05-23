@@ -15,7 +15,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import model.data.Client;
+
 import model.data.Employe;
 
 public class EmpolyerManagementViewController {
@@ -25,7 +25,7 @@ public class EmpolyerManagementViewController {
    
     private ObservableList<Employe> ListEmployer;
     private Object cmDialogController;
-    private Employe oListEmployer;
+    private ObservableList<Object> oListEmployer;
     
     
     public void initContext(Stage _containingStage, EmployerManagement cEmpManag, DailyBankState _dbstate){
@@ -65,7 +65,7 @@ public class EmpolyerManagementViewController {
 	@FXML
 	private TextField txtPrenom;
 	@FXML
-	private ListView<Client> lvEmployer;
+	private ListView<Employe> lvEmployer;
 	@FXML
 	private Button btnDesactEmployerButton;
 	@FXML
@@ -116,13 +116,13 @@ public class EmpolyerManagementViewController {
 		ArrayList<Employe> listeEmployer;
 		listeEmployer = this.cmDialogController.getlisteComptes(numCompte, debutNom, debutPrenom);
 
-		((List<Employe>) this.oListEmployer).clear();
-		((ObservableList<Employe>) this.oListEmployer).addAll(listeEmployer);
+	    this.oListEmployer.clear();
+		this.oListEmployer.addAll(listeEmployer);
 		this.validateComponentState();
 	}
 
 	@FXML
-	private void doComptesClient() {
+	private void doComptesEmployer() {
 		int selectedIndice = this.lvEmployer.getSelectionModel().getSelectedIndex();
 		if (selectedIndice >= 0) {
 			Employe employe = this.oListEmployer;
@@ -131,20 +131,20 @@ public class EmpolyerManagementViewController {
 	}
 
 	@FXML
-	private void doModifierClient() {
+	private void doModifierEmployer() {
 
 		int selectedIndice = this.lvEmployer.getSelectionModel().getSelectedIndex();
 		if (selectedIndice >= 0) {
 			Employe empMod = this.oListEmployer.get();
-			Client result = ((Object) this.cmDialogController).modifierEmployer(empMod);
+			Employe result = this.cmDialogController.modifierEmployer(empMod);
 			if (result != null) {
-				this.oListClients.set(selectedIndice, result);
+				this.oListEmployer.set(selectedIndice, result);
 			}
 		}
 	}
 
 	@FXML
-	private void doDesactiverClient() {
+	private void doDesactiverEmployer() {
 	}
 
 	@FXML

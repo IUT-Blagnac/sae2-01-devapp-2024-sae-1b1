@@ -50,11 +50,11 @@ public class EmployerManagement{
 		}
 	}
 
-	public void doClientManagementDialog() {
+	public void doEmployerManagementDialog() {
 		this.cmViewController.displayDialog();
 	}
 
-	public Employe modifierClient(Employe em) throws DatabaseConnexionException, ApplicationException {
+	public Employe modifierEmploye(Employe em) throws DatabaseConnexionException, ApplicationException {
 		EmployerEditor emp = new EmployerEditor(cmStage, dailyBankState);
 		Employe result = emp.doEmployerEditorDialog(em, EditionMode.MODIFICATION);
 		if (result != null) {
