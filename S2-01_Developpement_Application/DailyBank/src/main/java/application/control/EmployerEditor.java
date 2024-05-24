@@ -5,6 +5,7 @@ import application.DailyBankState;
 import application.tools.EditionMode;
 import application.tools.StageManagement;
 import application.view.CompteEditorPaneViewController;
+import application.view.EmployeEditorViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -17,12 +18,13 @@ import model.data.Employe;
 public class EmployerEditor {
 
     private Stage cepStage;
-	private CompteEditorPaneViewController cepViewController;
+	private EmployeEditorViewController cepViewController;
+	private DailyBankApp dailyBankState;
 
 	public EmployerEditor(Stage _parentStage, DailyBankState _dbstate) {
-
+		this.dailyBankState=_dbstate;
 		try {
-			FXMLLoader loader = new FXMLLoader(CompteEditorPaneViewController.class.getResource("compteeditorpane.fxml"));
+			FXMLLoader loader = new FXMLLoader(CompteEditorPaneViewController.class.getResource("employeeditorpane.fxml"));
 			BorderPane root = loader.load();
 
 			Scene scene = new Scene(root, root.getPrefWidth() + 20, root.getPrefHeight() + 10);
@@ -37,21 +39,18 @@ public class EmployerEditor {
 			this.cepStage.setResizable(false);
 
 			this.cepViewController = loader.getController();
-			this.cepViewController.initContext(this.cepStage, _dbstate);
+			this.cepViewController.initContext(this.cepStage, this.dailyBankApp);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public Employe doCompteEditorDialog(Employe emp, CompteCourant cpte, EditionMode em) {
+	public Employe doCompteEditorDialog(Employe emp, EditionMode em) {
 		
-		return (Employe) this.cepViewController.displayDialog(emp, em);
+		return this.cepViewController.displayDialog(emp, em);
 	}
 
-	public Employe doEmployerEditorDialog(Employe em, EditionMode modification) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'doEmployerEditorDialog'");
-	}
+
     
 }

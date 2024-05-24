@@ -23,13 +23,13 @@ public class EmpolyerManagementViewController {
     private EmployerManagement cEmpolyerManagement;
     private Stage containingStage;
    
-    private ObservableList<Employe> ListEmployer;
-    private Object cmDialogController;
-    private ObservableList<Object> oListEmployer;
+    private ObservableList<Employe> oListEmployer;
+    private EmployerManagement cmDialogController;
+    //private ObservableList<Object> oListEmployer;
     
     
     public void initContext(Stage _containingStage, EmployerManagement cEmpManag, DailyBankState _dbstate){
-      
+		this.cmDialogController=cEmpManag;
 		this.containingStage = _containingStage;
 		this.dailyBankState = _dbstate;
 		this.configure();
@@ -38,7 +38,7 @@ public class EmpolyerManagementViewController {
 	private void configure() {
 		this.containingStage.setOnCloseRequest(e -> this.closeWindow(e));
 		this.oListEmployer= FXCollections.observableArrayList();
-		this.lvEmployer.setId(this.oListEmployer);
+		this.lvEmployer.setItems(this.oListEmployer);
 		this.lvEmployer.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 		this.lvEmployer.getFocusModel().focus(-1);
 		this.lvEmployer.getSelectionModel().selectedItemProperty().addListener(e -> this.validateComponentState());
