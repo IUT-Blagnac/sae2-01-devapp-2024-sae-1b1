@@ -16,7 +16,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.data.Client;
 import model.data.CompteCourant;
-import model.data.Employe;
 import model.orm.Access_BD_CompteCourant;
 import model.orm.exception.ApplicationException;
 import model.orm.exception.DatabaseConnexionException;
@@ -30,9 +29,9 @@ public class ComptesManagement {
 	private DailyBankState dailyBankState;
 	private Client clientDesComptes;
 
-	public ComptesManagement(Stage _parentStage, DailyBankState _dbstate, Client c) {
+	public ComptesManagement(Stage _parentStage, DailyBankState _dbstate, Client client) {
 
-		this.clientDesComptes = c;
+		this.clientDesComptes = client;
 		this.dailyBankState = _dbstate;
 		try {
 			FXMLLoader loader = new FXMLLoader(ComptesManagementViewController.class.getResource("comptesmanagement.fxml"));
@@ -50,7 +49,7 @@ public class ComptesManagement {
 			this.cmStage.setResizable(false);
 
 			this.cmViewController = loader.getController();
-			this.cmViewController.initContext(this.cmStage, this, _dbstate, c);
+			this.cmViewController.initContext(this.cmStage, this, _dbstate, client);
 
 		} catch (Exception e) {
 			e.printStackTrace();
