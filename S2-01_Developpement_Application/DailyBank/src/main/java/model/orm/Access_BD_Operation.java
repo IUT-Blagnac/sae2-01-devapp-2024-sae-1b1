@@ -166,6 +166,7 @@ public class Access_BD_Operation {
 		}
 	}
 
+
 	/*
 	 * Fonction utilitaire qui retourne un ordre sql "to_date" pour mettre une date
 	 * dans une requête sql
