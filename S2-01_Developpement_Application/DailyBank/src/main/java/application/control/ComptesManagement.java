@@ -106,7 +106,7 @@ public class ComptesManagement {
 				// Construction de la requete d'ajout du compte sur la bd
 				if (newIdNumCompte != -1) {
 					String query = "INSERT INTO COMPTECOURANT (IDNUMCOMPTE, DEBITAUTORISE, SOLDE, IDNUMCLI, ESTCLOTURE) ";
-					query += "VALUES (" + newIdNumCompte + "," + compte.debitAutorise + "," + compte.solde + ","
+					query += "VALUES (" + newIdNumCompte + "," + (-compte.debitAutorise) + "," + compte.solde + ","
 							+ compte.idNumCli + ", 'N')";
 
 					// Ajout du compte sur la bd
