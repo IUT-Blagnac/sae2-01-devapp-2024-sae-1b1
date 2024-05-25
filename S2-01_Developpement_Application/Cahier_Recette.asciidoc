@@ -61,8 +61,122 @@ Les éléments testés concernent les Use-Cases spécifiés dans la *documentati
 Ordinateur sous Windows ou OS équivalent avec l'utilisation de JAVA et du frameword Junit pour les tests.
 
 
+== III Tests
 
-== III. Exemples de Cas de test :
+=== 1. Fonctionnalités Guichetier V1
+
+==== 1.1 Création de Compte
+
+===== 1.1.1 Connexion à la base de données
+|====
+
+|Cas de test 4+|CDB-01
+|Titre 4+|Connexion à la base de données
+|Objectif 4+| Vérifier que la connexion à la base de données est établie
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|CDB.1 ^|Connexion à la base de données. ^|Connexion établie sans erreur. ^|- ^|OK
+
+|====
+
+===== 1.1.2 Création du Statement
+|====
+
+|Cas de test 4+|CS-01
+|Titre 4+|Création du Statement
+|Objectif 4+| Vérifier que le Statement est créé sans exception
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|CS.1 ^|Création du Statement. ^|Statement créé sans exception. ^|Connexion établie ^|OK
+
+|====
+
+===== 1.1.3 Exécution de la requête SELECT pour obtenir le nouvel ID
+|====
+
+|Cas de test 4+|ES-01
+|Titre 4+|Exécution de la requête SELECT pour obtenir le nouvel ID
+|Objectif 4+| Vérifier que la requête SELECT retourne le nouvel ID
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|ES.1 ^|Exécution de la requête SELECT pour obtenir le nouvel ID. ^|Le ResultSet contient la nouvelle valeur de l'ID. ^|Connexion établie. ^|OK
+
+|====
+
+===== 1.1.4 Vérification du contenu du ResultSet
+|====
+
+|Cas de test 4+|VRS-01
+|Titre 4+|Vérification du contenu du ResultSet
+|Objectif 4+| Vérifier que le ResultSet contient des données et le curseur est positionné
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|VRS.1 ^|Vérification du contenu du ResultSet. ^|Le ResultSet contient des données et le curseur est positionné. ^|Résultat de la requête SELECT. ^|OK
+
+|====
+
+===== 1.1.5 Construction et exécution de la requête INSERT
+|====
+
+|Cas de test 4+|CEI-01
+|Titre 4+|Construction et exécution de la requête INSERT
+|Objectif 4+| Vérifier que la requête INSERT est construite correctement et exécutée avec succès
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|CEI.1 ^|Construction de la requête INSERT. ^|Requête construite correctement. ^|Nouvel ID obtenu. ^|OK
+^|CEI.2 ^|Exécution de la requête INSERT. ^|Insertion réussie dans la base de données. ^|Requête INSERT construite. ^|OK
+
+|====
+
+===== 1.1.6 Gestion des transactions
+|====
+
+|Cas de test 4+|GT-01
+|Titre 4+|Commit de la transaction
+|Objectif 4+| Vérifier que la transaction est commitée avec succès
+
+|Cas de test 4+|GT-02
+|Titre 4+|Rollback de la transaction
+|Objectif 4+| Vérifier que la transaction est annulée en cas d'erreur
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|GT.1 ^|Commit de la transaction. ^|Transaction commitée avec succès. ^|Insertion réussie. ^|OK
+^|GT.2 ^|Rollback de la transaction. ^|Transaction annulée en cas d'erreur. ^|Insertion échouée. ^|OK
+
+|====
+
+===== 1.1.7 Fermeture des ressources
+|====
+
+|Cas de test 4+|FR-01
+|Titre 4+|Fermeture des ressources (connexion, statement, resultset)
+|Objectif 4+| Vérifier que les ressources sont fermées sans exception
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|FR.1 ^|Fermeture des ressources (connexion, statement, resultset). ^|Ressources fermées sans exception. ^|Insertion réussie ou échouée. ^|OK
+
+|====
+
+=== 1.1.8 Commentaires
+Si jamais un test échoue, un message d'erreur approprié sera affiché à l'utilisateur pour l'informer de la situation et lui demander de contacter l'administrateur de la base de données avec une erreur plus ou moins détaillée selon les situations qu'il aura à lui communiquer.
+
+
+
+== IV. Exemples de Cas de test (ne pas mettre vos tests ici) :
 === 1. Fonctionnalités des guichetiers :
 ==== 1.1 Gestion des clients :
 

@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
 import model.data.CompteCourant;
+import model.orm.Access_BD_CompteCourant;
 
 public class CompteEditorPaneViewController {
 
@@ -46,13 +47,16 @@ public class CompteEditorPaneViewController {
 	}
 
 	public CompteCourant displayDialog(Client client, CompteCourant cpte, EditionMode mode) {
+		
 		this.clientDuCompte = client;
 		this.editionMode = mode;
+		
 		if (cpte == null) {
 			this.compteEdite = new CompteCourant(0, 200, 0, "N", this.clientDuCompte.idNumCli);
 		} else {
 			this.compteEdite = new CompteCourant(cpte);
 		}
+		
 		this.compteResultat = null;
 		this.txtIdclient.setDisable(true);
 		this.txtIdAgence.setDisable(true);
@@ -189,6 +193,24 @@ public class CompteEditorPaneViewController {
 
 	private boolean isSaisieValide() {
 
+		//TESTS pour savoir si la saisie est
+
 		return true;
+	}
+
+	//GETTERS 
+	
+	public int getIdNumCompte(){
+		return this.compteEdite.idNumCompte;
+	}
+	
+	public int getDecAutorise(){
+		return compteEdite.debitAutorise;
+	}
+	
+	public double getSolde(){
+
+		return compteEdite.solde;
+	
 	}
 }
