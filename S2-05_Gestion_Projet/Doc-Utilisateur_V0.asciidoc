@@ -1,15 +1,16 @@
 :toc: preamble
-:toc-title: Table des matières
+:toc-title: Table des Matières
+= Documentation utilisateur application DailyBank
 
-= SAE 2.05
-
-image:../media/image_univ.jpg[Logo UT2J,100,150]
+image:../media/image_univ.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
 IUT de Blagnac
 
 Département Informatique
+
+SAE 2.05
 
 ifdef::env-github[]
 ++++
@@ -28,7 +29,11 @@ ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPLAGNE Titouan, FIGUERAS Clara_*
 ____
 
+Version 0.1
 
+A destination l'entreprise DailyBank
+
+Créé pour :  Philippe Gaconnet et Yahn Formanczac
 
 == I - L’application DailyBank
 
