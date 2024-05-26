@@ -73,14 +73,14 @@ image:..\media\Tutoriels_utilisation\Connexion\2-Identification.png[Con-Etape2]
 
 Si vos identifiants sont incorrects, une erreur vous le fera savoir au moment où vous cliquerez sur le bouton "Valider". Si vos identifiants sont corrects, vous serez alors redirigé sur la Fenêtre Principale et vous pourrez visualiser les informations sur votre agence et votre compte.
 
-image:..\media\Tutoriels_utilisation\Connexion\2-ConnexionReussie.png[Con-Etape3]
+image:..\media\Tutoriels_utilisation\Connexion\3-ConnexionReussie.png[Con-Etape3]
 
 [[GestionClient]]
 === 3.2 Fenêtre de Gestion des Clients B.Y
 
 Pour accéder à la fenêtre de gestion des clients, vous devez être préalablement connecté sur l'application (cf. <<connexion, Connexion>>).
 
-Cliquez sur le deuxième menu en partant de la gauche en haut de la fenêtre "Gestion" puis sur "Client".
+Cliquez sur le deuxième menu en partant de la gauche en haut de la fenêtre "Gestion" puis sur "Clients".
 
 image:..\media\Tutoriels_utilisation\GestionClient\1-OuvrirGestClient.png[GestCli-Etape1]
 
@@ -96,9 +96,9 @@ image:..\media\Tutoriels_utilisation\GestionClient\2-ModeRechercheClient.png[Ges
 
 *3 -> Prénom du client*, renseignez dans ce champ le prénom du client que vous voulez rechercher.
 
-*4 -> Bouton Recherche*, ce bouton permet de rechercher le client en fonction des informations que vous avez entrées dans les champs 1, 2 et 3. Si aucun champ n'est renseigné, tous les clients de l'agence seront affichés.
+*4 -> Bouton Rechercher*, ce bouton permet de rechercher le client en fonction des informations que vous avez entrées dans les champs 1, 2 et 3. Si aucun champ n'est renseigné, tous les clients de l'agence seront affichés.
 
-Par exemple, si vous cliquez sur le bouton "Recherche" directement sans avoir renseigné aucun champ, tous les clients apparaîtront comme ci-dessous.
+Par exemple, si vous cliquez sur le bouton "Rechercher" directement sans avoir renseigné aucun champ, tous les clients apparaîtront comme ci-dessous.
 
 image:..\media\Tutoriels_utilisation\GestionClient\3-ModeRechercherTout.png[GestCli-Etape3]
 
