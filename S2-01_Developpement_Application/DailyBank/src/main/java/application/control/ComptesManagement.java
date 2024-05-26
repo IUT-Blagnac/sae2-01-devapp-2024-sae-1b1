@@ -112,7 +112,7 @@ public class ComptesManagement {
 					if (s.executeUpdate(query) > 0) {
 						con.commit();
 						AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "Le compte numéro " + compte.idNumCompte 
-						+ " au nom de " + this.clientDesComptes.nom + " " + this.clientDesComptes.nom  + " a bien été ajouté\nPremier dépôt : " + compte.solde + "€"
+						+ " au nom de " + this.clientDesComptes.nom + " " + this.clientDesComptes.nom  + " a bien été ajouté.\nPremier dépôt : " + compte.solde + "€"
 						+ "\nDécouvert autorisé : " + compte.debitAutorise + "€", AlertType.INFORMATION);
 						this.cmViewController.reloadList();
 					} else {
