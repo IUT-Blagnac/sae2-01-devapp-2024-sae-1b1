@@ -111,7 +111,9 @@ public class ComptesManagement {
 					// Ajout du compte sur la bd
 					if (s.executeUpdate(query) > 0) {
 						con.commit();
-						AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "", AlertType.INFORMATION);
+						AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "Le compte numéro " + compte.idNumCompte 
+						+ " au nom de " + this.clientDesComptes.nom + " " + this.clientDesComptes.nom  + " a bien été ajouté\nPremier dépôt : " + compte.solde + "€"
+						+ "\nDécouvert autorisé : " + compte.debitAutorise + "€", AlertType.INFORMATION);
 						this.cmViewController.reloadList();
 					} else {
 						AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
