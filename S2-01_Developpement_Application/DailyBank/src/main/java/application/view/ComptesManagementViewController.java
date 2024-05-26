@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.Alert.AlertType;
+import application.tools.AlertUtilities;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
@@ -105,7 +107,15 @@ public class ComptesManagementViewController {
 
 	@FXML
 	private void doSupprimerCompte() {
-
+		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+		if (selectedIndice >= 0) {
+			CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+			this.cmDialogController.supprimerCompte(cpt);
+		}else{
+			// Alerte théoriquement inatteignable
+			AlertUtilities.showAlert(this.containingStage,"Erreur de sélection", "Aucun compte ne semble sélectionné!","Vous devez sélectionner un compte à supprimer!!",AlertType.ERROR);
+		}
+		
 	}
 
 	@FXML
@@ -123,12 +133,14 @@ public class ComptesManagementViewController {
 	private void validateComponentState() {
 		// Non implémenté => désactivé
 		this.btnModifierCompte.setDisable(true);
-		this.btnSupprCompte.setDisable(true);
+		
 
 		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
 		if (selectedIndice >= 0) {
+			this.btnSupprCompte.setDisable(false);
 			this.btnVoirOpes.setDisable(false);
 		} else {
+			this.btnSupprCompte.setDisable(true);
 			this.btnVoirOpes.setDisable(true);
 		}
 	}

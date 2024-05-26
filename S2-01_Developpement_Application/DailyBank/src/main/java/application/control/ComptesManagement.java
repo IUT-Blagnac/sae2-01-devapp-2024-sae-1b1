@@ -156,6 +156,66 @@ public class ComptesManagement {
 		return compte;
 	}
 
+	public void supprimerCompte(CompteCourant cpt){
+		Connection con = null;
+			Statement s = null;
+			ResultSet result = null;
+			try {
+				//Initialisation de l'id (id de la bd) du nouveau compte à -1 pour gérer les erreurs 
+				int idCompteASuppr = cpt.idNumCompte;
+
+				// Connection à la base de données
+				con = LogToDatabase.getConnexion();
+				con.setAutoCommit(false); // Gestion manuelle des transactions
+
+				// Creation du statement pour exectuter les requetes
+				s = con.createStatement();
+
+				// Construction de la requete de désactivation du compte dans la bd
+				String query = "UPDATE COMPTECOURANT SET ESTCLOTURE='O' WHERE IDNUMCOMPTE="+cpt.idNumCompte;
+
+				// Ajout du compte sur la bd  
+				if (s.executeUpdate(query) > 0) {
+					con.commit();
+					AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "", AlertType.INFORMATION);
+					this.cmViewController.reloadList();
+				} else {
+					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+				 "Contactez l'administrateur de la base de données\nErreur : l'execution de la requete d'insertion à échoué", AlertType.ERROR);
+					con.rollback();
+				}
+			} catch (DatabaseConnexionException e) {
+				ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, e);
+				ed.doExceptionDialog();
+				this.cmStage.close();
+			} catch (ApplicationException ae) {
+				ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, ae);
+				ed.doExceptionDialog();
+			} catch (SQLException se) {
+				AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+					 "Contactez l'administrateur de la base de données\nErreur : " + se.toString(), AlertType.ERROR);
+				if (con != null) {
+					try {
+						con.rollback();
+					} catch (SQLException se2) {
+						AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+					 	"Contactez l'administrateur de la base de données\nErreur : Impossibilité de rollback suite à une exception SQL\n" + se2.toString(), AlertType.ERROR);
+					}
+				}
+			} finally {
+				// Fermer les ressources
+				try {
+					if (result != null) result.close();
+					if (s != null) s.close();
+					if (con != null) con.close();
+				} catch (SQLException se) {
+					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte à été ajouté",
+					 	"Contactez l'administrateur de la base de données\nErreur : Exception lors de la fermeture des ressources bd après utilisation\n" 
+						+ se.toString(), AlertType.ERROR);
+				}
+		}
+	}
+
 	public ArrayList<CompteCourant> getComptesDunClient() {
 		ArrayList<CompteCourant> listeCpt = new ArrayList<>();
 
