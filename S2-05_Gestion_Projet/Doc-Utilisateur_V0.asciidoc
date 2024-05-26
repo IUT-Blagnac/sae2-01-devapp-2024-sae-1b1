@@ -80,7 +80,7 @@ image:..\media\Tutoriels_utilisation\Connexion\3-ConnexionReussie.png[Con-Etape3
 
 Pour accéder à la fenêtre de gestion des clients, vous devez être préalablement connecté sur l'application (cf. <<connexion, Connexion>>).
 
-Cliquez sur le deuxième menu en partant de la gauche en haut de la fenêtre "Gestion" puis sur "Client".
+Cliquez sur le deuxième menu en partant de la gauche en haut de la fenêtre "Gestion" puis sur "Clients".
 
 image:..\media\Tutoriels_utilisation\GestionClient\1-OuvrirGestClient.png[GestCli-Etape1]
 
