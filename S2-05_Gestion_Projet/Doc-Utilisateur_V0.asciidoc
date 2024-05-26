@@ -158,6 +158,40 @@ Vous retrouverez ensuite le compte créé dans la liste des comptes du client ap
 
 image:..\media\Tutoriels_utilisation\CreerCompte\4-CompteCree.png[CreaCpt-Etape4]
 
+[[Operations]]
+=== 3.7 Consulter les opérations d'un compte B.Y
+
+Afin de consulter les opérations d'un compte, vous devez être sur la fenêtre de gestion des comptes d'un client (cf <<GestionComptes, Gestion Comptes Client>>).
+
+Sélectionnez le compte pour lequel vous souhaitez consulter les opérations parmi la liste de comptes affichée, puis cliquez sur le bouton "Voir opérations" en haut à droite de la fenêtre.
+
+image:..\media\Tutoriels_utilisation\VoirOperations\1-VoirOperations.png[VoirOp-Etape1]
+
+Suite à cela, une nouvelle fenêtre s'ouvrira affichant les opérations répertoriées pour le compte sélectionné.
+
+image:..\media\Tutoriels_utilisation\VoirOperations\1-VoirOperations.png[VoirOp-Etape2]
+
+=== 3.8 Créditer/Débiter un compte B.Y
+
+Pour créditer/débiter un compte, vous devez préalablement être sur la fenêtre des opérations d'un compte (cf <<Operations, Consulter les opérations d'un compte>>).
+
+Cette partie vous illustrera comment créditer un compte. Pour débiter un compte, c'est exactement la même démarche à l'exception de cliquer sur le bouton "Enregistrer Débit" plutôt que "Enregistrer Crédit" qui sera l'opération choisie dans ce guide.
+
+Cliquez sur le bouton qui correspond à l'opération que vous souhaitez effectuer sur la droite de la fenêtre, dans notre cas "Enregistrer Crédit".
+
+image:..\media\Tutoriels_utilisation\Crediter\1-CrediterCompte.png[CreditCpt-Etape1]
+
+Suite à cela, une nouvelle fenêtre s'ouvre. Renseignez le montant de l'opération ainsi que le type d'opération (dans notre cas Dépôt Espèces). Si le montant renseigné n'est pas valide (montant < 0 ou pas un nombre), lorsque vous cliquerez sur le bouton "Effectuer Crédit", la couleur du champ "Montant" changera en rouge vous indiquant que la saisie est invalide. Vous devrez donc ressaisir un montant valide afin de pouvoir valider l'opération. Il en est de même pour le débit avec une particularité en plus : si vous essayez de débiter un compte d'un montant qui rendra le solde inférieur à son découvert autorisé, une erreur vous l'indiquera et le débit ne sera pas effectué tant que vous n'aurez pas changé le montant en conséquence (sauf pour débit exceptionnel par chef d'agence).
+
+image:..\media\Tutoriels_utilisation\Crediter\2-ValiderMontant.png[CreditCpt-Etape2]
+
+Une fois que vous avez cliqué sur le bouton "Effectuer Crédit", une petite fenêtre s'affichera vous confirmant l'opération effectuée avec les informations liées.
+
+image:..\media\Tutoriels_utilisation\Crediter\3-PopUpCreditReussi.png[CreditCpt-Etape3]
+
+Vous retrouverez donc l'opération qui vient d'être effectuée sur la fenêtre des opérations du compte juste après.
+
+image:..\media\Tutoriels_utilisation\Crediter\4-AffichageduOpEffectue.png[CreditCpt-Etape4]
 
 
 == 4 - Résultats
