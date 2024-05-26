@@ -110,11 +110,7 @@ public class ComptesManagementViewController {
 
 	@FXML
 	private void doNouveauCompte() {
-		CompteCourant compte;
-		compte = this.cmDialogController.creerNouveauCompte();
-		if (compte != null) {
-			this.oListCompteCourant.add(compte);
-		}
+		this.cmDialogController.creerNouveauCompte();
 	}
 
 	private void loadList() {
@@ -136,4 +132,10 @@ public class ComptesManagementViewController {
 			this.btnVoirOpes.setDisable(true);
 		}
 	}
+
+	//Permet de mettre à jour la liste qui affiche les compte d'un client
+	public void reloadList() {
+		this.loadList();
+	}
+
 }

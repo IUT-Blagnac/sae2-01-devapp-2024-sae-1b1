@@ -35,7 +35,6 @@ public class ComptesManagement {
 	private ComptesManagementViewController cmViewController;
 	private DailyBankState dailyBankState;
 	private Client clientDesComptes;
-	private CompteEditorPaneViewController cepViewController;
 
 	public ComptesManagement(Stage _parentStage, DailyBankState _dbstate, Client client) {
 		this.clientDesComptes = client;
@@ -113,6 +112,7 @@ public class ComptesManagement {
 					if (s.executeUpdate(query) > 0) {
 						con.commit();
 						AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "", AlertType.INFORMATION);
+						this.cmViewController.reloadList();
 					} else {
 						AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
 					 "Contactez l'administrateur de la base de données\nErreur : l'execution de la requete d'insertion à échoué", AlertType.ERROR);
@@ -172,5 +172,8 @@ public class ComptesManagement {
 		}
 		return listeCpt;
 	}
+
+
+
 }
 
