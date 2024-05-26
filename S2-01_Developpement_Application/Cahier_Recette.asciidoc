@@ -14,7 +14,7 @@ Cahier Recettes
 
 SAE 2.01
 
-image:../media/image_doc_tech.jpg[image,width=565,height=374]
+image:../media/image_recette.png[image,width=565,height=374]
 
 ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
