@@ -169,7 +169,7 @@ image:..\media\Tutoriels_utilisation\VoirOperations\1-VoirOperations.png[VoirOp-
 
 Suite à cela, une nouvelle fenêtre s'ouvrira affichant les opérations répertoriées pour le compte sélectionné.
 
-image:..\media\Tutoriels_utilisation\VoirOperations\1-VoirOperations.png[VoirOp-Etape2]
+image:..\media\Tutoriels_utilisation\VoirOperations\2-ResultatOperations[VoirOp-Etape2]
 
 === 3.8 Créditer/Débiter un compte B.Y
 
