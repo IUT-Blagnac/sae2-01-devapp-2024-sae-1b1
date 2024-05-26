@@ -73,7 +73,7 @@ image:..\media\Tutoriels_utilisation\Connexion\2-Identification.png[Con-Etape2]
 
 Si vos identifiants sont incorrects, une erreur vous le fera savoir au moment où vous cliquerez sur le bouton "Valider". Si vos identifiants sont corrects, vous serez alors redirigé sur la Fenêtre Principale et vous pourrez visualiser les informations sur votre agence et votre compte.
 
-image:..\media\Tutoriels_utilisation\Connexion\2-ConnexionReussie.png[Con-Etape3]
+image:..\media\Tutoriels_utilisation\Connexion\3-ConnexionReussie.png[Con-Etape3]
 
 [[GestionClient]]
 === 3.2 Fenêtre de Gestion des Clients B.Y
