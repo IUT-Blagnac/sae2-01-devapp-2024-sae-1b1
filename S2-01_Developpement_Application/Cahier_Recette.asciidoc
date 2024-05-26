@@ -84,8 +84,24 @@ Ordinateur sous Windows ou OS équivalent avec l'utilisation de JAVA et du frame
 |====
 
 
-==== 1.2 Enregistrement de Crédit B.Y
+==== 1.2 Créditer un Compte B.Y
 
+|====
+
+>|Cas de test 4+|Test-All_G_CB_C-01
+>|Titre 4+|Créditer un compte
+>|Objectif 4+| Vérifier qu'il est possible de créditer un compte
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|All_G_CB_C-1 ^|Cliquer sur le bouton "Voir opérations". ^|La fenêtre de gestion des opérations s'ouvre. ^|Action All_G_CB_A-1 est terminée et un compte est sélectionné parmi la liste en cliquant dessus. ^|OK
+^|All_G_CB_C-2 ^|Cliquer sur le bouton "Enregistrer Crédit". ^|La fenêtre d'enregistrement d'une opération de crédit s'ouvre. ^|Action All_G_CB_C-1 est terminée. ^|OK
+^|All_G_CB_C-3 ^|Cliquer sur "Effectuer Crédit". ^|Une popup indiquant que le compte a été crédité apparaît et l'opération de crédit est ajoutée à la liste des opérations. ^|Action All_G_CB_C-2 est terminée, un type d'opération est choisi et un montant valide est renseigné. ^|OK
+
+5+|Commentaire : Pour l'action All_G_CB_C-3, le type d'opération "Dépot Espèces" est choisi par défaut. Le bouton "Effectuer Crédit" change la couleur du champ "Montant" en rouge si la saisie du montant est invalide (< 0 ou n'est pas un nombre) et n'effectue pas le crédit tant que le champ "Montant" n'est pas valide.
+
+|====
 
 
 == IV. Exemples de Cas de test (ne pas mettre vos tests ici) :
