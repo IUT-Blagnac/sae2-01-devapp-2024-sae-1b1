@@ -161,6 +161,7 @@ public class ComptesManagement {
 		Statement s = null;
 		CompteEditorPane cep = new CompteEditorPane(this.cmStage, this.dailyBankState);
 		CompteCourant compte = cep.doCompteEditorDialog(this.clientDesComptes, cpt, EditionMode.MODIFICATION);
+		if(compte!=null){
 		try {
 			//Initialisation de l'id du compte à modifier
 			int idAModifier = cpt.idNumCompte;
@@ -172,8 +173,8 @@ public class ComptesManagement {
 			s = con.createStatement();
 
 			// Construction de la requete de modification du compte dans la bd
-			String query = "UPDATE COMPTECOURANT SET DEBITAUTORISE="+cpt.debitAutorise+",  ESTCLOTURE=" + cpt.estCloture;
-			query+= "WHERE IDNUMCOMPTE="+cpt.idNumCompte;
+			String query = "UPDATE COMPTECOURANT SET DEBITAUTORISE="+compte.debitAutorise+",  ESTCLOTURE='" + compte.estCloture;
+			query+= "' WHERE IDNUMCOMPTE="+idAModifier;
 
 
 			// Ajout du compte sur la bd  
@@ -214,6 +215,7 @@ public class ComptesManagement {
 					 	"Contactez l'administrateur de la base de données\nErreur : Exception lors de la fermeture des ressources bd après utilisation\n" 
 						+ se.toString(), AlertType.ERROR);
 				}
+			}
 		}
 	}
 
