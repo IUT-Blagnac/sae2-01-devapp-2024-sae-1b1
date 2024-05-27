@@ -173,9 +173,9 @@ public class ComptesManagement {
 			s = con.createStatement();
 
 			// Construction de la requete de modification du compte dans la bd
-			String query = "UPDATE COMPTECOURANT SET DEBITAUTORISE="+compte.debitAutorise+",  ESTCLOTURE='" + compte.estCloture;
+			String query = "UPDATE COMPTECOURANT SET DEBITAUTORISE="+compte.debitAutorise+", ESTCLOTURE='" + compte.estCloture;
 			query+= "' WHERE IDNUMCOMPTE="+idAModifier;
-
+			System.out.println(query);
 
 			// Ajout du compte sur la bd  
 			if (s.executeUpdate(query) > 0) {

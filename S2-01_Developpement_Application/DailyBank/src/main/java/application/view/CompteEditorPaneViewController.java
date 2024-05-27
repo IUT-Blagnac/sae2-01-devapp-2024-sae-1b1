@@ -81,7 +81,7 @@ public class CompteEditorPaneViewController {
 			this.txtDecAutorise.setDisable(false);
 			this.txtSolde.setDisable(true);
 			this.lblMessage.setText("Informations sur le nouveau compte");
-			this.lblSolde.setText("Solde (premier dépôt)");
+			this.lblSolde.setText("Solde");
 			this.btnCloture.setDisable(false);
 			this.btnOuvert.setDisable(false);
 			this.btnOk.setText("Modifier");
@@ -160,10 +160,11 @@ public class CompteEditorPaneViewController {
 
 	private Object focusIsOpen(ObservableValue<? extends Toggle> tValue, Toggle oldToggle, Toggle newToggle){
 		if (newToggle != null) {
-			
+
 			RadioButton selectedButton=(RadioButton)newToggle;
-			
-			this.compteEdite.estCloture= selectedButton.getText() == "Ouvert" ? "O" : "N";
+			System.out.println(selectedButton.getText());
+			this.compteEdite.estCloture= selectedButton.getText().equals("Ouvert") ? "N" : "O";
+			System.out.println(this.compteEdite.estCloture);
 		}
 
 		return null;
