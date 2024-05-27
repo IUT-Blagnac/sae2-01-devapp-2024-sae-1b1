@@ -2,6 +2,7 @@ package application.view;
 
 import java.util.Locale;
 
+
 import application.DailyBankState;
 import application.tools.AlertUtilities;
 import application.tools.ConstantesIHM;
@@ -11,7 +12,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
@@ -44,6 +48,7 @@ public class CompteEditorPaneViewController {
 
 		this.txtDecAutorise.focusedProperty().addListener((t, o, n) -> this.focusDecouvert(t, o, n));
 		this.txtSolde.focusedProperty().addListener((t, o, n) -> this.focusSolde(t, o, n));
+		this.ON.selectedToggleProperty().addListener((t,o,n) -> this.focusIsOpen(t,o,n));
 	}
 
 	public CompteCourant displayDialog(Client client, CompteCourant cpte, EditionMode mode) {
@@ -61,6 +66,8 @@ public class CompteEditorPaneViewController {
 		this.txtIdclient.setDisable(true);
 		this.txtIdAgence.setDisable(true);
 		this.txtIdNumCompte.setDisable(true);
+		this.btnCloture.setDisable(true);
+		this.btnOuvert.setDisable(true);
 		switch (mode) {
 		case CREATION:
 			this.txtDecAutorise.setDisable(false);
@@ -71,10 +78,19 @@ public class CompteEditorPaneViewController {
 			this.btnCancel.setText("Annuler");
 			break;
 		case MODIFICATION:
-			AlertUtilities.showAlert(this.containingStage, "Non implémenté", "Modif de compte n'est pas implémenté", null,
-					AlertType.ERROR);
-			return null;
-		// break;
+			this.txtDecAutorise.setDisable(false);
+			this.txtSolde.setDisable(true);
+			this.lblMessage.setText("Informations sur le nouveau compte");
+			this.lblSolde.setText("Solde (premier dépôt)");
+			this.btnCloture.setDisable(false);
+			this.btnOuvert.setDisable(false);
+			this.btnOk.setText("Modifier");
+			this.btnCancel.setText("Annuler");
+			
+			//AlertUtilities.showAlert(this.containingStage, "Non implémenté", "Modif de compte n'est pas implémenté", null,
+					// AlertType.ERROR);
+			// return null;
+			break;
 		case SUPPRESSION:
 			AlertUtilities.showAlert(this.containingStage, "Non implémenté", "Suppression de compte n'est pas implémenté",
 					null, AlertType.ERROR);
@@ -142,6 +158,19 @@ public class CompteEditorPaneViewController {
 		return null;
 	}
 
+	private Object focusIsOpen(ObservableValue<? extends Toggle> tValue, Toggle oldToggle, Toggle newToggle){
+		if (newToggle != null) {
+			
+			RadioButton selectedButton=(RadioButton)newToggle;
+			
+			this.compteEdite.estCloture= selectedButton.getText() == "Ouvert" ? "O" : "N";
+		}
+
+		return null;
+
+	}
+
+
 	// Attributs de la scene + actions
 	@FXML
 	private Label lblMessage;
@@ -161,6 +190,13 @@ public class CompteEditorPaneViewController {
 	private Button btnOk;
 	@FXML
 	private Button btnCancel;
+	@FXML
+	private RadioButton btnOuvert;
+	@FXML
+	private RadioButton btnCloture;
+	@FXML
+	private ToggleGroup ON;
+
 
 	@FXML
 	private void doCancel() {
@@ -205,12 +241,12 @@ public class CompteEditorPaneViewController {
 	}
 	
 	public int getDecAutorise(){
-		return compteEdite.debitAutorise;
+		return this.compteEdite.debitAutorise;
 	}
 	
 	public double getSolde(){
 
-		return compteEdite.solde;
+		return this.compteEdite.solde;
 	
 	}
 }

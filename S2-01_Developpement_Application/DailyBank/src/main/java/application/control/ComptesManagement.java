@@ -156,13 +156,80 @@ public class ComptesManagement {
 		return compte;
 	}
 
-	public void supprimerCompte(CompteCourant cpt){
+	public void editerCompte(CompteCourant cpt){
 		Connection con = null;
+		Statement s = null;
+		CompteEditorPane cep = new CompteEditorPane(this.cmStage, this.dailyBankState);
+		CompteCourant compte = cep.doCompteEditorDialog(this.clientDesComptes, cpt, EditionMode.MODIFICATION);
+		try {
+			//Initialisation de l'id du compte à modifier
+			int idAModifier = cpt.idNumCompte;
+			// Connection à la base de données
+			con = LogToDatabase.getConnexion();
+			con.setAutoCommit(false); // Gestion manuelle des transactions
+
+			// Creation du statement pour exectuter les requetes
+			s = con.createStatement();
+
+			// Construction de la requete de modification du compte dans la bd
+			String query = "UPDATE COMPTECOURANT SET DEBITAUTORISE="+cpt.debitAutorise+",  ESTCLOTURE=" + cpt.estCloture;
+			query+= "WHERE IDNUMCOMPTE="+cpt.idNumCompte;
+
+
+			// Ajout du compte sur la bd  
+			if (s.executeUpdate(query) > 0) {
+				con.commit();
+					AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "", AlertType.INFORMATION);
+					this.cmViewController.reloadList();
+				} else {
+					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+				 "Contactez l'administrateur de la base de données\nErreur : l'execution de la requete d'insertion à échoué", AlertType.ERROR);
+					con.rollback();
+				}
+			} catch (DatabaseConnexionException e) {
+				ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, e);
+				ed.doExceptionDialog();
+				this.cmStage.close();
+			} catch (ApplicationException ae) {
+				ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, ae);
+				ed.doExceptionDialog();
+			} catch (SQLException se) {
+				AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+					 "Contactez l'administrateur de la base de données\nErreur : " + se.toString(), AlertType.ERROR);
+				if (con != null) {
+					try {
+						con.rollback();
+					} catch (SQLException se2) {
+						AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+					 	"Contactez l'administrateur de la base de données\nErreur : Impossibilité de rollback suite à une exception SQL\n" + se2.toString(), AlertType.ERROR);
+					}
+				}
+			} finally {
+				// Fermer les ressources
+				try {
+					if (s != null) s.close();
+					if (con != null) con.close();
+				} catch (SQLException se) {
+					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte à été ajouté",
+					 	"Contactez l'administrateur de la base de données\nErreur : Exception lors de la fermeture des ressources bd après utilisation\n" 
+						+ se.toString(), AlertType.ERROR);
+				}
+		}
+	}
+
+
+	// Clara's Job
+	public void supprimerCompte(CompteCourant cpt){
+		CompteCourant compte;
+		CompteEditorPane cep = new CompteEditorPane(this.cmStage, this.dailyBankState);
+		compte = cep.doCompteEditorDialog(this.clientDesComptes, null, EditionMode.MODIFICATION);
+		if (compte != null) {
+			Connection con = null;
 			Statement s = null;
 			ResultSet result = null;
 			try {
 				//Initialisation de l'id (id de la bd) du nouveau compte à -1 pour gérer les erreurs 
-				int idCompteASuppr = cpt.idNumCompte;
+				int newIdNumCompte = -1;
 
 				// Connection à la base de données
 				con = LogToDatabase.getConnexion();
@@ -171,19 +238,37 @@ public class ComptesManagement {
 				// Creation du statement pour exectuter les requetes
 				s = con.createStatement();
 
-				// Construction de la requete de désactivation du compte dans la bd
-				String query = "UPDATE COMPTECOURANT SET ESTCLOTURE='O' WHERE IDNUMCOMPTE="+cpt.idNumCompte;
+				// Récuperation d'un numero de compte qui peut être attribué à un nouveau compte
+				result = s.executeQuery("SELECT (MAX(idnumcompte) + 1) AS ID_NOUV_COMPTE FROM COMPTECOURANT");
 
-				// Ajout du compte sur la bd  
-				if (s.executeUpdate(query) > 0) {
-					con.commit();
-					AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "", AlertType.INFORMATION);
-					this.cmViewController.reloadList();
+				// Vérifier que le ResultSet contient des données et placer le curseur sur la donnée presente 
+				if (result.next()) {
+					newIdNumCompte = result.getInt("ID_NOUV_COMPTE");
 				} else {
 					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
-				 "Contactez l'administrateur de la base de données\nErreur : l'execution de la requete d'insertion à échoué", AlertType.ERROR);
-					con.rollback();
+					 "Contactez l'administrateur de la base de données\nErreur : Données dans COMPTECOURANT inexistantes", AlertType.ERROR);
 				}
+
+				// Construction de la requete d'ajout du compte sur la bd
+				if (newIdNumCompte != -1) {
+					String query = "INSERT INTO COMPTECOURANT (IDNUMCOMPTE, DEBITAUTORISE, SOLDE, IDNUMCLI, ESTCLOTURE) ";
+					query += "VALUES (" + newIdNumCompte + "," + (-compte.debitAutorise) + "," + compte.solde + ","
+							+ compte.idNumCli + ", 'N')";
+
+					// Ajout du compte sur la bd
+					if (s.executeUpdate(query) > 0) {
+						con.commit();
+						AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "Le compte numéro " + compte.idNumCompte 
+						+ " au nom de " + this.clientDesComptes.nom + " " + this.clientDesComptes.nom  + " a bien été ajouté.\nPremier dépôt : " + compte.solde + "€"
+						+ "\nDécouvert autorisé : " + compte.debitAutorise + "€", AlertType.INFORMATION);
+						this.cmViewController.reloadList();
+					} else {
+						AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+					 "Contactez l'administrateur de la base de données\nErreur : l'execution de la requete d'insertion à échoué", AlertType.ERROR);
+						con.rollback();
+					}
+				}
+
 			} catch (DatabaseConnexionException e) {
 				ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, e);
 				ed.doExceptionDialog();
@@ -213,6 +298,7 @@ public class ComptesManagement {
 					 	"Contactez l'administrateur de la base de données\nErreur : Exception lors de la fermeture des ressources bd après utilisation\n" 
 						+ se.toString(), AlertType.ERROR);
 				}
+			}
 		}
 	}
 
