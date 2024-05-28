@@ -165,26 +165,28 @@ public class ComptesManagement {
 		try {
 			//Initialisation de l'id du compte à modifier
 			int idAModifier = cpt.idNumCompte;
+
 			// Connection à la base de données
 			con = LogToDatabase.getConnexion();
 			con.setAutoCommit(false); // Gestion manuelle des transactions
 
 			// Creation du statement pour exectuter les requetes
 			s = con.createStatement();
+			
 
 			// Construction de la requete de modification du compte dans la bd
-			String query = "UPDATE COMPTECOURANT SET DEBITAUTORISE="+compte.debitAutorise+", ESTCLOTURE='" + compte.estCloture;
+			String query = "UPDATE COMPTECOURANT SET DEBITAUTORISE="+ -Math.abs(compte.debitAutorise)+", ESTCLOTURE='" + compte.estCloture;
 			query+= "' WHERE IDNUMCOMPTE="+idAModifier;
-			System.out.println(query);
 
-			// Ajout du compte sur la bd  
+			// Execution de la requête précedemment crée  
 			if (s.executeUpdate(query) > 0) {
 				con.commit();
-					AlertUtilities.showAlert(cmStage, "Ajout du compte", "Le compte a bien été ajouté", "", AlertType.INFORMATION);
+					String statut=compte.estCloture.equals("N") ? "ouvert" : "cloturé";
+					AlertUtilities.showAlert(cmStage, "Modificatio du compte", "Le compte a bien été modifié", "Le compte est maintenant "+statut+"\nSon découvert autorisé est de : "+ compte.debitAutorise+"€", AlertType.INFORMATION);
 					this.cmViewController.reloadList();
 				} else {
-					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
-				 "Contactez l'administrateur de la base de données\nErreur : l'execution de la requete d'insertion à échoué", AlertType.ERROR);
+					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été modifié",
+				 "Contactez l'administrateur de la base de données\nErreur : l'execution de la requete \"Update\" à échoué", AlertType.ERROR);
 					con.rollback();
 				}
 			} catch (DatabaseConnexionException e) {
@@ -195,13 +197,13 @@ public class ComptesManagement {
 				ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, ae);
 				ed.doExceptionDialog();
 			} catch (SQLException se) {
-				AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+				AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été modifié",
 					 "Contactez l'administrateur de la base de données\nErreur : " + se.toString(), AlertType.ERROR);
 				if (con != null) {
 					try {
 						con.rollback();
 					} catch (SQLException se2) {
-						AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été ajouté",
+						AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte n'a pas été modifié",
 					 	"Contactez l'administrateur de la base de données\nErreur : Impossibilité de rollback suite à une exception SQL\n" + se2.toString(), AlertType.ERROR);
 					}
 				}
@@ -211,7 +213,7 @@ public class ComptesManagement {
 					if (s != null) s.close();
 					if (con != null) con.close();
 				} catch (SQLException se) {
-					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte à été ajouté",
+					AlertUtilities.showAlert(cmStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue\nLe compte à été modifié",
 					 	"Contactez l'administrateur de la base de données\nErreur : Exception lors de la fermeture des ressources bd après utilisation\n" 
 						+ se.toString(), AlertType.ERROR);
 				}

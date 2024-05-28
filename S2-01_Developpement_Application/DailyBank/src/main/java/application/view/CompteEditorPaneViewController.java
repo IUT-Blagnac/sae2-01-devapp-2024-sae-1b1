@@ -107,7 +107,7 @@ public class CompteEditorPaneViewController {
 		this.txtIdclient.setText("" + this.compteEdite.idNumCli);
 		this.txtIdNumCompte.setText("" + this.compteEdite.idNumCompte);
 		this.txtIdAgence.setText("" + this.dailyBankState.getEmployeActuel().idAg);
-		this.txtDecAutorise.setText("" + this.compteEdite.debitAutorise);
+		this.txtDecAutorise.setText("" + Math.abs(this.compteEdite.debitAutorise));
 		this.txtSolde.setText(String.format(Locale.ENGLISH, "%10.02f", this.compteEdite.solde));
 
 		this.compteResultat = null;
