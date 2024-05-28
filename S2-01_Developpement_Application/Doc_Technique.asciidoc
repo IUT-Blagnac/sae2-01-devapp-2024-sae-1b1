@@ -43,7 +43,7 @@ Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le c
 
 ==== 2.1.2 Diagramme de classes
 
-image:../media/DocTech/DiagClasse/CreerCompte.png[DCCreerCompte]
+image:../media/DocTech/DigClasse/CreerCompte.png[DCCreerCompte]
 
 La classe utilisée pour inserer un compte sur la base de données est la classe `CompteCourant`.
 
@@ -77,7 +77,7 @@ Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le c
 
 ==== 2.2.2 Diagramme de classes
 
-image:../media/DocTech/DiagClasse/Operation.png[DCOperation]
+image:../media/DocTech/DigClasse/Operation.png[DCOperation]
 
 La classe utilisée pour créditer un compte est la classe `Operation`.
 
