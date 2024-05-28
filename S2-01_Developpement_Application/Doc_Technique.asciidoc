@@ -63,6 +63,10 @@ La classe utilisée pour inserer un compte sur la base de données est la classe
 
 ==== 2.1.3 Code commenté
 
+La fonctionnalité de création de compte est principalement codée dans la fonction `creerNouveauCompte()` de la classe `ComptesManagement`. Cette fonction permet d'insérer un compte dans la base de données en effectuant une première requête pour récupérer le plus grand ID de compte présent dans la table `CompteCourant`, puis en ajoutant 1 pour générer l'ID du nouveau compte à insérer. Ensuite, la seconde requête permet d'insérer le compte dans la base de données. Après cela, la méthode `reloadList()` de la classe `ComptesManagementViewController` est appelée pour recharger la liste des comptes présents dans la fenêtre, permettant ainsi à l'utilisateur de voir et d'interagir directement avec le nouveau compte. après sa création.
+
+`ComptesManagementViewController` va donc appeler `creerNouveauCompte()` de la classe `ComptesManagement` lorsque l'utilisateur cliquera sur "Nouveau Compte" (`ComptesManagementViewController.doNouveauCompte()`). `creerNouveauCompte()` affichera la page permettant de renseigner les informations du nouveau compte en appelant `doCompteEditorDialog()` de la classe `CompteEditorPane`, qui à son tour retourne l'appel de `displayDialog()` de la classe `CompteEditorPaneViewController`, affichant ainsi réellement la fenêtre d'ajout de compte.
+
 
 
 === 2.2.1 Créditer un Compte B.Y
