@@ -231,8 +231,8 @@ public Operation enregistrerCredit() {
 
 	public Operation enregistrerVirement() {
 
-		OperationEditorPane oep = new OperationEditorPane(this.omStage, this.dailyBankState);
-		Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.DEBIT);
+		VirementEditorPane vep = new VirementEditorPane(this.omStage, this.dailyBankState);
+		Operation op = vep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.DEBIT);
 		if (op != null) {
 			try {
 				Access_BD_Operation ao = new Access_BD_Operation();
