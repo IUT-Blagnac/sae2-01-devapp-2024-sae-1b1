@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 import junit.framework.TestCase;
+import application.control.ComptesManagement;
 
 public class TestSuppEmploye extends TestCase{
     
