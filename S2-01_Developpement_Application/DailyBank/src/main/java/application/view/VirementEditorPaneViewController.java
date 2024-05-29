@@ -3,8 +3,11 @@ package application.view;
 import java.util.Locale;
 
 import application.DailyBankState;
+import application.control.OperationsManagement;
+import application.control.VirementEditorPane;
 import application.tools.CategorieOperation;
 import application.tools.ConstantesIHM;
+import application.tools.PairsOfValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.CompteCourant;
 import model.data.Operation;
+import model.data.TypeOperation;
 
 public class VirementEditorPaneViewController {
 
@@ -26,14 +30,17 @@ public class VirementEditorPaneViewController {
 	private Stage containingStage;
 
 	// Données de la fenêtre
-	private CategorieOperation categorieOperation;
 	private CompteCourant compteEdite;
-	private Operation operationResultat;
+	private CompteCourant compteDest;
+	private PairsOfValue<Operation,Operation> operationResultat;
+	private VirementEditorPane vepDialogController;
+
 
 	// Manipulation de la fenêtre
-	public void initContext(Stage _containingStage, DailyBankState _dbstate) {
+	public void initContext(Stage _containingStage,VirementEditorPane _vep, DailyBankState _dbstate) {
 		this.containingStage = _containingStage;
 		this.dailyBankState = _dbstate;
+		this.vepDialogController=_vep;
 		this.configure();
 	}
 
@@ -41,8 +48,7 @@ public class VirementEditorPaneViewController {
 		this.containingStage.setOnCloseRequest(e -> this.closeWindow(e));
 	}
 
-	public Operation displayDialog(CompteCourant cpte, CategorieOperation mode) {
-		this.categorieOperation = mode;
+	public PairsOfValue<Operation,Operation> displayDialog(CompteCourant cpte) {
 		this.compteEdite = cpte;
 		String info;
 
@@ -72,12 +78,20 @@ public class VirementEditorPaneViewController {
 		return null;
 	}
 
+	public CompteCourant getDestinataire(){
+		return this.compteDest;
+	}
+
     @FXML
 	private Label lblMessage;
 	@FXML
 	private Label lblMontant;
 	@FXML
 	private TextField txtMontant;
+	@FXML
+	private TextField infoCompteDest;
+	@FXML 
+	private Button choisir;
 	@FXML
 	private Button btnOk;
 	@FXML
@@ -89,12 +103,12 @@ public class VirementEditorPaneViewController {
 		this.containingStage.close();
 	}
 
-	/*@FXML
+	@FXML
 	private void doAjouter() {	
 		double montant;
 		String info;
-		String typeOp;
 
+		this.infoCompteDest.getStyleClass().remove("borderred");
 		this.txtMontant.getStyleClass().remove("borderred");
 		this.lblMontant.getStyleClass().remove("borderred");
 		this.lblMessage.getStyleClass().remove("borderred");
@@ -124,36 +138,22 @@ public class VirementEditorPaneViewController {
 			this.txtMontant.requestFocus();
 			return;
 		}
-		typeOp = this.cbTypeOpe.getValue();
-		this.operationResultat = new Operation(-1, montant, null, null, this.compteEdite.idNumCli, typeOp);
-		this.containingStage.close();
-		
-			
-
-			this.txtMontant.getStyleClass().remove("borderred");
-			this.lblMontant.getStyleClass().remove("borderred");
-			this.lblMessage.getStyleClass().remove("borderred");
-			info = "Cpt. : " + this.compteEdite.idNumCompte + "  "
+		if(this.compteDest==null){
+			info = "Un compte destinataire du virement doit être sélectionné ! - Cpt. : " + this.compteEdite.idNumCompte + "  "
 					+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
 					+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);
-			this.lblMessage.setText(info);
-
-			try {
-				montant = Double.parseDouble(this.txtMontant.getText().trim());
-				if (montant <= 0)
-					throw new NumberFormatException();
-			} catch (NumberFormatException nfe) {
-				this.txtMontant.getStyleClass().add("borderred");
-				this.lblMontant.getStyleClass().add("borderred");
-				this.txtMontant.requestFocus();
-				return;
-			}
-
-			typeOp = this.cbTypeOpe.getValue();
-
-			this.operationResultat = new Operation(-1, montant, null, null, this.compteEdite.idNumCompte, typeOp);
-			this.containingStage.close();
-			break;
+			this.infoCompteDest.getStyleClass().add("borderred");
+			this.infoCompteDest.requestFocus();
+			return;
 		}
-	}*/
+		
+		this.operationResultat = new PairsOfValue<Operation,Operation>(new Operation(-1, montant, null, null, this.compteEdite.idNumCompte, "Virement Compte à Compte"),new Operation(-1, montant, null, null, this.compteDest.idNumCompte, "Virement Compte à Compte"));
+		this.containingStage.close();
+	}
+
+	@FXML
+	public void doChoice(){
+		this.compteDest=this.vepDialogController.chooseDest();
+
+	}
 }

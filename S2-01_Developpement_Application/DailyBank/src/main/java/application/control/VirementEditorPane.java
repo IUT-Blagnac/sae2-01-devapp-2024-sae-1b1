@@ -3,6 +3,7 @@ package application.control;
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.CategorieOperation;
+import application.tools.PairsOfValue;
 import application.tools.StageManagement;
 import application.view.OperationEditorPaneViewController;
 import application.view.VirementEditorPaneViewController;
@@ -38,14 +39,24 @@ public class VirementEditorPane {
 			this.vepStage.setResizable(false);
 
 			this.vepViewController = loader.getController();
-			this.vepViewController.initContext(this.vepStage, _dbstate);
+			this.vepViewController.initContext(this.vepStage,this, _dbstate );
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public Operation doOperationEditorDialog(CompteCourant cpte, CategorieOperation cm) {
-		return this.vepViewController.displayDialog(cpte, cm);
+	public PairsOfValue<Operation, Operation> doOperationEditorDialog(CompteCourant cpte) {
+		return this.vepViewController.displayDialog(cpte);
+	}
+
+	public CompteCourant getDestinataire(){
+		return this.vepViewController.getDestinataire();
+	}
+
+	public CompteCourant chooseDest(){
+		// DestPickerPane dpp = new DestPickerPane(this.omStage, this.dailyBankState);
+    	// CompteCourant dest = dpp.EditorDialog(this.compteConcerne, CategorieOperation.CREDIT);
+		return null;
 	}
 }
