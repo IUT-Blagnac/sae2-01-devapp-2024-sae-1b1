@@ -194,6 +194,7 @@ public class OperationEditorPaneViewController {
 
 			typeOp = this.cbTypeOpe.getValue();
 
+
 			this.operationResultat = new Operation(-1, montant, null, null, this.compteEdite.idNumCompte, typeOp);
 			this.containingStage.close();
 			break;
