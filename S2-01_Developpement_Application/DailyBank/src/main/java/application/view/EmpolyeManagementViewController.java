@@ -74,7 +74,7 @@ public class EmpolyeManagementViewController {
 	private void doCancel() {
 		this.containingStage.close();
 	}
-
+	// Afficher la liste des employes 
 	@FXML
 	private void doRechercher() throws DatabaseConnexionException, ApplicationException {
 		int idEmploye;
@@ -106,10 +106,11 @@ public class EmpolyeManagementViewController {
 			}
 		}
 
-		// Recherche des EMPLOYER en BD. cf. AccessClient > getClients(.)
+		// Recherche des EMPLOYE en BD. cf. AccessEmploye > getEmploye(.)
 		// idEmploye != -1 => recherche sur idEmploye
 		// idEmploye != -1 et debutNom non vide => recherche nom/prenom
-		// idEmploye != -1 et debutNom vide => recherche tous les clients
+		// idEmploye != -1 et debutNom vide => recherche tous les employe
+		
 		ArrayList<Employe> listeEmploye;
 		listeEmploye = this.cmDialogController.getlisteEmployes(idEmploye, debutNom, debutPrenom);
 
