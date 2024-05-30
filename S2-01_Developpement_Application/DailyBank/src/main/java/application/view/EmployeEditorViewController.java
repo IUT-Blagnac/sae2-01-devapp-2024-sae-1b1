@@ -65,7 +65,7 @@ public class EmployeEditorViewController {
 			this.txtLog.setDisable(false);
 			this.txtMdp.setDisable(false);
 			this.txtAg.setDisable(false);
-			this.lblMessage.setText("Informations sur le nouveau employer");
+			this.lblMessage.setText("Informations sur le nouveau employe");
 			this.butOk.setText("Ajouter");
 			this.butCancel.setText("Annuler");
 			break;
@@ -76,7 +76,7 @@ public class EmployeEditorViewController {
 		this.txtLog.setDisable(false);
 		this.txtMdp.setDisable(false);
 		this.txtAg.setDisable(false);
-		this.lblMessage.setText("Informations sur le nouveau employer");
+		this.lblMessage.setText("Informations sur le nouveau employe");
 		this.butOk.setText("Ajouter");
 		this.butCancel.setText("Annuler");
 			break;
@@ -186,6 +186,8 @@ public class EmployeEditorViewController {
 			this.txtPrenom.requestFocus();
 			return false;
 		}
+
+		
 
 		
 		if (this.employeEdite.motPasse.isEmpty()&& (this.employeEdite.motPasse.length() < 50)) {
