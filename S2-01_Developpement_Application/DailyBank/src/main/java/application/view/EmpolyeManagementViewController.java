@@ -137,6 +137,7 @@ public class EmpolyeManagementViewController {
 	private void doDesactiverEmploye() {
 	}
 
+	// Création d'un nouveau employe 
 	@FXML
 	private void doNouveauEmploye() throws DatabaseConnexionException, ApplicationException {
 		Employe employe;
