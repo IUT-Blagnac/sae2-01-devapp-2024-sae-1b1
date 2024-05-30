@@ -193,6 +193,10 @@ Vous retrouverez donc l'opération qui vient d'être effectuée sur la fenêtre 
 
 image:..\media\Tutoriels_utilisation\Crediter\4-AffichageduOpEffectue.png[CreditCpt-Etape4]
 
+=== 3.9 Créer un Nouveau Employe H.W
+
+=== 3.10 Afficher Employe H.W
+
 
 == 4 - Résultats
 
