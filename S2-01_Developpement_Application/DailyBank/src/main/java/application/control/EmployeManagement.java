@@ -56,6 +56,9 @@ public class EmployeManagement{
 		this.cmViewController.displayDialog();
 	}
 
+	
+
+
 	public Employe modifierEmploye(Employe em) throws DatabaseConnexionException, ApplicationException {
 		EmployeEditorPane emp = new EmployeEditorPane(cmStage, dailyBankState);
 		Employe result = emp.doEmployeEditorDialog(em, EditionMode.MODIFICATION);
@@ -75,6 +78,26 @@ public class EmployeManagement{
 			}
 		}
 		return result;
+	}
+
+	public boolean supprimerEmploye(Employe emp){
+		try {
+			Access_BD_Employe ac = new Access_BD_Employe();
+			ac.deleteEmploye(emp);
+			return true;
+		} catch (DatabaseConnexionException e){
+			ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, e);
+			ed.doExceptionDialog();
+			emp = null;
+			return false;
+		} catch (ApplicationException ae) {
+			ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, ae);
+			ed.doExceptionDialog();
+			emp = null;
+			return false;
+
+		}
+
 	}
 
 	public Employe nouveauEmploye() throws DatabaseConnexionException, ApplicationException {
