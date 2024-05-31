@@ -1,7 +1,9 @@
 :toc: preamble
 :toc-title: Table des Matières
-:useCases: ../media/DocTech/UseCase/
-
+:docTech: ../media/DocTech/
+:useCases: {docTech}UseCase/
+:diagClass: {docTech}DigClasse/
+:autre: {docTech}/Autre/
 = Documentation Technique application Daily Bank
 
 
@@ -46,7 +48,7 @@ Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le c
 
 ==== 2.1.2 Diagramme de classes
 
-image:../media/DocTech/DigClasse/CreerCompte.png[DCCreerCompte]
+image:{diagClass}CreerCompte.png[DCCreerCompte]
 
 La classe utilisée pour inserer un compte sur la base de données est la classe `CompteCourant`.
 
@@ -74,13 +76,13 @@ La fonctionnalité de création de compte est principalement codée dans la fonc
 
 === 2.2.1 Créditer un Compte B.Y
 
-image:../media/DocTech/UseCase/CrediterCompte.png[UCCrediterCompte]
+image:{useCases}CrediterCompte.png[UCCrediterCompte]
 
 Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le chef d'Agence.
 
 ==== 2.2.2 Diagramme de classes
 
-image:../media/DocTech/DigClasse/Operation.png[DCOperation]
+image:{diagClass}Operation.png[DCOperation]
 
 La classe utilisée pour créditer un compte est la classe `Operation`.
 
@@ -153,7 +155,7 @@ La fonction `enregistrerCredit()` crée une connexion à la base de données à 
 === 2.10 Créer un Employe H.W
 
 ==== 2.10.1 Use case
-image:../media/DocTech/UseCase/usecasecreeremploye.png[UCCrediterCompte]
+image:{usecases}usecasecreeremploye.png[UCCrediterCompte]
 
 La classe utilisée pour inserer un compte sur la base de données est la classe `Employe`.
 
@@ -183,7 +185,7 @@ Pour afficher la liste des employés dans cette application, j'ai d'abord créé
 === 2.11 Afficher Employe H.W
 
 ==== 2.11.1 Use case
-image:../media/DocTech/UseCase/AfficherEmploye.png[UCCrediterCompte]
+image:{useCases}AfficherEmploye.png[UCCrediterCompte]
 
 Les utilisateurs concernés par cette fonctionnalité sont les chefs d'Agence.
 
