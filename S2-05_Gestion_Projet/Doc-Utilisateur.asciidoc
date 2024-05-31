@@ -1,5 +1,6 @@
 :toc: preamble
 :toc-title: Table des Matières
+:img: ../media/
 = Documentation utilisateur application DailyBank
 
 image:../media/image_univ.jpg[image,width=97,height=137]

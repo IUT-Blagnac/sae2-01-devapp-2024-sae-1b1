@@ -8,7 +8,7 @@
 = Documentation Technique application Daily Bank
 
 
-image:../media/image_univ.jpg[image,width=97,height=137]
+image:{img}image_univ.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
@@ -20,7 +20,7 @@ Documentation Technique
 
 SAE 2.01
 
-image:../media/image_doc_tech.jpg[image,width=565,height=374]
+image:{img}image_doc_tech.jpg[image,width=565,height=374]
 
 ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
@@ -126,20 +126,25 @@ image:{diagclass}Virement.png["DCVirement"]
 Les classes utilisées pour effectuer un virement sont la classe CompteCourant et Client.
 
 * application.control :
-** `ComptesManagement`
-** `CompteEditorPane`
+** `OperationsManagement`
+** `VirementEditorPane`
+** `DestPickerPane`
 
 * application.view :
-** `ComptesManagementViewController`
-** `CompteEditorPaneViewController`
+** `OperationsManagementViewController`
+** `VirementEditorPaneViewController`
+** `DestPickerPaneViewController`
 
 * model.data :
 ** `CompteCourant`
+** `Client`
 
 * model.orm :
 ** `LogToDataBase`
 
 ==== 2.3.3 Code commenté
+
+Effectuer un virement est l'une des trois options d'opérations d'un compte. Ainsi La première classe utilisée est `OperationsManagementViewController`. Celle-ci dispose de la methode `doAutre()` lié par le FXML au bouton 
 
 === 2.4 Modifier et Cloturer un Compte D.T
 
