@@ -213,7 +213,7 @@ image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 Pour ouvrir modifier les informations d'un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir Employé.
 
-// Mettre Image 
+// Mettre Image
 
 Une nouvelle fenêtre affichant les employés va s'ouvrir.
 
@@ -227,7 +227,7 @@ Dès lors, vous allez pouvoir modifier les informations de l'employé tel que so
 
 //Mettre image 
 
-Une fois les modifications effectuer, pour valider ces dernières vous devez cliquer sur le bouton Modifier. 
+Une fois les modifications effectuer, pour valider ces dernières vous devez cliquer sur le bouton Ajouter. 
 
 // Mettre image 
 
