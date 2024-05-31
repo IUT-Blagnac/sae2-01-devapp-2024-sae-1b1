@@ -17,7 +17,7 @@ Les différentes responsabilités des autres membres à définir plus tard.
 |version|rôle     |use case   |cas...                 |  Yassir | Titouan  |  Clara  | Wissal
 |1    |Chef d’Agence    |CRUD employé  |C| | | |
 |1    |Chef d’Agence    |CRUD employé  |R| | | |
-|1    |Chef d’Agence |CRUD employé  |U| | |D |
+|1    |Chef d’Agence |CRUD employé  |U| | |F |
 |1    |Chef d’Agence   |CRUD employé  |D| | |F|
 |1    |Chef d’Agence    |CRUD employé  |C| | | |F
 |1    |Chef d’Agence    |CRUD employé  |R| | | |F
