@@ -1,0 +1,205 @@
+= DOCUMENTATION TECHNIQUE V1
+
+Version 1 +
+
+Date : 31 mai 2023 +
+
+Equipe : Boulouiha gnaoui Yassir, Delaplagne Titouan, Figueras Clara, Hanki Wissal +
+
+Groupe 1B1
+
+Projet : DailyBank - SAÉ 2.01 et 2.05
+
+== Sommaire
+* <<presentation_appli>>
+** <<use_case>>
+** <<diagramme_de_classe>>
+* <<architecture>>
+** <<architecture_generale>> 
+** <<ressources_externes>> 
+** <<structuration>> 
+** <<elements_essentiels>> 
+* <<presentation_des_diagrammes>>
+** <<guichetier>>
+*** <<crediter_compte>>
+*** <<debiter_compte>>
+*** <<creer_compte>>
+*** <<virement_compte>>
+*** <<cloturer_compte>>
+** <<chef_agence>>
+*** <<CRUD>>
+**** <<create>>
+**** <<read>>
+**** <<update>>
+**** <<delete>>
+
+[[presentation_appli]]
+== 1. Presentation de l'application
+L’application DailyBank permet de gérer des comptes bancaires de dépôt pour des clients préalablement créés. Elle dispose de plusieurs fonctionnalités : débiter, créditer un compte, effectuer des virements, consulter un compte, le clôturer, simuler un emprunt ou encore générer un relevé mensuel.
+
+[[use_case]]
+=== 1.1 Use Case global
+
+image::../media/DiagrammeCasUti.png[]
+
+Nous identifions deux types d’utilisateurs de l’application : le guichetier et le chef d’agence.
+
+Le guichetier peut créer un nouveau client, modifier ses informations, le consulter et le débiter. 
+Le chef d’agence a les mêmes fonctionnalités que le guichetier et peut également rendre inactif un client.
+
+
+//Mettre Diagramme des Cas d'utilisation V1
+
+En plus de la version 0, le guichetier peut créer un compte, le clôturer, le créditer et effectuer un virement. Le chef d’agence peut gérer les employés.
+
+[[diagramme_de_classe]]
+=== 1.2 Diagramme de classe des données global
+
+// Mettre diagramme de classes V0
+
+Le diagramme de classes V0 dispose de plusieurs tables :
+
+* Client : a un nom, un prénom, une adresse postale, un email, un numéro de téléphone et un statut estInactif (si un client est inactif ou non) +
+
+* CompteCourant : possède un identifiant numéro compte, un débit autorisé et un solde
+
+* Operation : dispose d’un montant, d’une date de début d’opération et d’une date de valeur +
+
+* TypeOperation : représente un chèque, un retrait par carte bancaire, un paiement par carte bancaire ou encore un virement +
+
+* AgenceBancaire : dispose d’un nom et d’une adresse postale +
+
+* Employe : a un nom, un prénom, un droit d’accès, un login et un mot de passe +
+
+//mettre ce que diagramme de classe V1
+
+Le diagramme de classes V1 dispose des mêmes tables que dans la V0.
+Il n'y a presque aucun changement à part qu'un SoldeCourant peut-être cloturé ou non.
+
+[[architecture]]
+== 2. Architecture
+
+[[architecture_generale]]
+=== 2.1 Architecture générale
+
+Deux types d'utilisateurs se connectent à l'application : le guichetier et le chef d'agence. L'application se connecte à une base de données (Oracle SQL Developper).
+
+[[ressources_externes]]
+=== 2.2 Ressources externes utilisées et rôles
+
+* Le fichier .jar
+
+[[structuration]] 
+=== 2.3 Structuration en packages de l'application
+
+* Application : 
+** application : DailyBank : main() de départ
+** application.control : Ce package est responsable de la gestion de la logique de contrôle de l'application. Il contient des classes ou des fonctions qui gèrent les interactions avec l'utilisateur, la validation des entrées et coordonnent la circulation des données au sein de l'application.
+** application.tools : Le package application.tools fournit des fonctions utilitaires ou des classes couramment utilisées dans l'application. Ces outils aident à simplifier le développement et à améliorer l'organisation du code en fournissant des fonctionnalités réutilisables.
+** application.view : Le package application.view se concentre sur les aspects de l'interface utilisateur (IU) de l'application.
+* Model :
+** model.data : Le package model.data sert à décrire les différents objets utilisés (AgenceBancaire, Client ,ect...). 
+** model.orm : Le package model.orm est chargé de la gestion des données dans l'application. Ce package inclut des fonctions pour récupérer des données à partir d'une base de données, les sauvegarder ou effectuer des transformations de données.
+** model.orm.exception : Le package model.orm.exception regroupe des exceptions qui sont utilisées pour gérer les erreurs liées aux opérations de base de données ou à la manipulation des données.
+
+[[elements_essentiels]]
+=== 2.4 Elements essentiels
+
+Pour utiliser l'application il est nécessaire d'avoir Java 1.8. On exécute l'application en lançant le fichier .jar. Pour la base de données on utilise Oracle SQL Developper.
+
+[[presentation_des_diagrammes]]
+== 3. Présentation et explication des diagrammes demandés
+
+[[guichetier]]
+=== 3.1 Guichetier
+Le guichetier a accès à plusieurs fonctionnalités : créditer un compte, débiter un compte, créer un compte, effectuer un virement et clôturer un compte. 
+
+[[crediter_compte]]
+==== 3.1.1 Créditer un compte - Yassir
+
+//Mettre ce que vous voulez
+
+
+**Classes et ressources utilisées :** 
+
+* OperationManagement.java 
+* OperationManagementController.java
+* OperationManagement.fxml
+* OperationEditorPaneController.java
+* AccessOperation.java
+
+
+[[debiter_compte]]
+==== 3.1.2 Débiter un compte - Yassir
+
+//mettre ce que vous voulez
+
+
+**Classes et ressources utilisées :** 
+
+* OperationManagement.java
+* OperationManagementController.java
+* OperationManagement.fxml
+* OperationEditorPaneController.java
+* AccessOperation.java
+
+
+
+[[creer_compte]]
+==== 3.1.3 Créer un compte - Wissal
+C'est une fonctionnalité permettant de créer un compte Bancaire pour un client existant, une nouvelle fenêtre s'ouvrira affichant toutes les informations nécessaires à l'ajout du compte, le gérant de la création du compte en particulier le guichetier doit ajouter un solde de base sur le compte, les ID sont disposés automatiquement par le programme.
+Une fois ajouté, le compte sera visible sur le gestionnaire des comptes du client.
+
+
+**Classes et ressources utilisés :**
+
+* ComptesManagementController.java : Controlleur de la fenêtre "Gestion des comptes". Les boutons "btnVoirOpes", "btnModifierCompte", "btnSupprCompte" sont nécessaires.
+* ComptesManagement.java : Permet de gérer les comptes d’un client. Les méthodes suivantes sont utilisés, "getComptesDunClient", "creerNouveauCompte", "gererOperationsDUnCompte", "doComptesManagementDialog".
+* AccessCompteCourant.java : Permet de gérer l’accès aux comptes d’un client. Les méthodes "creerCompteCourant" et "updateCompteCourant".
+* CompteEditorPane.fxml : Page FXML qui correspond à la fenêtre "Gestion des comptes".
+* ComptesManagement.fxml : Page FXML qui correspond à la fenêtre "Gestion des clients".
+
+[[virement_compte]]
+==== 3.1.4 Effectuer un virement de compte à compte - Titouan
+L'opération de virement s'effectue en choisissant un compte bancaire client afin de faire un virement vers un autre compte du même client.
+
+
+**Classes et ressources utilisés :**
+
+[[cloturer_compte]]
+==== 3.1.5 Clôturer compte - Titouan
+
+//mettre ce que vous voulez
+
+
+[[chef_agence]]
+=== 3.2 Chef d'agence
+Le chef d'agence a pour fonctionnalités : gérer les employés qui sont le guichetier et le chef d'agence. C'est-à-dire gérer le CRUD : Créer un employé, Consulter un employé, Modifier les informations d'un employé et Supprimer un employé.
+
+[[CRUD]]
+==== 3.2.1 Gérer (faire le “CRUD”) les employés (guichetier et chef d’agence)
+
+[[create]]
+===== 3.2.1.1 Create - Wissal
+
+//mettre ce que vous voulez
+
+[[read]]
+===== 3.2.1.2 Read - Wissal
+
+//mettre ce que vous voulez
+
+[[update]]
+===== 3.2.1.3 Update - Clara
+
+
+
+**Classes et ressources utilisés :**
+
+
+
+[[delete]]
+===== 3.2.1.4 Delete - Clara
+
+[[elements_code]]
+== 4. Eléments de code significatifs commentés
