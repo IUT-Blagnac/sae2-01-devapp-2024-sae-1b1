@@ -18,7 +18,7 @@ Les différentes responsabilités des autres membres à définir plus tard.
 |1    |Chef d’Agence    |CRUD employé  |C| | | |F
 |1    |Chef d’Agence    |CRUD employé  |R| | | |F
 |1    |Chef d’Agence |CRUD employé  |U| | |F |
-|1    |Chef d’Agence   |CRUD employé  |D| |F | |
+|1    |Chef d’Agence   |CRUD employé  |D| | |F |
 |1    |Guichetier     | Compte | Créer|F| | | 
 |1    |Guichetier     | Compte | Créditer/Débiter|F| | | 
 |1    |Guichetier     | Compte | Effectuer un virement|| | | 
