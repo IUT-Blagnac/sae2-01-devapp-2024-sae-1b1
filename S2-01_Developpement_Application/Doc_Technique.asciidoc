@@ -123,7 +123,7 @@ Les utilisateurs pouvant opérer un virement sont le Chef d'agence et le Guichet
 
 image:{diagclass}Virement.png["DCVirement"]
 
-Les classes utilisées pour effectuer un virement sont la classe CompteCourant et Client.
+Les classes utilisées pour effectuer un virement sont les classes CompteCourant et Client.
 
 * application.control :
 ** `OperationsManagement`
@@ -144,7 +144,19 @@ Les classes utilisées pour effectuer un virement sont la classe CompteCourant e
 
 ==== 2.3.3 Code commenté
 
-Effectuer un virement est l'une des trois options d'opérations d'un compte. Ainsi La première classe utilisée est `OperationsManagementViewController`. Celle-ci dispose de la methode `doAutre()` lié par le FXML au bouton 
+Effectuer un virement est l'une des trois options d'opérations d'un compte. Ainsi La première classe utilisée est `OperationsManagementViewController`. Celle-ci dispose de la methode `doAutre()` lié par le FXML au bouton `Virement depuis ce Compte`. La méthode appelle ensuite `enregistrerVirement()` de la classe `OperationsManagement`.
+
+La méthode `enregistrerVirement()` effectue deux tâches, elle ouvre d'abord une nouvelle instance de `VirementEditorPane`, utilise sa methode `doOperationEditorDialog()` qui elle-même appelle `DisplayDialog()` de la classe `VirementEditorPaneViewController` qui permet d'afficher une fenêtre ou l'on sélectionnera le montant et le compte destinataire. `enregistrerVirement()` se sert ensuite de ces deux données pour effectuer le virement sur la base de données.
+
+Afin de selectionner le compte destinataire du virement la fenêtre `VirementEditorPaneViewController` comprends un bouton lié à la méthode `doChoice`. Celle ci appelle la méthode `chooseDest()` de `VirementEditorPane` qui crée une instance de `DestPickerPane`. Cette classe et `DestPickerPaneViewController` servent à selectionner le compte destinataire parmis tous les clients.
+
+La classe `DestPickerPane` dispose, d'un constructeur permettant de load le fxml de la fenêtre, également de la méthode `chooseDestDialog()` qui appelle simplement `displayDialog()` du controller `DestPickerPaneViewController` permettant d'afficher la fenêtre de choix. La classe dispose aussi de `getlisteComptes()` permettant d'obtenir une `ArrayList` contenant tous les clients de l'agence. Enfin `DestPickerPane` possède une méthode `getComptesDunClient()` qui permet non seulement, d'obtenir une `ArrayList` des ComptesCourants d'un client, mais `Override` également le `toString()` de ces `CompteCourants` pour permettre un meilleur affichage.
+
+Enfin la classe `DestPickerPaneViewController` est très similaire a `ClientsManagement`. Les différences sont que `DestPickerPaneViewController`:
+
+* affiche tous les comptes avec leur client et non simplement les clients
+* ne permet pas de créer, modifier, ou supprimer les clients
+* 
 
 === 2.4 Modifier et Cloturer un Compte D.T
 
