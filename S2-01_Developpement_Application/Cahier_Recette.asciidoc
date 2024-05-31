@@ -23,7 +23,7 @@ ____
 
 _Informatique 1^ière^ Année_
 
-Version 0.1
+Version 1.4
 
 A destination l'entreprise DailyBank
 
