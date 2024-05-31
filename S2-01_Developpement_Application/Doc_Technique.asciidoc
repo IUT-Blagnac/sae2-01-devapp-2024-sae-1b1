@@ -1,6 +1,9 @@
 :toc: preamble
 :toc-title: Table des Matières
+:useCases: ../media/DocTech/UseCase/
+
 = Documentation Technique application Daily Bank
+
 
 image:../media/image_univ.jpg[image,width=97,height=137]
 
@@ -37,7 +40,7 @@ A destination l'entreprise DailyBank
 
 ==== 2.1.1 Use Case
 
-image:../media/DocTech/UseCase/CreerCompte.png[UCCreerCompte]
+image:{useCases}CreerCompte.png[UCCreerCompte]
 
 Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le chef d'Agence.
 
