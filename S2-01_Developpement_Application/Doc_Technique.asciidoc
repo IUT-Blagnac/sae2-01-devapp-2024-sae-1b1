@@ -104,3 +104,61 @@ Pour créditer un compte, j'ai d'abord complété la fonction `displayDialog()` 
 Le cœur du processus se trouve dans la fonction `enregistrerCredit()` de la classe OperationManagement. Cette fonction reçoit l'opération de crédit à enregistrer via la méthode `doOperationEditorDialog()` de la classe `OperationEditorPane`, qui appelle en retour la fonction `displayDialog()` mentionnée précédemment.
 
 La fonction `enregistrerCredit()` crée une connexion à la base de données à l'aide de la classe LogToDataBase. Dans un premier temps, elle exécute une requête pour obtenir le plus grand ID d'opération présent dans la table `Operation` et ajoute 1, ce qui permet de déterminer l'ID de la nouvelle opération à insérer. Ensuite, elle exécute une deuxième requête pour insérer l'opération de crédit dans la base de données en utilisant les informations contenues dans l'objet `Operation` récupéré. 
+
+
+==== 2.3.1 Créer un Employe
+
+
+
+La classe utilisée pour inserer un compte sur la base de données est la classe `Employe`.
+
+* application.control :  
+** `EmployeManagement`
+** `EmployeEditorPane`
+
+* application.view :
+** `EmployeManagementViewController`
+** `EmployeEditorPaneViewController`
+
+* model.data :
+** `Employe`
+
+* model.orm :
+** `Acces_BD_Employe`
+
+==== 2.3.2 Code commenté
+
+
+
+=== 2.4.1 Afficher Employe
+
+
+
+Les utilisateurs concernés par cette fonctionnalité est le chef d'Agence.
+
+
+==== 2.4.2 Diagramme de classes
+
+
+
+La classe utilisée pour créer un employe est la classe `Employe`.
+
+Répartition des classes utilisées dans les packages :
+
+* application.control :  
+** `EmployeManagement`
+** `EmployeEditorPane`
+
+* application.view :
+** `EmployeManagementViewController`
+** `EmployeEditorPaneViewController`
+
+* model.data :
+** `Employe`
+
+* model.orm :
+  ** `Access_BD_Employe`
+
+==== 2.4.3 Code commenté
+
+Pour créer un employe, j'ai d'abord créer les classes : `EmployeManagement`,`EmployeEditorPane`,`EmployeManagementViewController` et `EmployeEditorPaneViewController`.
