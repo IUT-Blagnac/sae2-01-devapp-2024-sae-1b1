@@ -52,12 +52,12 @@ Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a dév
 |         | Doc. Tec. V0 |     link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]   |    
 |         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici] |Reprenez la page de garde qui doit être homogène avec les autres documents (nom du projet, compo équipe, date ...). Veillez à bien respecter la structuration demandée du document dans les futures versions. Il manque la procédure d'installation & lancement de l'application (et les credentails nécessaires) qui auraient déjà pu être renseignés.
 |         | Recette V0  |        link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]              | 
-| 31/05   | Gantt V1  réalisé    |    link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici]   | 
+| 31/05   | Gantt V1  réalisé    |    link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)   | 
 |         | Doc. Util. V1 |   link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici]      |         
 |         | Doc. Tec. V1 |  link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]   |     
 |         | Code V1    |    link:S2-01_Developpement_Application/DailyBank/src[ici]    | 
 |         | Recette V1 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]   | 
-|         | Gantt V2 prévu |  link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici]  | 
+|         | Gantt V2 prévu |  link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)  | 
 | 14/06   | Gantt V2  réalisé    |       | 
 |         | Doc. Util. V2 |         |         
 |         | Doc. Tec. V2 |                |     
