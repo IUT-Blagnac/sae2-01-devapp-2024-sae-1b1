@@ -195,6 +195,16 @@ image:..\media\Tutoriels_utilisation\Crediter\4-AffichageduOpEffectue.png[Credit
 
 === 3.9 Créer un Nouveau Employe H.W
 
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape1.png[CreditCpt-Etape4]
+
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape2..png[CreditCpt-Etape4]
+
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape3.png[CreditCpt-Etape4]
+
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape4.png[CreditCpt-Etape4]
+
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
+
 === 3.10 Afficher Employe H.W
 
 
