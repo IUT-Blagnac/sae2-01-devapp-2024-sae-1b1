@@ -57,8 +57,6 @@ public class EmployeManagement{
 	}
 
 	
-
-
 	public Employe modifierEmploye(Employe em) throws DatabaseConnexionException, ApplicationException {
 		EmployeEditorPane emp = new EmployeEditorPane(cmStage, dailyBankState);
 		Employe result = emp.doEmployeEditorDialog(em, EditionMode.MODIFICATION);

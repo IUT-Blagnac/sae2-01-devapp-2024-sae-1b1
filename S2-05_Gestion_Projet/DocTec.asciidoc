@@ -48,7 +48,8 @@ Le guichetier peut créer un nouveau client, modifier ses informations, le consu
 Le chef d’agence a les mêmes fonctionnalités que le guichetier et peut également rendre inactif un client.
 
 
-//Mettre Diagramme des Cas d'utilisation V1
+image::../media/DocTech/DigClasse/DiagrammeClassesV1.png[]
+
 
 En plus de la version 0, le guichetier peut créer un compte, le clôturer, le créditer et effectuer un virement. Le chef d’agence peut gérer les employés.
 
@@ -56,6 +57,7 @@ En plus de la version 0, le guichetier peut créer un compte, le clôturer, le c
 === 1.2 Diagramme de classe des données global
 
 // Mettre diagramme de classes V0
+image::../media/DocTech/DigClasse/DiagrammeClassesV0.png[]
 
 Le diagramme de classes V0 dispose de plusieurs tables :
 
@@ -71,7 +73,7 @@ Le diagramme de classes V0 dispose de plusieurs tables :
 
 * Employe : a un nom, un prénom, un droit d’accès, un login et un mot de passe +
 
-//mettre ce que diagramme de classe V1
+image::../media/DocTech/DigClasse/DiagrammeClassesV1.png[]
 
 Le diagramme de classes V1 dispose des mêmes tables que dans la V0.
 Il n'y a presque aucun changement à part qu'un SoldeCourant peut-être cloturé ou non.
@@ -192,9 +194,17 @@ Le chef d'agence a pour fonctionnalités : gérer les employés qui sont le guic
 [[update]]
 ===== 3.2.1.3 Update - Clara
 
+image::../media/DocTech/UseCase/UseCase_update_employe.png[]
+_Figure Diagramme des Cas d’Utilisation update employe_ 
+
 
 
 **Classes et ressources utilisés :**
+
+image::../media/DocTech/Autre/dc_update_employe.png[]
+
+_Figure Diagramme de classes update employe_ 
+
 
 
 
