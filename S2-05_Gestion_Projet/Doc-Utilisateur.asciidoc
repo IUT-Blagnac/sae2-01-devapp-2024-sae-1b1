@@ -199,13 +199,13 @@ Pour créer un nouveau employé, suivez les étapes ci-dessous en tant que chef 
 
 Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Employé :
 image:..\media\Tutoriels_utilisation\CréerEmploye\Etape1.png[CreditCpt-Etape4]
-Une fois sur cette page, cliquez sur Nouveau Employé :
-image:..\media\Tutoriels_utilisation\CréerEmploye\Etape2..png[CreditCpt-Etape4]
-Cela affichera la fenêtre suivante :
+Une fois sur cette page, cliquez sur Nouveau employe:
 image:..\media\Tutoriels_utilisation\CréerEmploye\Etape3.png[CreditCpt-Etape4]
-Complétez les données personnelles de l'employé :
+Cela affichera la fenêtre suivante :
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape2..png[CreditCpt-Etape4]
+Complétez les données personnelles de l'employé, ensuite cliquez sur Ajouter:
 image:..\media\Tutoriels_utilisation\CréerEmploye\Etape4.png[CreditCpt-Etape4]
-Cliquez sur OK pour créer l'employé :
+Vous verrez l'employé dans la liste :
 image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 === 3.10 Afficher Employe H.W
@@ -218,6 +218,8 @@ Une fois sur cette page, cliquez sur Rechercher pour afficher la liste des emplo
 image:..\media\Tutoriels_utilisation\AfficherEmploye\Etape2.png[CreditCpt-Etape4]
 Vous avez également la possibilité de rechercher un employé spécifique en entrant son nom et prénom dans les champs correspondants :
 image:..\media\Tutoriels_utilisation\AfficherEmploye\Etape3.png[CreditCpt-Etape4]
+Comme ceci:
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 === 3.11 Modifier un employe F.C
 
