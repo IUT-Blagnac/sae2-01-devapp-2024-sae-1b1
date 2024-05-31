@@ -131,7 +131,8 @@ La classe utilisée pour inserer un compte sur la base de données est la classe
 
 ==== 2.3.3 Code commenté
 
-Pour créer un employe, j'ai d'abord créer les classes : `EmployeManagement`,`EmployeEditorPane`,`EmployeManagementViewController` et `EmployeEditorPaneViewController`.
+Pour afficher la liste des employés dans cette application, j'ai d'abord créé les classes : `EmployeManagement`, `EmployeEditorPane`, `EmployeManagementViewController` et `EmployeEditorPaneViewController`. Lorsqu'un utilisateur souhaite crée  un nouveau employé (en utilisant la méthode `nouveauEmploye()`), il ajoute un employe apres avor remplir le champs qui correspond au nom, prénom, etc... dans les champs de texte appropriés.
+
 
 
 === 2.4 Afficher Employe H.W
@@ -165,4 +166,6 @@ Répartition des classes utilisées dans les packages :
 
 ==== 2.4.3 Code commenté
 
-Pour créer un employe, j'ai d'abord créer les classes : `EmployeManagement`,`EmployeEditorPane`,`EmployeManagementViewController` et `EmployeEditorPaneViewController`.
+Pour afficher la liste des employés dans cette application, j'ai d'abord créé les classes : `EmployeManagement`, `EmployeEditorPane`, `EmployeManagementViewController` et `EmployeEditorPaneViewController`. Lorsqu'un utilisateur souhaite rechercher des employés (en utilisant la méthode `doRechercher()`), il peut entrer un nom ou un prénom dans les champs de texte appropriés. Ensuite, la méthode appelle `cmDialogController.getlisteEmployes()` pour récupérer la liste des employés correspondant aux critères de recherche.
+
+J'ai également utilisé la liste observable des employés `oListEmploye` pour stocker les objets de type `Employe`. Cette liste permet de lier dynamiquement ces données à un composant d'interface utilisateur comme `ListView`, assurant ainsi que toute modification de la liste est automatiquement reflétée dans l'interface utilisateur.
