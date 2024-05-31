@@ -1,5 +1,6 @@
 package application.control;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -31,8 +32,12 @@ import model.orm.Access_BD_CompteCourant;
 import model.orm.Access_BD_Operation;
 import model.orm.LogToDatabase;
 import model.orm.exception.ApplicationException;
+import model.orm.exception.DataAccessException;
 import model.orm.exception.DatabaseConnexionException;
+import model.orm.exception.ManagementRuleViolation;
+import model.orm.exception.Order;
 import model.orm.exception.RowNotFoundOrTooManyRowsException;
+import model.orm.exception.Table;
 
 public class OperationsManagement {
 
@@ -233,27 +238,43 @@ public Operation enregistrerCredit() {
 	public Operation enregistrerVirement() {
 
 		VirementEditorPane vep = new VirementEditorPane(this.omStage, this.dailyBankState);
-		PairsOfValue<Operation,Operation> ops = vep.doOperationEditorDialog(this.compteConcerne);
+		double montant = vep.doOperationEditorDialog(this.compteConcerne);
         CompteCourant compteDest=vep.getDestinataire();
-        ops=null;
-		// if (ops != null) {
-			// try {
-				// Access_BD_Operation ao = new Access_BD_Operation();
-// 
-				// ao.insertDebit(this.compteConcerne.idNumCompte, op.montant, op.idTypeOp);
-// 
-			// } catch (DatabaseConnexionException e) {
-				// ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, e);
-				// ed.doExceptionDialog();
-				// this.omStage.close();
-				// op = null;
-			// } catch (ApplicationException ae) {
-				// ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, ae);
-				// ed.doExceptionDialog();
-				// op = null;
-			// }
-		// }
-		return null;
+        
+		if (montant != -1 && compteDest.idNumCompte!=compteConcerne.idNumCompte) {
+			try {
+		    	Connection con = LogToDatabase.getConnexion();
+		    	CallableStatement call;
+                
+		    	String q = "{call Virer (?, ?, ?, ?)}";
+                
+		    	// les ? correspondent aux paramètres : cf. déf procédure (4 paramètres)
+		    	call = con.prepareCall(q);
+		    	// Paramètres in
+		    	call.setInt(1, compteConcerne.idNumCompte);
+		    	// 1 -> valeur du premier paramètre, cf. déf procédure
+		    	call.setInt(2, compteDest.idNumCompte);
+		    	call.setDouble(3, montant);
+		    	// Paramètres out
+		    	call.registerOutParameter(4, java.sql.Types.INTEGER);
+		    	// 4 type du quatrième paramètre qui est déclaré en OUT, cf. déf procédure
+                
+		    	call.execute();
+                
+		    	int res = call.getInt(4);
+                
+		    } catch (SQLException e) {
+		    	AlertUtilities.showAlert(omStage, "Erreur Base de données", 
+                        "Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
+                        "Contactez l'administrateur de la base de données\nErreur : Impossibilité de rollback suite à une exception SQL\n" 
+                        + e.toString(), AlertType.ERROR);
+		    }catch (DatabaseConnexionException dce){
+                ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, dce);
+                ed.doExceptionDialog();
+			    this.omStage.close();
+            }
+		}
+		return new Operation();
 	}
 // 
 	public PairsOfValue<CompteCourant, ArrayList<Operation>> operationsEtSoldeDunCompte() {

@@ -28,7 +28,7 @@ ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPLAGNE Titouan, FIGUERAS Clara_*
 ____
 
-Version 0.1
+Version 1.3
 
 À destination de l'entreprise DailyBank
 
@@ -195,19 +195,31 @@ image:..\media\Tutoriels_utilisation\Crediter\4-AffichageduOpEffectue.png[Credit
 
 === 3.9 Créer un Nouveau Employe H.W
 
+Pour créer un nouveau employé, suivez les étapes ci-dessous en tant que chef d'agence :
+
+Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Employé :
 image:..\media\Tutoriels_utilisation\CréerEmploye\Etape1.png[CreditCpt-Etape4]
-
-image:..\media\Tutoriels_utilisation\CréerEmploye\Etape2..png[CreditCpt-Etape4]
-
+Une fois sur cette page, cliquez sur Nouveau employe:
 image:..\media\Tutoriels_utilisation\CréerEmploye\Etape3.png[CreditCpt-Etape4]
-
+Cela affichera la fenêtre suivante :
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape2..png[CreditCpt-Etape4]
+Complétez les données personnelles de l'employé, ensuite cliquez sur Ajouter:
 image:..\media\Tutoriels_utilisation\CréerEmploye\Etape4.png[CreditCpt-Etape4]
-
+Vous verrez l'employé dans la liste :
 image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 === 3.10 Afficher Employe H.W
 
+Pour afficher la liste des employés, suivez les étapes ci-dessous en tant que chef d'agence :
 
+Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Employé :
+image:..\media\Tutoriels_utilisation\AfficherEmploye\Etape1.png[CreditCpt-Etape4]
+Une fois sur cette page, cliquez sur Rechercher pour afficher la liste des employés :
+image:..\media\Tutoriels_utilisation\AfficherEmploye\Etape2.png[CreditCpt-Etape4]
+Vous avez également la possibilité de rechercher un employé spécifique en entrant son nom et prénom dans les champs correspondants :
+image:..\media\Tutoriels_utilisation\AfficherEmploye\Etape3.png[CreditCpt-Etape4]
+Comme ceci:
+image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 === 3.11 Modifier un employe F.C
 

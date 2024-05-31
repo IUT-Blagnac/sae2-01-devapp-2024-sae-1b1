@@ -52,7 +52,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
                   <TextField fx:id="infoCompteDest" editable="false" prefHeight="26.0" prefWidth="216.0" />
-                  <Button fx:id="choisir" mnemonicParsing="false" text="Choisir" />
+                  <Button fx:id="choisir" mnemonicParsing="false" onAction="#doChoice" text="Choisir" />
                </children>
             </HBox>
          </children>

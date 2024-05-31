@@ -23,9 +23,9 @@ ____
 
 _Informatique 1^ière^ Année_
 
-Version 0.1
+Version 1.4
 
-A destination l'entreprise DailyBank
+A destination de l'entreprise DailyBank
 
 :toc:
 :toc-title: Sommaire
@@ -36,36 +36,37 @@ A destination l'entreprise DailyBank
 Créé pour :  Philippe Gaconnet et Yahn Formanczac
 
 
-== I. Introduction
-=== 1. Objet :
+== 1 Introduction
+=== 1.1 Objet :
 [.text-justify]
 Ce document a été produit dans le cadre d'un projet d'élaboration d'une application bancaire pour la banque DailyBank, celle-ci souhaite développer une application JAVA-Oracle de gestion des comptes clients pour remplacer plusieurs outils obsolètes. Ce développement s’inscrit dans le cadre de la restructuration de ses services bancaires et l’application sera déployée dans les 100 agences que compte son réseau. 
 
 
-== II. Pre-Requis :
+== 2 Pré-Requis :
 [.text-justify]
 L'exécution des tests spécifiés au chapitre suivant requiert :
 
-* Une base de données installée (cf link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]).
+* Une base de données installée (cf link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[DocTechnique]).
 * L'environnement de test tel que spécifié dans la partie "Environnement de test" de ce document.
-* Les fiches de tests. *À vérifier*
+* Les fiches de tests.
+* Les identifiants de connexion.
 
 
-=== 1. Éléments à tester :
+=== 2.1 Éléments à tester :
 [.text-justify]
 Les éléments testés concernent les Use-Cases spécifiés dans la *documentation technique*.
 
 
-=== 2. Environnement de test :
+=== 2.2 Environnement de test :
 [.text-justify]
-Ordinateur sous Windows ou OS équivalent avec l'utilisation de JAVA et du frameword Junit pour les tests.
+Ordinateur sous Windows ou OS équivalent avec l'utilisation de JAVA.
 
 
-== III Tests
+== 3 Tests
 
-=== 1. Fonctionnalités Guichetier V1
+=== 3.1 Fonctionnalités Guichetier V1
 
-==== 1.1 Création de Compte B.Y
+==== 3.1.1 Création de Compte B.Y
 
 |====
 
@@ -84,7 +85,7 @@ Ordinateur sous Windows ou OS équivalent avec l'utilisation de JAVA et du frame
 |====
 
 
-==== 1.2 Créditer un Compte B.Y
+==== 3.1.2 Créditer un Compte B.Y
 
 |====
 
@@ -184,7 +185,6 @@ autorisé est de -100 euros.
  ^|OK
   
  
-
 |====
 
 

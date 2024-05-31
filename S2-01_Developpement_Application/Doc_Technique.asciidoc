@@ -1,6 +1,12 @@
 :toc: preamble
 :toc-title: Table des Matières
+:img: ../media/
+:docTech: {img}DocTech/
+:useCases: {docTech}UseCase/
+:diagClass: {docTech}DigClasse/
+:autre: {docTech}/Autre/
 = Documentation Technique application Daily Bank
+
 
 image:../media/image_univ.jpg[image,width=97,height=137]
 
@@ -37,13 +43,13 @@ A destination l'entreprise DailyBank
 
 ==== 2.1.1 Use Case
 
-image:../media/DocTech/UseCase/CreerCompte.png[UCCreerCompte]
+image:{useCases}CreerCompte.png[UCCreerCompte]
 
 Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le chef d'Agence.
 
 ==== 2.1.2 Diagramme de classes
 
-image:../media/DocTech/DigClasse/CreerCompte.png[DCCreerCompte]
+image:{diagClass}CreerCompte.png[DCCreerCompte]
 
 La classe utilisée pour inserer un compte sur la base de données est la classe `CompteCourant`.
 
@@ -71,13 +77,13 @@ La fonctionnalité de création de compte est principalement codée dans la fonc
 
 === 2.2.1 Créditer un Compte B.Y
 
-image:../media/DocTech/UseCase/CrediterCompte.png[UCCrediterCompte]
+image:{useCases}CrediterCompte.png[UCCrediterCompte]
 
 Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le chef d'Agence.
 
 ==== 2.2.2 Diagramme de classes
 
-image:../media/DocTech/DigClasse/Operation.png[DCOperation]
+image:{diagClass}Operation.png[DCOperation]
 
 La classe utilisée pour créditer un compte est la classe `Operation`.
 
@@ -105,14 +111,116 @@ Le cœur du processus se trouve dans la fonction `enregistrerCredit()` de la cla
 
 La fonction `enregistrerCredit()` crée une connexion à la base de données à l'aide de la classe LogToDataBase. Dans un premier temps, elle exécute une requête pour obtenir le plus grand ID d'opération présent dans la table `Operation` et ajoute 1, ce qui permet de déterminer l'ID de la nouvelle opération à insérer. Ensuite, elle exécute une deuxième requête pour insérer l'opération de crédit dans la base de données en utilisant les informations contenues dans l'objet `Operation` récupéré. 
 
-
-=== 2.3 Créer un Employe H.W
+=== 2.3 Effectuer un Virement D.T
 
 ==== 2.3.1 Use case
 
-La classe utilisée pour inserer un compte sur la base de données est la classe `Employe`.
+image:{useCases}Virement.png["UCVirement"]
+
+Les utilisateurs pouvant opérer un virement sont le Chef d'agence et le Guichetier.
 
 ==== 2.3.2 Diagramme de classes
+
+image:{diagclass}Virement.png["DCVirement"]
+
+Les classes utilisées pour effectuer un virement sont la classe CompteCourant et Client.
+
+* application.control :
+** `ComptesManagement`
+** `CompteEditorPane`
+
+* application.view :
+** `ComptesManagementViewController`
+** `CompteEditorPaneViewController`
+
+* model.data :
+** `CompteCourant`
+
+* model.orm :
+** `LogToDataBase`
+
+==== 2.3.3 Code commenté
+
+=== 2.4 Modifier et Cloturer un Compte D.T
+
+==== 2.4.1 Use case
+
+image:{usecases}ModifierEtCloturerCompte.png["UCModifier"]
+
+Les utilisateurs pouvant Modifier et Cloturer un compte sont le Chef d'agence et le Guichetier.
+
+==== 2.4.2 Diagramme de classes
+
+image:{diagClass}CreerCompte.png[DCCreerCompte]
+
+La classe utilisée pour inserer un compte sur la base de données est la classe `CompteCourant`.
+
+* application.control :  
+** `ComptesManagement`
+** `CompteEditorPane`
+
+* application.view :
+** `ComptesManagementViewController`
+** `CompteEditorPaneViewController`
+
+* model.data :
+** `CompteCourant`
+
+* model.orm :
+** `LogToDataBase`
+
+==== 2.4.3 Code commenté
+
+L'objectif de cette fonctionnalité est de créer une fenêtre similaire à celle servant à créer le compte ou la possibilité de modifier les informations autre que le découvert autorisé est impossible. La fenêtre devait également permettre d'ouvrir ou cloturer un compte.
+
+J'ai d'abord dû modifier la classe `ComptesManagementViewController` dans laquelle j'ai créé la méthode `doModifier()`. Celle-ci est liée au bouton `btnModifierCompte` du fichier FXML de la fenêtre `comptemanagement.fxml`. La méthode `doModifier()` se contente de récupérer le compte sélectionné par l'utilisateur et de l'utiliser pour appeler la méthode `editerCompte(CompteCourant cpt)` de la classe `CompteManagement` avec le compte sélectionné en paramêtre.
+
+La méthode `editerCompte()` s'occupera de deux choses, d'abord elle créera un `CompteEditorPane` dont elle appelera la méthode `doCompteEditorDialog()`. Ensuite, après avoir récuperé les données modifiées retournées, elle s'occupera d'enregistrer ces modifications dans la base de données.
+
+La méthode `doCompteEditorDialog()` est dans la classe `CompteEditorPane` et se contente d'appeler la méthode `displayDialog()` de la classe `CompteEditorPaneViewController`.
+
+Enfin la méthode `displayDialog()` remplit les champs avec les données du compte à modifier et désactive les champs qui ne sont pas nécessaires. Lorsque la fenêtre est fermée les données entrées sont récupérée ou non selon si l'utilisateur utilise `annuler` ou `modifier`.
+
+
+
+=== 2.5 Créer un prélevement automatique B.Y
+==== 2.5.1 Use case
+==== 2.5.2 Diagramme de classes
+==== 2.5.3 Code commenté
+
+=== 2.6 Obtenir et Afficher les prélevements automatiques B.Y
+
+==== 2.6.1 Use case
+==== 2.6.2 Diagramme de classes
+==== 2.6.3 Code commenté
+
+=== 2.7 Modifier un prélevement automatique D.T
+
+==== 2.7.1 Use case
+==== 2.7.2 Diagramme de classes
+==== 2.7.3 Code commenté
+
+=== 2.8 Supprimer/Arreter un prélevement automatique D.T
+==== 2.8.1 Use case
+==== 2.8.2 Diagramme de classes
+==== 2.8.3 Code commenté
+
+
+=== 2.9 Générer un relevé pdf F.C
+
+==== 2.9.1 Use case
+==== 2.9.2 Diagramme de classes
+==== 2.9.3 Code commenté
+
+
+=== 2.10 Créer un Employe H.W
+
+==== 2.10.1 Use case
+image:{usecases}usecasecreeremploye.png[UCCrediterCompte]
+
+La classe utilisée pour inserer un compte sur la base de données est la classe `Employe`.
+
+==== 2.10.2 Diagramme de classes
 
 
 * application.control :  
@@ -129,19 +237,21 @@ La classe utilisée pour inserer un compte sur la base de données est la classe
 * model.orm :
 ** `Acces_BD_Employe`
 
-==== 2.3.3 Code commenté
+==== 2.10.3 Code commenté
 
-Pour créer un employe, j'ai d'abord créer les classes : `EmployeManagement`,`EmployeEditorPane`,`EmployeManagementViewController` et `EmployeEditorPaneViewController`.
-
-
-=== 2.4 Afficher Employe H.W
-
-==== 2.4.1 Use case
-
-Les utilisateurs concernés par cette fonctionnalité est le chef d'Agence.
+Pour afficher la liste des employés dans cette application, j'ai d'abord créé les classes : `EmployeManagement`, `EmployeEditorPane`, `EmployeManagementViewController` et `EmployeEditorPaneViewController`. Lorsqu'un utilisateur souhaite crée  un nouveau employé (en utilisant la méthode `nouveauEmploye()`), il ajoute un employe apres avor remplir le champs qui correspond au nom, prénom, etc... dans les champs de texte appropriés.
 
 
-==== 2.4.2 Diagramme de classes
+
+=== 2.11 Afficher Employe H.W
+
+==== 2.11.1 Use case
+image:{useCases}AfficherEmploye.png[UCCrediterCompte]
+
+Les utilisateurs concernés par cette fonctionnalité sont les chefs d'Agence.
+
+
+==== 2.11.2 Diagramme de classes
 
 
 
@@ -163,6 +273,41 @@ Répartition des classes utilisées dans les packages :
 * model.orm :
   ** `Access_BD_Employe`
 
-==== 2.4.3 Code commenté
+==== 2.11.3 Code commenté
 
-Pour créer un employe, j'ai d'abord créer les classes : `EmployeManagement`,`EmployeEditorPane`,`EmployeManagementViewController` et `EmployeEditorPaneViewController`.
+Pour afficher la liste des employés dans cette application, j'ai d'abord créé les classes : `EmployeManagement`, `EmployeEditorPane`, `EmployeManagementViewController` et `EmployeEditorPaneViewController`. Lorsqu'un utilisateur souhaite rechercher des employés (en utilisant la méthode `doRechercher()`), il peut entrer un nom ou un prénom dans les champs de texte appropriés. Ensuite, la méthode appelle `cmDialogController.getlisteEmployes()` pour récupérer la liste des employés correspondant aux critères de recherche.
+
+J'ai également utilisé la liste observable des employés `oListEmploye` pour stocker les objets de type `Employe`. Cette liste permet de lier dynamiquement ces données à un composant d'interface utilisateur comme `ListView`, assurant ainsi que toute modification de la liste est automatiquement reflétée dans l'interface utilisateur.
+
+=== 2.12 Débit exeptionnel d'un Compte F.C
+
+==== 2.12.1 Use case
+==== 2.12.2 Diagramme de classes
+==== 2.12.3 Code commenté
+
+=== 2.13 Supprimer un employé F.C
+
+==== 2.13.1 Use case
+==== 2.13.2 Diagramme de classes
+==== 2.13.3 Code commenté
+
+=== 2.14 Modifier un employé F.C
+
+==== 2.14.1 Use case
+==== 2.14.2 Diagramme de classes
+==== 2.14.3 Code commenté
+
+=== 2.15  Simulation Emprunt H.W
+
+==== 2.15.1 Use case
+==== 2.15.2 Diagramme de classes
+==== 2.15.3 Code commenté
+
+=== 2.16 Simulation Assurance H.W
+
+==== 2.16.1 Use case
+==== 2.16.2 Diagramme de classes
+==== 2.16.3 Code commenté
+
+
+=== 2.17 Supprimer Compte ????????

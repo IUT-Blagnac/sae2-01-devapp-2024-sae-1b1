@@ -32,7 +32,7 @@ public class VirementEditorPaneViewController {
 	// Données de la fenêtre
 	private CompteCourant compteEdite;
 	private CompteCourant compteDest;
-	private PairsOfValue<Operation,Operation> operationResultat;
+	private double operationResultat;
 	private VirementEditorPane vepDialogController;
 
 
@@ -48,7 +48,7 @@ public class VirementEditorPaneViewController {
 		this.containingStage.setOnCloseRequest(e -> this.closeWindow(e));
 	}
 
-	public PairsOfValue<Operation,Operation> displayDialog(CompteCourant cpte) {
+	public double displayDialog(CompteCourant cpte) {
 		this.compteEdite = cpte;
 		String info;
 
@@ -58,15 +58,15 @@ public class VirementEditorPaneViewController {
 		this.lblMessage.setText(info);
 
 		this.btnOk.setText("Effectuer Virement");
-		this.btnCancel.setText("Annuler Virement");	
+		this.btnCancel.setText("Annuler Virement");
 
 		// Paramétrages spécifiques pour les chefs d'agences
 		if (ConstantesIHM.isAdmin(this.dailyBankState.getEmployeActuel())) {
 			// rien pour l'instant
 		}
 
-		this.operationResultat = null;
-
+		this.operationResultat = -1;
+		this.updateInfoDest();
 		this.containingStage.showAndWait();
 		return this.operationResultat;
 	}
@@ -80,6 +80,15 @@ public class VirementEditorPaneViewController {
 
 	public CompteCourant getDestinataire(){
 		return this.compteDest;
+	}
+
+	public void updateInfoDest(){
+		String content=
+			this.compteDest==null ? 
+				"Selectionnez un Compte -> " : "Cpt. :" + this.compteDest.idNumCompte + "  "
+															+ String.format(Locale.ENGLISH, "%12.02f", this.compteDest.solde) + " /"
+															+ String.format(Locale.ENGLISH, "%8d", this.compteDest.debitAutorise);
+		this.infoCompteDest.setText(content);
 	}
 
     @FXML
@@ -99,7 +108,7 @@ public class VirementEditorPaneViewController {
 
     @FXML
 	private void doCancel() {
-		this.operationResultat = null;
+		this.operationResultat = -1;
 		this.containingStage.close();
 	}
 
@@ -147,13 +156,16 @@ public class VirementEditorPaneViewController {
 			return;
 		}
 		
-		this.operationResultat = new PairsOfValue<Operation,Operation>(new Operation(-1, montant, null, null, this.compteEdite.idNumCompte, "Virement Compte à Compte"),new Operation(-1, montant, null, null, this.compteDest.idNumCompte, "Virement Compte à Compte"));
+		// this.operationResultat = new PairsOfValue<Operation,Operation>(new Operation(-1, montant, null, null, this.compteEdite.idNumCompte, "Virement Compte à Compte"),new Operation(-1, montant, null, null, this.compteDest.idNumCompte, "Virement Compte à Compte"));
+		this.operationResultat=montant;
 		this.containingStage.close();
 	}
 
 	@FXML
 	public void doChoice(){
-		this.compteDest=this.vepDialogController.chooseDest();
-
+		CompteCourant newCompteDest=this.vepDialogController.chooseDest();
+		if(newCompteDest!=null)
+			this.compteDest=newCompteDest;
+		this.updateInfoDest();
 	}
 }
