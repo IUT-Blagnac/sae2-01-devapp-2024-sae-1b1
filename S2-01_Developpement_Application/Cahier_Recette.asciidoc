@@ -25,7 +25,7 @@ _Informatique 1^ière^ Année_
 
 Version 1.4
 
-A destination l'entreprise DailyBank
+A destination de l'entreprise DailyBank
 
 :toc:
 :toc-title: Sommaire
