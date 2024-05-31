@@ -48,7 +48,7 @@ public class VirementEditorPane {
 		}
 	}
 
-	public PairsOfValue<Operation, Operation> doOperationEditorDialog(CompteCourant cpte) {
+	public double doOperationEditorDialog(CompteCourant cpte) {
 		return this.vepViewController.displayDialog(cpte);
 	}
 
