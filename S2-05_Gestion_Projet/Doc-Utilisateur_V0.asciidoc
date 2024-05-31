@@ -208,6 +208,43 @@ image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
 === 3.10 Afficher Employe H.W
 
 
+
+=== 3.11 Modifier un employe F.C
+
+Pour ouvrir modifier les informations d'un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir Employé.
+
+// Mettre Image 
+
+Une nouvelle fenêtre affichant les employés va s'ouvrir.
+
+//Mettre image 
+
+Vous devez donc selectionner un employé puis cliquer sur le bouton Modifier employé.
+
+//Mettre image 
+
+Dès lors, vous allez pouvoir modifier les informations de l'employé tel que sont nom,prenom,adresse,téléphone ou encore sont e-mail.
+
+//Mettre image 
+
+Une fois les modifications effectuer, pour valider ces dernières vous devez cliquer sur le bouton Modifier. 
+
+// Mettre image 
+
+=== 3.11 Supprimer un employe F.C
+
+Pour ouvrir supprimer un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir l'employé que vous souhaiter supprimer.
+
+//Mettre image 
+
+Après avoir sélectionner l'employé à supprimer vous devez cliquer sur le bouton de confirmation, un avertissement apparaitra afin de confirmer l'action.
+
+// Mettre image 
+
+
+
+
+
 == 4 - Résultats
 
 === 4.1 - Fonctionnalité 1
