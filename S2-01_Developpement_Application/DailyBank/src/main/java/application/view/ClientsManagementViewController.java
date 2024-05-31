@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
+import model.data.Employe;
 
 public class ClientsManagementViewController {
 
@@ -147,8 +148,11 @@ public class ClientsManagementViewController {
 	}
 
 	@FXML
-	private void doDesactiverClient() {
+	private void doDesactiverEmploye() {
+	
+		
 	}
+
 
 	@FXML
 	private void doNouveauClient() {

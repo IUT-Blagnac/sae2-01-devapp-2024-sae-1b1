@@ -247,9 +247,7 @@ Pour ouvrir supprimer un employé, vous devez être préalablement connecter en 
 
 //Mettre image 
 
-Après avoir sélectionner l'employé à supprimer vous devez cliquer sur le bouton de confirmation, un avertissement apparaitra afin de confirmer l'action.
-
-// Mettre image 
+Après avoir sélectionner l'employé à supprimer vous devez cliquer sur le bouton de confirmation, un avertissement apparaitra afin de confirmer l'action. 
 
 
 
