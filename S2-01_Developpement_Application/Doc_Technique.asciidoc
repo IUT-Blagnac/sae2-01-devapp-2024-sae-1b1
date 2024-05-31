@@ -139,7 +139,7 @@ Pour afficher la liste des employés dans cette application, j'ai d'abord créé
 
 ==== 2.4.1 Use case
 
-Les utilisateurs concernés par cette fonctionnalité est le chef d'Agence.
+Les utilisateurs concernés par cette fonctionnalité sont les chefs d'Agence.
 
 
 ==== 2.4.2 Diagramme de classes
@@ -169,3 +169,46 @@ Répartition des classes utilisées dans les packages :
 Pour afficher la liste des employés dans cette application, j'ai d'abord créé les classes : `EmployeManagement`, `EmployeEditorPane`, `EmployeManagementViewController` et `EmployeEditorPaneViewController`. Lorsqu'un utilisateur souhaite rechercher des employés (en utilisant la méthode `doRechercher()`), il peut entrer un nom ou un prénom dans les champs de texte appropriés. Ensuite, la méthode appelle `cmDialogController.getlisteEmployes()` pour récupérer la liste des employés correspondant aux critères de recherche.
 
 J'ai également utilisé la liste observable des employés `oListEmploye` pour stocker les objets de type `Employe`. Cette liste permet de lier dynamiquement ces données à un composant d'interface utilisateur comme `ListView`, assurant ainsi que toute modification de la liste est automatiquement reflétée dans l'interface utilisateur.
+
+
+=== 2.5 Effectuer un Virement D.T
+
+==== 2.5.1 Use case
+
+
+
+==== 2.5.2 Diagramme de classes
+==== 2.5.3 Code commenté
+
+=== 2.6 Modifier et Cloturer un Compte D.T
+
+==== 2.6.1 Use case
+
+
+
+==== 2.6.2 Diagramme de classes
+==== 2.6.3 Code commenté
+
+=== 2.7 Débit exeptionnel d'un Compte F.C
+
+==== 2.7.1 Use case
+==== 2.7.2 Diagramme de classes
+==== 2.7.3 Code commenté
+
+=== 2.8 Supprimer un employé F.C
+
+==== 2.8.1 Use case
+==== 2.8.2 Diagramme de classes
+==== 2.8.3 Code commenté
+
+=== 2.9 Modifier un employé F.C
+
+==== 2.9.1 Use case
+==== 2.9.2 Diagramme de classes
+==== 2.9.3 Code commenté
+
+=== 2.10 Modifier et Cloturer un Compte D.T
+
+==== 2.10.1 Use case
+==== 2.10.2 Diagramme de classes
+==== 2.10.3 Code commenté
