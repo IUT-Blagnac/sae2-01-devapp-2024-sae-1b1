@@ -110,6 +110,7 @@ La fonction `enregistrerCredit()` crée une connexion à la base de données à 
 
 ==== 2.3.1 Use case
 image:../media/DocTech/UseCase/usecasecreeremploye.png[UCCrediterCompte]
+
 La classe utilisée pour inserer un compte sur la base de données est la classe `Employe`.
 
 ==== 2.3.2 Diagramme de classes
@@ -139,6 +140,7 @@ Pour afficher la liste des employés dans cette application, j'ai d'abord créé
 
 ==== 2.4.1 Use case
 image:../media/DocTech/UseCase/AfficherEmploye.png[UCCrediterCompte]
+
 Les utilisateurs concernés par cette fonctionnalité est le chef d'Agence.
 
 
