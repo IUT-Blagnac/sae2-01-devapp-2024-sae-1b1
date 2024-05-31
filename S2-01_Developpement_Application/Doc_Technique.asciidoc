@@ -1,6 +1,7 @@
 :toc: preamble
 :toc-title: Table des Matières
-:docTech: ../media/DocTech/
+:img: ../media/
+:docTech: {img}DocTech/
 :useCases: {docTech}UseCase/
 :diagClass: {docTech}DigClasse/
 :autre: {docTech}/Autre/
@@ -113,14 +114,74 @@ La fonction `enregistrerCredit()` crée une connexion à la base de données à 
 === 2.3 Effectuer un Virement D.T
 
 ==== 2.3.1 Use case
+
+image:{useCases}Virement.png["UCVirement"]
+
+Les utilisateurs pouvant opérer un virement sont le Chef d'agence et le Guichetier.
+
 ==== 2.3.2 Diagramme de classes
+
+image:{diagclass}Virement.png["DCVirement"]
+
+Les classes utilisées pour effectuer un virement sont la classe CompteCourant et Client.
+
+* application.control :
+** `ComptesManagement`
+** `CompteEditorPane`
+
+* application.view :
+** `ComptesManagementViewController`
+** `CompteEditorPaneViewController`
+
+* model.data :
+** `CompteCourant`
+
+* model.orm :
+** `LogToDataBase`
+
 ==== 2.3.3 Code commenté
 
 === 2.4 Modifier et Cloturer un Compte D.T
 
 ==== 2.4.1 Use case
+
+image:{usecases}ModifierEtCloturerCompte.png["UCModifier"]
+
+Les utilisateurs pouvant Modifier et Cloturer un compte sont le Chef d'agence et le Guichetier.
+
 ==== 2.4.2 Diagramme de classes
+
+image:{diagClass}CreerCompte.png[DCCreerCompte]
+
+La classe utilisée pour inserer un compte sur la base de données est la classe `CompteCourant`.
+
+* application.control :  
+** `ComptesManagement`
+** `CompteEditorPane`
+
+* application.view :
+** `ComptesManagementViewController`
+** `CompteEditorPaneViewController`
+
+* model.data :
+** `CompteCourant`
+
+* model.orm :
+** `LogToDataBase`
+
 ==== 2.4.3 Code commenté
+
+L'objectif de cette fonctionnalité est de créer une fenêtre similaire à celle servant à créer le compte ou la possibilité de modifier les informations autre que le découvert autorisé est impossible. La fenêtre devait également permettre d'ouvrir ou cloturer un compte.
+
+J'ai d'abord dû modifier la classe `ComptesManagementViewController` dans laquelle j'ai créé la méthode `doModifier()`. Celle-ci est liée au bouton `btnModifierCompte` du fichier FXML de la fenêtre `comptemanagement.fxml`. La méthode `doModifier()` se contente de récupérer le compte sélectionné par l'utilisateur et de l'utiliser pour appeler la méthode `editerCompte(CompteCourant cpt)` de la classe `CompteManagement` avec le compte sélectionné en paramêtre.
+
+La méthode `editerCompte()` s'occupera de deux choses, d'abord elle créera un `CompteEditorPane` dont elle appelera la méthode `doCompteEditorDialog()`. Ensuite, après avoir récuperé les données modifiées retournées, elle s'occupera d'enregistrer ces modifications dans la base de données.
+
+La méthode `doCompteEditorDialog()` est dans la classe `CompteEditorPane` et se contente d'appeler la méthode `displayDialog()` de la classe `CompteEditorPaneViewController`.
+
+Enfin la méthode `displayDialog()` remplit les champs avec les données du compte à modifier et désactive les champs qui ne sont pas nécessaires. Lorsque la fenêtre est fermée les données entrées sont récupérée ou non selon si l'utilisateur utilise `annuler` ou `modifier`.
+
+
 
 === 2.5 Créer un prélevement automatique B.Y
 ==== 2.5.1 Use case
@@ -247,3 +308,6 @@ J'ai également utilisé la liste observable des employés `oListEmploye` pour s
 ==== 2.16.1 Use case
 ==== 2.16.2 Diagramme de classes
 ==== 2.16.3 Code commenté
+
+
+=== 2.17 Supprimer Compte ????????
