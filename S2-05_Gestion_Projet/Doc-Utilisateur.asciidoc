@@ -28,7 +28,7 @@ ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPLAGNE Titouan, FIGUERAS Clara_*
 ____
 
-Version 0.1
+Version 1.3
 
 À destination de l'entreprise DailyBank
 

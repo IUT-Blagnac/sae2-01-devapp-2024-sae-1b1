@@ -50,14 +50,14 @@ Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a dév
 |         |Gantt V1 Prévu|       link:/S2-05_Gestion_Projet/GantV1_prev.pdf[ici]                              |Le découpage des taches semblent bon (approche par brique fonctionnelle, avec test/ dev / documentation) mais dfficilement lisible car sur plusieurs pages. Durée de chaque tache difficilement lisible. Assurez vous d'avoir quelquechose de lisible & cohérent pour la V1 pour pouvoir attaquer les devs semaine prochaine. N'oubliez pas certaines taches pour la fin du projet (soutenance etc ...) meme si aujourdh'ui l'bjectif est d'avoir un GANTT prêt pour la V1
 | 07/05  | CdC V2final|          link:/S2-05_Gestion_Projet/CDCUV2.asciidoc[ici]                           |Alignez la version du CDCU avec celle de l’appli: V2 et pas V1.1. Il manque la date de “release” du document. On attend une identification de la problématique, pas une question. Toujours un manque de ciblage du contexe/ pbmatique / objectifs qui sont trop génralistes. Les commantaires de la version précédente n’ont pas été pris en compte pour l’analyse du besoin, ou l’approche en US masque toujours le manque de profondeur de l’analyse. Les règles de gestion ne sont pas mentionnées par exemple. Il manque toute la partie UC V2, et vous répétez l’existant (UC V0). Les contraintes sont trop générales et manquent de précisions. Certaines sont manquantes (juridique) ou pas comprises.8/20  
 |         | Doc. Tec. V0 |     link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]   |    
-|         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur_V0.asciidoc[ici] |Reprenez la page de garde qui doit être homogène avec les autres documents (nom du projet, compo équipe, date ...). Veillez à bien respecter la structuration demandée du document dans les futures versions. Il manque la procédure d'installation & lancement de l'application (et les credentails nécessaires) qui auraient déjà pu être renseignés.
+|         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici] |Reprenez la page de garde qui doit être homogène avec les autres documents (nom du projet, compo équipe, date ...). Veillez à bien respecter la structuration demandée du document dans les futures versions. Il manque la procédure d'installation & lancement de l'application (et les credentails nécessaires) qui auraient déjà pu être renseignés.
 |         | Recette V0  |        link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]              | 
-| 31/05   | Gantt V1  réalisé    |       | 
-|         | Doc. Util. V1 |         |         
-|         | Doc. Tec. V1 |                |     
-|         | Code V1    |                     | 
-|         | Recette V1 |                      | 
-|         | Gantt V2 prévu |    | 
+| 31/05   | Gantt V1  réalisé    |    link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)   | 
+|         | Doc. Util. V1 |   link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici]      |         
+|         | Doc. Tec. V1 |  link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]   |     
+|         | Code V1    |    link:S2-01_Developpement_Application/DailyBank/src[ici]    | 
+|         | Recette V1 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]   | 
+|         | Gantt V2 prévu |  link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)  | 
 | 14/06   | Gantt V2  réalisé    |       | 
 |         | Doc. Util. V2 |         |         
 |         | Doc. Tec. V2 |                |     
