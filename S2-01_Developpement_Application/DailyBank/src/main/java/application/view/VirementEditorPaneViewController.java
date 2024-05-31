@@ -58,7 +58,7 @@ public class VirementEditorPaneViewController {
 		this.lblMessage.setText(info);
 
 		this.btnOk.setText("Effectuer Virement");
-		this.btnCancel.setText("Annuler Virement");	
+		this.btnCancel.setText("Annuler Virement");
 
 		// Paramétrages spécifiques pour les chefs d'agences
 		if (ConstantesIHM.isAdmin(this.dailyBankState.getEmployeActuel())) {
@@ -154,6 +154,6 @@ public class VirementEditorPaneViewController {
 	@FXML
 	public void doChoice(){
 		this.compteDest=this.vepDialogController.chooseDest();
-
+		System.out.println(this.compteDest);
 	}
 }

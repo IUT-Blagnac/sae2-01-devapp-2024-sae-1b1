@@ -17,10 +17,12 @@ import model.data.Operation;
 
 public class VirementEditorPane {
 
+	private DailyBankState dailyBankState;
 	private Stage vepStage;
 	private VirementEditorPaneViewController vepViewController;
 
 	public VirementEditorPane(Stage _parentStage, DailyBankState _dbstate) {
+		this.dailyBankState=_dbstate;
 
 		try {
 			FXMLLoader loader = new FXMLLoader(
@@ -55,8 +57,8 @@ public class VirementEditorPane {
 	}
 
 	public CompteCourant chooseDest(){
-		// DestPickerPane dpp = new DestPickerPane(this.omStage, this.dailyBankState);
-    	// CompteCourant dest = dpp.EditorDialog(this.compteConcerne, CategorieOperation.CREDIT);
-		return null;
+		DestPickerPane dpp = new DestPickerPane(this.vepStage, this.dailyBankState);
+    	CompteCourant dest = dpp.chooseDestDialog();
+		return dest;
 	}
 }

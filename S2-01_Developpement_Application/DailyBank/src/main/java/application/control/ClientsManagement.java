@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.EditionMode;
+import application.tools.PairsOfValue;
 import application.tools.StageManagement;
 import application.view.ClientsManagementViewController;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +14,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.data.Client;
+import model.data.CompteCourant;
 import model.orm.Access_BD_Client;
+import model.orm.Access_BD_CompteCourant;
 import model.orm.exception.ApplicationException;
 import model.orm.exception.DatabaseConnexionException;
 
@@ -125,4 +128,32 @@ public class ClientsManagement {
 		}
 		return listeCli;
 	}
+
+
+	// Frérot faut juste faire getListeClient puis getListeComptes et tt add
+	// public ArrayList<PairsOfValue<Client,ArrayList<CompteCourant>>> getlisteComptesEtClient(int _numCompte, String _debutNom, String _debutPrenom){
+		// ArrayList<PairsOfValue<Client,ArrayList<CompteCourant>>> listeCptCli=new ArrayList<PairsOfValue<Client,ArrayList<CompteCourant>>>();
+		// ArrayList<Client> listeCli = new ArrayList<>();
+		// Arraylist<CompteCourant> listeCpt=new ArrayList<CompteCourant>();
+		// try {
+			// Recherche des clients en BD. cf. AccessClient > getClients(.)
+			// numCompte != -1 => recherche sur numCompte
+			// numCompte == -1 et debutNom non vide => recherche nom/prenom
+			// numCompte == -1 et debutNom vide => recherche tous les clients
+// 
+			// Access_BD_Client ac = new Access_BD_Client();
+			// listeCli = ac.getClients(this.dailyBankState.getEmployeActuel().idAg, _numCompte, _debutNom, _debutPrenom);
+// 
+		// } catch (DatabaseConnexionException e) {
+			// ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, e);
+			// ed.doExceptionDialog();
+			// this.cmStage.close();
+			// listeCli = new ArrayList<>();
+		// } catch (ApplicationException ae) {
+			// ExceptionDialog ed = new ExceptionDialog(this.cmStage, this.dailyBankState, ae);
+			// ed.doExceptionDialog();
+			// listeCli = new ArrayList<>();
+		// }
+		// return listeCli;
+	// }
 }
