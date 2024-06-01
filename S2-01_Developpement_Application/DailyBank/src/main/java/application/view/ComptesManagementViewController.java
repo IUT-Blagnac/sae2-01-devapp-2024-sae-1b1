@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import application.DailyBankState;
 import application.control.ComptesManagement;
+import application.control.PrelevementsManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -83,6 +84,8 @@ public class ComptesManagementViewController {
 	private Button btnModifierCompte;
 	@FXML
 	private Button btnSupprCompte;
+	@FXML
+	private Button btnVoirPrelev;
 
 	@FXML
 	private void doCancel() {
@@ -98,6 +101,17 @@ public class ComptesManagementViewController {
 		}
 		this.loadList();
 		this.validateComponentState();
+	}
+
+	@FXML
+	private void doVoirPrelevements() {
+		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+		if (selectedIndice >= 0) {
+			CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+			PrelevementsManagement p = new PrelevementsManagement(this.containingStage, this.dailyBankState,
+					this.clientDesComptes, cpt);
+			p.doPrelevementManagementDialog();
+		}
 	}
 
 	@FXML
@@ -146,10 +160,12 @@ public class ComptesManagementViewController {
 			this.btnModifierCompte.setDisable(false);
 			this.btnSupprCompte.setDisable(false);
 			this.btnVoirOpes.setDisable(false);
+			this.btnVoirPrelev.setDisable(false);
 		} else {
 			this.btnModifierCompte.setDisable(true);
 			this.btnSupprCompte.setDisable(true);
 			this.btnVoirOpes.setDisable(true);
+			this.btnVoirPrelev.setDisable(true);
 		}
 	}
 

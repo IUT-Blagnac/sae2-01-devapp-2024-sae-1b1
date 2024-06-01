@@ -162,7 +162,7 @@ image:..\media\Tutoriels_utilisation\CreerCompte\4-CompteCree.png[CreaCpt-Etape4
 [[Operations]]
 === 3.7 Consulter les opérations d'un compte B.Y
 
-Afin de consulter les opérations d'un compte, vous devez être sur la fenêtre de gestion des comptes d'un client (cf <<GestionComptes, Gestion Comptes Client>>).
+Afin de consulter les opérations d'un compte, vous devez préalablement être sur la fenêtre de gestion des comptes d'un client (cf <<GestionComptes, Gestion Comptes Client>>).
 
 Sélectionnez le compte pour lequel vous souhaitez consulter les opérations parmi la liste de comptes affichée, puis cliquez sur le bouton "Voir opérations" en haut à droite de la fenêtre.
 
@@ -254,7 +254,7 @@ Une fois les modifications effectuer, pour valider ces dernières vous devez cli
 image:../media/Tutoriels_utilisation/ModifierEmploye/Etape5.png[]
 
 
-=== 3.11 Supprimer un employe F.C
+=== 3.12 Supprimer un employe F.C
 
 Pour ouvrir supprimer un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir l'employé que vous souhaiter supprimer.
 
@@ -262,8 +262,18 @@ Pour ouvrir supprimer un employé, vous devez être préalablement connecter en 
 
 Après avoir sélectionner l'employé à supprimer vous devez cliquer sur le bouton de confirmation, un avertissement apparaitra afin de confirmer l'action. 
 
+=== 3.13 Afficher les prélèvements automatiques d'un compte B.Y
 
+Pour afficher les prélèvements automatiques d'un compte vous devez préalablement être sur le menu de gestion des comptes d'un client (cf. <<GestionComptes, Gestion Comptes Client>>), dans le cadre de ce tutoriel nous utiliserons le premier compte du client Gabin.
 
+Sélectionnez le compte pour lequel vous souhaitez consulter les prélèvements automatiques en place en cliquant dessus (parmi les différents comptes listés).
+Suite à cela cliquez sur le bouton "Voir Prélèvements".
+
+image:../media/Tutoriels_utilisation/AfficherPrelev/1-Select-Compte.png[Etape1]
+
+Une fois cela fait si le compte choisi a des prélevements automatiques qui sont établis alors ils s'afficheront, sinon la liste sera vide. Dans notre cas le premier compte du client Gabin a 5 prélèvements automatiques établis.
+
+image:../media/Tutoriels_utilisation/AfficherPrelev/2-Resultat.png[Etape2]
 
 
 == 4 - Résultats

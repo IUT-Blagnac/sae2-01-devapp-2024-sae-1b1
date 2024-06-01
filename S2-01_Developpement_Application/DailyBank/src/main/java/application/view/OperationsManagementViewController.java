@@ -23,9 +23,9 @@ import model.data.Operation;
 
 public class OperationsManagementViewController {
 
+
 	// Etat courant de l'application
 	private DailyBankState dailyBankState;
-
 	// Contrôleur de Dialogue associé à OperationsManagementController
 	private OperationsManagement omDialogController;
 

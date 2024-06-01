@@ -104,6 +104,27 @@ Ordinateur sous Windows ou OS équivalent avec l'utilisation de JAVA.
 
 |====
 
+=== 3.2 Fonctionnalités Chef d'agence V1
+
+=== 3.3 Fonctionnalités Guichetier V2
+
+==== 3.3.1 Afficher les prélèvements automatiques B.Y
+|====
+
+|Cas de test 4+|Test-All_G_CB_P-01
+|Titre 4+|Afficher les prélèvements automatiques d'un compte
+|Objectif 4+| Vérifier qu'il est possible d'afficher les prélèvements automatiques d'un compte
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|All_G_CB_P-1 ^|Cliquer sur le bouton "Voir prélèvements". ^|La fenêtre de gestion des prélèvements s'ouvre et affiche les prélèvements établis sur ce compte. ^|Action All_G_CB_A-1 est terminée et un compte est sélectionné parmi la liste en cliquant dessus. ^|OK
+
+5+|Commentaire : Si ce compte n'a aucun prélèvement automatique de défini, la liste affichée sera vide.
+
+|====
+
+==== 3.3.2 Ajouter un prélèvement automatique B.Y
 
 == IV. Exemples de Cas de test (ne pas mettre vos tests ici) :
 === 1. Fonctionnalités des guichetiers :
