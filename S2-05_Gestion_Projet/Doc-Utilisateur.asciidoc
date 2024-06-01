@@ -4,6 +4,7 @@
 :img: ../media/
 :tuto: {img}Tutoriels_utilisation/
 :gestCpt: {tuto}GestionComptes/
+:effVir: {tuto}EffectuerVirement/
 
 = Documentation utilisateur application DailyBank
 
@@ -196,7 +197,7 @@ Une fois tous vos changement effectués vous pouvez quittez :
 image:{gestCpt}3-modifCompte.png[modifCpt3]
 
 [[Operations]]
-=== 3.7 Consulter les opérations d'un compte B.Y
+=== 3.8 Consulter les opérations d'un compte B.Y
 
 Afin de consulter les opérations d'un compte, vous devez être sur la fenêtre de gestion des comptes d'un client (cf <<GestionComptes, Gestion Comptes Client>>).
 
@@ -210,7 +211,7 @@ image:{tuto}VoirOperations\2-ResultatOperations.png[VoirOp-Etape2]
 
 [[CrediterCompte]][[DebiterCompte]]
 
-=== 3.8 Créditer/Débiter un compte B.Y
+=== 3.9 Créditer/Débiter un compte B.Y
 
 Pour créditer/débiter un compte, vous devez préalablement être sur la fenêtre des opérations d'un compte (cf <<Operations, Consulter les opérations d'un compte>>).
 
@@ -232,8 +233,59 @@ Vous retrouverez donc l'opération qui vient d'être effectuée sur la fenêtre 
 
 image:{tuto}Crediter\4-AffichageduOpEffectue.png[CreditCpt-Etape4]
 
+[[EffectuerVirement]]
+=== 3.10 Effectuer un Virement
+
+Dans le but d'effectuer un virement entre comptes bancaires nous devons d'abord ouvrir la fenêtre `Gestion des opérations`(cf <<Operations>>) du compte du compte depuis lequel le virement doit être fait.
+
+Une fois sur la page il suffira d'appuyer sur le bouton `Virement depuis ce compte`.
+
+image:{effVir}1-virement.png[effVir1]
+
+Vous accéderait alors a la fenêtre `Enregistrement d'une opération de virement`. Sur celle-ci vous devrez:
+
+* [.red]#Selectionner un compte  destinataire# (<<SelectionnerCompte, ici>>)
+* [green]#Renseigner le montant du virement# (<<RenseignerMontantVir, ici>>)
+
+image:{effvir}2-virement.png[effVir2]
+
+[[SelectionnerCompte]]
+Pour la selection du compte vers lequel effectuer le transfert, vous devez commencer par appuyer sur le bouton`Choisir`. Celui-ci ouvrira la fenêtre `Choix du destinataire du virement` similaire a la page de selection de client(cf <<GestionClient>>). 
+
+Cette fenêtre offre des options de recherche similaire à celle de gestion de clients. Ainsi vous pouvez entrer les informations concernant votre client et appuyer sur `Rechercher` afin de lancer la recherche du client.
+
+Vous obtiendrez ainsi la page ci-dessous où sont listés:
+
+* [red]#Les clients correspondants à votre recherche#
+* [green]#Leur comptes respectifs#
+
+image:{effVir}3-virement.png[effVir3]
+
+Après avoir sélectionné l'un des comptes vous pouvez appuyer sur le bouton:
+
+* [red]#`Annuler` pour quitter sans garder votre choix#
+* [green]#`Selectionner Compte` pour confirmer votre choix#
+
+image:{effVir}4-virement.png[effVir4]
+
+Ainsi une fois votre selection faite votre fenêtre `Enregistrement d'une opération de virement` devrais ressembler à celle ci-dessous avec [red]#votre compte destinataire sélectionné#.
+
+image:{effvir}5-virement.png[effVir5]
+
+[[RenseignerMontantVir]]
+Ainsi vous devez maintenant renseigner le montant du virement à effectuer. Il suffit pour cela d'entrez celui-ci dans [red]#l'encadré dédié#
+
+image:{effVir}6-virement.png[effVir6]
+
+Enfin vous pouvez maintenant appuyer sur:
+
+* [red]#`Annuler Virement` pour quitter sans effectuer de virement#
+* [green]#`Effectuer Virement` pour effectuer le virement#
+
+image:{effVir}7-virement.png[effVir7]
+
 [[CreerEmploye]]
-=== 3.9 Créer un Nouveau Employe H.W
+=== 3.11 Créer un Nouvel Employe H.W
 
 Pour créer un nouveau employé, suivez les étapes ci-dessous en tant que chef d'agence :
 
@@ -249,7 +301,7 @@ Vous verrez l'employé dans la liste :
 image:{tuto}CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 [[AfficherEmploye]]
-=== 3.10 Afficher Employe H.W
+=== 3.12 Afficher Employe H.W
 
 Pour afficher la liste des employés, suivez les étapes ci-dessous en tant que chef d'agence :
 
@@ -263,7 +315,7 @@ Comme ceci:
 image:{tuto}CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 [[ModifierEmploye]]
-=== 3.11 Modifier un employe F.C
+=== 3.13 Modifier un employe F.C
 
 Pour ouvrir modifier les informations d'un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir Employé.
 
@@ -295,7 +347,7 @@ Une fois les modifications effectuer, pour valider ces dernières vous devez cli
 image:{tuto}ModifierEmploye/Etape5.png[]
 
 [[SupprimerEmploye]]
-=== 3.11 Supprimer un employe F.C
+=== 3.14 Supprimer un employe F.C
 
 Pour ouvrir supprimer un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir l'employé que vous souhaiter supprimer.
 
