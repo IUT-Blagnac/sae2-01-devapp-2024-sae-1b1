@@ -60,7 +60,7 @@
          <bottom>
             <HBox BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnSelectionner" mnemonicParsing="false" onAction="#doSelect" prefHeight="37.0" prefWidth="217.0" text="Selectonner Compte">
+                  <Button fx:id="btnSelectionner" mnemonicParsing="false" onAction="#doSelect" prefHeight="37.0" prefWidth="217.0" text="Selectionner Compte">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" top="10.0" />
                      </HBox.margin>
