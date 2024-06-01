@@ -80,7 +80,7 @@ public class CompteEditorPaneViewController {
 		case MODIFICATION:
 			this.txtDecAutorise.setDisable(false);
 			this.txtSolde.setDisable(true);
-			this.lblMessage.setText("Informations sur le nouveau compte");
+			this.lblMessage.setText("Informations sur le compte à modifier");
 			this.lblSolde.setText("Solde");
 			this.btnCloture.setDisable(false);
 			this.btnOuvert.setDisable(false);

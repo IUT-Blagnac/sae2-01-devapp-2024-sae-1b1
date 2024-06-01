@@ -3,6 +3,7 @@
 // Variables
 :img: ../media/
 :tuto: {img}Tutoriels_utilisation/
+:gestCpt: {tuto}GestionComptes/
 
 = Documentation utilisateur application DailyBank
 
@@ -142,6 +143,7 @@ Une fois cela fait, vous vous retrouverez sur la fenêtre de gestion des comptes
 
 image:{tuto}GestionComptes\2-ResultatComptes.png[GestCpt-Etape2]
 
+[[CreerCompte]]
 === 3.6 Créer un Compte B.Y
 
 Pour créer un compte, vous devez préalablement être sur la fenêtre de gestion des comptes d'un client (cf <<GestionComptes, Gestion Comptes Client>>).
@@ -161,6 +163,35 @@ image:{tuto}CreerCompte\3-PopUpCompteAjoute.png[CreaCpt-Etape3]
 Vous retrouverez ensuite le compte créé dans la liste des comptes du client après cette action.
 
 image:{tuto}CreerCompte\4-CompteCree.png[CreaCpt-Etape4]
+
+=== 3.7 Modifier et Cloturer un compte D.T
+
+Une fois un compte créé il est bien sûr possible de vouloir modifier son découvert autorisé. Dans certains cas il est également nécessaire de cloturer le compte ou de le réouvrir. Ces trois fonctionnalités se feront depuis l'interface de modification de comptes. 
+
+Pour accéder à celle-ci il nous faudra partir de la fenêtre `Gestion des comptes` d'un client(cf <<GestionComptes, Gestion Comptes Client>>).
+
+image:{gestcpt}2-ResultatComptes.png[GestCpt]
+
+Ici après avoir sélectionné un compte vous pourrez appuyer sur le bouton `Modifier compte`.
+
+image:{gestCpt}1-modifCompte.png[modifCpt1]
+
+Après avoir cliqué vous obtiendrez la fenêtre de `Gestion d'un compte`.
+
+Celle-ci est la même fenêtre que celle permettant la création d'un compte(cf <<CreerCompte, Créer un Compte>>), on y a donc accès à toutes les informations du compte que l'on souhaite modifier, seulement les champs modifiable se limitent:
+
+
+* [red]#Au découvert authorisé#
+* [green]#La cloturation ou non de ce compte#
+
+image:{gestCpt}2-modifCompte.png[modifCpt2]
+
+Une fois tous vos changement effectués vous pouvez quittez :
+
+* [red]#Avec le bouton `Annuler` pour annuler vos changements.#
+* [green]#Avec le bouton `Modifier` pour les confirmer.#
+
+image:{gestCpt}3-modifCompte.png[modifCpt3]
 
 [[Operations]]
 === 3.7 Consulter les opérations d'un compte B.Y
