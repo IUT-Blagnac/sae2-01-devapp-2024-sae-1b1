@@ -1,6 +1,9 @@
 :toc: preamble
 :toc-title: Table des Matières
+// Variables
 :img: ../media/
+:tuto: {img}Tutoriels_utilisation/
+
 = Documentation utilisateur application DailyBank
 
 image:../media/image_univ.jpg[image,width=97,height=137]
@@ -66,15 +69,15 @@ Afin d'accéder à l'application, l'utilisateur doit se connecter. Il pourra ens
 
 Dans un premier temps, cliquez sur le bouton en bas au milieu de la fenêtre.
 
-image:..\media\Tutoriels_utilisation\Connexion\1-FenetrePrincipale.png[Con-Etape1]
+image:{tuto}Connexion/1-FenetrePrincipale.png[Con-Etape1]
 
 Suite à cela, apparaîtra une fenêtre de connexion vous demandant vos identifiants. Renseignez-les dans les champs respectifs.
 
-image:..\media\Tutoriels_utilisation\Connexion\2-Identification.png[Con-Etape2]
+image:{tuto}Connexion/2-Identification.png[Con-Etape2]
 
 Si vos identifiants sont incorrects, une erreur vous le fera savoir au moment où vous cliquerez sur le bouton "Valider". Si vos identifiants sont corrects, vous serez alors redirigé sur la Fenêtre Principale et vous pourrez visualiser les informations sur votre agence et votre compte.
 
-image:..\media\Tutoriels_utilisation\Connexion\3-ConnexionReussie.png[Con-Etape3]
+image:{tuto}Connexion\3-ConnexionReussie.png[Con-Etape3]
 
 [[GestionClient]]
 === 3.2 Fenêtre de Gestion des Clients B.Y
@@ -83,13 +86,13 @@ Pour accéder à la fenêtre de gestion des clients, vous devez être préalable
 
 Cliquez sur le deuxième menu en partant de la gauche en haut de la fenêtre "Gestion" puis sur "Clients".
 
-image:..\media\Tutoriels_utilisation\GestionClient\1-OuvrirGestClient.png[GestCli-Etape1]
+image:{tuto}GestionClient\1-OuvrirGestClient.png[GestCli-Etape1]
 
 Ensuite, une nouvelle fenêtre apparaît, c'est la fenêtre de gestion des clients. Pour le moment, aucune information n'apparaît. Pour afficher les différents clients, vous avez plusieurs options.
 
 Sur l'image ci-dessous, 4 numéros apparaissent, ils décrivent 4 façons d'afficher les clients.
 
-image:..\media\Tutoriels_utilisation\GestionClient\2-ModeRechercheClient.png[GestCli-Etape2]
+image:{tuto}GestionClient\2-ModeRechercheClient.png[GestCli-Etape2]
 
 *1 -> Numéro client*, renseignez dans ce champ le numéro du client que vous voulez rechercher.
 
@@ -101,7 +104,7 @@ image:..\media\Tutoriels_utilisation\GestionClient\2-ModeRechercheClient.png[Ges
 
 Par exemple, si vous cliquez sur le bouton "Rechercher" directement sans avoir renseigné aucun champ, tous les clients apparaîtront comme ci-dessous.
 
-image:..\media\Tutoriels_utilisation\GestionClient\3-ModeRechercherTout.png[GestCli-Etape3]
+image:{tuto}GestionClient\3-ModeRechercherTout.png[GestCli-Etape3]
 
 
 === 3.3 Créer un Nouveau Client
@@ -118,11 +121,11 @@ du client. (Champs encadrés en rouge dans l'image)
 
 Les clients correspondants seront listés et accessibles dans l'espace en dessous. (encadré en vert dans l'image)
 
-image:..\media\Tutoriels_utilisation\RechercheClient.png[ChampsRecherche]
+image:{tuto}RechercheClient.png[ChampsRecherche]
 
 Maintenant, il suffit de cliquer sur le bouton 'Modifier client' pour modifier les informations du client. L'application ouvre cette page :
 
-image:..\media\Tutoriels_utilisation\ModifClient.PNG[ModifClient]
+image:{tuto}ModifClient.PNG[ModifClient]
 
 Ici, les informations du client peuvent être directement modifiées, sauf bien sûr son id qui est unique et définitif. Après les modifications, le guichetier peut conserver celles-ci en appuyant sur 'Modifier' ou bien annuler les changements à l'aide du bouton 'Annuler'.
 
@@ -133,11 +136,11 @@ Pour ouvrir la fenêtre de gestion des comptes d'un client, vous devez être pr�
 
 Sur la fenêtre de gestion des clients, cliquez sur le client qui vous intéresse (celui dont vous voulez effectuer une action sur ses comptes) parmi la liste qui s'affiche en fonction de vos recherches de client précédentes. Puis cliquez sur le bouton "Comptes client" à droite de la fenêtre.
 
-image:..\media\Tutoriels_utilisation\GestionComptes\1-OuvrirGestionComptes.png[GestCpt-Etape1]
+image:{tuto}GestionComptes\1-OuvrirGestionComptes.png[GestCpt-Etape1]
 
 Une fois cela fait, vous vous retrouverez sur la fenêtre de gestion des comptes du client que vous avez sélectionné dans le menu précédent.
 
-image:..\media\Tutoriels_utilisation\GestionComptes\2-ResultatComptes.png[GestCpt-Etape2]
+image:{tuto}GestionComptes\2-ResultatComptes.png[GestCpt-Etape2]
 
 === 3.6 Créer un Compte B.Y
 
@@ -145,19 +148,19 @@ Pour créer un compte, vous devez préalablement être sur la fenêtre de gestio
 
 Cliquez sur le bouton en bas à droite de la fenêtre "Nouveau Compte".
 
-image:..\media\Tutoriels_utilisation\CreerCompte\1-CreerNouveauCompte.png[CreaCpt-Etape1]
+image:{tuto}CreerCompte\1-CreerNouveauCompte.png[CreaCpt-Etape1]
 
 Suite à cela, une nouvelle fenêtre s'ouvre. Remplissez les champs "Découvert Autorisé" et "Solde (premier dépôt)". Si vous ne renseignez pas ces champs, ils sont prédéfinis à 200 et 0 respectivement. Dans notre cas, nous les avons définis à 100€ de découvert autorisé et 560€ de premier dépôt. Cliquez ensuite sur le bouton "Ajouter" afin d'ajouter le compte.
 
-image:..\media\Tutoriels_utilisation\CreerCompte\2-RemplirInfos.png[CreaCpt-Etape2]
+image:{tuto}CreerCompte\2-RemplirInfos.png[CreaCpt-Etape2]
 
 Après cela, une petite fenêtre apparaîtra afin de vous confirmer l'ajout du compte avec les informations renseignées pour celui-ci.
 
-image:..\media\Tutoriels_utilisation\CreerCompte\3-PopUpCompteAjoute.png[CreaCpt-Etape3]
+image:{tuto}CreerCompte\3-PopUpCompteAjoute.png[CreaCpt-Etape3]
 
 Vous retrouverez ensuite le compte créé dans la liste des comptes du client après cette action.
 
-image:..\media\Tutoriels_utilisation\CreerCompte\4-CompteCree.png[CreaCpt-Etape4]
+image:{tuto}CreerCompte\4-CompteCree.png[CreaCpt-Etape4]
 
 [[Operations]]
 === 3.7 Consulter les opérations d'un compte B.Y
@@ -166,11 +169,11 @@ Afin de consulter les opérations d'un compte, vous devez être sur la fenêtre 
 
 Sélectionnez le compte pour lequel vous souhaitez consulter les opérations parmi la liste de comptes affichée, puis cliquez sur le bouton "Voir opérations" en haut à droite de la fenêtre.
 
-image:..\media\Tutoriels_utilisation\VoirOperations\1-VoirOperations.png[VoirOp-Etape1]
+image:{tuto}VoirOperations\1-VoirOperations.png[VoirOp-Etape1]
 
 Suite à cela, une nouvelle fenêtre s'ouvrira affichant les opérations répertoriées pour le compte sélectionné.
 
-image:..\media\Tutoriels_utilisation\VoirOperations\2-ResultatOperations.png[VoirOp-Etape2]
+image:{tuto}VoirOperations\2-ResultatOperations.png[VoirOp-Etape2]
 
 === 3.8 Créditer/Débiter un compte B.Y
 
@@ -180,78 +183,78 @@ Cette partie vous illustrera comment créditer un compte. Pour débiter un compt
 
 Cliquez sur le bouton qui correspond à l'opération que vous souhaitez effectuer sur la droite de la fenêtre, dans notre cas "Enregistrer Crédit".
 
-image:..\media\Tutoriels_utilisation\Crediter\1-CrediterCompte.png[CreditCpt-Etape1]
+image:{tuto}Crediter\1-CrediterCompte.png[CreditCpt-Etape1]
 
 Suite à cela, une nouvelle fenêtre s'ouvre. Renseignez le montant de l'opération ainsi que le type d'opération (dans notre cas Dépôt Espèces). Si le montant renseigné n'est pas valide (montant < 0 ou pas un nombre), lorsque vous cliquerez sur le bouton "Effectuer Crédit", la couleur du champ "Montant" changera en rouge vous indiquant que la saisie est invalide. Vous devrez donc ressaisir un montant valide afin de pouvoir valider l'opération. Il en est de même pour le débit avec une particularité en plus : si vous essayez de débiter un compte d'un montant qui rendra le solde inférieur à son découvert autorisé, une erreur vous l'indiquera et le débit ne sera pas effectué tant que vous n'aurez pas changé le montant en conséquence (sauf pour débit exceptionnel par chef d'agence).
 
-image:..\media\Tutoriels_utilisation\Crediter\2-ValiderMontant.png[CreditCpt-Etape2]
+image:{tuto}Crediter\2-ValiderMontant.png[CreditCpt-Etape2]
 
 Une fois que vous avez cliqué sur le bouton "Effectuer Crédit", une petite fenêtre s'affichera vous confirmant l'opération effectuée avec les informations liées.
 
-image:..\media\Tutoriels_utilisation\Crediter\3-PopUpCreditReussi.png[CreditCpt-Etape3]
+image:{tuto}Crediter\3-PopUpCreditReussi.png[CreditCpt-Etape3]
 
 Vous retrouverez donc l'opération qui vient d'être effectuée sur la fenêtre des opérations du compte juste après.
 
-image:..\media\Tutoriels_utilisation\Crediter\4-AffichageduOpEffectue.png[CreditCpt-Etape4]
+image:{tuto}Crediter\4-AffichageduOpEffectue.png[CreditCpt-Etape4]
 
 === 3.9 Créer un Nouveau Employe H.W
 
 Pour créer un nouveau employé, suivez les étapes ci-dessous en tant que chef d'agence :
 
 Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Employé :
-image:..\media\Tutoriels_utilisation\CréerEmploye\Etape1.png[CreditCpt-Etape4]
+image:{tuto}CréerEmploye\Etape1.png[CreditCpt-Etape4]
 Une fois sur cette page, cliquez sur Nouveau employe:
-image:..\media\Tutoriels_utilisation\CréerEmploye\Etape3.png[CreditCpt-Etape4]
+image:{tuto}CréerEmploye\Etape3.png[CreditCpt-Etape4]
 Cela affichera la fenêtre suivante :
-image:..\media\Tutoriels_utilisation\CréerEmploye\Etape2..png[CreditCpt-Etape4]
+image:{tuto}CréerEmploye\Etape2..png[CreditCpt-Etape4]
 Complétez les données personnelles de l'employé, ensuite cliquez sur Ajouter:
-image:..\media\Tutoriels_utilisation\CréerEmploye\Etape4.png[CreditCpt-Etape4]
+image:{tuto}CréerEmploye\Etape4.png[CreditCpt-Etape4]
 Vous verrez l'employé dans la liste :
-image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
+image:{tuto}CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 === 3.10 Afficher Employe H.W
 
 Pour afficher la liste des employés, suivez les étapes ci-dessous en tant que chef d'agence :
 
 Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Employé :
-image:..\media\Tutoriels_utilisation\AfficherEmploye\Etape1.png[CreditCpt-Etape4]
+image:{tuto}AfficherEmploye\Etape1.png[CreditCpt-Etape4]
 Une fois sur cette page, cliquez sur Rechercher pour afficher la liste des employés :
-image:..\media\Tutoriels_utilisation\AfficherEmploye\Etape2.png[CreditCpt-Etape4]
+image:{tuto}AfficherEmploye\Etape2.png[CreditCpt-Etape4]
 Vous avez également la possibilité de rechercher un employé spécifique en entrant son nom et prénom dans les champs correspondants :
-image:..\media\Tutoriels_utilisation\AfficherEmploye\Etape3.png[CreditCpt-Etape4]
+image:{tuto}AfficherEmploye\Etape3.png[CreditCpt-Etape4]
 Comme ceci:
-image:..\media\Tutoriels_utilisation\CréerEmploye\Etape5.png[CreditCpt-Etape4]
+image:{tuto}CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
 === 3.11 Modifier un employe F.C
 
 Pour ouvrir modifier les informations d'un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir Employé.
 
 // Mettre Image
-image:../media/Tutoriels_utilisation/ModifierEmploye/Etape1.png[]
+image:{tuto}ModifierEmploye/Etape1.png[]
 
 
 Une nouvelle fenêtre affichant les employés va s'ouvrir.
 
 //Mettre image
-image:../media/Tutoriels_utilisation/ModifierEmploye/Etape2.png[]
+image:{tuto}ModifierEmploye/Etape2.png[]
 
 
 Vous devez donc selectionner un employé puis cliquer sur le bouton Modifier employé.
 
 //Mettre image
-image:../media/Tutoriels_utilisation/ModifierEmploye/Etape3.png[]
+image:{tuto}ModifierEmploye/Etape3.png[]
 
 
 Dès lors, vous allez pouvoir modifier les informations de l'employé tel que sont nom,prenom,adresse,téléphone ou encore sont e-mail.
 
 //Mettre image 
-image:../media/Tutoriels_utilisation/ModifierEmploye/Etape4.png[]
+image:{tuto}ModifierEmploye/Etape4.png[]
 
 
 Une fois les modifications effectuer, pour valider ces dernières vous devez cliquer sur le bouton Ajouter. 
 
 // Mettre image 
-image:../media/Tutoriels_utilisation/ModifierEmploye/Etape5.png[]
+image:{tuto}ModifierEmploye/Etape5.png[]
 
 
 === 3.11 Supprimer un employe F.C
