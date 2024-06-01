@@ -110,6 +110,7 @@ image:{tuto}GestionClient\3-ModeRechercherTout.png[GestCli-Etape3]
 
 === 3.3 Créer un Nouveau Client
 
+[[ModifierClient]]
 === 3.4 Modifier des Informations Client D.T
 
 Pour modifier les informations d'un client, le guichetier doit d'abord trouver le client. Cette recherche se fait par :
@@ -164,6 +165,7 @@ Vous retrouverez ensuite le compte créé dans la liste des comptes du client ap
 
 image:{tuto}CreerCompte\4-CompteCree.png[CreaCpt-Etape4]
 
+[[ModifierCompte]]
 === 3.7 Modifier et Cloturer un compte D.T
 
 Une fois un compte créé il est bien sûr possible de vouloir modifier son découvert autorisé. Dans certains cas il est également nécessaire de cloturer le compte ou de le réouvrir. Ces trois fonctionnalités se feront depuis l'interface de modification de comptes. 
@@ -181,7 +183,7 @@ Après avoir cliqué vous obtiendrez la fenêtre de `Gestion d'un compte`.
 Celle-ci est la même fenêtre que celle permettant la création d'un compte(cf <<CreerCompte, Créer un Compte>>), on y a donc accès à toutes les informations du compte que l'on souhaite modifier, seulement les champs modifiable se limitent:
 
 
-* [red]#Au découvert authorisé#
+* [red]#Au découvert autorisé#
 * [green]#La cloturation ou non de ce compte#
 
 image:{gestCpt}2-modifCompte.png[modifCpt2]
@@ -206,6 +208,8 @@ Suite à cela, une nouvelle fenêtre s'ouvrira affichant les opérations répert
 
 image:{tuto}VoirOperations\2-ResultatOperations.png[VoirOp-Etape2]
 
+[[CrediterCompte]][[DebiterCompte]]
+
 === 3.8 Créditer/Débiter un compte B.Y
 
 Pour créditer/débiter un compte, vous devez préalablement être sur la fenêtre des opérations d'un compte (cf <<Operations, Consulter les opérations d'un compte>>).
@@ -228,6 +232,7 @@ Vous retrouverez donc l'opération qui vient d'être effectuée sur la fenêtre 
 
 image:{tuto}Crediter\4-AffichageduOpEffectue.png[CreditCpt-Etape4]
 
+[[CreerEmploye]]
 === 3.9 Créer un Nouveau Employe H.W
 
 Pour créer un nouveau employé, suivez les étapes ci-dessous en tant que chef d'agence :
@@ -243,6 +248,7 @@ image:{tuto}CréerEmploye\Etape4.png[CreditCpt-Etape4]
 Vous verrez l'employé dans la liste :
 image:{tuto}CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
+[[AfficherEmploye]]
 === 3.10 Afficher Employe H.W
 
 Pour afficher la liste des employés, suivez les étapes ci-dessous en tant que chef d'agence :
@@ -256,6 +262,7 @@ image:{tuto}AfficherEmploye\Etape3.png[CreditCpt-Etape4]
 Comme ceci:
 image:{tuto}CréerEmploye\Etape5.png[CreditCpt-Etape4]
 
+[[ModifierEmploye]]
 === 3.11 Modifier un employe F.C
 
 Pour ouvrir modifier les informations d'un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir Employé.
@@ -287,7 +294,7 @@ Une fois les modifications effectuer, pour valider ces dernières vous devez cli
 // Mettre image 
 image:{tuto}ModifierEmploye/Etape5.png[]
 
-
+[[SupprimerEmploye]]
 === 3.11 Supprimer un employe F.C
 
 Pour ouvrir supprimer un employé, vous devez être préalablement connecter en tant que chef d'agence  (cf. <<connexion, Connexion>>). Ensuite, vous devez cliquez sur le bouton Gestion et choisir l'employé que vous souhaiter supprimer.
