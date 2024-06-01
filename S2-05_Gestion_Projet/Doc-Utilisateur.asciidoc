@@ -1,10 +1,12 @@
 :toc: preamble
 :toc-title: Table des Matières
+:toclevels: 4
 // Variables
 :img: ../media/
 :tuto: {img}Tutoriels_utilisation/
 :gestCpt: {tuto}GestionComptes/
 :effVir: {tuto}EffectuerVirement/
+:gestCli: {tuto}GestionClient/
 
 = Documentation utilisateur application DailyBank
 
@@ -48,9 +50,8 @@ L'application DailyBank répond au besoin croissant de compétitivité des agenc
 
 Ainsi, fin avril 2024, l'agence DailyBank a contacté notre équipe pour moderniser leur application bancaire déjà existante, aujourd'hui bancale et incomplète. L'objectif principal du projet était donc de rectifier les lacunes actuelles de l'application, d'assurer la sécurité des données stockées et de permettre ainsi de redynamiser DailyBank, avec cet outil aujourd'hui essentiel à toute agence moderne.
 
-=== 1.2 – Spécifications 
-
-=== 1.3 – Prérequis
+[[Prerequis]]
+=== 1.2 – Prérequis
 
 Notre nouvelle version de l'application DailyBank, tout comme son prédécesseur, est développée en Java. Aussi, l'application nécessite link:https://www.java.com/fr/download/help/windows_manual_download.html[l'installation préalable] du link:https://www.java.com/en/download/manual.jsp[Java Runtime Environment]. Une fois link:https://www.java.com/en/download/manual.jsp[le lien] cliqué, vous serez redirigé vers la page de téléchargement officiel de Java. Il ne vous reste plus qu'à sélectionner le lien de téléchargement correspondant à votre système d'exploitation.
 
@@ -58,9 +59,18 @@ L'ordinateur vous imposera ici de sélectionner l'emplacement de l'installeur Ja
 
 == 2 - Installation et Utilisation
 
-=== 2.1 – Installation classique 
+=== 2.1 - Installation
 
-=== 2.2 – Installation à partir des sources 
+L'application sera déployer par défault sur tous les ordinateurs des employés de l'application DailyBank. Elle peut-être trouvée sous forme d'un fichier `.jar`. Si vous ne trouvez pas l'application vous pouvez utiliser la fonctionnalité de recherche des systèmes Windows.
+
+Si l'application n'est pas installée sur votre poste, vous pouvez contacter le service informatique pour leur demander d'effectuer l'installation. Ils vous créerons une copie du `.jar` sur votre poste. 
+
+Si l'entreprise ne dispose plus de service informatique que vous pouvez contacter, vous pouvez demander une copie de l'application à un supérieur. Si un subordonné vous demande une copie de l'application dans ce cadre, évitez l'envoie par mail et ne laissez pas de copie physique pour éviter des risques de sécurités.
+
+=== 2.2 - Lancement
+
+Une fois le JRE installé (cf <<Prerequis>>) et le jar obtenu, l'application peut simplement être lancée comme un exécutable. L'application peut aussi être démarrée depuis l'invite de commande en utilisant la commande `java -jar DailyBank.jar`.
+
 
 == 3 - Fonctionnement
 
@@ -109,7 +119,17 @@ Par exemple, si vous cliquez sur le bouton "Rechercher" directement sans avoir r
 image:{tuto}GestionClient\3-ModeRechercherTout.png[GestCli-Etape3]
 
 
-=== 3.3 Créer un Nouveau Client
+=== 3.3 Créer un Nouveau Client DT
+
+Afin de créer un nouveau profil client vous devez tout d'abord être sur la fenêtre `Gestion des clients`(cf <<GestionClient>>).
+
+image:{gestcli}1-CreerClient.png[CreerCli1]
+
+Sur cette fenêtre se trouve le bouton `Nouveau client`. Une fois celui-ci pressé s'ouvre la fenêtre `Gestion d'un client`.
+
+image:{gestCli}2-CreerClient.png[CreerCli2]
+
+
 
 [[ModifierClient]]
 === 3.4 Modifier des Informations Client D.T
