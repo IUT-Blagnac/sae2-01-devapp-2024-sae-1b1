@@ -8,8 +8,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 import model.orm.LogToDatabase;
 import model.orm.exception.DatabaseConnexionException;
+
 
 /**
  * Classe de controleur de Dialogue de la fenêtre principale.
@@ -32,6 +34,7 @@ public class DailyBankMainFrame extends Application {
 
 		this.dbmfStage = primaryStage;
 
+		// dbmfStage.getIcons().add(new Image(DailyBankMainFrame.class.getResourceAsStream("icon.jpg")));
 		try {
 
 			// Création de l'état courant de l'application
