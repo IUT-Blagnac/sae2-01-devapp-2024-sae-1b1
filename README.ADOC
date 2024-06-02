@@ -28,7 +28,7 @@ Les différentes responsabilités des autres membres à définir plus tard.
 |2    |Chef d’Agence     | Emprunt | Simuler assurance|| | | D
 |2    |Guichetier     | Compte | Relevé PDF|| | | 
 |2    |Guichetier     | CRUD Prélèvement | C|D| | | 
-|2    |Guichetier     | CRUD Prélèvement | R|D| | | 
+|2    |Guichetier     | CRUD Prélèvement | R|F| | | 
 |2    |Guichetier     | CRUD Prélèvement | U|| | | 
 |2    |Guichetier     | CRUD Prélèvement | D|| | | 
 |2    |Batch     | Prélèvements automatiques | || | | 
