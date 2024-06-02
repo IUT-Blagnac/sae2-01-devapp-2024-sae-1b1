@@ -36,11 +36,110 @@ A destination l'entreprise DailyBank
 
 == 1 L'application DailyBank
 
+=== 1.1 Contexte
+
 L'application DailyBank répond au besoin croissant de compétitivité des agences bancaires. En effet, de nos jours, les banques se numérisent de plus en plus et, afin de rester attrayantes auprès de jeunes consommateurs, les banques traditionnelles se doivent de se doter d'une application mobile pratique, esthétique et ergonomique. L’entreprise DailyBank, comme beaucoup d'autres, doit restructurer son réseau pour s'intégrer dans une stratégie de différenciation.
 
 Ainsi, fin avril 2024, l'agence DailyBank a contacté notre équipe pour moderniser leur application bancaire déjà existante, devenue obsolète. L'objectif principal du projet est de rectifier les lacunes actuelles de l'application, d'assurer la sécurité des données stockées et de redynamiser DailyBank avec cet outil, aujourd'hui essentiel à toute agence moderne. Il nous faut donc développer plusieurs fonctionnalités pour répondre a ce besoin croissant de modernité.
 
+=== 1.2 UseCase global
+
+L'application DailyBank permet de gérer une agence bancaire. Elle dispose donc de différents profils utilisateurs et de différents cas d'utilisation.
+
+=== 1.3 Diagramme de Classe des données
+
+
+
 == 2 Architecture
+
+=== 2.1 Architecture Générale
+
+L’application sera déployée sur toutes les machines des employés (guichetiers et chefs d’agences) dans toutes les agences. L’application utilise Java 1.8, JavaFX pour l’interface et se connecte à une base de données Oracle.
+
+=== 2.2 Ressources externes
+
+Le fichier `.jar` permet l’exécution par l’utilisateur de l’application. Réferrez-vous à la documentation utilisateur pour connaître les différentes fonctionnalités du point de vue de l’utilisateur. Une base de données Oracle est utilisée par cette application, la connexion est établie dans la classe LogToDatabase.java, package "model.orm".
+
+L'application utilise le framework javafx toute modification de celle-ci requiert l'acquisition préalable de ce dernier. 
+
+=== 2.3 Structure initiale de l'application
+
+==== 2.3.1. Packages
+
+Les packages : dans `src/main/java`
+
+* `application`
+
+** DailyBank : `main()` de départ
+* `application.control`
+
+** Contrôleurs de dialogue et accès aux données : gestion des fonctions
+de l’application. Deux rôles majeurs :
+
+*** Réalise les actions concrètes : accès BD, faire un calcul complexe,
+générer un fichier, …​
+*** Ouvre les autres fenêtres nécessaires : gestion du dialogue.
+* `application.view`
+
+** Contrôleurs associés aux vues fxml.
+
+*** Gestion de la vue affichée : contrôle des saisies réalisées,
+messages d’erreurs pour les contrôles de surface, appel du contrôleur de
+dialogue pour réaliser les actions concrètes.
+* `application.tools`
+
+** Utilitaires pour `application.view` et `application.control`
+* `model.data`
+
+** Classes java mappant les table de la BD. Une table ⇒ 1 classe. On
+peut en ajouter (classes pour jointures, …​)
+* `model.orm`
+
+** Classes d’accès physiques à la BD. Une table ⇒ 1 classe offrant
+différentes méthodes pour accéder à la table : select, insert, delete,
+update, appel de procédure stockée (elles sont données). On peut en
+ajouter.
+* `model.exception`
+
+** Classes des exceptions spécifiques d’accès à la BD, levées par les
+classes de `model.orm`
+
+Les views fxml : dans `src/main/resources`.
+
+* `application.view`
+
+** Vues de l’application : fichiers fxml
+** Fichier css
+
+[[_et_mvc]]
+==== 2.3.2. Modèle MVC
+
+Si on prend le modèle MVC pour l’application entière, on a :
+
+* Modèle :
+
+** `model.orm` : le "vrai" modèle : "contient" les données gérées dans
+l’application, via une BD Oracle.
+** `model.data` : classes nécessaires pour transporter les données
+* Vue :
+
+** `application.view` : toutes les parties visibles de l’utilisateur,
+sans accès aux données, sans calculs/action concrète, sans accès les
+unes aux autres
+* Contrôleur :
+
+** `application.control` : classes de contrôle du "déroulement"
+
+*** Routage entre fenêtres
+*** Accès aux données lorsque de besoin + calculs + accès fichiers + …​
+
+Le reste est juste de l’organisation de code :
+
+* `model.exception` : pour ne pas mélanger classes de code et classes
+d’exception
+* `application.tools` : pour isoler des classes utilisées à plusieurs
+endroits et qui sont utilitaires par rapport aux objectifs de
+l’application.
 
 == 3 Fonctionnalités
 

@@ -254,7 +254,7 @@ Vous retrouverez donc l'opération qui vient d'être effectuée sur la fenêtre 
 image:{tuto}Crediter\4-AffichageduOpEffectue.png[CreditCpt-Etape4]
 
 [[EffectuerVirement]]
-=== 3.10 Effectuer un Virement
+=== 3.10 Effectuer un Virement D.T
 
 Dans le but d'effectuer un virement entre comptes bancaires nous devons d'abord ouvrir la fenêtre `Gestion des opérations`(cf <<Operations>>) du compte du compte depuis lequel le virement doit être fait.
 
