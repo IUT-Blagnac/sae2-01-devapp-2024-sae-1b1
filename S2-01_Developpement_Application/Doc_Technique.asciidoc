@@ -278,6 +278,8 @@ image:{diagClass}CreerCompte.png[DCCreerCompte]
 
 La classe utilisée pour inserer un compte sur la base de données est la classe `CompteCourant`.
 
+Répartition des classes utilisées dans les packages :
+
 * application.control :  
 ** `ComptesManagement`
 ** `CompteEditorPane`

@@ -61,11 +61,11 @@ L'ordinateur vous imposera ici de sélectionner l'emplacement de l'installeur Ja
 
 === 2.1 - Installation
 
-L'application sera déployer par défault sur tous les ordinateurs des employés de l'application DailyBank. Elle peut-être trouvée sous forme d'un fichier `.jar`. Si vous ne trouvez pas l'application vous pouvez utiliser la fonctionnalité de recherche des systèmes Windows.
+L'application sera déployée par défaut sur tous les ordinateurs des employés de l'application DailyBank. Elle peut être trouvée sous forme d'un fichier `.jar`. Si vous ne trouvez pas l'application, vous pouvez utiliser la fonctionnalité de recherche des systèmes Windows.
 
-Si l'application n'est pas installée sur votre poste, vous pouvez contacter le service informatique pour leur demander d'effectuer l'installation. Ils vous créerons une copie du `.jar` sur votre poste. 
+Si l'application n'est pas installée sur votre poste, vous pouvez contacter le service informatique pour leur demander d'effectuer l'installation. Ils vous créeront une copie du `.jar` sur votre poste.
 
-Si l'entreprise ne dispose plus de service informatique que vous pouvez contacter, vous pouvez demander une copie de l'application à un supérieur. Si un subordonné vous demande une copie de l'application dans ce cadre, évitez l'envoie par mail et ne laissez pas de copie physique pour éviter des risques de sécurités.
+Si l'entreprise ne dispose plus de service informatique que vous pouvez contacter, vous pouvez demander une copie de l'application à un supérieur. Si un subordonné vous demande une copie de l'application dans ce cadre, évitez l'envoi par mail et ne laissez pas de copie physique pour éviter des risques de sécurité.
 
 === 2.2 - Lancement
 
