@@ -31,7 +31,7 @@ Les différentes responsabilités des autres membres à définir plus tard.
 |2    |Guichetier     | CRUD Prélèvement | R|F| | | 
 |2    |Guichetier     | CRUD Prélèvement | U|| | | 
 |2    |Guichetier     | CRUD Prélèvement | D|| | | 
-|2    |Batch     | Prélèvements automatiques | || | | 
+|2    |Batch     | Prélèvements automatiques |D || | | 
 |2    |Batch     | Reléves mensuels | || | | 
 
 |=======================
