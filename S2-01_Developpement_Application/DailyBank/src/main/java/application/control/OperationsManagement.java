@@ -23,7 +23,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Pair;
 import model.data.Client;
 import model.data.CompteCourant;
 import model.data.Operation;
@@ -32,12 +31,7 @@ import model.orm.Access_BD_CompteCourant;
 import model.orm.Access_BD_Operation;
 import model.orm.LogToDatabase;
 import model.orm.exception.ApplicationException;
-import model.orm.exception.DataAccessException;
 import model.orm.exception.DatabaseConnexionException;
-import model.orm.exception.ManagementRuleViolation;
-import model.orm.exception.Order;
-import model.orm.exception.RowNotFoundOrTooManyRowsException;
-import model.orm.exception.Table;
 
 public class OperationsManagement {
 
@@ -103,136 +97,150 @@ public class OperationsManagement {
 		}
 		return op;
 	}
-	
 
-/**
- * Enregistre une opération de crédit sur le compte courant concerné.
- * 
- * @return L'opération de crédit enregistrée, ou null si une erreur s'est produite.
- */
-public Operation enregistrerCredit() {
 
-    // Crée et affiche une boîte de dialogue pour saisir les détails de l'opération de crédit
-    OperationEditorPane oep = new OperationEditorPane(this.omStage, this.dailyBankState);
-    Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.CREDIT);
+	/**
+	 * Enregistre une opération de crédit sur le compte courant concerné.
+	 * <p>
+	 * Cette méthode crée et affiche une boîte de dialogue pour saisir les détails de l'opération de crédit.
+	 * Si l'opération de crédit est validée, elle est enregistrée dans la base de données et le solde du compte est mis à jour.
+	 * En cas d'erreur lors de l'enregistrement, une alerte est affichée.
+	 * </p>
+	 *
+	 * @return L'opération de crédit enregistrée, ou null si une erreur s'est produite.
+	 *
+	 * @see AlertUtilities#showAlert
+	 * @see ExceptionDialog#doExceptionDialog
+	 * @see LogToDatabase#getConnexion
+	 * @see Access_BD_Client#getClient
+	 * @see OperationEditorPane#doOperationEditorDialog
+	 *
+	 * @author BOULOUIHA GNAOUI Yassir
+	 */
+	public Operation enregistrerCredit() {
 
-    if (op != null) {
-        Connection con = null;
-        Statement s = null;
-        ResultSet result = null;
-        PreparedStatement pst = null;
-        try {
-            // Initialisation de l'id (id de la bd) de la nouvelle opération à -1 pour gérer les erreurs 
-            int newIdOp = -1;
+		// Crée et affiche une boîte de dialogue pour saisir les détails de l'opération de crédit
+		OperationEditorPane oep = new OperationEditorPane(this.omStage, this.dailyBankState);
+		Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.CREDIT);
 
-            // Connection à la base de données
-            con = LogToDatabase.getConnexion();
-            con.setAutoCommit(false); // Gestion manuelle des transactions
+		if (op != null) {
+			Connection con = null;
+			Statement s = null;
+			ResultSet result = null;
+			PreparedStatement pst = null;
+			try {
+				// Initialisation de l'id (id de la bd) de la nouvelle opération à -1 pour gérer les erreurs
+				int newIdOp = -1;
 
-            // Création du statement pour exécuter les requêtes
-            s = con.createStatement();
+				// Connection à la base de données
+				con = LogToDatabase.getConnexion();
+				con.setAutoCommit(false); // Gestion manuelle des transactions
 
-            // Récupération d'un numéro d'opération qui peut être attribué à une nouvelle opération
-            result = s.executeQuery("SELECT MAX(idoperation) + 1 AS NOUV_ID_OP FROM Operation");
+				// Création du statement pour exécuter les requêtes
+				s = con.createStatement();
 
-            // Vérifier que le ResultSet contient des données et placer le curseur sur la donnée présente 
-            if (result.next()) {
-                newIdOp = result.getInt("NOUV_ID_OP");
-            } else {
-                AlertUtilities.showAlert(omStage, "Erreur Base de données", 
-                    "Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
-                    "Contactez l'administrateur de la base de données\nErreur : Données dans COMPTECOURANT inexistantes", 
-                    AlertType.ERROR);
-            }
+				// Récupération d'un numéro d'opération qui peut être attribué à une nouvelle opération
+				result = s.executeQuery("SELECT MAX(idoperation) + 1 AS NOUV_ID_OP FROM Operation");
 
-            // Construction de la requête d'ajout de l'opération sur la bd
-            if (newIdOp != -1) {
+				// Vérifier que le ResultSet contient des données et placer le curseur sur la donnée présente
+				if (result.next()) {
+					newIdOp = result.getInt("NOUV_ID_OP");
+				} else {
+					AlertUtilities.showAlert(omStage, "Erreur Base de données",
+							"Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
+							"Contactez l'administrateur de la base de données\nErreur : Données dans COMPTECOURANT inexistantes",
+							AlertType.ERROR);
+				}
 
-                String query = "INSERT INTO OPERATION (IDOPERATION, MONTANT, DATEVALEUR, IDNUMCOMPTE, IDTYPEOP) VALUES (?, ?, ?, ?, ?)";
-                pst = con.prepareStatement(query);
+				// Construction de la requête d'ajout de l'opération sur la bd
+				if (newIdOp != -1) {
 
-                // Calculer la date d'aujourd'hui + 2 jours (date effective de l'opération à renseigner sur la bd)
-                LocalDate todayPlusTwo = LocalDate.now().plusDays(2);
-                Date sqlDate = Date.valueOf(todayPlusTwo);
+					String query = "INSERT INTO OPERATION (IDOPERATION, MONTANT, DATEVALEUR, IDNUMCOMPTE, IDTYPEOP) VALUES (?, ?, ?, ?, ?)";
+					pst = con.prepareStatement(query);
 
-                pst.setInt(1, newIdOp);
-                pst.setDouble(2, op.montant);
-                pst.setDate(3, sqlDate); // insertion de la date d'aujourd'hui (+2 jours)
-                pst.setInt(4, this.compteConcerne.idNumCompte);
-                pst.setString(5, op.idTypeOp);
+					// Calculer la date d'aujourd'hui + 2 jours (date effective de l'opération à renseigner sur la bd)
+					LocalDate todayPlusTwo = LocalDate.now().plusDays(2);
+					Date sqlDate = Date.valueOf(todayPlusTwo);
 
-                // Ajout de l'opération sur la bd
-                if (pst.executeUpdate() > 0) {
-                    // Mise à jour du solde du compte localement
-                    this.compteConcerne.solde += op.montant;
+					pst.setInt(1, newIdOp);
+					pst.setDouble(2, op.montant);
+					pst.setDate(3, sqlDate); // insertion de la date d'aujourd'hui (+2 jours)
+					pst.setInt(4, this.compteConcerne.idNumCompte);
+					pst.setString(5, op.idTypeOp);
 
-                    // Modification du solde du compte sur la bd 
-                    query = "UPDATE COMPTECOURANT SET solde = ? WHERE idnumcompte = ?";
+					// Ajout de l'opération sur la bd
+					if (pst.executeUpdate() > 0) {
+						// Mise à jour du solde du compte localement
+						this.compteConcerne.solde += op.montant;
 
-                    pst = con.prepareStatement(query);
-                    pst.setDouble(1, this.compteConcerne.solde);
-                    pst.setInt(2, this.compteConcerne.idNumCompte);
+						// Modification du solde du compte sur la bd
+						query = "UPDATE COMPTECOURANT SET solde = ? WHERE idnumcompte = ?";
 
-                    if (pst.executeUpdate() > 0) {
-                        con.commit();
-                        Access_BD_Client accesCl = new Access_BD_Client();
-                        AlertUtilities.showAlert(omStage, "Opération de Crédit", "Le compte a bien été crédité", 
-                            "Le compte numéro " + this.compteConcerne.idNumCompte  
-                            + " de " + accesCl.getClient(this.compteConcerne.idNumCli).nom + " " 
-                            + accesCl.getClient(this.compteConcerne.idNumCli).prenom + " a bien été crédité de " 
-                            + op.montant + "€", AlertType.INFORMATION);
-                    }
+						pst = con.prepareStatement(query);
+						pst.setDouble(1, this.compteConcerne.solde);
+						pst.setInt(2, this.compteConcerne.idNumCompte);
 
-                } else {
-                    AlertUtilities.showAlert(omStage, "Erreur Base de données", 
-                        "Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
-                        "Contactez l'administrateur de la base de données\nErreur : l'exécution de la requête d'insertion a échoué", 
-                        AlertType.ERROR);
-                    con.rollback();
-                }
-            }
+						if (pst.executeUpdate() > 0) {
+							con.commit();
+							Access_BD_Client accesCl = new Access_BD_Client();
+							AlertUtilities.showAlert(omStage, "Opération de Crédit", "Le compte a bien été crédité",
+									"Le compte numéro " + this.compteConcerne.idNumCompte
+											+ " de " + accesCl.getClient(this.compteConcerne.idNumCli).nom + " "
+											+ accesCl.getClient(this.compteConcerne.idNumCli).prenom + " a bien été crédité de "
+											+ op.montant + "€", AlertType.INFORMATION);
+						}
 
-        } catch (DatabaseConnexionException e) {
-            ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, e);
-            ed.doExceptionDialog();
-            this.omStage.close();
-            op = null;
-        } catch (ApplicationException ae) {
-            ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, ae);
-            ed.doExceptionDialog();
-            op = null;
-        } catch (SQLException se) {
-            AlertUtilities.showAlert(omStage, "Erreur Base de données", 
-                "Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
-                "Contactez l'administrateur de la base de données\nErreur : " + se.toString(), 
-                AlertType.ERROR);
-            if (con != null) {
-                try {
-                    con.rollback();
-                } catch (SQLException se2) {
-                    AlertUtilities.showAlert(omStage, "Erreur Base de données", 
-                        "Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
-                        "Contactez l'administrateur de la base de données\nErreur : Impossibilité de rollback suite à une exception SQL\n" 
-                        + se2.toString(), AlertType.ERROR);
-                }
-            }
-        } finally {
-            // Fermer les ressources
-            try {
-                if (result != null) result.close();
-                if (pst != null) pst.close();
-                if (s != null) s.close();
-                if (con != null) con.close();
-            } catch (SQLException se) {
-                AlertUtilities.showAlert(omStage, "Erreur Base de données", 
-                    "Une erreur concernant la base de données est survenue\nL'opération a été enregistrée",
-                    "Contactez l'administrateur de la base de données\nErreur : Exception lors de la fermeture des ressources bd après utilisation\n" 
-                    + se.toString(), AlertType.ERROR);
-            }
-        }
-    }
-    return op;
-}
+					} else {
+						AlertUtilities.showAlert(omStage, "Erreur Base de données",
+								"Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
+								"Contactez l'administrateur de la base de données\nErreur : l'exécution de la requête d'insertion a échoué",
+								AlertType.ERROR);
+						con.rollback();
+					}
+				}
+
+			} catch (DatabaseConnexionException e) {
+				ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, e);
+				ed.doExceptionDialog();
+				this.omStage.close();
+				op = null;
+			} catch (ApplicationException ae) {
+				ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, ae);
+				ed.doExceptionDialog();
+				op = null;
+			} catch (SQLException se) {
+				AlertUtilities.showAlert(omStage, "Erreur Base de données",
+						"Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
+						"Contactez l'administrateur de la base de données\nErreur : " + se.toString(),
+						AlertType.ERROR);
+				if (con != null) {
+					try {
+						con.rollback();
+					} catch (SQLException se2) {
+						AlertUtilities.showAlert(omStage, "Erreur Base de données",
+								"Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
+								"Contactez l'administrateur de la base de données\nErreur : Impossibilité de rollback suite à une exception SQL\n"
+										+ se2.toString(), AlertType.ERROR);
+					}
+				}
+			} finally {
+				// Fermer les ressources
+				try {
+					if (result != null) result.close();
+					if (pst != null) pst.close();
+					if (s != null) s.close();
+					if (con != null) con.close();
+				} catch (SQLException se) {
+					AlertUtilities.showAlert(omStage, "Erreur Base de données",
+							"Une erreur concernant la base de données est survenue\nL'opération a été enregistrée",
+							"Contactez l'administrateur de la base de données\nErreur : Exception lors de la fermeture des ressources bd après utilisation\n"
+									+ se.toString(), AlertType.ERROR);
+				}
+			}
+		}
+		return op;
+	}
+
 
 
 	public Operation enregistrerVirement() {

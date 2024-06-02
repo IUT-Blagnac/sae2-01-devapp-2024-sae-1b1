@@ -87,6 +87,16 @@ public class OperationsManagementViewController {
 		this.containingStage.close();
 	}
 
+	/**
+	 * Gère l'action de débit sur le compte courant.
+	 * <p>
+	 * Cette méthode vérifie si le compte est ouvert avant de permettre un débit.
+	 * Si le compte est ouvert, elle enregistre l'opération de débit et met à jour les informations du compte et de l'état des composants.
+	 * Si le compte est fermé, elle affiche une alerte pour informer l'utilisateur que l'opération est interdite.
+	 * </p>
+	 *
+	 * @author Yassir BOULOUIHA GNAOUI
+	 */
 	@FXML
 	private void doDebit() {
 		if (this.compteConcerne.estCloture.equals("N")) {
@@ -95,26 +105,38 @@ public class OperationsManagementViewController {
 				this.updateInfoCompteClient();
 				this.validateComponentState();
 			}
-		}else AlertUtilities.showAlert(this.containingStage, "Action interdite",
-				"Vous ne pouvez pas effectuer une opération de Débit sur un compte fermé !",
-				"", Alert.AlertType.WARNING);
-
+		} else {
+			AlertUtilities.showAlert(this.containingStage, "Action interdite",
+					"Vous ne pouvez pas effectuer une opération de Débit sur un compte fermé !",
+					"", Alert.AlertType.WARNING);
+		}
 	}
 
+	/**
+	 * Gère l'action de crédit sur le compte courant.
+	 * <p>
+	 * Cette méthode vérifie si le compte est ouvert avant de permettre un crédit.
+	 * Si le compte est ouvert, elle enregistre l'opération de crédit et met à jour les informations du compte et de l'état des composants.
+	 * Si le compte est fermé, elle affiche une alerte pour informer l'utilisateur que l'opération est interdite.
+	 * </p>
+	 *
+	 * @author Yassir BOULOUIHA GNAOUI
+	 */
 	@FXML
 	private void doCredit() {
-
 		if (this.compteConcerne.estCloture.equals("N")) {
 			Operation op = this.omDialogController.enregistrerCredit();
 			if (op != null) {
 				this.updateInfoCompteClient();
 				this.validateComponentState();
 			}
-		} else AlertUtilities.showAlert(this.containingStage, "Action interdite",
-		"Vous ne pouvez pas effectuer une opération de Crédit sur un compte fermé !",
-				"", Alert.AlertType.WARNING);
-
+		} else {
+			AlertUtilities.showAlert(this.containingStage, "Action interdite",
+					"Vous ne pouvez pas effectuer une opération de Crédit sur un compte fermé !",
+					"", Alert.AlertType.WARNING);
+		}
 	}
+
 
 	@FXML
 	private void doAutre() {

@@ -103,13 +103,31 @@ public class ComptesManagementViewController {
 		this.validateComponentState();
 	}
 
+	/**
+	 * Méthode appelée lors de l'événement FXML pour afficher et gérer les prélèvements du compte sélectionné.
+	 * <p>
+	 * Cette méthode récupère l'indice du compte sélectionné dans la liste des comptes (lvComptes).
+	 * Si un compte est sélectionné, elle crée une instance de PrelevementsManagement pour gérer les prélèvements
+	 * du compte sélectionné et ouvre la boîte de dialogue de gestion des prélèvements.
+	 * </p>
+	 *
+	 * @author Yassir BOULOUIHA GNAOUI
+	 */
 	@FXML
 	private void doVoirPrelevements() {
+		// Récupération de l'indice du compte sélectionné dans la ListView
 		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+
+		// Vérifie si un compte est effectivement sélectionné
 		if (selectedIndice >= 0) {
+			// Récupération du compte courant à l'indice sélectionné
 			CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+
+			// Création d'une instance de PrelevementsManagement pour gérer les prélèvements du compte sélectionné
 			PrelevementsManagement p = new PrelevementsManagement(this.containingStage, this.dailyBankState,
 					this.clientDesComptes, cpt);
+
+			// Ouverture de la boîte de dialogue de gestion des prélèvements
 			p.doPrelevementManagementDialog();
 		}
 	}

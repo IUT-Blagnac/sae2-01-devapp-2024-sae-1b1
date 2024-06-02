@@ -200,12 +200,62 @@ Enfin la méthode `displayDialog()` remplit les champs avec les données du comp
 
 
 
-=== 2.5 Créer un prélevement automatique B.Y
+=== 2.5 Afficher les prélevements automatiques B.Y
+
 ==== 2.5.1 Use case
+
+image:{usecases}AfficherPrelevement.png["UCAffPrelev"]
+
+Les utilisateurs pouvant afficher les prélèvements automatiques d'un compte sont le Chef d'agence et le Guichetier.
+
+
 ==== 2.5.2 Diagramme de classes
+
+image:{diagClass}Prelevement.png[DCprelevement]
+
+La classe utilisée pour stocker et afficher un prélèvement est la classe `Prelevement`.
+
+* application.control :  
+** `PrelevementsManagement`
+
+* application.view :
+** `PrelevementsManagementViewController`
+
+* model.data :
+** `Prelevement`
+
+* model.orm :
+** `Access_BD_Prelevement`
+
 ==== 2.5.3 Code commenté
 
-=== 2.6 Obtenir et Afficher les prélevements automatiques B.Y
+Pour mettre en place cete fonctionnalité un nouveau fxml `prelevementsmanager.fxml` représentant la fenêtre de gestion des prélevements a été crée, le controller de ce fichier fxml est `PrelevementsManagementViewController`.
+
+Le code permettant d'afficher les prélèvements du compte selectionné se situe dans la classe `PrelevementsManagementViewController` plus particulièrement la méthode `loadList()` qui charge les prélevements à l'aide de la fonction `getPrelevements(CompteCourant cpt)` de la classe `Access_BD_Prelevement`. 
+
+La fonction `getPrelevements(CompteCourant cpt)` recupère les prélèvements liés au compte passé en parametre et retourne une ArrayList de contenant ces mêmes prélèvements (des objets de type `Prelevement`). Si aucun prélèvement n'est trouvé la fonction retourne une ArrayList de prélèvements vide.
+
+Un bouton "Voir Prélèvements" a été ajouté juste en dessous du bouton déjà existant "Voir Opérations" dans le fxml `comptesmanagement.fxml`, l'évènement `doVoirPrelevements()` a été ajouté au controller `ComptesManagementViewController`, cet évenement est lié au clic du bouton "Voir Prélèvemens" nouvellement ajouté .
+
+Lorsque le bouton "Voir Prélèvements" est cliqué l'appel des différentes fonctions et classes précedamment expliquées est fait via `doVoirPrelevements()`
+
+[source,java,linenums]
+----
+@FXML
+private void doVoirPrelevements() {
+	int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+	if (selectedIndice >= 0) {
+		CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+		PrelevementsManagement p = new PrelevementsManagement(this.containingStage, this.dailyBankState,
+				this.clientDesComptes, cpt);
+		p.doPrelevementManagementDialog();
+	}
+}
+----
+
+Ce code enregistre le compte qui est selectionné parmi la liste affichée dans la variable `cpt`, ce qui permettra de passer cpt en parametre pour instancier un objet de la classe `PrelevementsManagement` qui preparera la fenetre à afficher en fonction du compte donné. Puis `p.doPrelevementManagementDialog()` va afficher la fenetre en appellant la méthode `displayDialog()` de la classe `PrelevementsManagementViewController`.
+
+=== 2.6 Créer un prélevement automatique B.Y 
 
 ==== 2.6.1 Use case
 ==== 2.6.2 Diagramme de classes

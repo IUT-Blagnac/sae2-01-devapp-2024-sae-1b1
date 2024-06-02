@@ -1,8 +1,6 @@
 package application.view;
 
 import application.DailyBankState;
-import application.control.ComptesManagement;
-import application.control.OperationsManagement;
 import application.control.PrelevementsManagement;
 import application.tools.AlertUtilities;
 import javafx.collections.FXCollections;
@@ -13,34 +11,46 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
 import model.data.CompteCourant;
-import model.data.Operation;
 import model.data.Prelevement;
 import model.orm.Access_BD_Prelevement;
 import model.orm.exception.DataAccessException;
 import model.orm.exception.DatabaseConnexionException;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * Contrôleur pour la gestion des prélèvements automatiques.
+ * <p>
+ * Cette classe gère l'interface utilisateur pour afficher, ajouter, modifier et supprimer les prélèvements automatiques d'un compte courant.
+ * </p>
+ *
+ * @author Yassir BOULOUIHA GNAOUI
+ */
 public class PrelevementsManagementViewController {
 
     // Etat courant de l'application
     private DailyBankState dailyBankState;
     // Contrôleur de Dialogue associé à PrelevementsManagementController
     private PrelevementsManagement pmDialogController;
-
-    // Fenêtre physique ou est la scène contenant le fichier xml contrôlé par this
+    // Fenêtre physique où se trouve la scène contenant le fichier XML contrôlé par cette classe
     private Stage containingStage;
-
     // Données de la fenêtre
     private Client clientDuCompte;
     private CompteCourant compteConcerne;
     private ObservableList<Prelevement> oListPrelevements;
 
-
-    // Manipulation de la fenêtre
-    public void initContext(Stage _containingStage, PrelevementsManagement _om, DailyBankState _dbstate, Client client,
-                            CompteCourant compte) {
+    /**
+     * Initialise le contexte de la fenêtre de gestion des prélèvements automatiques.
+     *
+     * @param _containingStage La fenêtre parente contenant cette scène.
+     * @param _om Le contrôleur de gestion des prélèvements automatiques.
+     * @param _dbstate L'état courant de l'application bancaire.
+     * @param client Le client dont les comptes sont gérés.
+     * @param compte Le compte courant concerné par les prélèvements.
+     *
+     * @author Yassir BOULOUIHA GNAOUI
+     */
+    public void initContext(Stage _containingStage, PrelevementsManagement _om, DailyBankState _dbstate, Client client, CompteCourant compte) {
         this.containingStage = _containingStage;
         this.dailyBankState = _dbstate;
         this.pmDialogController = _om;
@@ -51,7 +61,14 @@ public class PrelevementsManagementViewController {
         this.displayDialog(compte);
     }
 
-
+    /**
+     * Configure les composants de la fenêtre.
+     * <p>
+     * Cette méthode initialise les composants de l'interface, configure les écouteurs d'événements et charge la liste des prélèvements.
+     * </p>
+     *
+     * @author Yassir BOULOUIHA GNAOUI
+     */
     private void configure() {
         this.containingStage.setOnCloseRequest(e -> this.closeWindow(e));
         this.oListPrelevements = FXCollections.observableArrayList();
@@ -64,27 +81,41 @@ public class PrelevementsManagementViewController {
         this.validateComponentState();
     }
 
-    public void displayDialog(CompteCourant cpt){
-        String info;
-        info = this.clientDuCompte.nom + "  " + this.clientDuCompte.prenom + "  (id : " + this.clientDuCompte.idNumCli
-                + ")";
+    /**
+     * Affiche la boîte de dialogue de gestion des prélèvements pour le compte courant donné.
+     *
+     * @param cpt Le compte courant concerné par les prélèvements.
+     *
+     * @author Yassir BOULOUIHA GNAOUI
+     */
+    public void displayDialog(CompteCourant cpt) {
+        String info = this.clientDuCompte.nom + "  " + this.clientDuCompte.prenom + "  (id : " + this.clientDuCompte.idNumCli + ")";
         this.lblInfosClient.setText(info);
 
         info = "Cpt. : " + this.compteConcerne.idNumCompte + "  "
                 + String.format(Locale.ENGLISH, "%12.02f", this.compteConcerne.solde) + "  /  "
                 + String.format(Locale.ENGLISH, "%8d", this.compteConcerne.debitAutorise);
         this.lblInfosCompte.setText(info);
-
     }
 
-    // Gestion du stage
+    /**
+     * Gestion de la fermeture de la fenêtre.
+     * <p>
+     * Cette méthode est appelée lors de la fermeture de la fenêtre et empêche la fermeture automatique.
+     * </p>
+     *
+     * @param e L'événement de fermeture de fenêtre.
+     * @return Toujours null.
+     *
+     * @author Yassir BOULOUIHA GNAOUI
+     */
     private Object closeWindow(WindowEvent e) {
         this.doCancel();
         e.consume();
         return null;
     }
 
-    // Attributs de la scene + actions
+    // Attributs de la scène + actions
 
     @FXML
     private Label lblInfosClient;
@@ -99,26 +130,51 @@ public class PrelevementsManagementViewController {
     @FXML
     private Button btnNouvPrelev;
 
+    /**
+     * Annule l'action en cours et ferme la fenêtre de gestion des prélèvements.
+     *
+     * @author Yassir BOULOUIHA GNAOUI
+     */
     @FXML
     private void doCancel() {
         this.containingStage.close();
     }
 
+    /**
+     * Gère l'ajout d'un nouveau prélèvement.
+     *
+     * @author Yassir BOULOUIHA GNAOUI
+     */
     @FXML
-    private void doNouveauPrelev(){
+    private void doNouveauPrelev() {
         System.out.println("Nouveau Prelev");
     }
 
+    /**
+     * Gère la modification d'un prélèvement existant.
+     *
+     * @author Titouan DELAPLAGNE
+     */
     @FXML
-    private void doModifierPrelev(){
+    private void doModifierPrelev() {
         System.out.println("Modif Prelev");
     }
 
+    /**
+     * Gère la suppression d'un prélèvement existant.
+     *
+     * @author Titouan DELAPLAGNE
+     */
     @FXML
-    private void doSuprimmerPrelev(){
+    private void doSuprimmerPrelev() {
         System.out.println("Supr Prelev");
     }
 
+    /**
+     * Valide l'état des composants de l'interface en fonction de la sélection actuelle.
+     *
+     * @author Yassir BOULOUIHA GNAOUI
+     */
     private void validateComponentState() {
         this.btnNouvPrelev.setDisable(false);
         int selectedIndice = this.lvPrelevements.getSelectionModel().getSelectedIndex();
@@ -131,15 +187,20 @@ public class PrelevementsManagementViewController {
         }
     }
 
+    /**
+     * Charge la liste des prélèvements automatiques pour le compte courant concerné.
+     * <p>
+     * Cette méthode interroge la base de données pour récupérer les prélèvements et les affiche dans la liste.
+     * </p>
+     *
+     * @author Yassir BOULOUIHA GNAOUI
+     */
     private void loadList() {
-
         try {
             Access_BD_Prelevement access = new Access_BD_Prelevement();
-
             this.oListPrelevements.clear();
             this.oListPrelevements.addAll(access.getPrelevements(this.compteConcerne));
             this.lvPrelevements.setItems(this.oListPrelevements);
-
         } catch (DataAccessException e) {
             AlertUtilities.showAlert(containingStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue",
                     "Contactez l'administrateur de la base de données\nErreur : " + e.getMessage(), Alert.AlertType.ERROR);
@@ -147,7 +208,5 @@ public class PrelevementsManagementViewController {
             AlertUtilities.showAlert(containingStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue",
                     "Contactez l'administrateur de la base de données\nErreur : " + e.getMessage(), Alert.AlertType.ERROR);
         }
-
     }
-
 }
