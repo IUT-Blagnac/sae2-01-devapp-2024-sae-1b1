@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Application DailyBank " company="Groupe 1B1" webLink="http://" view-date="2024-05-13" view-index="0" gantt-divider-location="374" resource-divider-location="300" version="3.3.3309" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Application DailyBank " company="Groupe 1B1" webLink="http://" view-date="2024-05-13" view-index="0" gantt-divider-location="359" resource-divider-location="300" version="3.3.3309" locale="fr_FR">
     <description/>
     <view zooming-state="default:4" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="203" order="0"/>
-        <field id="tpd4" name="Date de début" width="77" order="1"/>
-        <field id="tpd5" name="Date de fin" width="78" order="2"/>
+        <field id="tpd3" name="Nom" width="194" order="0"/>
+        <field id="tpd4" name="Date de début" width="74" order="1"/>
+        <field id="tpd5" name="Date de fin" width="75" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="taskLabelUp" value="length"/>
         <option id="taskLabelDown" value="resources"/>
@@ -16,8 +16,8 @@
         <option id="color.recent"><![CDATA[#990000 #006633 #000066 #666600 #0000cc #ffff00 #666666 #ccffcc #333333 #006666]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="191" order="0"/>
-        <field id="1" name="Rôle par défaut" width="90" order="1"/>
+        <field id="0" name="Nom" width="198" order="0"/>
+        <field id="1" name="Rôle par défaut" width="98" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -243,7 +243,7 @@
                     </task>
                 </task>
             </task>
-            <task id="88" uid="21141d1253dc4e1a9653159618b859e4" name="Batch" color="#006633" meeting="false" start="2024-06-13" duration="5" complete="0" expand="false">
+            <task id="88" uid="21141d1253dc4e1a9653159618b859e4" name="Batch" color="#006633" meeting="false" start="2024-06-13" duration="5" complete="0" expand="true">
                 <task id="89" uid="6da0121d6cc34f068efa3fe42bb92c0d" name="Prélèvements Auto" color="#999999" meeting="false" start="2024-06-13" duration="5" complete="0" expand="false">
                     <notes><![CDATA[Fonctionnalité permettant d'exécuter les prélèvements automatiques]]></notes>
                     <task id="90" uid="f37764f63a7d4e948aa9744a13a8c120" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-06-13" duration="1" complete="0" expand="true">
@@ -288,6 +288,7 @@
         <allocation task-id="35" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="59" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="63" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="89" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="5" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="8" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="39" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
