@@ -34,7 +34,7 @@ Version 1.1
 
 A destination l'entreprise DailyBank
 
-== 1 L'application DailyBank
+== 1 Le projet DailyBank
 
 === 1.1 Contexte
 
@@ -46,9 +46,44 @@ Ainsi, fin avril 2024, l'agence DailyBank a contacté notre équipe pour moderni
 
 L'application DailyBank permet de gérer une agence bancaire. Elle dispose donc de différents profils utilisateurs et de différents cas d'utilisation.
 
+image:{img}uc-initialv0.svg[UseCaseV0]
+
 === 1.3 Diagramme de Classe des données
 
+image:{img}dc-initialv2.svg[DiagClassV2]
 
+
+=== 1.4 Notre équipe
+
+Voici la répartition des tâches de notre équipe de développement.
+
+|=======================
+|version|rôle     |use case   |cas...                 |  Yassir | Titouan  |  Clara  | Wissal
+|1    |Chef d’Agence    |CRUD employé  |C| | | |F
+|1    |Chef d’Agence    |CRUD employé  |R| | | |F
+|1    |Chef d’Agence |CRUD employé  |U| | |F |
+|1    |Chef d’Agence   |CRUD employé  |D| | |F |
+|1    |Guichetier     | Compte | Créer|F| | | 
+|1    |Guichetier     | Compte | Créditer/Débiter|F| | | 
+|1    |Guichetier     | Compte | Effectuer un virement|| F | | 
+|1    |Guichetier     | Compte | Clôturer|| F | | 
+|2    |Chef d’Agence     | Compte | Débit exceptionnel| | | D | 
+|2    |Chef d’Agence     | Emprunt | Simuler emprunt|| | | D
+|2    |Chef d’Agence     | Emprunt | Simuler assurance|| | | D
+|2    |Guichetier     | Compte | Relevé PDF|| | | 
+|2    |Guichetier     | CRUD Prélèvement | C|D| | | 
+|2    |Guichetier     | CRUD Prélèvement | R|D| | | 
+|2    |Guichetier     | CRUD Prélèvement | U|| | | 
+|2    |Guichetier     | CRUD Prélèvement | D|| | | 
+|2    |Batch     | Prélèvements automatiques | || | | 
+|2    |Batch     | Reléves mensuels | || | | 
+
+|=======================
+
+Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a développé la fonctionnalité, il y est indiqué
+
+*	*F* pour fonctionnel ou
+*	*D* pour encore en Développement
 
 == 2 Architecture
 

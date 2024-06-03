@@ -169,4 +169,37 @@ public class Access_BD_Prelevement {
             throw new DataAccessException(Table.PrelevementAutomatique, Order.INSERT, "Erreur d'insertion \n", e);
         }
     }
+
+    public void deletePrelevement(Prelevement prl)throws DataAccessException, DatabaseConnexionException{
+        try {
+            ArrayList<Prelevement> alPrelevements = new ArrayList<>();
+
+            // Obtention de la connexion à la base de données
+            Connection con = LogToDatabase.getConnexion();
+
+            // Requête SQL pour récupérer les prélèvements automatiques du compte spécifié
+            String query = """
+                    DELETE FROM Acteur
+                    WHERE idprelev= ? 
+                    """;
+
+            PreparedStatement pst = con.prepareStatement(query);
+
+            // Paramétrage de la requête avec l'identifiant du compte
+            pst.setInt(1, prl.idprelev);
+
+            pst.executeQuery();
+
+            // Fermeture des ressources
+            pst.close();
+            con.commit();
+            System.out.println(pst);
+        } catch (SQLException e) {
+            throw new DataAccessException(Table.Operation, Order.DELETE, "Erreur accès", e);
+        } catch (DatabaseConnexionException e) {
+            throw new DatabaseConnexionException("Erreur accès", e);
+        }
+    }
+
+
 }

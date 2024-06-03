@@ -10,7 +10,7 @@
 
 = Documentation utilisateur application DailyBank
 
-image:../media/image_univ.jpg[image,width=97,height=137]
+image:{img}image_univ.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
@@ -29,7 +29,7 @@ ifdef::env-github[]
 endif::[]
 
 ifndef::env-github[]
-image::../media/image_docu.png[Image de document, 350, align=center]
+image::{img}image_docu.png[Image de document, 350, align=center]
 endif::[]
 
 ____
@@ -118,39 +118,45 @@ Par exemple, si vous cliquez sur le bouton "Rechercher" directement sans avoir r
 
 image:{tuto}GestionClient\3-ModeRechercherTout.png[GestCli-Etape3]
 
-
+[[CreerClient]]
 === 3.3 Créer un Nouveau Client DT
 
 Afin de créer un nouveau profil client vous devez tout d'abord être sur la fenêtre `Gestion des clients`(cf <<GestionClient>>).
 
 image:{gestcli}1-CreerClient.png[CreerCli1]
 
-Sur cette fenêtre se trouve le bouton `Nouveau client`. Une fois celui-ci pressé s'ouvre la fenêtre `Gestion d'un client`.
+Sur cette fenêtre se trouve le bouton `Nouveau client`. Une fois celui-ci pressé s'ouvre la fenêtre `Gestion d'un client`. Vous devez ensuite remplir les champs pour modifier:
+
+
+[[ChampsClients]]
+* [red]#Nom du client#
+* [green]#Prénom du client#
+* [blue]#L'adresse du client#
+* [lime]#Le numéro de télephone du client#
+* [fuchsia]#L'E-mail du client#
+
+Certains champs ne peuvent être définis comme:
+
+* [olive]#L'ID du client généré par la base de données#
+* [gray]#Si le client est actif ou non car si il est crée il doit être actif#
 
 image:{gestCli}2-CreerClient.png[CreerCli2]
-
-
 
 [[ModifierClient]]
 === 3.4 Modifier des Informations Client D.T
 
-Pour modifier les informations d'un client, le guichetier doit d'abord trouver le client. Cette recherche se fait par :
+Pour modifier les informations d'un client, le guichetier doit d'abord accéder à la fenêtre de gestion de clients(cf <<GestionClient>>)
 
-*** Le numéro
-*** Le nom
-*** Le prénom
-
-du client. (Champs encadrés en rouge dans l'image)
-
-Les clients correspondants seront listés et accessibles dans l'espace en dessous. (encadré en vert dans l'image)
+Vous devez ensuite sélectionner le client dont vous voulez modifier les informations dans la [red]#liste#. 
 
 image:{tuto}RechercheClient.png[ChampsRecherche]
 
-Maintenant, il suffit de cliquer sur le bouton 'Modifier client' pour modifier les informations du client. L'application ouvre cette page :
+Maintenant, il suffit de cliquer sur le bouton `Modifier client` pour modifier les informations du client. L'application ouvre la page `Gestion d'un client`. Les informations du client peuvent y être directement modifiées, sauf bien sûr son id qui est unique et définitif. Après les modifications, le guichetier peut appuyer sur le bouton:
+
+* [green]#`Modifier` pour confirmer les changements#
+* [red]#`Annuler` pour abandonner les changements#
 
 image:{tuto}ModifClient.PNG[ModifClient]
-
-Ici, les informations du client peuvent être directement modifiées, sauf bien sûr son id qui est unique et définitif. Après les modifications, le guichetier peut conserver celles-ci en appuyant sur 'Modifier' ou bien annuler les changements à l'aide du bouton 'Annuler'.
 
 [[GestionComptes]]
 === 3.5 Gestion Comptes Client B.Y
@@ -161,7 +167,7 @@ Sur la fenêtre de gestion des clients, cliquez sur le client qui vous intéress
 
 image:{tuto}GestionComptes\1-OuvrirGestionComptes.png[GestCpt-Etape1]
 
-Une fois cela fait, vous vous retrouverez sur la fenêtre de gestion des comptes du client que vous avez sélectionné dans le menu précédent.
+Une fois cela fait, vous vous retrouverez sur la fenêtre de gestion des comptes du client que vous avez sélectionné dans le menu précédent. Les champs sont les même que pour la création d'un nouveau compte(cf <<ChampsClient>>)
 
 image:{tuto}GestionComptes\2-ResultatComptes.png[GestCpt-Etape2]
 
