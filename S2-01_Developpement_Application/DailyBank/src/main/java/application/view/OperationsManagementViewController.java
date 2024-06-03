@@ -132,7 +132,7 @@ public class OperationsManagementViewController {
 			}
 		} else {
 			AlertUtilities.showAlert(this.containingStage, "Action interdite",
-					"Vous ne pouvez pas effectuer une opération de Crédit sur un compte fermé !",
+					"Vous ne pouvez pas effectuer une opération de Crédit sur un compte clôturé",
 					"", Alert.AlertType.WARNING);
 		}
 	}
@@ -147,7 +147,7 @@ public class OperationsManagementViewController {
 				this.validateComponentState();
 			}
 		} else AlertUtilities.showAlert(this.containingStage, "Action interdite",
-				"Vous ne pouvez pas effectuer un virement depuis un compte fermé !",
+				"Vous ne pouvez pas effectuer un virement depuis un compte clôturé",
 				"", Alert.AlertType.WARNING);
 	}
 

@@ -656,7 +656,7 @@ CREATE SEQUENCE seq_id_prelevAuto
 CREATE TABLE PrelevementAutomatique(
 	idPrelev NUMBER(8), 
 	montant DECIMAL(8,2),
-	dateRecurrente NUMBER(2), -- ex: 5 pour prelev à executer chaque 5 mois
+	dateRecurrente NUMBER(2), -- ex: 5 pour prelev à executer chaque 5 du mois
 	beneficiaire VARCHAR(50), -- le bénéficiaire du prélèvement auto, ex: EDF
 	idNumCompte NUMBER(5),
 	CONSTRAINT pk_PrelevAuto PRIMARY KEY (idPrelev),
