@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
@@ -161,13 +162,21 @@ public class PrelevementsManagementViewController {
     }
 
     /**
-     * Gère la suppression d'un prélèvement existant.
+     * Gère la suppression d'un prélèvement existant
      *
      * @author Titouan DELAPLAGNE
      */
     @FXML
     private void doSuprimmerPrelev() {
-        System.out.println("Supr Prelev");
+        int selectedIndice=this.lvPrelevements.getSelectionModel().getSelectedIndex();
+
+        Access_BD_Prelevement aBd_Prelevement= new Access_BD_Prelevement();
+        
+        try {
+            aBd_Prelevement.deletePrelevement(this.lvPrelevements.getItems().get(selectedIndice));
+        } catch (DataAccessException | DatabaseConnexionException e) {
+            AlertUtilities.showAlert(this.containingStage,"Erreur de BD","Echec d'accès à la BD",e.getMessage(),AlertType.ERROR);
+        }
     }
 
     /**
