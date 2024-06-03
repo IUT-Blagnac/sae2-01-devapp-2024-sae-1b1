@@ -55,6 +55,8 @@ image:{img}dc-initialv2.svg[DiagClassV2]
 
 === 1.4 Notre équipe
 
+Voici la répartition des tâches de notre équipe de développement.
+
 |=======================
 |version|rôle     |use case   |cas...                 |  Yassir | Titouan  |  Clara  | Wissal
 |1    |Chef d’Agence    |CRUD employé  |C| | | |F
