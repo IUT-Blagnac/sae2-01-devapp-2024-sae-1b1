@@ -263,7 +263,7 @@ public class NewPrelevementPaneViewController {
             return false;
         }
 
-        regex = "^[1-9]+\\.[0-9]{2}";
+        regex = "^[1-9]{1}[0-9]*\\.[0-9]{2}";
         if (!this.txtMontant.getText().trim().matches(regex)) {
             AlertUtilities.showAlert(this.containingStage, "Saisie Invalide",
                     "Le montant doit être un nombre strictement positif",

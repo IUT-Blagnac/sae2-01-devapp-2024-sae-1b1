@@ -178,10 +178,13 @@ public class PrelevementsManagementViewController {
 
         Access_BD_Prelevement aBd_Prelevement= new Access_BD_Prelevement();
         
-        try {
-            aBd_Prelevement.deletePrelevement(this.lvPrelevements.getItems().get(selectedIndice));
-        } catch (DataAccessException | DatabaseConnexionException e) {
-            AlertUtilities.showAlert(this.containingStage,"Erreur de BD","Echec d'accès à la BD",e.getMessage(),AlertType.ERROR);
+        if(AlertUtilities.confirmYesCancel(this.containingStage, "Supprimer?", "Voulez vous vraiment supprimer ce prélevement", null, AlertType.CONFIRMATION)){
+            try {
+                aBd_Prelevement.deletePrelevement(this.lvPrelevements.getItems().get(selectedIndice));
+            } catch (DataAccessException | DatabaseConnexionException e) {
+                AlertUtilities.showAlert(this.containingStage,"Erreur de BD","Echec d'accès à la BD",e.getMessage(),AlertType.ERROR);
+            }
+            this.loadList();
         }
     }
 

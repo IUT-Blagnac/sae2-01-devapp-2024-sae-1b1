@@ -179,7 +179,7 @@ public class Access_BD_Prelevement {
 
             // Requête SQL pour récupérer les prélèvements automatiques du compte spécifié
             String query = """
-                    DELETE FROM Acteur
+                    DELETE FROM PRELEVEMENTAUTOMATIQUE
                     WHERE idprelev= ? 
                     """;
 
@@ -187,13 +187,13 @@ public class Access_BD_Prelevement {
 
             // Paramétrage de la requête avec l'identifiant du compte
             pst.setInt(1, prl.idprelev);
-
+            
             pst.executeQuery();
+
 
             // Fermeture des ressources
             pst.close();
             con.commit();
-            System.out.println(pst);
         } catch (SQLException e) {
             throw new DataAccessException(Table.Operation, Order.DELETE, "Erreur accès", e);
         } catch (DatabaseConnexionException e) {
