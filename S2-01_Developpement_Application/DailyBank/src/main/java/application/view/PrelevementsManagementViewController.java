@@ -218,9 +218,11 @@ public class PrelevementsManagementViewController {
         } catch (DataAccessException e) {
             AlertUtilities.showAlert(containingStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue",
                     "Contactez l'administrateur de la base de données\nErreur : " + e.getMessage(), Alert.AlertType.ERROR);
+            this.containingStage.close();
         } catch (DatabaseConnexionException e) {
             AlertUtilities.showAlert(containingStage, "Erreur Base de données", "Une erreur concernant la base de données est survenue",
                     "Contactez l'administrateur de la base de données\nErreur : " + e.getMessage(), Alert.AlertType.ERROR);
+            this.containingStage.close();
         }
     }
 }
