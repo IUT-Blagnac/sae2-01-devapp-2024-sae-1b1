@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.NewPrelevementPaneViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.PrelevementEditorPaneViewController">
    <top>
       <Label fx:id="lblInfoOperation" alignment="CENTER" maxWidth="1.7976931348623157E308" styleClass="borderlight" text="IdOperation" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -70,7 +70,7 @@
    <bottom>
       <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="479.0" BorderPane.alignment="CENTER_RIGHT">
          <children>
-            <Button mnemonicParsing="false" onAction="#doAjouter" text="Valider">
+            <Button mnemonicParsing="false" onAction="#doConfirm" text="Valider">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>

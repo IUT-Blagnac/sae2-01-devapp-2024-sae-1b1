@@ -1,5 +1,7 @@
 package application.view;
 
+import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
+
 import application.DailyBankState;
 import application.tools.AlertUtilities;
 import application.tools.EditionMode;
@@ -29,7 +31,7 @@ import model.orm.exception.DatabaseConnexionException;
  * @see Access_BD_Prelevement
  * @see AlertUtilities
  */
-public class NewPrelevementPaneViewController {
+public class PrelevementEditorPaneViewController {
 
     // Etat courant de l'application
     private DailyBankState dailyBankState;
@@ -145,6 +147,7 @@ public class NewPrelevementPaneViewController {
                 break;
         }
 
+
         this.containingStage.showAndWait();
     }
 
@@ -178,7 +181,7 @@ public class NewPrelevementPaneViewController {
      * @see NewPrelevementPaneViewController#isSaisieValide()
      */
     @FXML
-    private void doAjouter() {
+    private void doConfirm() {
         if (isSaisieValide()) {
             Access_BD_Prelevement access = new Access_BD_Prelevement();
             try {

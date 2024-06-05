@@ -4,7 +4,7 @@ import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.EditionMode;
 import application.tools.StageManagement;
-import application.view.NewPrelevementPaneViewController;
+import application.view.PrelevementEditorPaneViewController;
 import application.view.PrelevementsManagementViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -30,10 +30,10 @@ import model.data.CompteCourant;
  *
  * @author Yassir BOULOUIHA GNAOUI
  */
-public class NewPrelevementPane {
+public class PrelevementEditorPane {
 
     private Stage nppStage;
-    private NewPrelevementPaneViewController nppViewController;
+    private PrelevementEditorPaneViewController pepViewController;
     private DailyBankState dailyBankState;
 
     /**
@@ -54,10 +54,10 @@ public class NewPrelevementPane {
      *
      * @see DailyBankApp
      */
-    public NewPrelevementPane(Stage _parentStage, DailyBankState _dbstate, PrelevementsManagementViewController p, CompteCourant cpt) {
+    public PrelevementEditorPane(Stage _parentStage, DailyBankState _dbstate, PrelevementsManagementViewController p, CompteCourant cpt) {
         this.dailyBankState = _dbstate;
         try {
-            FXMLLoader loader = new FXMLLoader(NewPrelevementPaneViewController.class.getResource("newprelevementpane.fxml"));
+            FXMLLoader loader = new FXMLLoader(PrelevementEditorPaneViewController.class.getResource("prelevementeditorpane.fxml"));
             BorderPane root = loader.load();
 
             Scene scene = new Scene(root, root.getPrefWidth() + 20, root.getPrefHeight() + 10);
@@ -71,8 +71,8 @@ public class NewPrelevementPane {
             this.nppStage.setTitle("Gestion d'un prélèvement");
             this.nppStage.setResizable(false);
 
-            this.nppViewController = loader.getController();
-            this.nppViewController.initContext(this.nppStage, this.dailyBankState, p, cpt);
+            this.pepViewController = loader.getController();
+            this.pepViewController.initContext(this.nppStage, this.dailyBankState, p, cpt);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -84,11 +84,11 @@ public class NewPrelevementPane {
      *
      * @param em Le mode d'édition (création, modification, suppression).
      *
-     * @see NewPrelevementPaneViewController#displayDialog(EditionMode)
+     * @see PrelevementEditorPaneViewController#displayDialog(EditionMode)
      *
      * @see <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html#showAndWait--">Stage.showAndWait()</a>
      */
-    public void doNewPrelevementDialog(EditionMode em) {
-        this.nppViewController.displayDialog(em);
+    public void doPrelevementEditorPaneDialog(EditionMode em) {
+        this.pepViewController.displayDialog(em);
     }
 }

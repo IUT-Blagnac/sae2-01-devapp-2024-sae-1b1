@@ -1,7 +1,7 @@
 package application.view;
 
 import application.DailyBankState;
-import application.control.NewPrelevementPane;
+import application.control.PrelevementEditorPane;
 import application.control.PrelevementsManagement;
 import application.tools.AlertUtilities;
 import application.tools.EditionMode;
@@ -147,16 +147,14 @@ public class PrelevementsManagementViewController {
     private void doNouveauPrelev() {
 
         if (this.compteConcerne.estCloture.equals("N")){
-            NewPrelevementPane npPane = new NewPrelevementPane(this.containingStage, this.dailyBankState, this,
+            PrelevementEditorPane pEditorPane = new PrelevementEditorPane(this.containingStage, this.dailyBankState, this,
                     this.compteConcerne);
-            npPane.doNewPrelevementDialog(EditionMode.CREATION);
+                pEditorPane.doPrelevementEditorPaneDialog(EditionMode.MODIFICATION);
         }else {
             AlertUtilities.showAlert(this.containingStage, "Action interdite",
-                    "Vous ne pouvez pas établir un prélèvement automatiqué sur un compte clôturé",
+                    "Vous ne pouvez pas modifier un prélèvement automatiqué sur un compte clôturé",
                     "", Alert.AlertType.WARNING);
         }
-
-
     }
 
     /**
@@ -164,7 +162,17 @@ public class PrelevementsManagementViewController {
      */
     @FXML
     private void doModifierPrelev() {
-        System.out.println("Modif Prelev");
+
+        if (this.compteConcerne.estCloture.equals("N")){
+            PrelevementEditorPane pEditorPane = new PrelevementEditorPane(this.containingStage, this.dailyBankState, this,
+                    this.compteConcerne);
+            pEditorPane.doPrelevementEditorPaneDialog(EditionMode.CREATION);
+        }else {
+            AlertUtilities.showAlert(this.containingStage, "Action interdite",
+                    "Vous ne pouvez pas établir un prélèvement automatiqué sur un compte clôturé",
+                    "", Alert.AlertType.WARNING);
+        }
+
     }
 
     /**
