@@ -381,6 +381,7 @@ Pour ouvrir supprimer un employé, vous devez être préalablement connecter en 
 
 Après avoir sélectionner l'employé à supprimer vous devez cliquer sur le bouton de confirmation, un avertissement apparaitra afin de confirmer l'action. 
 
+[[GestionPrelev]]
 === 3.15 Afficher les prélèvements automatiques d'un compte B.Y
 
 Pour afficher les prélèvements automatiques d'un compte vous devez préalablement être sur le menu de gestion des comptes d'un client (cf. <<GestionComptes, Gestion Comptes Client>>), dans le cadre de ce tutoriel nous utiliserons le premier compte du client Gabin.
@@ -394,6 +395,29 @@ Une fois cela fait si le compte choisi a des prélevements automatiques qui sont
 
 image:../media/Tutoriels_utilisation/AfficherPrelev/2-Resultat.png[Etape2]
 
+=== 3.16 Établir un prélèvement automatique B.Y
+
+Pour établir un nouveau prélèvement automatique sur un compte il faut préalablement être sur la fenêtre de gestion des prélèvements d'un compte client (cf. <<GestionPrelev, Afficher les prélèvements automatiques d'un compte>>).
+
+Une fois sur cette page cliquez sur le bouton en bas a droite de la fenêtre "Nouveau Prélèvement".
+
+image:../media/Tutoriels_utilisation/AfficherPrelev/1-Etape.png[Etape1]
+
+Une nouvelle fenêtre s'ouvrira, renseignez sur cette fenêtre les champs demandés.
+
+image:../media/Tutoriels_utilisation/AfficherPrelev/2-Etape.png[Etape2]
+
+Une fois avoir rempli les trois champs "Bénéficiaire", "Récurrence" et "Montant" cliquez sur le bouton "Ajouter"
+
+image:../media/Tutoriels_utilisation/AfficherPrelev/3-Etape.png[Etape3]
+
+Si tous les champs sont correctement renseignés une nouvelle petite fenêtre vous informera que l'ajout à été effectué avec succès contenant des détails sur le prélèvement ajouté et le compte impacté. Si jamais un des champs n'est pas bien renseigné et que vous essayez d'ajouter le prélèvement, une fenetre vous indiquant le champ a corriger et la raison pourlaquelle vous devez le corriger aparaitra, si cela arrive prenez soin de lire l'avertissement affiché et de corriger votre saisie pour créer le prélèvement.
+
+image:../media/Tutoriels_utilisation/AfficherPrelev/4-Etape.png[Etape4]
+
+Une fois le prélèvement ajouté vous serez redirigé vers la fenetre d'affichage des prélèvements du compte qui à présent affichera le nouveau prélèvement dans la liste.
+
+image:../media/Tutoriels_utilisation/AfficherPrelev/5-Etape.png[Etape5]
 
 == 4 - Résultats
 

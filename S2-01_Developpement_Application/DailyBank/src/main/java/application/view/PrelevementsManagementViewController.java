@@ -149,12 +149,13 @@ public class PrelevementsManagementViewController {
         if (this.compteConcerne.estCloture.equals("N")){
             PrelevementEditorPane pEditorPane = new PrelevementEditorPane(this.containingStage, this.dailyBankState, this,
                     this.compteConcerne);
-                pEditorPane.doPrelevementEditorPaneDialog(EditionMode.MODIFICATION);
+            pEditorPane.doPrelevementEditorPaneDialog(EditionMode.CREATION);
         }else {
             AlertUtilities.showAlert(this.containingStage, "Action interdite",
-                    "Vous ne pouvez pas modifier un prélèvement automatiqué sur un compte clôturé",
+                    "Vous ne pouvez pas établir un prélèvement automatiqué sur un compte clôturé",
                     "", Alert.AlertType.WARNING);
         }
+
     }
 
     /**
@@ -166,10 +167,10 @@ public class PrelevementsManagementViewController {
         if (this.compteConcerne.estCloture.equals("N")){
             PrelevementEditorPane pEditorPane = new PrelevementEditorPane(this.containingStage, this.dailyBankState, this,
                     this.compteConcerne);
-            pEditorPane.doPrelevementEditorPaneDialog(EditionMode.CREATION);
+            pEditorPane.doPrelevementEditorPaneDialog(EditionMode.MODIFICATION);
         }else {
             AlertUtilities.showAlert(this.containingStage, "Action interdite",
-                    "Vous ne pouvez pas établir un prélèvement automatiqué sur un compte clôturé",
+                    "Vous ne pouvez pas modifier un prélèvement automatiqué sur un compte clôturé",
                     "", Alert.AlertType.WARNING);
         }
 

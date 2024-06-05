@@ -124,7 +124,23 @@ Ordinateur sous Windows ou OS équivalent avec l'utilisation de JAVA.
 
 |====
 
-==== 3.3.2 Ajouter un prélèvement automatique B.Y
+==== 3.3.2 Ajouter un Prélèvement Automatique B.Y
+
+|====
+
+|Cas de test 4+|Test-All_G_CB_P-02
+|Titre 4+|Ajouter un prélèvement automatique
+|Objectif 4+| Vérifier qu'il est possible d'ajouter un nouveau prélèvement automatique pour un compte
+
+5+|
+
+^|ID ^|Action ^|Comportement attendu ^|Pré-conditions ^|Résultat
+^|All_G_CB_P-2 ^|Cliquer sur le bouton "Nouveau Prélèvement". ^|La fenêtre de création de prélèvement est ouverte. ^|Action All_G_CB_P-1 est terminée. ^|OK
+^|All_G_CB_P-3 ^|Remplir les champs "Bénéficiaire", "Récurrence" et "Montant". ^|Si les champs sont valides, alors une popup s'affiche pour indiquer que le prélèvement a été ajouté et la fenêtre de nouveau prélèvement se ferme. Sinon, une popup affichant le champ invalide à corriger s'affiche et retour à la fenêtre de nouveau prélèvement pour corriger la saisie. ^|Action All_G_CB_P-2 est terminée. ^|OK
+
+5+|Commentaire : Les tests faits sur les champs sont les suivants : le Bénéficiaire doit contenir au moins une lettre, la récurrence doit être un entier compris entre 1 et 28 inclus, et le montant doit être un nombre positif. Le montant entré, s'il est valide, est reformaté en X.X.
+
+|====
 
 == IV. Exemples de Cas de test (ne pas mettre vos tests ici) :
 === 1. Fonctionnalités des guichetiers :
