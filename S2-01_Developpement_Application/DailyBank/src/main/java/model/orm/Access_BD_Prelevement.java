@@ -170,6 +170,44 @@ public class Access_BD_Prelevement {
         }
     }
 
+    public void modifierPrelevement(@NotNull Prelevement prlv, @NotNull CompteCourant cpt) throws DataAccessException,
+            DatabaseConnexionException {
+        try (Connection con = LogToDatabase.getConnexion()) {
+            con.setAutoCommit(false);
+
+            // Requête SQL pour insérer un nouveau prélèvement automatique
+            String query = """
+                        UPDATE PRELEVEMENTAUTOMATIQUE 
+                        SET montant= ? ,
+                        daterecurrente= ? ,
+                        beneficiaire= ? ,
+                        idNumCompte= ? 
+                        WHERE idPrelev= ?
+                        """;
+            try (PreparedStatement pst = con.prepareStatement(query)) {
+                // Paramétrage de la requête
+                
+                pst.setDouble(1, prlv.montant);
+                pst.setInt(2, prlv.dateRec);
+                pst.setString(3, prlv.beneficiaire);
+                pst.setInt(4, cpt.idNumCompte);
+                pst.setInt(5, prlv.idprelev);
+
+                // Exécution de la requête
+                if (pst.executeUpdate() > 0) {
+                    con.commit();
+                } else {
+                    con.rollback();
+                    throw new DataAccessException(Table.PrelevementAutomatique, Order.INSERT, "Échec de la modification\n",
+                            new Throwable("Échec de la modification du prélèvement dans la base de données"));
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new DataAccessException(Table.PrelevementAutomatique, Order.INSERT, "Erreur de modification \n", e);
+        }
+    }
+
     public void deletePrelevement(Prelevement prl)throws DataAccessException, DatabaseConnexionException{
         try {
             ArrayList<Prelevement> alPrelevements = new ArrayList<>();
@@ -200,6 +238,4 @@ public class Access_BD_Prelevement {
             throw new DatabaseConnexionException("Erreur accès", e);
         }
     }
-
-
 }

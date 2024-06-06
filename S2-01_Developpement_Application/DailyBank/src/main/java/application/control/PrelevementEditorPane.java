@@ -12,6 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.data.CompteCourant;
+import model.data.Prelevement;
 
 /**
  * Gère l'affichage et l'initialisation de la fenêtre de gestion des prélèvements automatiques.
@@ -88,7 +89,7 @@ public class PrelevementEditorPane {
      *
      * @see <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html#showAndWait--">Stage.showAndWait()</a>
      */
-    public void doPrelevementEditorPaneDialog(EditionMode em) {
-        this.pepViewController.displayDialog(em);
+    public void doPrelevementEditorPaneDialog(EditionMode em, Prelevement pr) {
+        this.pepViewController.displayDialog(em, pr);
     }
 }

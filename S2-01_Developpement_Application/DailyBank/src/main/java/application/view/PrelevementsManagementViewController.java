@@ -149,7 +149,7 @@ public class PrelevementsManagementViewController {
         if (this.compteConcerne.estCloture.equals("N")){
             PrelevementEditorPane pEditorPane = new PrelevementEditorPane(this.containingStage, this.dailyBankState, this,
                     this.compteConcerne);
-            pEditorPane.doPrelevementEditorPaneDialog(EditionMode.CREATION);
+            pEditorPane.doPrelevementEditorPaneDialog(EditionMode.CREATION,null);
         }else {
             AlertUtilities.showAlert(this.containingStage, "Action interdite",
                     "Vous ne pouvez pas établir un prélèvement automatiqué sur un compte clôturé",
@@ -163,11 +163,12 @@ public class PrelevementsManagementViewController {
      */
     @FXML
     private void doModifierPrelev() {
+        int selectedIndice=this.lvPrelevements.getSelectionModel().getSelectedIndex();
 
         if (this.compteConcerne.estCloture.equals("N")){
             PrelevementEditorPane pEditorPane = new PrelevementEditorPane(this.containingStage, this.dailyBankState, this,
                     this.compteConcerne);
-            pEditorPane.doPrelevementEditorPaneDialog(EditionMode.MODIFICATION);
+            pEditorPane.doPrelevementEditorPaneDialog(EditionMode.MODIFICATION, this.lvPrelevements.getItems().get(selectedIndice));
         }else {
             AlertUtilities.showAlert(this.containingStage, "Action interdite",
                     "Vous ne pouvez pas modifier un prélèvement automatiqué sur un compte clôturé",
