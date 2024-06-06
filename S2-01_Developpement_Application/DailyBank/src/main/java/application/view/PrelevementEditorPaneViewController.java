@@ -36,6 +36,9 @@ public class PrelevementEditorPaneViewController {
     // Etat courant de l'application
     private DailyBankState dailyBankState;
 
+    // Le mode (Ajout ou Modification)
+    private EditionMode em;
+
     // Fenêtre physique où est la scène contenant le fichier XML contrôlé par cette classe
     private Stage containingStage;
 
@@ -124,6 +127,7 @@ public class PrelevementEditorPaneViewController {
     public void displayDialog(EditionMode em, Prelevement pr) {
         Access_BD_Prelevement access = new Access_BD_Prelevement();
 
+        this.em=em;
 
         switch (em) {
             case CREATION:
@@ -142,9 +146,11 @@ public class PrelevementEditorPaneViewController {
 
             case MODIFICATION:
                 this.lblInfoOperation.setText("Modifier Prélèvement");
-                // this.txtIdPrelevement.setText(pr.)
+                this.txtIdPrelevement.setText(""+pr.idprelev);
+                this.txtBeneficiaire.setText(pr.beneficiaire);
+                this.txtMontant.setText("" +pr.montant);
+                this.txtReccurence.setText(""+pr.dateRec);
                 break;
-
             default:
                 break;
         }
@@ -186,10 +192,26 @@ public class PrelevementEditorPaneViewController {
     private void doConfirm() {
         if (isSaisieValide()) {
             Access_BD_Prelevement access = new Access_BD_Prelevement();
+            int idPrelevement = Integer.parseInt(this.txtIdPrelevement.getText().trim());
             try {
-                int idNouvPrelevement = access.getIdNouvPrelevement();
-                access.insererPrelevement(new Prelevement(
-                        idNouvPrelevement,
+                switch (em) {
+                    case CREATION:
+                    access.insererPrelevement(new Prelevement(
+                            idPrelevement,
+                            Double.parseDouble(this.txtMontant.getText().trim()),
+                            Integer.parseInt(this.txtReccurence.getText().trim()),
+                            this.txtBeneficiaire.getText().trim()
+                    ), this.compteEdite);
+                    
+                    AlertUtilities.showAlert(this.containingStage, "Prélèvement établi",
+                            "Prélèvement automatique ajouté",
+                            "Le prélèvement numéro " + idPrelevement +
+                                    " a bien été ajouté aux prélèvements automatiques établis sur le compte numéro " +
+                                    this.compteEdite.idNumCompte, Alert.AlertType.INFORMATION);
+                        break;
+                    case MODIFICATION:
+                        access.modifierPrelevement(new Prelevement(idPrelevement
+                        ,
                         Double.parseDouble(this.txtMontant.getText().trim()),
                         Integer.parseInt(this.txtReccurence.getText().trim()),
                         this.txtBeneficiaire.getText().trim()
@@ -197,9 +219,14 @@ public class PrelevementEditorPaneViewController {
 
                 AlertUtilities.showAlert(this.containingStage, "Prélèvement établi",
                         "Prélèvement automatique ajouté",
-                        "Le prélèvement numéro " + idNouvPrelevement +
-                                " a bien été ajouté aux prélèvements automatiques établis sur le compte numéro " +
+                        "Le prélèvement numéro " + idPrelevement +
+                                " a bien été modifié sur le compte numéro " +
                                 this.compteEdite.idNumCompte, Alert.AlertType.INFORMATION);
+                        break;
+                    default:
+                        break;
+                }
+                
 
                 this.pmController.loadList(); // Rechargement de la liste
                 this.containingStage.close();
@@ -228,6 +255,7 @@ public class PrelevementEditorPaneViewController {
      * @author Yassir BOULOUIHA GNAOUI
      */
     private boolean isSaisieValide() {
+
         if (this.txtBeneficiaire.getText().trim().isEmpty()) {
             AlertUtilities.showAlert(this.containingStage, "Saisie Invalide",
                     "Le bénéficiaire doit obligatoirement être renseigné",
@@ -268,7 +296,7 @@ public class PrelevementEditorPaneViewController {
             return false;
         }
 
-        regex = "^[1-9]{1}[0-9]*\\.[0-9]{2}";
+        regex = "^[1-9]{1}[0-9]*\\.[0-9]+";
         if (!this.txtMontant.getText().trim().matches(regex)) {
             AlertUtilities.showAlert(this.containingStage, "Saisie Invalide",
                     "Le montant doit être un nombre strictement positif",
