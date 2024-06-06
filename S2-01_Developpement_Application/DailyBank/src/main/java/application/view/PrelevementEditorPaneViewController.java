@@ -178,7 +178,7 @@ public class PrelevementEditorPaneViewController {
      * @see Access_BD_Prelevement#insererPrelevement(Prelevement, CompteCourant)
      * @see AlertUtilities#showAlert(Stage, String, String, String, Alert.AlertType)
      * @see Access_BD_Prelevement#getIdNouvPrelevement()
-     * @see NewPrelevementPaneViewController#isSaisieValide()
+     * @see PrelevementEditorPaneViewController#isSaisieValide()
      */
     @FXML
     private void doConfirm() {
