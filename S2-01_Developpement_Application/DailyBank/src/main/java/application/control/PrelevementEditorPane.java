@@ -17,11 +17,11 @@ import model.data.CompteCourant;
  * Gère l'affichage et l'initialisation de la fenêtre de gestion des prélèvements automatiques.
  * <p>
  * Cette classe est responsable de la création et de la configuration de la fenêtre modale pour ajouter,
- * modifier ou supprimer un prélèvement automatique. Elle utilise le {@link NewPrelevementPaneViewController}
+ * modifier ou supprimer un prélèvement automatique. Elle utilise le {@link PrelevementEditorPaneViewController}
  * pour contrôler la logique de l'interface utilisateur.
  * </p>
  *
- * @see NewPrelevementPaneViewController
+ * @see PrelevementEditorPaneViewController
  * @see PrelevementsManagementViewController
  * @see DailyBankState
  * @see CompteCourant
@@ -44,7 +44,7 @@ public class PrelevementEditorPane {
      * @param p Le contrôleur de gestion des prélèvements.
      * @param cpt Le compte courant concerné par les prélèvements.
      *
-     * @see NewPrelevementPaneViewController
+     * @see PrelevementEditorPaneViewController
      * @see PrelevementsManagementViewController
      * @see DailyBankState
      * @see CompteCourant

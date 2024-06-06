@@ -32,7 +32,7 @@ import java.util.Locale;
  * automatiques à partir de la base de données.</p>
  *
  * @author Yassir BOULOUIHA GNAOUI
- * @see NewPrelevementPane
+ * @see PrelevementEditorPane
  * @see PrelevementsManagement
  * @see AlertUtilities
  */
