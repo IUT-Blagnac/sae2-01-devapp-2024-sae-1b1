@@ -142,6 +142,7 @@ public class PrelevementsManagementViewController {
 
     /**
      * Gère l'ajout d'un nouveau prélèvement.
+     * @author Yassir BOULOUIHA GNAOUI
      */
     @FXML
     private void doNouveauPrelev() {
