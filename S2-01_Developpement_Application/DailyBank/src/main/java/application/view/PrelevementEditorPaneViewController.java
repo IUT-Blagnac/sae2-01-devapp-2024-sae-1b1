@@ -97,7 +97,7 @@ public class PrelevementEditorPaneViewController {
                         // Met au bon format un nombre décimal écrit avec une virgule
                         txtMontant.setText(txtMontant.getText().trim().split(",", 2)[0] + "." +
                                 txtMontant.getText().trim().split(",", 2)[1].substring(0, 2));
-                    }
+              }
 
                     // Expression régulière d'un nombre > 0
                     regex = "^[1-9][0-9]*";
@@ -121,8 +121,9 @@ public class PrelevementEditorPaneViewController {
      *
      * @author Yassir BOULOUIHA GNAOUI
      */
-    public void displayDialog(EditionMode em) {
+    public void displayDialog(EditionMode em, Prelevement pr) {
         Access_BD_Prelevement access = new Access_BD_Prelevement();
+
 
         switch (em) {
             case CREATION:
@@ -141,6 +142,7 @@ public class PrelevementEditorPaneViewController {
 
             case MODIFICATION:
                 this.lblInfoOperation.setText("Modifier Prélèvement");
+                // this.txtIdPrelevement.setText(pr.)
                 break;
 
             default:
