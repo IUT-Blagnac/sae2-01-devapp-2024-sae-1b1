@@ -141,7 +141,6 @@ public class PrelevementEditorPaneViewController {
                             "Erreur : " + e.getMessage(), Alert.AlertType.ERROR);
                     this.containingStage.close();
                 }
-                this.txtIdPrelevement.setDisable(true);
                 break;
 
             case MODIFICATION:
@@ -155,6 +154,7 @@ public class PrelevementEditorPaneViewController {
                 break;
         }
 
+        this.txtIdPrelevement.setDisable(true);
 
         this.containingStage.showAndWait();
     }

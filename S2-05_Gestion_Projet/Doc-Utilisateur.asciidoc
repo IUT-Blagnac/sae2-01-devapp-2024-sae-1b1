@@ -7,6 +7,7 @@
 :gestCpt: {tuto}GestionComptes/
 :effVir: {tuto}EffectuerVirement/
 :gestCli: {tuto}GestionClient/
+:editPrel: {tuto}EditerPrelev/
 
 = Documentation utilisateur application DailyBank
 
@@ -389,11 +390,11 @@ Pour afficher les prélèvements automatiques d'un compte vous devez préalablem
 Sélectionnez le compte pour lequel vous souhaitez consulter les prélèvements automatiques en place en cliquant dessus (parmi les différents comptes listés).
 Suite à cela cliquez sur le bouton "Voir Prélèvements".
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/1-Select-Compte.png[Etape1]
+image:{tuto}AfficherPrelev/1-Select-Compte.png[Etape1]
 
 Une fois cela fait si le compte choisi a des prélevements automatiques qui sont établis alors ils s'afficheront, sinon la liste sera vide. Dans notre cas le premier compte du client Gabin a 5 prélèvements automatiques établis.
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/2-Resultat.png[Etape2]
+image:{tuto}AfficherPrelev/2-Resultat.png[Etape2]
 
 === 3.16 Établir un prélèvement automatique B.Y
 
@@ -401,23 +402,46 @@ Pour établir un nouveau prélèvement automatique sur un compte il faut préala
 
 Une fois sur cette page cliquez sur le bouton en bas a droite de la fenêtre "Nouveau Prélèvement".
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/1-Etape.png[Etape1]
+image:{tuto}AfficherPrelev/1-Etape.png[Etape1]
 
 Une nouvelle fenêtre s'ouvrira, renseignez sur cette fenêtre les champs demandés.
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/2-Etape.png[Etape2]
+image:{tuto}AfficherPrelev/2-Etape.png[Etape2]
 
 Une fois avoir rempli les trois champs "Bénéficiaire", "Récurrence" et "Montant" cliquez sur le bouton "Ajouter"
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/3-Etape.png[Etape3]
+image:{tuto}AfficherPrelev/3-Etape.png[Etape3]
 
 Si tous les champs sont correctement renseignés une nouvelle petite fenêtre vous informera que l'ajout à été effectué avec succès contenant des détails sur le prélèvement ajouté et le compte impacté. Si jamais un des champs n'est pas bien renseigné et que vous essayez d'ajouter le prélèvement, une fenetre vous indiquant le champ a corriger et la raison pourlaquelle vous devez le corriger aparaitra, si cela arrive prenez soin de lire l'avertissement affiché et de corriger votre saisie pour créer le prélèvement.
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/4-Etape.png[Etape4]
+image:{tuto}AfficherPrelev/4-Etape.png[Etape4]
 
 Une fois le prélèvement ajouté vous serez redirigé vers la fenetre d'affichage des prélèvements du compte qui à présent affichera le nouveau prélèvement dans la liste.
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/5-Etape.png[Etape5]
+image:{tuto}AfficherPrelev/5-Etape.png[Etape5]
+
+=== 3.17 Editer un prélèvement automatique D.T
+
+Pour modifier un prélèvement automatique précédemment créé, il faut d'abord accéder à la fenêtre de gestion des prélèvement automatiques(cf <<GestionPrelev>>). Une fois sur celle-ci vous devez sélectionner un prélèvement parmis la liste, puis le bouton `Modifier Prélèvement`.
+
+image:{editprel}1-editPrelev.png[editPrel1]
+
+S'ouvre alors la fenêtre `Gestion d'un prélèvement`. Celle-ci permet de modifier :
+
+* [red]#Le bénéficiaire#
+* [green]#Le jour du mois#
+* [blue]#Le montant#
+
+du virement.
+
+image:{editPrel}2-editPrelev.png[editPrel2]
+
+Une fois les différentes modifications effectuées, vous pouvez:
+
+* [red]#`Annuler` les changements#
+* [green]#`Valider` les changements#
+
+image:{editPrel}3-editPrelev.png[editPrel3]
 
 == 4 - Résultats
 
