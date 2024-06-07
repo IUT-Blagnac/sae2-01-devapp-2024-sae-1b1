@@ -189,7 +189,7 @@ public class PrelevementsManagementViewController {
 
         Access_BD_Prelevement aBd_Prelevement= new Access_BD_Prelevement();
         
-        if(AlertUtilities.confirmYesCancel(this.containingStage, "Supprimer?", "Voulez vous vraiment supprimer ce prélevement", null, AlertType.CONFIRMATION)){
+        if(AlertUtilities.confirmYesCancel(this.containingStage, "Supprimer?", "Voulez vous vraiment supprimer ce prélevement", this.lvPrelevements.getItems().get(selectedIndice).toString(), AlertType.CONFIRMATION)){
             try {
                 aBd_Prelevement.deletePrelevement(this.lvPrelevements.getItems().get(selectedIndice));
             } catch (DataAccessException | DatabaseConnexionException e) {

@@ -8,6 +8,8 @@
 :effVir: {tuto}EffectuerVirement/
 :gestCli: {tuto}GestionClient/
 :editPrel: {tuto}EditerPrelev/
+:delPrel: {tuto}SupprimerPrelev/
+
 
 = Documentation utilisateur application DailyBank
 
@@ -422,7 +424,7 @@ image:{tuto}AfficherPrelev/5-Etape.png[Etape5]
 
 === 3.17 Editer un prélèvement automatique D.T
 
-Pour modifier un prélèvement automatique précédemment créé, il faut d'abord accéder à la fenêtre de gestion des prélèvement automatiques(cf <<GestionPrelev>>). Une fois sur celle-ci vous devez sélectionner un prélèvement parmis la liste, puis le bouton `Modifier Prélèvement`.
+Pour modifier un prélèvement automatique précédemment créé, il faut d'abord accéder à la fenêtre de `Gestion des prélèvement automatiques`(cf <<GestionPrelev>>). Une fois sur celle-ci vous devez sélectionner un prélèvement parmis la liste, puis le bouton `Modifier Prélèvement`.
 
 image:{editprel}1-editPrelev.png[editPrel1]
 
@@ -442,6 +444,16 @@ Une fois les différentes modifications effectuées, vous pouvez:
 * [green]#`Valider` les changements#
 
 image:{editPrel}3-editPrelev.png[editPrel3]
+
+=== 3.18 Supprimer un prélèvement automatique
+
+Dans le but de supprimer un prélèvement automatique d'un compte vous devez d'abord être sur la fenêtre de `Gestion des prélèvement automatiques`(cf <<GestionPrelev>>). Une fois sur celle-ci vous devez sélectionner un prélèvement parmis la liste, puis le bouton `Supprimer Prélèvement`.
+
+image:{delprel}1-SupprPrel.png[supprPrel1]
+
+Une fenêtre de confirmation s'ouvre alors, sélectionnez simplement si vous souhaitez confirmer `Ok` ou `Annuler`.
+
+image:{delPrel}2-SupprPrel.png[supprPrel2]
 
 == 4 - Résultats
 
