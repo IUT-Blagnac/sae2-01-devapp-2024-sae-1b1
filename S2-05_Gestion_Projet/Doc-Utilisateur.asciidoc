@@ -404,23 +404,23 @@ Pour établir un nouveau prélèvement automatique sur un compte il faut préala
 
 Une fois sur cette page cliquez sur le bouton en bas a droite de la fenêtre "Nouveau Prélèvement".
 
-image:{tuto}AfficherPrelev/1-Etape.png[Etape1]
+image:{tuto}AjouterPrelev/1-Etape.png[Etape1]
 
 Une nouvelle fenêtre s'ouvrira, renseignez sur cette fenêtre les champs demandés.
 
-image:{tuto}AfficherPrelev/2-Etape.png[Etape2]
+image:{tuto}AjouterPrelev/2-Etape.png[Etape2]
 
 Une fois avoir rempli les trois champs "Bénéficiaire", "Récurrence" et "Montant" cliquez sur le bouton "Ajouter"
 
-image:{tuto}AfficherPrelev/3-Etape.png[Etape3]
+image:{tuto}AjouterPrelev/3-Etape.png[Etape3]
 
 Si tous les champs sont correctement renseignés une nouvelle petite fenêtre vous informera que l'ajout à été effectué avec succès contenant des détails sur le prélèvement ajouté et le compte impacté. Si jamais un des champs n'est pas bien renseigné et que vous essayez d'ajouter le prélèvement, une fenetre vous indiquant le champ a corriger et la raison pourlaquelle vous devez le corriger aparaitra, si cela arrive prenez soin de lire l'avertissement affiché et de corriger votre saisie pour créer le prélèvement.
 
-image:{tuto}AfficherPrelev/4-Etape.png[Etape4]
+image:{tuto}AjouterPrelev/4-Etape.png[Etape4]
 
 Une fois le prélèvement ajouté vous serez redirigé vers la fenetre d'affichage des prélèvements du compte qui à présent affichera le nouveau prélèvement dans la liste.
 
-image:{tuto}AfficherPrelev/5-Etape.png[Etape5]
+image:{tuto}AjouterPrelev/5-Etape.png[Etape5]
 
 === 3.17 Editer un prélèvement automatique D.T
 
