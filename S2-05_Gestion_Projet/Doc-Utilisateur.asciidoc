@@ -132,16 +132,16 @@ Sur cette fenêtre se trouve le bouton `Nouveau client`. Une fois celui-ci press
 
 
 [[ChampsClients]]
-* [red]#Nom du client#
-* [green]#Prénom du client#
-* [blue]#L'adresse du client#
-* [lime]#Le numéro de télephone du client#
-* [fuchsia]#L'E-mail du client#
+* [red]#Nom du client (rouge)#
+* [green]#Prénom du client (vert)#
+* [blue]#L'adresse du client (bleu)#
+* [lime]#Le numéro de télephone du client (vert pomme)#
+* [fuchsia]#L'E-mail du client (rose)#
 
 Certains champs ne peuvent être définis comme:
 
-* [olive]#L'ID du client généré par la base de données#
-* [gray]#Si le client est actif ou non car si il est crée il doit être actif#
+* [olive]#L'ID du client généré par la base de données (marron)#
+* [gray]#Si le client est actif ou non car si il est crée il doit être actif (gris)#
 
 image:{gestCli}2-CreerClient.png[CreerCli2]
 
@@ -150,14 +150,21 @@ image:{gestCli}2-CreerClient.png[CreerCli2]
 
 Pour modifier les informations d'un client, le guichetier doit d'abord accéder à la fenêtre de gestion de clients(cf <<GestionClient>>)
 
-Vous devez ensuite sélectionner le client dont vous voulez modifier les informations dans la [red]#liste#. 
+Vous devez ensuite sélectionner le client dont vous voulez modifier les informations dans la [red]#liste (rouge)#. 
 
 image:{tuto}RechercheClient.png[ChampsRecherche]
 
 Maintenant, il suffit de cliquer sur le bouton `Modifier client` pour modifier les informations du client. L'application ouvre la page `Gestion d'un client`. Les informations du client peuvent y être directement modifiées, sauf bien sûr son id qui est unique et définitif. Après les modifications, le guichetier peut appuyer sur le bouton:
 
-* [green]#`Modifier` pour confirmer les changements#
-* [red]#`Annuler` pour abandonner les changements#
+++++
+<p align="center">
+  <FONT Color="red">
+    Bite
+  </FONT>
+</p>
+++++
+* [green]#`Modifier` pour confirmer les changements (vert)#
+* [red]#`Annuler` pour abandonner les changements (rouge)#
 
 image:{tuto}ModifClient.PNG[ModifClient]
 
@@ -213,15 +220,15 @@ Après avoir cliqué vous obtiendrez la fenêtre de `Gestion d'un compte`.
 Celle-ci est la même fenêtre que celle permettant la création d'un compte(cf <<CreerCompte, Créer un Compte>>), on y a donc accès à toutes les informations du compte que l'on souhaite modifier, seulement les champs modifiable se limitent:
 
 
-* [red]#Au découvert autorisé#
-* [green]#La cloturation ou non de ce compte#
+* [red]#Au découvert autorisé (rouge)#
+* [green]#La cloturation ou non de ce compte (vert)#
 
 image:{gestCpt}2-modifCompte.png[modifCpt2]
 
 Une fois tous vos changement effectués vous pouvez quittez :
 
-* [red]#Avec le bouton `Annuler` pour annuler vos changements.#
-* [green]#Avec le bouton `Modifier` pour les confirmer.#
+* [red]#Avec le bouton `Annuler` pour annuler vos changements. (rouge)#
+* [green]#Avec le bouton `Modifier` pour les confirmer. (vert)#
 
 image:{gestCpt}3-modifCompte.png[modifCpt3]
 
@@ -273,8 +280,8 @@ image:{effVir}1-virement.png[effVir1]
 
 Vous accéderait alors a la fenêtre `Enregistrement d'une opération de virement`. Sur celle-ci vous devrez:
 
-* [.red]#Selectionner un compte  destinataire# (<<SelectionnerCompte, ici>>)
-* [green]#Renseigner le montant du virement# (<<RenseignerMontantVir, ici>>)
+* [.red]#Selectionner un compte  destinataire (rouge)# (<<SelectionnerCompte, ici>>)
+* [green]#Renseigner le montant du virement (vert)# (<<RenseignerMontantVir, ici>>)
 
 image:{effvir}2-virement.png[effVir2]
 
@@ -285,24 +292,24 @@ Cette fenêtre offre des options de recherche similaire à celle de gestion de c
 
 Vous obtiendrez ainsi la page ci-dessous où sont listés:
 
-* [red]#Les clients correspondants à votre recherche#
-* [green]#Leur comptes respectifs#
+* [red]#Les clients correspondants à votre recherche (rouge)#
+* [green]#Leur comptes respectifs (vert)#
 
 image:{effVir}3-virement.png[effVir3]
 
 Après avoir sélectionné l'un des comptes vous pouvez appuyer sur le bouton:
 
-* [red]#`Annuler` pour quitter sans garder votre choix#
-* [green]#`Selectionner Compte` pour confirmer votre choix#
+* [red]#`Annuler` pour quitter sans garder votre choix (rouge)#
+* [green]#`Selectionner Compte` pour confirmer votre choix (vert)#
 
 image:{effVir}4-virement.png[effVir4]
 
-Ainsi une fois votre selection faite votre fenêtre `Enregistrement d'une opération de virement` devrais ressembler à celle ci-dessous avec [red]#votre compte destinataire sélectionné#.
+Ainsi une fois votre selection faite votre fenêtre `Enregistrement d'une opération de virement` devrais ressembler à celle ci-dessous avec [red]#votre compte destinataire sélectionné (rouge)#.
 
 image:{effvir}5-virement.png[effVir5]
 
 [[RenseignerMontantVir]]
-Ainsi vous devez maintenant renseigner le montant du virement à effectuer. Il suffit pour cela d'entrez celui-ci dans [red]#l'encadré dédié#
+Ainsi vous devez maintenant renseigner le montant du virement à effectuer. Il suffit pour cela d'entrez celui-ci dans [red]#l'encadré dédié (rouge)#
 
 image:{effVir}6-virement.png[effVir6]
 
@@ -430,9 +437,9 @@ image:{editprel}1-editPrelev.png[editPrel1]
 
 S'ouvre alors la fenêtre `Gestion d'un prélèvement`. Celle-ci permet de modifier :
 
-* [red]#Le bénéficiaire#
-* [green]#Le jour du mois#
-* [blue]#Le montant#
+* [red]#Le bénéficiaire (rouge)#
+* [green]#Le jour du mois (vert)#
+* [blue]#Le montant (bleu)#
 
 du virement.
 
@@ -440,8 +447,8 @@ image:{editPrel}2-editPrelev.png[editPrel2]
 
 Une fois les différentes modifications effectuées, vous pouvez:
 
-* [red]#`Annuler` les changements#
-* [green]#`Valider` les changements#
+* [red]#`Annuler` les changements (rouge)#
+* [green]#`Valider` les changements (vert)#
 
 image:{editPrel}3-editPrelev.png[editPrel3]
 
@@ -451,7 +458,7 @@ Dans le but de supprimer un prélèvement automatique d'un compte vous devez d'a
 
 image:{delprel}1-SupprPrel.png[supprPrel1]
 
-Une fenêtre de confirmation s'ouvre alors, sélectionnez simplement si vous souhaitez confirmer `Ok` ou `Annuler`.
+Une fenêtre de confirmation s'ouvre alors, sélectionnez simplement si vous souhaitez supprimer `Ok` ou annuler l'action `Annuler`.
 
 image:{delPrel}2-SupprPrel.png[supprPrel2]
 
