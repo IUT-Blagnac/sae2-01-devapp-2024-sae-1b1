@@ -156,13 +156,6 @@ image:{tuto}RechercheClient.png[ChampsRecherche]
 
 Maintenant, il suffit de cliquer sur le bouton `Modifier client` pour modifier les informations du client. L'application ouvre la page `Gestion d'un client`. Les informations du client peuvent y être directement modifiées, sauf bien sûr son id qui est unique et définitif. Après les modifications, le guichetier peut appuyer sur le bouton:
 
-++++
-<p align="center">
-  <FONT Color="red">
-    Bite
-  </FONT>
-</p>
-++++
 * [green]#`Modifier` pour confirmer les changements (vert)#
 * [red]#`Annuler` pour abandonner les changements (rouge)#
 
