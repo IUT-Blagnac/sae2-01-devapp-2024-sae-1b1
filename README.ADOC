@@ -65,6 +65,6 @@ GPO: Le repo GIT devrait être structuré par version de l’application pour un
 |         | Doc. Tec. V2 | link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici] |     
 |         | Code V2    | link:S2-01_Developpement_Application/DailyBank/src[ici] | 
 |         | Recette V2 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici] | 
-|         | `jar` projet |    | 
+|         | `jar` projet |  link:/S2-01_Developpement_Application/DailyBank/target/DailyBank-1.0-shaded.jar  | 
 |         | `JavaDoc` |    | 
 |===
