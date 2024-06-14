@@ -1,7 +1,7 @@
 = Readme
 
 Notre équipe est chargée de mettre à jour et d'améliorer l'application bancaire de l'entreprise DailyBank dont les fonctionnalités ne répondent plus aux besoins de cette dernière.
-L'équipe comporte trois membres:
+L'équipe comporte trois membres :
 
 - FIGUERAS Clara
 - HANKI Wissal
@@ -66,4 +66,5 @@ GPO: Le repo GIT devrait être structuré par version de l’application pour un
 |         | Code V2    |                     | 
 |         | Recette V2 |                      | 
 |         | `jar` projet |    | 
+|         | `JavaDoc` |    | 
 |===
