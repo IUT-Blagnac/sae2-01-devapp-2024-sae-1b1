@@ -1,9 +1,28 @@
 package application.view;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.awt.*; 
+
+
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Font.FontFamily;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import application.DailyBankState;
 import application.control.ComptesManagement;
+import application.control.OperationsManagement;
 import application.control.PrelevementsManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,10 +33,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.Alert.AlertType;
 import application.tools.AlertUtilities;
+import application.tools.PairsOfValue;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
 import model.data.CompteCourant;
+import model.data.Operation;
 
 public class ComptesManagementViewController {
 
@@ -129,18 +150,6 @@ public class ComptesManagementViewController {
 
 			// Ouverture de la boîte de dialogue de gestion des prélèvements
 			p.doPrelevementManagementDialog();
-		}
-	}
-
-	@FXML
-	private void doModifierCompte() {
-		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
-		if (selectedIndice >= 0) {
-			CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
-			this.cmDialogController.editerCompte(cpt);
-		}else{
-			// Alerte théoriquement inatteignable
-			AlertUtilities.showAlert(this.containingStage,"Erreur de sélection", "Aucun compte ne semble sélectionné!","Vous devez sélectionner un compte à supprimer!!",AlertType.ERROR);
 		}
 	}
 
