@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.AgenceBancaire;
 import model.data.Employe;
+import model.data.SimulerEmprunt;
 
 /**
  * Controller JavaFX de la view dailybankmainframe.
@@ -213,7 +214,12 @@ public class DailyBankMainFrameViewController {
 		this.dbmfDialogController.gestionEmploye();
 		
 	}
-
+	
+	@FXML
+	private void doSimuler() {
+		this.dbmfDialogController.gestionSimulerEmprunt();
+	}
+	
 	/*
 	 * Se déconnecter de la bd oracle. Demande au contrôleur de dialogue de se
 	 * déconnecter.

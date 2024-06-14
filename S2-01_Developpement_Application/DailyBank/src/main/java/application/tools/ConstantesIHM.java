@@ -56,8 +56,29 @@ public class ConstantesIHM {
 	 * Liste des opérations de crédit possible en agence
 	 */
 	public static final String[] OPERATIONS_CREDIT_GUICHET = { ConstantesIHM.TYPE_OP_1, ConstantesIHM.TYPE_OP_3 };
+  
+	/*
+	 * Libellés des différents types de simulations.
+	 */
+	public static final String TYPE_SIMUL_1 = "Emprunt Taux fixe";
+	public static final String TYPE_SIMUL_2 = "Assurance Taux fixe";
 
-	// Méthodes utilitaires
+	/**
+	 * Liste des simulations possible
+	 */
+	public static final String[] SIMULATIONS = { ConstantesIHM.TYPE_SIMUL_1, ConstantesIHM.TYPE_SIMUL_2 };
+
+
+	/*
+	 * Libellés des différents types de périodes
+	 */
+	public static final String TYPE_PERIODE_1 = "Mensualités";
+	public static final String TYPE_PERIODE_2 = "Annuités";
+
+	/**
+	 * Liste des périodes possible
+	 */
+	public static final String[] PERIODES_SIMULATIONS = { ConstantesIHM.TYPE_PERIODE_1, ConstantesIHM.TYPE_PERIODE_2 };
 
 	/**
 	 * Teste si un droit d'accès correspond à un Admin, soit un chef d'agence pour

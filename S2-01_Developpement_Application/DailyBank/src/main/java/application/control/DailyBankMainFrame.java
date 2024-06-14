@@ -129,4 +129,9 @@ public class DailyBankMainFrame extends Application {
 		EmployeManagement cm = new EmployeManagement(this.dbmfStage, this.dailyBankState);
 		cm.doEmployeManagementDialog();
 	}
+	public void gestionSimulerEmprunt() {
+		SimulerManagement sm = new SimulerManagement(this.dbmfStage, dailyBankState);
+		sm.doSimulerManagementDialog();
+	}
+	
 }
