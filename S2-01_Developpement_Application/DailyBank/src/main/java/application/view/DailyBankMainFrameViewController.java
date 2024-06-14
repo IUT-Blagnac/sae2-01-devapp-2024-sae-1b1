@@ -106,6 +106,8 @@ public class DailyBankMainFrameViewController {
 	private Button btnConn;
 	@FXML
 	private Button btnDeconn;
+	@FXML
+	private MenuItem mitemSimulerEmprunt;
 
 	// Actions
 
@@ -176,6 +178,7 @@ public class DailyBankMainFrameViewController {
 				this.mitemEmploye.setDisable(true);
 			}
 			this.mitemClient.setDisable(false);
+			this.mitemSimulerEmprunt.setDisable(false);
 			this.mitemConnexion.setDisable(true);
 			this.mitemDeConnexion.setDisable(false);
 			this.btnConn.setVisible(false);
@@ -188,6 +191,7 @@ public class DailyBankMainFrameViewController {
 
 			this.mitemClient.setDisable(true);
 			this.mitemEmploye.setDisable(true);
+			this.mitemSimulerEmprunt.setDisable(true);
 			this.mitemConnexion.setDisable(false);
 			this.mitemDeConnexion.setDisable(true);
 			this.btnConn.setVisible(true);

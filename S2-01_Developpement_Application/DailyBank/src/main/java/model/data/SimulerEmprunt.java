@@ -6,9 +6,6 @@ import application.tools.ConstantesIHM;
 
 /**
  * Classe permettant de stocker les informations concernant la simulation d'un emprunt ou d'une assurance
- * 
- *
- *
  * @author Wissal
  *
  */
