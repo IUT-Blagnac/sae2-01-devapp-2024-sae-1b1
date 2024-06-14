@@ -39,12 +39,12 @@
                               <Insets bottom="10.0" top="10.0" />
                            </GridPane.margin>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doAutre" text="Virement depuis ce compte" GridPane.rowIndex="3">
+                        <Button fx:id="btnVirement" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doAutre" text="Virement depuis ce compte" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </GridPane.margin>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doReleve" text="PDF" />
+                        <Button fx:id="btnPDF" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doReleve" text="PDF" />
                      </children>
                   </GridPane>
                </children>
@@ -60,7 +60,7 @@
          <bottom>
             <HBox BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#doCancel" prefHeight="31.0" prefWidth="214.0" text="Retour gestion comptes">
+                  <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#doCancel" prefHeight="31.0" prefWidth="214.0" text="Retour gestion comptes">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" top="10.0" />
                      </HBox.margin>

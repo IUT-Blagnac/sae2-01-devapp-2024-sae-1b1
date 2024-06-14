@@ -95,6 +95,12 @@ public class OperationsManagementViewController {
 	private Button btnDebit;
 	@FXML
 	private Button btnCredit;
+	@FXML
+	private Button btnCancel;
+	@FXML
+	private Button btnVirement;
+	@FXML
+	private Button btnPDF;
 
 	@FXML
 	private void doCancel() {
