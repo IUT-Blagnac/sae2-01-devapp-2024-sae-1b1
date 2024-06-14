@@ -198,7 +198,7 @@ public class SimulerManagementViewController {
 
 		try {
 			FXMLLoader loader = new FXMLLoader(
-					OperationsManagementViewController.class.getResource("simulationeditorpane.fxml"));
+					OperationsManagementViewController.class.getResource("simulereditorpane.fxml"));
 			BorderPane root = loader.load();
 
 			Scene scene = new Scene(root, 1080, 700);
