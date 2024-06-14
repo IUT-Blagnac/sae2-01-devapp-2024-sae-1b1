@@ -499,11 +499,11 @@ image:{tuto}SimulerEmprunt\Etape2.png[Emprunt-Etape4]
 
 Apres avoir remplie vous cliquez sur 'Valider':
 
-image:{tuto}SimulerEmprunt\Etape3simuler.png[Emprunt-Etape4]
+image:{tuto}SimulerEmprunt\Etape3.png[Emprunt-Etape4]
 
 Cela affichera la fenêtre suivante qui represente le résultat de votre simulations d'assurance :
 
-image:{tuto}SimulerEmprunt\Etape4simuler.png[Emprunt-Etape4]
+image:{tuto}SimulerEmprunt\Etape4.png[Emprunt-Etape4]
 
 [[SimulerEmprunt]]
 
