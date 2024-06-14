@@ -39,7 +39,7 @@ ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPLAGNE Titouan, FIGUERAS Clara_*
 ____
 
-Version 1.3
+Version 2.1
 
 À destination de l'entreprise DailyBank
 
@@ -59,6 +59,14 @@ Ainsi, fin avril 2024, l'agence DailyBank a contacté notre équipe pour moderni
 Notre nouvelle version de l'application DailyBank, tout comme son prédécesseur, est développée en Java. Aussi, l'application nécessite link:https://www.java.com/fr/download/help/windows_manual_download.html[l'installation préalable] du link:https://www.java.com/en/download/manual.jsp[Java Runtime Environment]. Une fois link:https://www.java.com/en/download/manual.jsp[le lien] cliqué, vous serez redirigé vers la page de téléchargement officiel de Java. Il ne vous reste plus qu'à sélectionner le lien de téléchargement correspondant à votre système d'exploitation.
 
 L'ordinateur vous imposera ici de sélectionner l'emplacement de l'installeur Java, une fois sélectionné le téléchargement démarre, et vous devez maintenant lancer l'installeur. Cliquez sur "Installer", et l'installation est maintenant terminée.
+
+=== 1.2 – Identifiants de Connexion
+
+Format -> login:mdp
+
+Guichetier : LN:Levieux
+
+Chef d'agence : Tuff:Lejeune
 
 == 2 - Installation et Utilisation
 
