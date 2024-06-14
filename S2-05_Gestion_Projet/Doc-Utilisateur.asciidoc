@@ -468,12 +468,19 @@ image:{delPrel}2-SupprPrel.png[supprPrel2]
 Pour simuler une emprunt, suivez les étapes ci-dessous en tant que chef d'agence :
 
 Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Simulations :
+
 image:{tuto}SimulerEmprunt\Etape1.png[Emprunt-Etape4]
-Une fois sur cette page, vous pouvais remplire les cases suivantes:
+
+Une fois sur cette page, vous pouvez remplire les cases suivantes :
+
 image:{tuto}SimulerEmprunt\Etape2simuler.png[Emprunt-Etape4]
+
 Apres avoir remplie vous cliquez sur 'Valider':
+
 image:{tuto}SimulerEmprunt\Etape3simuler.png[Emprunt-Etape4]
+
 Cela affichera la fenêtre suivante qui represente le résultat de votre emprunt :
+
 image:{tuto}SimulerEmprunt\Etape4simuler.png[Emprunt-Etape4]
 
 [[SimulerEmprunt]]
@@ -483,12 +490,19 @@ image:{tuto}SimulerEmprunt\Etape4simuler.png[Emprunt-Etape4]
 Pour simuler votre assurance, suivez les étapes ci-dessous en tant que chef d'agence :
 
 Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Simulations :
+
 image:{tuto}SimulerEmprunt\Etape1.png[Emprunt-Etape4]
+
 Une fois sur cette page, vous pouvais remplire les cases suivantes, mais attention selectionner bien l'assurance:
+
 image:{tuto}SimulerEmprunt\Etape2.png[Emprunt-Etape4]
+
 Apres avoir remplie vous cliquez sur 'Valider':
+
 image:{tuto}SimulerEmprunt\Etape3simuler.png[Emprunt-Etape4]
+
 Cela affichera la fenêtre suivante qui represente le résultat de votre simulations d'assurance :
+
 image:{tuto}SimulerEmprunt\Etape4simuler.png[Emprunt-Etape4]
 
 [[SimulerEmprunt]]
