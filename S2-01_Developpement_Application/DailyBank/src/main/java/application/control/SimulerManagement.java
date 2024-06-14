@@ -20,10 +20,11 @@ public class SimulerManagement {
 	public SimulerManagement(Stage _parentStage, DailyBankState _dbstate) {
 
 		this.dailyBankState = _dbstate;
+		this.primaryStage=_parentStage;
 
 		try {
 			FXMLLoader loader = new FXMLLoader(
-					OperationsManagementViewController.class.getResource("simulationmanagement.fxml"));
+					OperationsManagementViewController.class.getResource("simulermanagement.fxml"));
 			BorderPane root = loader.load();
 
 			Scene scene = new Scene(root, 550 + 20, 390 + 10);
