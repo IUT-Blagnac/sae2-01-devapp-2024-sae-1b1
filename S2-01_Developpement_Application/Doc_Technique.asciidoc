@@ -30,7 +30,7 @@ ____
 
 _Informatique 1^ière^ Année_
 
-Version 1.1
+Version 2.1
 
 A destination l'entreprise DailyBank
 
@@ -54,6 +54,8 @@ image:{img}dc-initialv2.svg[DiagClassV2]
 
 
 === 1.4 Notre équipe
+
+Voici la répartition des tâches de notre équipe de développement.
 
 |=======================
 |version|rôle     |use case   |cas...                 |  Yassir | Titouan  |  Clara  | Wissal
@@ -356,6 +358,8 @@ image:{diagClass}Prelevement.png[DCprelevement]
 
 La classe utilisée pour stocker et afficher un prélèvement est la classe `Prelevement`.
 
+Répartition des classes utilisées dans les packages :
+
 * application.control :  
 ** `PrelevementsManagement`
 
@@ -399,8 +403,75 @@ Ce code enregistre le compte qui est selectionné parmi la liste affichée dans 
 === 3.6 Créer un prélevement automatique B.Y 
 
 ==== 3.6.1 Use case
+
+image:{usecases}CreerPrelevement.png["UCAffPrelev"]
+
+Les utilisateurs pouvant créer des prélèvements automatiques sur un compte sont le Chef d'agence et le Guichetier.
+
 ==== 3.6.2 Diagramme de classes
+
+image:{diagClass}Prelevement.png[DCprelevement]
+
+La classe utilisée pour insérer un prélèvement sur la base de données est la classe `Prelevement`.
+
+Répartition des classes utilisées dans les packages :
+
+* application.control :  
+** `PrelevementsManagement`
+** `PrelevementEditorPane`
+
+* application.view :
+** `PrelevementsManagementViewController`
+** `PrelevementEditorPaneViewController`
+
+* model.data :
+** `Prelevement`
+
+* model.orm :
+** `Access_BD_Prelevement`
+
 ==== 3.6.3 Code commenté
+
+Pour mettre en place cette fonctionnalité j'ai crée un nouveau fxml `prelevementeditorpane.fxml`, ce fichier fxml est lié au controller `PrelevementEditorPaneViewController`. 
+
+**PrelevementEditorPaneViewController** : 
+ Cette classe gère l'interface utilisateur et la manipulation des données pour les prélèvements automatiques.
+ Elle permet d'ajouter, de modifier et de supprimer des prélèvements sur un compte courant.
+ Elle utilise `Access_BD_Prelevement` pour accéder à la base de données.
+ Les alertes d'erreur sont gérées par `AlertUtilities`.
+
+**PrelevementEditorPane**: 
+ Cette classe est responsable de la création et de la configuration de la fenêtre modale pour ajouter,
+ modifier ou supprimer un prélèvement automatique. Elle utilise le `PrelevementEditorPaneViewController`
+ pour contrôler la logique de l'interface utilisateur.
+
+
+**Access_BD_Prelevement** :  
+Au niveau de cette classe, deux méthodes ont été ajoutées :
+
+1. La première méthode, `public int getIdNouvPrelevement()`, permet de récupérer un id de prélèvement qui est utilisé pour l'insertion dans la base de données mais également pour l'affichage de la fenêtre de création d'un prélèvement.
+2. La deuxième nouvelle méthode est `public void insererPrelevement(@NotNull Prelevement prlv, @NotNull CompteCourant cpt)` celle-ci permet d'inserer le prélèvement `prlv` sur le compte `cpt`, les deux étant passés en parametre.
+
+Le code qui va déclancher l'utilisation de toutes ces classes et donc l'ouverture de la fenetre de création de compte est dans `PrelevementsManagementViewController` : 
+
+[source,java,linenums]
+----
+@FXML
+private void doNouveauPrelev() {
+    if (this.compteConcerne.estCloture.equals("N")){
+        PrelevementEditorPane pEditorPane = new PrelevementEditorPane(this.containingStage, this.dailyBankState, this,
+                this.compteConcerne);
+        pEditorPane.doPrelevementEditorPaneDialog(EditionMode.CREATION);
+    }else {
+        AlertUtilities.showAlert(this.containingStage, "Action interdite",
+                "Vous ne pouvez pas établir un prélèvement automatiqué sur un compte clôturé",
+                "", Alert.AlertType.WARNING);
+    }
+}
+----
+
+Ce code vérifie tout d'abors si le compte sur lequel on veut ajouter le prélèvement est cloruré, si il est cloturé on indique qu'il n'est pas possible d'effectuer l'action sur un compte cloturé, et si il n'est pas cloturé on instancie un objet `PrelevementEditorPane` puis via cet objet on appelle `doPrelevementEditorPaneDialog(EditionMode.CREATION)` qui va lancer la fenetre d'ajout d'un nouveau compte nottament puisqu'on a spécifié le mode d'édition en parametre. Les différents modes d'édition que prends en charge la méthode `doPrelevementEditorPaneDialog(EditionMode em)` sont `EditionMode.CREATION` & `EditionMode.MODIFICATION`.
+
 
 === 3.7 Modifier un prélevement automatique D.T
 

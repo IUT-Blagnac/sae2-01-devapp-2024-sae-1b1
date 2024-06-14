@@ -7,10 +7,13 @@
 :gestCpt: {tuto}GestionComptes/
 :effVir: {tuto}EffectuerVirement/
 :gestCli: {tuto}GestionClient/
+:editPrel: {tuto}EditerPrelev/
+:delPrel: {tuto}SupprimerPrelev/
+
 
 = Documentation utilisateur application DailyBank
 
-image:../media/image_univ.jpg[image,width=97,height=137]
+image:{img}image_univ.jpg[image,width=97,height=137]
 
 Université de Toulouse
 
@@ -29,14 +32,14 @@ ifdef::env-github[]
 endif::[]
 
 ifndef::env-github[]
-image::../media/image_docu.png[Image de document, 350, align=center]
+image::{img}image_docu.png[Image de document, 350, align=center]
 endif::[]
 
 ____
 *_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPLAGNE Titouan, FIGUERAS Clara_*
 ____
 
-Version 1.3
+Version 2.1
 
 À destination de l'entreprise DailyBank
 
@@ -56,6 +59,14 @@ Ainsi, fin avril 2024, l'agence DailyBank a contacté notre équipe pour moderni
 Notre nouvelle version de l'application DailyBank, tout comme son prédécesseur, est développée en Java. Aussi, l'application nécessite link:https://www.java.com/fr/download/help/windows_manual_download.html[l'installation préalable] du link:https://www.java.com/en/download/manual.jsp[Java Runtime Environment]. Une fois link:https://www.java.com/en/download/manual.jsp[le lien] cliqué, vous serez redirigé vers la page de téléchargement officiel de Java. Il ne vous reste plus qu'à sélectionner le lien de téléchargement correspondant à votre système d'exploitation.
 
 L'ordinateur vous imposera ici de sélectionner l'emplacement de l'installeur Java, une fois sélectionné le téléchargement démarre, et vous devez maintenant lancer l'installeur. Cliquez sur "Installer", et l'installation est maintenant terminée.
+
+=== 1.2 – Identifiants de Connexion
+
+Format -> login:mdp
+
+Guichetier : LN:Levieux
+
+Chef d'agence : Tuff:Lejeune
 
 == 2 - Installation et Utilisation
 
@@ -118,39 +129,45 @@ Par exemple, si vous cliquez sur le bouton "Rechercher" directement sans avoir r
 
 image:{tuto}GestionClient\3-ModeRechercherTout.png[GestCli-Etape3]
 
-
+[[CreerClient]]
 === 3.3 Créer un Nouveau Client DT
 
 Afin de créer un nouveau profil client vous devez tout d'abord être sur la fenêtre `Gestion des clients`(cf <<GestionClient>>).
 
 image:{gestcli}1-CreerClient.png[CreerCli1]
 
-Sur cette fenêtre se trouve le bouton `Nouveau client`. Une fois celui-ci pressé s'ouvre la fenêtre `Gestion d'un client`.
+Sur cette fenêtre se trouve le bouton `Nouveau client`. Une fois celui-ci pressé s'ouvre la fenêtre `Gestion d'un client`. Vous devez ensuite remplir les champs pour modifier:
+
+
+[[ChampsClients]]
+* [red]#Nom du client (rouge)#
+* [green]#Prénom du client (vert)#
+* [blue]#L'adresse du client (bleu)#
+* [lime]#Le numéro de télephone du client (vert pomme)#
+* [fuchsia]#L'E-mail du client (rose)#
+
+Certains champs ne peuvent être définis comme:
+
+* [olive]#L'ID du client généré par la base de données (marron)#
+* [gray]#Si le client est actif ou non car si il est crée il doit être actif (gris)#
 
 image:{gestCli}2-CreerClient.png[CreerCli2]
-
-
 
 [[ModifierClient]]
 === 3.4 Modifier des Informations Client D.T
 
-Pour modifier les informations d'un client, le guichetier doit d'abord trouver le client. Cette recherche se fait par :
+Pour modifier les informations d'un client, le guichetier doit d'abord accéder à la fenêtre de gestion de clients(cf <<GestionClient>>)
 
-*** Le numéro
-*** Le nom
-*** Le prénom
-
-du client. (Champs encadrés en rouge dans l'image)
-
-Les clients correspondants seront listés et accessibles dans l'espace en dessous. (encadré en vert dans l'image)
+Vous devez ensuite sélectionner le client dont vous voulez modifier les informations dans la [red]#liste (rouge)#. 
 
 image:{tuto}RechercheClient.png[ChampsRecherche]
 
-Maintenant, il suffit de cliquer sur le bouton 'Modifier client' pour modifier les informations du client. L'application ouvre cette page :
+Maintenant, il suffit de cliquer sur le bouton `Modifier client` pour modifier les informations du client. L'application ouvre la page `Gestion d'un client`. Les informations du client peuvent y être directement modifiées, sauf bien sûr son id qui est unique et définitif. Après les modifications, le guichetier peut appuyer sur le bouton:
+
+* [green]#`Modifier` pour confirmer les changements (vert)#
+* [red]#`Annuler` pour abandonner les changements (rouge)#
 
 image:{tuto}ModifClient.PNG[ModifClient]
-
-Ici, les informations du client peuvent être directement modifiées, sauf bien sûr son id qui est unique et définitif. Après les modifications, le guichetier peut conserver celles-ci en appuyant sur 'Modifier' ou bien annuler les changements à l'aide du bouton 'Annuler'.
 
 [[GestionComptes]]
 === 3.5 Gestion Comptes Client B.Y
@@ -161,7 +178,7 @@ Sur la fenêtre de gestion des clients, cliquez sur le client qui vous intéress
 
 image:{tuto}GestionComptes\1-OuvrirGestionComptes.png[GestCpt-Etape1]
 
-Une fois cela fait, vous vous retrouverez sur la fenêtre de gestion des comptes du client que vous avez sélectionné dans le menu précédent.
+Une fois cela fait, vous vous retrouverez sur la fenêtre de gestion des comptes du client que vous avez sélectionné dans le menu précédent. Les champs sont les même que pour la création d'un nouveau compte(cf <<ChampsClient>>)
 
 image:{tuto}GestionComptes\2-ResultatComptes.png[GestCpt-Etape2]
 
@@ -204,15 +221,15 @@ Après avoir cliqué vous obtiendrez la fenêtre de `Gestion d'un compte`.
 Celle-ci est la même fenêtre que celle permettant la création d'un compte(cf <<CreerCompte, Créer un Compte>>), on y a donc accès à toutes les informations du compte que l'on souhaite modifier, seulement les champs modifiable se limitent:
 
 
-* [red]#Au découvert autorisé#
-* [green]#La cloturation ou non de ce compte#
+* [red]#Au découvert autorisé (rouge)#
+* [green]#La cloturation ou non de ce compte (vert)#
 
 image:{gestCpt}2-modifCompte.png[modifCpt2]
 
 Une fois tous vos changement effectués vous pouvez quittez :
 
-* [red]#Avec le bouton `Annuler` pour annuler vos changements.#
-* [green]#Avec le bouton `Modifier` pour les confirmer.#
+* [red]#Avec le bouton `Annuler` pour annuler vos changements. (rouge)#
+* [green]#Avec le bouton `Modifier` pour les confirmer. (vert)#
 
 image:{gestCpt}3-modifCompte.png[modifCpt3]
 
@@ -264,8 +281,8 @@ image:{effVir}1-virement.png[effVir1]
 
 Vous accéderait alors a la fenêtre `Enregistrement d'une opération de virement`. Sur celle-ci vous devrez:
 
-* [.red]#Selectionner un compte  destinataire# (<<SelectionnerCompte, ici>>)
-* [green]#Renseigner le montant du virement# (<<RenseignerMontantVir, ici>>)
+* [.red]#Selectionner un compte  destinataire (rouge)# (<<SelectionnerCompte, ici>>)
+* [green]#Renseigner le montant du virement (vert)# (<<RenseignerMontantVir, ici>>)
 
 image:{effvir}2-virement.png[effVir2]
 
@@ -276,24 +293,24 @@ Cette fenêtre offre des options de recherche similaire à celle de gestion de c
 
 Vous obtiendrez ainsi la page ci-dessous où sont listés:
 
-* [red]#Les clients correspondants à votre recherche#
-* [green]#Leur comptes respectifs#
+* [red]#Les clients correspondants à votre recherche (rouge)#
+* [green]#Leur comptes respectifs (vert)#
 
 image:{effVir}3-virement.png[effVir3]
 
 Après avoir sélectionné l'un des comptes vous pouvez appuyer sur le bouton:
 
-* [red]#`Annuler` pour quitter sans garder votre choix#
-* [green]#`Selectionner Compte` pour confirmer votre choix#
+* [red]#`Annuler` pour quitter sans garder votre choix (rouge)#
+* [green]#`Selectionner Compte` pour confirmer votre choix (vert)#
 
 image:{effVir}4-virement.png[effVir4]
 
-Ainsi une fois votre selection faite votre fenêtre `Enregistrement d'une opération de virement` devrais ressembler à celle ci-dessous avec [red]#votre compte destinataire sélectionné#.
+Ainsi une fois votre selection faite votre fenêtre `Enregistrement d'une opération de virement` devrais ressembler à celle ci-dessous avec [red]#votre compte destinataire sélectionné (rouge)#.
 
 image:{effvir}5-virement.png[effVir5]
 
 [[RenseignerMontantVir]]
-Ainsi vous devez maintenant renseigner le montant du virement à effectuer. Il suffit pour cela d'entrez celui-ci dans [red]#l'encadré dédié#
+Ainsi vous devez maintenant renseigner le montant du virement à effectuer. Il suffit pour cela d'entrez celui-ci dans [red]#l'encadré dédié (rouge)#
 
 image:{effVir}6-virement.png[effVir6]
 
@@ -375,6 +392,7 @@ Pour ouvrir supprimer un employé, vous devez être préalablement connecter en 
 
 Après avoir sélectionner l'employé à supprimer vous devez cliquer sur le bouton de confirmation, un avertissement apparaitra afin de confirmer l'action. 
 
+[[GestionPrelev]]
 === 3.15 Afficher les prélèvements automatiques d'un compte B.Y
 
 Pour afficher les prélèvements automatiques d'un compte vous devez préalablement être sur le menu de gestion des comptes d'un client (cf. <<GestionComptes, Gestion Comptes Client>>), dans le cadre de ce tutoriel nous utiliserons le premier compte du client Gabin.
@@ -382,12 +400,112 @@ Pour afficher les prélèvements automatiques d'un compte vous devez préalablem
 Sélectionnez le compte pour lequel vous souhaitez consulter les prélèvements automatiques en place en cliquant dessus (parmi les différents comptes listés).
 Suite à cela cliquez sur le bouton "Voir Prélèvements".
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/1-Select-Compte.png[Etape1]
+image:{tuto}AfficherPrelev/1-Select-Compte.png[Etape1]
 
 Une fois cela fait si le compte choisi a des prélevements automatiques qui sont établis alors ils s'afficheront, sinon la liste sera vide. Dans notre cas le premier compte du client Gabin a 5 prélèvements automatiques établis.
 
-image:../media/Tutoriels_utilisation/AfficherPrelev/2-Resultat.png[Etape2]
+image:{tuto}AfficherPrelev/2-Resultat.png[Etape2]
 
+=== 3.16 Établir un prélèvement automatique B.Y
+
+Pour établir un nouveau prélèvement automatique sur un compte il faut préalablement être sur la fenêtre de gestion des prélèvements d'un compte client (cf. <<GestionPrelev, Afficher les prélèvements automatiques d'un compte>>).
+
+Une fois sur cette page cliquez sur le bouton en bas a droite de la fenêtre "Nouveau Prélèvement".
+
+image:{tuto}AjouterPrelev/1-Etape.png[Etape1]
+
+Une nouvelle fenêtre s'ouvrira, renseignez sur cette fenêtre les champs demandés.
+
+image:{tuto}AjouterPrelev/2-Etape.png[Etape2]
+
+Une fois avoir rempli les trois champs "Bénéficiaire", "Récurrence" et "Montant" cliquez sur le bouton "Ajouter"
+
+image:{tuto}AjouterPrelev/3-Etape.png[Etape3]
+
+Si tous les champs sont correctement renseignés une nouvelle petite fenêtre vous informera que l'ajout à été effectué avec succès contenant des détails sur le prélèvement ajouté et le compte impacté. Si jamais un des champs n'est pas bien renseigné et que vous essayez d'ajouter le prélèvement, une fenetre vous indiquant le champ a corriger et la raison pourlaquelle vous devez le corriger aparaitra, si cela arrive prenez soin de lire l'avertissement affiché et de corriger votre saisie pour créer le prélèvement.
+
+image:{tuto}AjouterPrelev/4-Etape.png[Etape4]
+
+Une fois le prélèvement ajouté vous serez redirigé vers la fenetre d'affichage des prélèvements du compte qui à présent affichera le nouveau prélèvement dans la liste.
+
+image:{tuto}AjouterPrelev/5-Etape.png[Etape5]
+
+=== 3.17 Editer un prélèvement automatique D.T
+
+Pour modifier un prélèvement automatique précédemment créé, il faut d'abord accéder à la fenêtre de `Gestion des prélèvement automatiques`(cf <<GestionPrelev>>). Une fois sur celle-ci vous devez sélectionner un prélèvement parmis la liste, puis le bouton `Modifier Prélèvement`.
+
+image:{editprel}1-editPrelev.png[editPrel1]
+
+S'ouvre alors la fenêtre `Gestion d'un prélèvement`. Celle-ci permet de modifier :
+
+* [red]#Le bénéficiaire (rouge)#
+* [green]#Le jour du mois (vert)#
+* [blue]#Le montant (bleu)#
+
+du virement.
+
+image:{editPrel}2-editPrelev.png[editPrel2]
+
+Une fois les différentes modifications effectuées, vous pouvez:
+
+* [red]#`Annuler` les changements (rouge)#
+* [green]#`Valider` les changements (vert)#
+
+image:{editPrel}3-editPrelev.png[editPrel3]
+
+=== 3.18 Supprimer un prélèvement automatique
+
+Dans le but de supprimer un prélèvement automatique d'un compte vous devez d'abord être sur la fenêtre de `Gestion des prélèvement automatiques`(cf <<GestionPrelev>>). Une fois sur celle-ci vous devez sélectionner un prélèvement parmis la liste, puis le bouton `Supprimer Prélèvement`.
+
+image:{delprel}1-SupprPrel.png[supprPrel1]
+
+Une fenêtre de confirmation s'ouvre alors, sélectionnez simplement si vous souhaitez supprimer `Ok` ou annuler l'action `Annuler`.
+
+image:{delPrel}2-SupprPrel.png[supprPrel2]
+
+=== 3.19 Simuler Emprunt H.W
+
+Pour simuler une emprunt, suivez les étapes ci-dessous en tant que chef d'agence :
+
+Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Simulations :
+
+image:{tuto}SimulerEmprunt\Etape1.png[Emprunt-Etape4]
+
+Une fois sur cette page, vous pouvez remplire les cases suivantes :
+
+image:{tuto}SimulerEmprunt\Etape2simuler.png[Emprunt-Etape4]
+
+Apres avoir remplie vous cliquez sur 'Valider':
+
+image:{tuto}SimulerEmprunt\Etape3simuler.png[Emprunt-Etape4]
+
+Cela affichera la fenêtre suivante qui represente le résultat de votre emprunt :
+
+image:{tuto}SimulerEmprunt\Etape4simuler.png[Emprunt-Etape4]
+
+[[SimulerEmprunt]]
+
+=== 3.19 Simuler Assurance H.W
+
+Pour simuler votre assurance, suivez les étapes ci-dessous en tant que chef d'agence :
+
+Connectez-vous en tant que chef d'agence pour accéder à la page suivante, puis cliquez sur Simulations :
+
+image:{tuto}SimulerEmprunt\Etape1.png[Emprunt-Etape4]
+
+Une fois sur cette page, vous pouvais remplire les cases suivantes, mais attention selectionner bien l'assurance:
+
+image:{tuto}SimulerEmprunt\Etape2.png[Emprunt-Etape4]
+
+Apres avoir remplie vous cliquez sur 'Valider':
+
+image:{tuto}SimulerEmprunt\Etape3.png[Emprunt-Etape4]
+
+Cela affichera la fenêtre suivante qui represente le résultat de votre simulations d'assurance :
+
+image:{tuto}SimulerEmprunt\Etape4.png[Emprunt-Etape4]
+
+[[SimulerEmprunt]]
 
 == 4 - Résultats
 

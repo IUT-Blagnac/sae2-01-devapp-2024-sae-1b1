@@ -1,7 +1,7 @@
 = Readme
 
 Notre équipe est chargée de mettre à jour et d'améliorer l'application bancaire de l'entreprise DailyBank dont les fonctionnalités ne répondent plus aux besoins de cette dernière.
-L'équipe comporte trois membres:
+L'équipe comporte trois membres :
 
 - FIGUERAS Clara
 - HANKI Wissal
@@ -24,13 +24,13 @@ Les différentes responsabilités des autres membres à définir plus tard.
 |1    |Guichetier     | Compte | Effectuer un virement|| F | | 
 |1    |Guichetier     | Compte | Clôturer|| F | | 
 |2    |Chef d’Agence     | Compte | Débit exceptionnel| | | D | 
-|2    |Chef d’Agence     | Emprunt | Simuler emprunt|| | | D
-|2    |Chef d’Agence     | Emprunt | Simuler assurance|| | | D
+|2    |Chef d’Agence     | Emprunt | Simuler emprunt|| | | F
+|2    |Chef d’Agence     | Emprunt | Simuler assurance|| | | F
 |2    |Guichetier     | Compte | Relevé PDF|| | | 
-|2    |Guichetier     | CRUD Prélèvement | C|D| | | 
+|2    |Guichetier     | CRUD Prélèvement | C|F| | | 
 |2    |Guichetier     | CRUD Prélèvement | R|F| | | 
-|2    |Guichetier     | CRUD Prélèvement | U|| | | 
-|2    |Guichetier     | CRUD Prélèvement | D|| | | 
+|2    |Guichetier     | CRUD Prélèvement | U|| F | | 
+|2    |Guichetier     | CRUD Prélèvement | D|| F | | 
 |2    |Batch     | Prélèvements automatiques | |D| | | 
 |2    |Batch     | Reléves mensuels | || | | 
 
@@ -52,16 +52,19 @@ Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a dév
 |         | Doc. Tec. V0 |     link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]   |    
 |         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici] |Reprenez la page de garde qui doit être homogène avec les autres documents (nom du projet, compo équipe, date ...). Veillez à bien respecter la structuration demandée du document dans les futures versions. Il manque la procédure d'installation & lancement de l'application (et les credentails nécessaires) qui auraient déjà pu être renseignés.
 |         | Recette V0  |        link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]              | 
-| 31/05   | Gantt V1  réalisé    |    link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)   | 
-|         | Doc. Util. V1 |   link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici]      |         
+| 31/05   | Gantt V1  réalisé    |    link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)   | Le doc est trop petit pour avoir une vue synthetique des activités avec leur enchainement, il faut zoomer. Les acitivtiés ne sont pas effectées. Le découpage ne permet pas de voir l’enchainement des taches annexes de chaque dev (doc pour chaque fonctionnalité, qui la fait …)? la semaine IHM
+|         | Doc. Util. V1 |   link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici]      |Page de garde: la V1.3 est la version logicielle à laquelle la doc est applicable ? ou la version du doc ? indiquer la version logicielle applicable. indiquer les credentials à utiliser. Essayez d’étofferle document avec des exemples concret. Abordez les cas d’erreur (saisie incorrecte …). Attention à l’orthographe. 
+GPO: Le repo GIT devrait être structuré par version de l’application pour une meilleure accessibilité. Les taches du KanBan ne semblent pas complètement en ligne avec les GANTTs. Attention à bien ajouter tous les taggings necessaires, notamment la priorisation (must / should …)
+        
 |         | Doc. Tec. V1 |  link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]   |     
 |         | Code V1    |    link:S2-01_Developpement_Application/DailyBank/src[ici]    | 
 |         | Recette V1 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]   | 
-|         | Gantt V2 prévu |  link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)  | 
-| 14/06   | Gantt V2  réalisé    |       | 
-|         | Doc. Util. V2 |         |         
-|         | Doc. Tec. V2 |                |     
-|         | Code V2    |                     | 
-|         | Recette V2 |                      | 
+|         | Gantt V2 prévu |  link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)  | le gANTT a l’air strictement identique au GANTT V1 réalisé. IL n’y a pas eu d’ajustement ? d’ajout ? a reprendre.
+| 14/06   | Gantt V2  réalisé    | link:/S2-05_Gestion_Projet/GantReelV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité) | 
+|         | Doc. Util. V2 | link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici] |         
+|         | Doc. Tec. V2 | link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici] |     
+|         | Code V2    | link:S2-01_Developpement_Application/DailyBank/src[ici] | 
+|         | Recette V2 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici] | 
 |         | `jar` projet |    | 
+|         | `JavaDoc` |    | 
 |===

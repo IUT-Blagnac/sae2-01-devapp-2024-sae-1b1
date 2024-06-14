@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EmpolyeManagementViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EmpolyeManagementViewController">
    <right>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <top>
@@ -44,7 +44,7 @@
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnModifClient" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doModifierEmploye" text="Modifier employe" GridPane.rowIndex="2">
+                        <Button fx:id="btnModifEmployeButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doModifierEmploye" text="Modifier employe" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </GridPane.margin>

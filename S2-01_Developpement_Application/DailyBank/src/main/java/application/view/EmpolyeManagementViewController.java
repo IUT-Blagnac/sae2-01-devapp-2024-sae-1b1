@@ -67,8 +67,6 @@ public class EmpolyeManagementViewController {
 	private Button btnDesactEmployeButton;
 	@FXML
 	private Button btnModifEmployeButton;
-	@FXML
-	private Button btnComptesEmployeButton;
 
 	@FXML
 	private void doCancel() {
@@ -152,12 +150,12 @@ public class EmpolyeManagementViewController {
 		// Non implémenté => désactivé
 		this.btnDesactEmployeButton.setDisable(true);
 		int selectedIndice = this.lvEmploye.getSelectionModel().getSelectedIndex();
-		if (selectedIndice >= 0) {
+		if(selectedIndice >= 0) {
 			this.btnModifEmployeButton.setDisable(false);
-			this.btnComptesEmployeButton.setDisable(false);
+
 		} else {
 			this.btnModifEmployeButton.setDisable(true);
-			this.btnComptesEmployeButton.setDisable(true);
+		
 		}
 	}
 

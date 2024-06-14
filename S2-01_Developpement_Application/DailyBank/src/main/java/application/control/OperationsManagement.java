@@ -150,6 +150,7 @@ public class OperationsManagement {
 							"Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
 							"Contactez l'administrateur de la base de données\nErreur : Données dans COMPTECOURANT inexistantes",
 							AlertType.ERROR);
+					this.omStage.close();
 				}
 
 				// Construction de la requête d'ajout de l'opération sur la bd
@@ -196,6 +197,7 @@ public class OperationsManagement {
 								"Contactez l'administrateur de la base de données\nErreur : l'exécution de la requête d'insertion a échoué",
 								AlertType.ERROR);
 						con.rollback();
+						this.omStage.close();
 					}
 				}
 
@@ -208,11 +210,13 @@ public class OperationsManagement {
 				ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, ae);
 				ed.doExceptionDialog();
 				op = null;
+				this.omStage.close();
 			} catch (SQLException se) {
 				AlertUtilities.showAlert(omStage, "Erreur Base de données",
 						"Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
 						"Contactez l'administrateur de la base de données\nErreur : " + se.toString(),
 						AlertType.ERROR);
+				this.omStage.close();
 				if (con != null) {
 					try {
 						con.rollback();
@@ -221,6 +225,7 @@ public class OperationsManagement {
 								"Une erreur concernant la base de données est survenue\nL'opération n'a pas été enregistrée",
 								"Contactez l'administrateur de la base de données\nErreur : Impossibilité de rollback suite à une exception SQL\n"
 										+ se2.toString(), AlertType.ERROR);
+						this.omStage.close();
 					}
 				}
 			} finally {
@@ -235,6 +240,7 @@ public class OperationsManagement {
 							"Une erreur concernant la base de données est survenue\nL'opération a été enregistrée",
 							"Contactez l'administrateur de la base de données\nErreur : Exception lors de la fermeture des ressources bd après utilisation\n"
 									+ se.toString(), AlertType.ERROR);
+					this.omStage.close();
 				}
 			}
 		}

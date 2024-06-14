@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.AgenceBancaire;
 import model.data.Employe;
+import model.data.SimulerEmprunt;
 
 /**
  * Controller JavaFX de la view dailybankmainframe.
@@ -105,6 +106,8 @@ public class DailyBankMainFrameViewController {
 	private Button btnConn;
 	@FXML
 	private Button btnDeconn;
+	@FXML
+	private MenuItem mitemSimulerEmprunt;
 
 	// Actions
 
@@ -175,6 +178,7 @@ public class DailyBankMainFrameViewController {
 				this.mitemEmploye.setDisable(true);
 			}
 			this.mitemClient.setDisable(false);
+			this.mitemSimulerEmprunt.setDisable(false);
 			this.mitemConnexion.setDisable(true);
 			this.mitemDeConnexion.setDisable(false);
 			this.btnConn.setVisible(false);
@@ -187,6 +191,7 @@ public class DailyBankMainFrameViewController {
 
 			this.mitemClient.setDisable(true);
 			this.mitemEmploye.setDisable(true);
+			this.mitemSimulerEmprunt.setDisable(true);
 			this.mitemConnexion.setDisable(false);
 			this.mitemDeConnexion.setDisable(true);
 			this.btnConn.setVisible(true);
@@ -213,7 +218,12 @@ public class DailyBankMainFrameViewController {
 		this.dbmfDialogController.gestionEmploye();
 		
 	}
-
+	
+	@FXML
+	private void doSimuler() {
+		this.dbmfDialogController.gestionSimulerEmprunt();
+	}
+	
 	/*
 	 * Se déconnecter de la bd oracle. Demande au contrôleur de dialogue de se
 	 * déconnecter.
