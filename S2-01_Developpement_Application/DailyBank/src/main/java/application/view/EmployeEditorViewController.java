@@ -22,6 +22,17 @@ import model.orm.exception.ApplicationException;
 import model.orm.exception.Order;
 import model.orm.exception.Table;
 
+/**
+ * Contrôleur JavaFX pour la vue EmployeEditorView, responsable de l'édition des informations d'un employé.
+ * Cette classe gère l'interaction utilisateur pour la création, modification ou suppression des données d'un employé.
+ *
+ * @see application.DailyBankState
+ * @see application.tools.EditionMode
+ * @see application.control.ExceptionDialog
+ * @see application.tools.AlertUtilities
+ * @see application.tools.ConstantesIHM
+ * @see model.data.Employe
+ */
 public class EmployeEditorViewController {
 
 	// Etat courant de l'application
@@ -36,18 +47,32 @@ public class EmployeEditorViewController {
 	private EditionMode editionMode;
 	private Employe employeResultat;
 
-	// Manipulation de la fenêtre
 
+    /**
+     * Initialise le contexte du contrôleur de vue EmployeEditorViewController.
+     *
+     * @param _containingStage Stage qui contient le fichier XML contrôlé par EmployeEditorViewController
+     * @param dailyBankState2 Etat courant de l'application
+     */
 	public void initContext(Stage _containingStage, DailyBankState dailyBankState2) {
 		this.containingStage = _containingStage;
 		this.dailyBankState = dailyBankState2;
 		this.configure();
 	}
 
+	
 	private void configure() {
 		this.containingStage.setOnCloseRequest(e -> this.closeWindow(e));
 	}
 
+	 /**
+     * Affiche la fenêtre d'édition d'un employé en fonction du mode spécifié (CRÉATION, MODIFICATION, SUPPRESSION).
+     * Cette méthode permet à l'utilisateur de saisir ou de modifier les informations d'un employé.
+     *
+     * @param employe Employé à éditer (null si création d'un nouvel employé)
+     * @param mode    Mode d'édition (CRÉATION, MODIFICATION, SUPPRESSION)
+     * @return Employé résultat après édition, null si aucune action n'est réalisée
+     */
 	public Employe displayDialog(Employe employe, EditionMode mode) {
 
 		this.editionMode = mode;
@@ -110,7 +135,12 @@ public class EmployeEditorViewController {
 		return this.employeResultat;
 	}
 
-	// Gestion du stage
+	/**
+     * Gestion de la fermeture de la fenêtre par l'utilisateur.
+     *
+     * @param e Evénement associé à la fermeture de la fenêtre
+     * @return null toujours (inutilisé)
+     */
 	private Object closeWindow(WindowEvent e) {
 		this.doCancel();
 		e.consume();
@@ -138,12 +168,20 @@ public class EmployeEditorViewController {
 	@FXML
 	private Button butCancel;
 
+	 /**
+     * Action exécutée lors du clic sur le bouton Annuler.
+     * Réinitialise les champs et ferme la fenêtre d'édition.
+     */
 	@FXML
 	private void doCancel() {
 		this.employeResultat = null;
 		this.containingStage.close();
 	}
 
+	/**
+     * Action exécutée lors du clic sur le bouton Ajouter.
+     * Valide la saisie et effectue l'ajout, la modification ou la suppression de l'employé.
+     */
 	@FXML
 	private void doAjouter() {
 		switch (this.editionMode) {
@@ -167,6 +205,11 @@ public class EmployeEditorViewController {
 
 	}
 
+	/**
+     * Vérifie la validité de la saisie des données de l'employé.
+     *
+     * @return true si la saisie est valide, false sinon
+     */
 	private boolean isSaisieValide() {
 		this.employeEdite.nom = this.txtNom.getText().trim();
 		this.employeEdite.prenom = this.txtPrenom.getText().trim();

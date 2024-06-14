@@ -33,70 +33,98 @@ import model.orm.LogToDatabase;
 import model.orm.exception.ApplicationException;
 import model.orm.exception.DatabaseConnexionException;
 
+/**
+ * La classe OperationsManagement gère la gestion des opérations bancaires pour un client et un compte spécifiques
+ * dans l'application DailyBank.
+ * Elle utilise OperationsManagementViewController pour le contrôle de la vue et DailyBankState pour
+ * maintenir l'état de l'application.
+ *
+ * @version 1.0
+ * @see DailyBankState
+ * @see OperationsManagementViewController
+ */
 public class OperationsManagement {
 
-	private Stage omStage;
-	private DailyBankState dailyBankState;
-	private OperationsManagementViewController omViewController;
-	private Client clientDuCompte;
-	private CompteCourant compteConcerne;
+    private Stage omStage;
+    private DailyBankState dailyBankState;
+    private OperationsManagementViewController omViewController;
+    private Client clientDuCompte;
+    private CompteCourant compteConcerne;
 
-	public OperationsManagement(Stage _parentStage, DailyBankState _dbstate, Client client, CompteCourant compte) {
+    /**
+     * Constructeur de la classe OperationsManagement.
+     *
+     * @param _parentStage le stage parent pour la fenêtre de gestion des opérations
+     * @param _dbstate l'état quotidien de la banque
+     * @param client le client associé aux opérations
+     * @param compte le compte courant concerné par les opérations
+     */
+    public OperationsManagement(Stage _parentStage, DailyBankState _dbstate, Client client, CompteCourant compte) {
 
-		this.clientDuCompte = client;
-		this.compteConcerne = compte;
-		this.dailyBankState = _dbstate;
-		try {
-			FXMLLoader loader = new FXMLLoader(
-					OperationsManagementViewController.class.getResource("operationsmanagement.fxml"));
-			BorderPane root = loader.load();
+        this.clientDuCompte = client;
+        this.compteConcerne = compte;
+        this.dailyBankState = _dbstate;
+        try {
+            FXMLLoader loader = new FXMLLoader(OperationsManagementViewController.class.getResource("operationsmanagement.fxml"));
+            BorderPane root = loader.load();
 
-			Scene scene = new Scene(root, 900 + 20, 350 + 10);
-			scene.getStylesheets().add(DailyBankApp.class.getResource("application.css").toExternalForm());
+            Scene scene = new Scene(root, 900 + 20, 350 + 10);
+            scene.getStylesheets().add(DailyBankApp.class.getResource("application.css").toExternalForm());
 
-			this.omStage = new Stage();
-			this.omStage.initModality(Modality.WINDOW_MODAL);
-			this.omStage.initOwner(_parentStage);
-			StageManagement.manageCenteringStage(_parentStage, this.omStage);
-			this.omStage.setScene(scene);
-			this.omStage.setTitle("Gestion des opérations");
-			this.omStage.setResizable(false);
+            this.omStage = new Stage();
+            this.omStage.initModality(Modality.WINDOW_MODAL);
+            this.omStage.initOwner(_parentStage);
+            StageManagement.manageCenteringStage(_parentStage, this.omStage);
+            this.omStage.setScene(scene);
+            this.omStage.setTitle("Gestion des opérations");
+            this.omStage.setResizable(false);
 
-			this.omViewController = loader.getController();
-			this.omViewController.initContext(this.omStage, this, _dbstate, client, this.compteConcerne);
+            this.omViewController = loader.getController();
+            this.omViewController.initContext(this.omStage, this, _dbstate, client, this.compteConcerne);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	public void doOperationsManagementDialog() {
-		this.omViewController.displayDialog();
-	}
+    /**
+     * Affiche la fenêtre de gestion des opérations pour le compte courant associé.
+     *
+     * @see OperationsManagementViewController#displayDialog()
+     */
+    public void doOperationsManagementDialog() {
+        this.omViewController.displayDialog();
+    }
 
-	public Operation enregistrerDebit() {
-
-		OperationEditorPane oep = new OperationEditorPane(this.omStage, this.dailyBankState);
-		Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.DEBIT);
-		if (op != null) {
-			try {
-				Access_BD_Operation ao = new Access_BD_Operation();
-
-				ao.insertDebit(this.compteConcerne.idNumCompte, op.montant, op.idTypeOp);
-
-			} catch (DatabaseConnexionException e) {
-				ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, e);
-				ed.doExceptionDialog();
-				this.omStage.close();
-				op = null;
-			} catch (ApplicationException ae) {
-				ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, ae);
-				ed.doExceptionDialog();
-				op = null;
-			}
-		}
-		return op;
-	}
+    /**
+     * Enregistre une opération de débit sur le compte courant concerné.
+     *
+     * @return L'opération de débit enregistrée, ou null si une erreur s'est produite.
+     * 
+     * @see ExceptionDialog#doExceptionDialog
+     * @see Access_BD_Operation#insertDebit
+     * @see OperationEditorPane#doOperationEditorDialog
+     */
+    public Operation enregistrerDebit() {
+        OperationEditorPane oep = new OperationEditorPane(this.omStage, this.dailyBankState);
+        Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.DEBIT);
+        if (op != null) {
+            try {
+                Access_BD_Operation ao = new Access_BD_Operation();
+                ao.insertDebit(this.compteConcerne.idNumCompte, op.montant, op.idTypeOp);
+            } catch (DatabaseConnexionException e) {
+                ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, e);
+                ed.doExceptionDialog();
+                this.omStage.close();
+                op = null;
+            } catch (ApplicationException ae) {
+                ExceptionDialog ed = new ExceptionDialog(this.omStage, this.dailyBankState, ae);
+                ed.doExceptionDialog();
+                op = null;
+            }
+        }
+        return op;
+    }
 
 
 	/**
@@ -246,9 +274,21 @@ public class OperationsManagement {
 		}
 		return op;
 	}
-
-
-
+	
+	/**
+     * Enregistre un virement depuis le compte courant concerné vers un autre compte.
+     * <p>
+     * Cette méthode crée et affiche une boîte de dialogue pour saisir les détails du virement.
+     * Si le virement est validé, il est enregistré dans la base de données.
+     * En cas d'erreur lors de l'enregistrement, une alerte est affichée.
+     * </p>
+     *
+     * @return L'opération de virement enregistrée, ou une nouvelle instance d'Operation si une erreur s'est produite.
+     *
+     * @see VirementEditorPane#doOperationEditorDialog
+     * @see AlertUtilities#showAlert
+     * @see LogToDatabase#getConnexion
+     */
 	public Operation enregistrerVirement() {
 
 		VirementEditorPane vep = new VirementEditorPane(this.omStage, this.dailyBankState);
@@ -290,7 +330,21 @@ public class OperationsManagement {
 		}
 		return new Operation();
 	}
-// 
+
+	/**
+     * Récupère la liste des opérations et le solde actuel du compte courant associé.
+     * <p>
+     * Cette méthode interroge la base de données pour récupérer la liste des opérations et met à jour
+     * localement le solde du compte courant.
+     * En cas d'erreur lors de la récupération, une alerte est affichée.
+     * </p>
+     *
+     * @return Un objet PairsOfValue contenant le compte courant et la liste des opérations associées.
+     *
+     * @see Access_BD_CompteCourant#getCompteCourant
+     * @see Access_BD_Operation#getOperations
+     * @see ExceptionDialog#doExceptionDialog
+     */
 	public PairsOfValue<CompteCourant, ArrayList<Operation>> operationsEtSoldeDunCompte() {
 		ArrayList<Operation> listeOP = new ArrayList<>();
 

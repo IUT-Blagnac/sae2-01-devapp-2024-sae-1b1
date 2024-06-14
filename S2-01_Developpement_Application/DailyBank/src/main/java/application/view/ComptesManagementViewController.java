@@ -6,8 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.awt.*; 
-
 
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
@@ -22,7 +20,6 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import application.DailyBankState;
 import application.control.ComptesManagement;
-import application.control.OperationsManagement;
 import application.control.PrelevementsManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -33,184 +30,228 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.Alert.AlertType;
 import application.tools.AlertUtilities;
-import application.tools.PairsOfValue;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
 import model.data.CompteCourant;
-import model.data.Operation;
 
+/**
+ * Contrôleur de vue pour la gestion des comptes d'un client.
+ * Cette classe gère l'interface utilisateur et les interactions associées avec les comptes courants d'un client.
+ * Elle permet d'afficher les comptes, de modifier, supprimer et créer de nouveaux comptes.
+ * Elle gère également l'affichage et la gestion des opérations et prélèvements liés à chaque compte.
+ *
+ * @see application.view
+ */
 public class ComptesManagementViewController {
 
-	// Etat courant de l'application
-	private DailyBankState dailyBankState;
+    // Etat courant de l'application
+    private DailyBankState dailyBankState;
 
-	// Contrôleur de Dialogue associé à ComptesManagementController
-	private ComptesManagement cmDialogController;
+    // Contrôleur de Dialogue associé à ComptesManagementController
+    private ComptesManagement cmDialogController;
 
-	// Fenêtre physique ou est la scène contenant le fichier xml contrôlé par this
-	private Stage containingStage;
+    // Fenêtre physique ou est la scène contenant le fichier xml contrôlé par this
+    private Stage containingStage;
 
-	// Données de la fenêtre
-	private Client clientDesComptes;
-	private ObservableList<CompteCourant> oListCompteCourant;
+    // Données de la fenêtre
+    private Client clientDesComptes;
+    private ObservableList<CompteCourant> oListCompteCourant;
 
-	// Manipulation de la fenêtre
-	public void initContext(Stage _containingStage, ComptesManagement _cm, DailyBankState _dbstate, Client client) {
-		this.cmDialogController = _cm;
-		this.containingStage = _containingStage;
-		this.dailyBankState = _dbstate;
-		this.clientDesComptes = client;
-		this.configure();
-	}
+    /**
+     * Initialise le contexte du contrôleur avec la fenêtre principale et les données nécessaires.
+     *
+     * @param _containingStage La fenêtre principale contenant la scène gérée par ce contrôleur
+     * @param _cm              Le contrôleur des dialogues pour la gestion des comptes
+     * @param _dbstate         L'état courant de l'application bancaire
+     * @param client           Le client dont les comptes sont gérés par cette fenêtre
+     */
+    public void initContext(Stage _containingStage, ComptesManagement _cm, DailyBankState _dbstate, Client client) {
+        this.cmDialogController = _cm;
+        this.containingStage = _containingStage;
+        this.dailyBankState = _dbstate;
+        this.clientDesComptes = client;
+        this.configure();
+    }
 
-	private void configure() {
-		String info;
+    private void configure() {
+        String info;
 
-		this.containingStage.setOnCloseRequest(e -> this.closeWindow(e));
+        this.containingStage.setOnCloseRequest(e -> this.closeWindow(e));
 
-		this.oListCompteCourant = FXCollections.observableArrayList();
-		this.lvComptes.setItems(this.oListCompteCourant);
-		this.lvComptes.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-		this.lvComptes.getFocusModel().focus(-1);
-		this.lvComptes.getSelectionModel().selectedItemProperty().addListener(e -> this.validateComponentState());
+        this.oListCompteCourant = FXCollections.observableArrayList();
+        this.lvComptes.setItems(this.oListCompteCourant);
+        this.lvComptes.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        this.lvComptes.getFocusModel().focus(-1);
+        this.lvComptes.getSelectionModel().selectedItemProperty().addListener(e -> this.validateComponentState());
 
-		info = this.clientDesComptes.nom + "  " + this.clientDesComptes.prenom + "  (id : " + this.clientDesComptes.idNumCli + ")";
-		this.lblInfosClient.setText(info);
+        info = this.clientDesComptes.nom + "  " + this.clientDesComptes.prenom + "  (id : " + this.clientDesComptes.idNumCli + ")";
+        this.lblInfosClient.setText(info);
 
-		this.loadList();
-		this.validateComponentState();
-	}
+        this.loadList();
+        this.validateComponentState();
+    }
 
-	public void displayDialog() {
-		this.containingStage.showAndWait();
-	}
+    /**
+     * Affiche la fenêtre de gestion des comptes et attend que l'utilisateur la ferme.
+     */
+    public void displayDialog() {
+        this.containingStage.showAndWait();
+    }
 
-	// Gestion du stage
-	private Object closeWindow(WindowEvent e) {
-		this.doCancel();
-		e.consume();
-		return null;
-	}
+    // Gestion du stage
 
-	// Attributs de la scene + actions
+    /**
+     * Gère l'événement de fermeture de la fenêtre en annulant toute opération en cours.
+     *
+     * @param e L'événement de fermeture de la fenêtre
+     * @return null
+     */
+    private Object closeWindow(WindowEvent e) {
+        this.doCancel();
+        e.consume();
+        return null;
+    }
 
-	@FXML
-	private Label lblInfosClient;
-	@FXML
-	private ListView<CompteCourant> lvComptes;
-	@FXML
-	private Button btnVoirOpes;
-	@FXML
-	private Button btnModifierCompte;
-	@FXML
-	private Button btnSupprCompte;
-	@FXML
-	private Button btnVoirPrelev;
+    // Attributs de la scene + actions
 
-	@FXML
-	private void doCancel() {
-		this.containingStage.close();
-	}
+    @FXML
+    private Label lblInfosClient;
+    @FXML
+    private ListView<CompteCourant> lvComptes;
+    @FXML
+    private Button btnVoirOpes;
+    @FXML
+    private Button btnModifierCompte;
+    @FXML
+    private Button btnSupprCompte;
+    @FXML
+    private Button btnVoirPrelev;
 
-	@FXML
-	private void doVoirOperations() {
-		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
-		if (selectedIndice >= 0) {
-			CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
-			this.cmDialogController.gererOperationsDUnCompte(cpt);
-		}
-		this.loadList();
-		this.validateComponentState();
-	}
+    /**
+     * Gère l'événement de clic sur le bouton d'annulation.
+     * Ferme simplement la fenêtre de gestion des comptes.
+     */
+    @FXML
+    private void doCancel() {
+        this.containingStage.close();
+    }
 
-	/**
-	 * Méthode appelée lors de l'événement FXML pour afficher et gérer les prélèvements du compte sélectionné.
-	 * <p>
-	 * Cette méthode récupère l'indice du compte sélectionné dans la liste des comptes (lvComptes).
-	 * Si un compte est sélectionné, elle crée une instance de PrelevementsManagement pour gérer les prélèvements
-	 * du compte sélectionné et ouvre la boîte de dialogue de gestion des prélèvements.
-	 * </p>
-	 *
-	 * @author Yassir BOULOUIHA GNAOUI
-	 */
-	@FXML
-	private void doVoirPrelevements() {
-		// Récupération de l'indice du compte sélectionné dans la ListView
-		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+    /**
+     * Gère l'événement de clic sur le bouton pour voir les opérations du compte sélectionné.
+     * Récupère le compte courant sélectionné et ouvre la boîte de dialogue pour gérer les opérations du compte.
+     */
+    @FXML
+    private void doVoirOperations() {
+        int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+        if (selectedIndice >= 0) {
+            CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+            this.cmDialogController.gererOperationsDUnCompte(cpt);
+        }
+        this.loadList();
+        this.validateComponentState();
+    }
 
-		// Vérifie si un compte est effectivement sélectionné
-		if (selectedIndice >= 0) {
-			// Récupération du compte courant à l'indice sélectionné
-			CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+    /**
+     * Gère l'événement de clic sur le bouton pour voir les prélèvements du compte sélectionné.
+     * Récupère le compte courant sélectionné et ouvre la boîte de dialogue pour gérer les prélèvements du compte.
+     */
+    @FXML
+    private void doVoirPrelevements() {
+        // Récupération de l'indice du compte sélectionné dans la ListView
+        int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
 
-			// Création d'une instance de PrelevementsManagement pour gérer les prélèvements du compte sélectionné
-			PrelevementsManagement p = new PrelevementsManagement(this.containingStage, this.dailyBankState,
-					this.clientDesComptes, cpt);
+        // Vérifie si un compte est effectivement sélectionné
+        if (selectedIndice >= 0) {
+            // Récupération du compte courant à l'indice sélectionné
+            CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
 
-			// Ouverture de la boîte de dialogue de gestion des prélèvements
-			p.doPrelevementManagementDialog();
-		}
-	}
+            // Création d'une instance de PrelevementsManagement pour gérer les prélèvements du compte sélectionné
+            PrelevementsManagement p = new PrelevementsManagement(this.containingStage, this.dailyBankState,
+                    this.clientDesComptes, cpt);
 
-	@FXML
-	private void doModifierCompte() {
-		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
-		if (selectedIndice >= 0) {
-			CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
-			this.cmDialogController.editerCompte(cpt);
-		}else{
-			// Alerte théoriquement inatteignable
-			AlertUtilities.showAlert(this.containingStage,"Erreur de sélection", "Aucun compte ne semble sélectionné!","Vous devez sélectionner un compte à supprimer!!",AlertType.ERROR);
-		}
-	}
+            // Ouverture de la boîte de dialogue de gestion des prélèvements
+            p.doPrelevementManagementDialog();
+        }
+    }
 
-	@FXML
-	private void doSupprimerCompte() {
-		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
-		if (selectedIndice >= 0) {
-			if(AlertUtilities.confirmYesCancel(containingStage, "Suppression de compte", "Le compte ne pourra pas être retrouvé", "Voulez-vous réellement le supprimer?", AlertType.CONFIRMATION)){
-				CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
-				this.cmDialogController.supprimerCompte(cpt);
-			}
-		}else{
-			// Alerte théoriquement inatteignable
-			AlertUtilities.showAlert(this.containingStage,"Erreur de sélection", "Aucun compte ne semble sélectionné!","Vous devez sélectionner un compte à supprimer!!",AlertType.ERROR);
-		}
-		
-	}
+    /**
+     * Gère l'événement de clic sur le bouton pour modifier le compte sélectionné.
+     * Récupère le compte courant sélectionné et ouvre la boîte de dialogue pour modifier ses détails.
+     * Affiche une alerte d'erreur si aucun compte n'est sélectionné.
+     */
+    @FXML
+    private void doModifierCompte() {
+        int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+        if (selectedIndice >= 0) {
+            CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+            this.cmDialogController.editerCompte(cpt);
+        } else {
+            // Alerte théoriquement inatteignable
+            AlertUtilities.showAlert(this.containingStage, "Erreur de sélection", "Aucun compte ne semble sélectionné!",
+                    "Vous devez sélectionner un compte à supprimer!!", AlertType.ERROR);
+        }
+    }
 
-	@FXML
-	private void doNouveauCompte() {
-		this.cmDialogController.creerNouveauCompte();
-	}
+    /**
+     * Gère l'événement de clic sur le bouton pour supprimer le compte sélectionné.
+     * Récupère le compte courant sélectionné et demande confirmation à l'utilisateur avant de le supprimer.
+     * Affiche une alerte d'erreur si aucun compte est sélectionné.
+     */
+    @FXML
+    private void doSupprimerCompte() {
+        int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+        if (selectedIndice >= 0) {
+            if (AlertUtilities.confirmYesCancel(containingStage, "Suppression de compte", "Le compte ne pourra pas être retrouvé",
+                    "Voulez-vous réellement le supprimer?", AlertType.CONFIRMATION)) {
+                CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+                this.cmDialogController.supprimerCompte(cpt);
+            }
+        } else {
+            // Alerte théoriquement inatteignable
+            AlertUtilities.showAlert(this.containingStage, "Erreur de sélection", "Aucun compte ne semble sélectionné!",
+                    "Vous devez sélectionner un compte à supprimer!!", AlertType.ERROR);
+        }
 
-	private void loadList() {
-		ArrayList<CompteCourant> listeCpt;
-		listeCpt = this.cmDialogController.getComptesDunClient();
-		this.oListCompteCourant.clear();
-		this.oListCompteCourant.addAll(listeCpt);
-	}
+    }
 
-	private void validateComponentState() {
-		
-		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
-		if (selectedIndice >= 0) {
-			this.btnModifierCompte.setDisable(false);
-			this.btnSupprCompte.setDisable(false);
-			this.btnVoirOpes.setDisable(false);
-			this.btnVoirPrelev.setDisable(false);
-		} else {
-			this.btnModifierCompte.setDisable(true);
-			this.btnSupprCompte.setDisable(true);
-			this.btnVoirOpes.setDisable(true);
-			this.btnVoirPrelev.setDisable(true);
-		}
-	}
+    /**
+     * Gère l'événement de clic sur le bouton pour créer un nouveau compte pour le client actuel.
+     * Ouvre la boîte de dialogue pour créer un nouveau compte.
+     */
+    @FXML
+    private void doNouveauCompte() {
+        this.cmDialogController.creerNouveauCompte();
+    }
 
-	//Permet de mettre à jour la liste qui affiche les compte d'un client
-	public void reloadList() {
-		this.loadList();
-	}
+    private void loadList() {
+        ArrayList<CompteCourant> listeCpt;
+        listeCpt = this.cmDialogController.getComptesDunClient();
+        this.oListCompteCourant.clear();
+        this.oListCompteCourant.addAll(listeCpt);
+    }
+
+    private void validateComponentState() {
+
+        int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+        if (selectedIndice >= 0) {
+            this.btnModifierCompte.setDisable(false);
+            this.btnSupprCompte.setDisable(false);
+            this.btnVoirOpes.setDisable(false);
+            this.btnVoirPrelev.setDisable(false);
+        } else {
+            this.btnModifierCompte.setDisable(true);
+            this.btnSupprCompte.setDisable(true);
+            this.btnVoirOpes.setDisable(true);
+            this.btnVoirPrelev.setDisable(true);
+        }
+    }
+
+    /**
+     * Met à jour la liste des comptes affichée pour refléter les changements.
+     */
+    public void reloadList() {
+        this.loadList();
+    }
 
 }
