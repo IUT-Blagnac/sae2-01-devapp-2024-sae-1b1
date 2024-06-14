@@ -154,6 +154,18 @@ public class ComptesManagementViewController {
 	}
 
 	@FXML
+	private void doModifierCompte() {
+		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+		if (selectedIndice >= 0) {
+			CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+			this.cmDialogController.editerCompte(cpt);
+		}else{
+			// Alerte théoriquement inatteignable
+			AlertUtilities.showAlert(this.containingStage,"Erreur de sélection", "Aucun compte ne semble sélectionné!","Vous devez sélectionner un compte à supprimer!!",AlertType.ERROR);
+		}
+	}
+
+	@FXML
 	private void doSupprimerCompte() {
 		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
 		if (selectedIndice >= 0) {

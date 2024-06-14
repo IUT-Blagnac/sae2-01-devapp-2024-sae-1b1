@@ -1,6 +1,7 @@
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\OperationEditorPane.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\ComptesManagement.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\OperationsManagement.java
+c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\view\SimulerEmpruntEditorPaneViewController.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\orm\Access_BD_Prelevement.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\orm\Access_BD_TypeOperation.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\view\OperationsManagementViewController.java
@@ -9,8 +10,11 @@ c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\orm\Access_BD_CompteCourant.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\ClientEditorPane.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\DailyBankMainFrame.java
+c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\data\SimulerEmprunt.java
+c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\view\SimulerManagementViewController.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\data\Prelevement.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\orm\Access_BD_AgenceBancaire.java
+c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\SimulerManagement.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\data\TypeOperation.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\orm\exception\DataAccessException.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\view\LoginDialogViewController.java
@@ -26,6 +30,7 @@ c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\data\Client.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\tools\AlertUtilities.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\view\OperationEditorPaneViewController.java
+c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\data\LigneTableauEmprunt.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\CompteEditorPane.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\data\AgenceBancaire.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\view\PrelevementEditorPaneViewController.java
@@ -40,6 +45,7 @@ c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\orm\LogToDatabase.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\data\Employe.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\LoginDialog.java
+c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\model\data\LigneTableauAssurance.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\view\DestPickerPaneViewController.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\control\PrelevementEditorPane.java
 c:\Users\Dell\Documents\Fichiers Persos\Studies\BUT Info\S2\SAÉS\SAE 2.1 DevApp\sae2-01-devapp-2024-sae-1b1\S2-01_Developpement_Application\DailyBank\src\main\java\application\view\ClientsManagementViewController.java
