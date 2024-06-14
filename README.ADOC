@@ -60,11 +60,11 @@ GPO: Le repo GIT devrait être structuré par version de l’application pour un
 |         | Code V1    |    link:S2-01_Developpement_Application/DailyBank/src[ici]    | 
 |         | Recette V1 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]   | 
 |         | Gantt V2 prévu |  link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)  | le gANTT a l’air strictement identique au GANTT V1 réalisé. IL n’y a pas eu d’ajustement ? d’ajout ? a reprendre.
-| 14/06   | Gantt V2  réalisé    |       | 
-|         | Doc. Util. V2 |         |         
-|         | Doc. Tec. V2 |                |     
-|         | Code V2    |                     | 
-|         | Recette V2 |                      | 
+| 14/06   | Gantt V2  réalisé    | link:/S2-05_Gestion_Projet/GantReelV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité) | 
+|         | Doc. Util. V2 | link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici] |         
+|         | Doc. Tec. V2 | link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici] |     
+|         | Code V2    | link:S2-01_Developpement_Application/DailyBank/src[ici] | 
+|         | Recette V2 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici] | 
 |         | `jar` projet |    | 
 |         | `JavaDoc` |    | 
 |===
