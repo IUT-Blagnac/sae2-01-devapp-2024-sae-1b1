@@ -579,13 +579,29 @@ J'ai également utilisé la liste observable des employés `oListEmploye` pour s
 === 3.15  Simulation Emprunt H.W
 
 ==== 3.15.1 Use case
+
+image:{useCases}SimulerEmprunt.png[SimulerEmprunt]
+
+Les utilisateurs concernés par cette fonctionnalité sont les chefs d'Agence.
+
 ==== 3.15.2 Diagramme de classes
+
+image:{DigClasse}SimulerEmprunt.png[SimulerAssurance]
+
 ==== 3.15.3 Code commenté
 
 === 3.16 Simulation Assurance H.W
 
 ==== 3.16.1 Use case
+
+image:{useCases}SimulerAssurance.png[SimulerAssurance]
+
+Les utilisateurs concernés par cette fonctionnalité sont les chefs d'Agence.
+
 ==== 3.16.2 Diagramme de classes
+
+image:{DigClasse}SimulerEmprunt.png[SimulerAssurance]
+
 ==== 3.16.3 Code commenté
 
 
