@@ -1,7 +1,21 @@
 package application.view;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
+
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Font.FontFamily;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import application.DailyBankState;
 import application.control.OperationsManagement;
@@ -81,6 +95,12 @@ public class OperationsManagementViewController {
 	private Button btnDebit;
 	@FXML
 	private Button btnCredit;
+	@FXML
+	private Button btnCancel;
+	@FXML
+	private Button btnVirement;
+	@FXML
+	private Button btnPDF;
 
 	@FXML
 	private void doCancel() {
@@ -137,7 +157,6 @@ public class OperationsManagementViewController {
 		}
 	}
 
-
 	@FXML
 	private void doAutre() {
 		if (this.compteConcerne.estCloture.equals("N")) {
@@ -182,4 +201,60 @@ public class OperationsManagementViewController {
 
 		this.validateComponentState();
 	}
+
+	/**
+	 * @author Figueras Clara
+	 * permet de generer le PDF de relevé des comptes 
+	 * @throws DocumentException 
+	 * @throws FileNotFoundException 
+	 * 
+	 */
+	@FXML
+    private void doReleve() {
+        Document doc = new Document();
+        try {
+
+			String cheminFichierSortie = this.clientDuCompte.nom + this.clientDuCompte.prenom + this.compteConcerne.idNumCompte + ".pdf";
+
+            PdfWriter.getInstance(doc, new FileOutputStream(cheminFichierSortie));
+            doc.open();
+
+            Font f = new Font(FontFamily.TIMES_ROMAN, 25.0f, Font.BOLD, BaseColor.RED);
+
+            Paragraph par1 = new Paragraph("DailyBank", f);
+            par1.setAlignment(Element.ALIGN_CENTER);
+            doc.add(par1);
+			
+            doc.add(new Paragraph(""));
+
+            // Font a = new Font(FontFamily.HELVETICA, 15.0f, Font.BOLD, BaseColor.BLACK);
+            Paragraph par2 = new Paragraph("Relevé de : " + this.clientDuCompte.nom + " " + this.clientDuCompte.prenom + "\nCompte numéro : " + this.compteConcerne.idNumCompte);
+            doc.add(par2);
+
+			doc.add(new Paragraph(""));
+
+			doc.add(new Paragraph("--------------------------------------------------------------------------------------"));
+
+			doc.add(new Paragraph(""));
+
+            PairsOfValue<CompteCourant, ArrayList<Operation>> opesEtCompte ;
+            opesEtCompte = this.omDialogController.operationsEtSoldeDunCompte();
+            ArrayList<Operation> listeOP;
+            listeOP = opesEtCompte.getRight();
+            for (Operation element : listeOP) {
+                doc.add(new Paragraph(element.toString()));
+            }
+
+            doc.close();
+            Desktop.getDesktop().open(new File(cheminFichierSortie));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+	
 }
+

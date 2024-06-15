@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.OperationsManagementViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.OperationsManagementViewController">
    <right>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
@@ -39,11 +39,12 @@
                               <Insets bottom="10.0" top="10.0" />
                            </GridPane.margin>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doAutre" text="Virement depuis ce compte" GridPane.rowIndex="3">
+                        <Button fx:id="btnVirement" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doAutre" text="Virement depuis ce compte" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </GridPane.margin>
                         </Button>
+                        <Button fx:id="btnPDF" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doReleve" text="PDF" />
                      </children>
                   </GridPane>
                </children>
@@ -59,7 +60,7 @@
          <bottom>
             <HBox BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#doCancel" prefHeight="31.0" prefWidth="214.0" text="Retour gestion comptes">
+                  <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#doCancel" prefHeight="31.0" prefWidth="214.0" text="Retour gestion comptes">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" top="10.0" />
                      </HBox.margin>
