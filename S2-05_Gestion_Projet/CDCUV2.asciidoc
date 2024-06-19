@@ -1,0 +1,156 @@
+:toc: preamble
+:toc-title: Table des Matières
+= Cahier des Charges application DailyBank v2
+
+image:../media/image_univ.jpg[Logo UT2J,100,150]
+
+Université de Toulouse
+
+IUT de Blagnac
+
+Département Informatique
+
+_Informatique 1^ière^ Année_
+
+____
+
+*_Noms : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS Clara_*
+
+____
+
+Version 1.1
+
+Pour l'entreprise DailyBank
+
+
+== 1.Présentation du sujet 
+
+=== 1.1 Présentation du domaine de BANKUniv
+
+Le secteur bancaire traditionnel étant en pleine mutation face à l’essor
+des applications financières et à l’arrivée de nouveaux acteurs
+innovants. Pour rester compétitives, les banques doivent s’adapter et
+adopter une approche digitale centrée sur l’expérience client. Cela
+implique donc d’investir dans des systèmes sécurisés et agiles, de
+simplifier l’accès aux services bancaires via les applications mobiles,
+et de répondre aux attentes des consommateurs connectés. Face à la
+concurrence accrue des acteurs digitaux, les banques doivent miser sur
+une expérience client fluide, engageante et sécurisée sur tous les
+canaux digitaux, tout en protégeant les données sensibles des clients.
+En saisissant ces opportunités, les banques peuvent fidéliser leur
+clientèle, développer de nouveaux produits ainsi que des services
+innovants, et ainsi toucher de nouveaux marchés, notamment les jeunes et
+les consommateurs technophiles. L’avenir du secteur bancaire se jouera
+donc sur la capacité à l’ère du numérique.
+
+=== 1.2 Contexte
+
+Dans le contexte de la SAE S2.01 et 05 la banque BANKUniv souhaite
+développer une application JAVA-Oracle de gestion des comptes clients
+pour remplacer plusieurs de leurs outils obsolètes. Ce développement
+s'inscrit dans le cadre de restructuration de ses services bancaires et
+l’application sera déployée dans les 100 agences que compte son réseau.
+
+=== 1.3 Problématique
+
+Comment développer une application de gestion de comptes clients performante pour répondre aux exigences bancaires modernes ? 
+
+=== 1.4 Objectifs
+ 
+L'application DailyBank doit répondre aux exigeances des clients, pour cela nous avons plusieurs objectifs qui sont : 
+
+** La gestion des compte : nous devons fournir un aperçu clair et complet de tous les comptes, du solde et des transactions récentes. 
+
+** La gestion des transactions : il est primordial de faciliter les transactions de débit ainsi que de crédit.
+
+** Fonctionnalités de virement : Permettre aux utilisateurs d'effectuer facilement des virements entre leurs propres comptes de dépot et autoriser les virements vers des comptes au sein de de la meme institution bancaire.
+
+== 2.Analyse de l’existant
+
+=== 2.1 Présentation de la solution déjà existante
+
+BANKUniv possède déjà une application bancaire nommée “ Daily Bank “.
+Cependant cette version est assez limitée et doit être adaptée pour
+répondre aux nouveaux besoins de la banque.
+
+Dans cette version de l’application peut permettre au guichetier :
+
+** Modifier les informations des clients tels que leurs numéro de téléphone
+ou encore leurs adresses.
+
+** Créer un nouveau client.
+
+** Consulter un compte.
+
+** Débiter un compte.
+
+
+Le chef d'agence peut également rendre inactif un client.
+
+=== 2.2 Différents utilisateurs
+
+Voici le diagramme des cas d’utilisation initial :
+
+image::../media/DiagrammeCasUti.png[]
+
+== 3.Analyse des besoins 
+
+=== 3.1 User Story
+
+[.underline]#User Story 1:#
+
+En tant que Guichetier, je souhaite avoir accès à la modification des informations du client, à la création de nouveaux comptes, à la consultation des comptes,ainsi qu'à la possibilité d'effectuer des virements entre comptes et de débiter un compte, générer un relevé mensuel d'un compte en format PDF et gérer les prélèvements automatiques.
+
+[.underline]#User Story 2:#
+
+En tant que Chef d’Agence, je souhaite pouvoir rendre inactif un client, gérer les employés, dans le cas où seules les spécifications le permettent, effectuer un débit exceptionnel, simuler un emprunt et simuler une assurance emprunt.
+
+=== 3.2 Use Case
+
+==== Use case V0 :
+
+image::../media/usecaseV0.png[]
+
+==== Use case V1 :
+
+image::../media/usecaseV1.png[]
+
+
+== 4.Analyse des contraintes 
+
+=== 4.1 Techniques
+
+L'application doit être conçue pour être compatible avec les infrastructures existantes de la banque, notamment celles basées sur Java et Oracle, afin d'assurer une intégration harmonieuse. Elle doit répondre à des exigences de sécurité rigoureuses pour protéger les données financières des clients contre toute intrusion non autorisée ou violation de confidentialité. Pour garantir une expérience utilisateur optimale, l'application doit être capable de traiter efficacement un volume élevé de transactions tout en maintenant des temps de réponse courts. De plus, elle doit être flexible et évolutive afin de pouvoir facilement intégrer de nouvelles fonctionnalités et s'adapter aux besoins changeants de la banque sans perturber les opérations existantes. En outre, il est nécessaire d'inclure des règles de gestion spécifiques, telles que les conditions pour les transactions exceptionnelles, afin de couvrir tous les aspects opérationnels. Enfin, des contraintes spécifiques telles que les langages de développement et les exigences de sécurité doivent être définies de manière claire et précise pour orienter le processus de développement de l'application. Ces directives vont fournir un cadre clair et détaillé pour guider le développement de l'application. Par exemple, il peut être décidé que le langage de programmation principal doit être Java en raison de sa compatibilité avec les systèmes existants de la banque. De plus, des normes de sécurité strinctes doivent être définies, telles que l'utilisation de protocoles de cryptage avancés pour protéger les données sensibles des clients et l'implémentation de mesures de contrôle d'accès pour empêcher tout accès non autorisé. En détaillant ces contraintes spécifiques, les développeurs auront une compréhension claire des attentes et des exigences à respecter tout au long du processus de développement.
+
+
+=== 4.2 Organisationnelles
+
+
+La mise en œuvre de la nouvelle application nécessitera une formation
+convenable du personnel des agences bancaires pour garantir une adoption
+efficace et une utilisation correcte de l'outil. Une communication
+claire et efficace doit être établie au sein de l'organisation pour
+informer le personnel des changements à venir, des avantages de la
+nouvelle application et des procédures à suivre.
+
+
+=== 4.3 Étapes du projet et livraisons
+
+Les étapes du projet et le rendue des livrables demandé par le professeur est le suivant : 
+
+-03/05: Cahier de charge version 1 et Gantt version 1;
+
+-07/05: Cahier de charge version 2 final, doc.technique V0, doc user version 0 et recette version 0;
+
+-31/05: Gantt version 1 réalisé, doc. utilisateur version 1, doc. technique Version 1, code version 1, recette version 1 et Gantt version 2;
+
+-14/06: Gantt version 2 réalisé, doc. utilisateur V2, doc. technique version 2, code version 2, recette version 2.
+
+
+== Conclusion
+
+En conclusion, ce cahier des charges fournit un cadre solide pour le 
+développement de l'application de gestion des comptes clients pour BANKUniv. 
+En abordant les aspects techniques, organisationnels et fonctionnels du projet, 
+il offre une vision globale des défis à relever et des objectifs à atteindre
+pour répondre aux besoins évolutifs du secteur bancaire.

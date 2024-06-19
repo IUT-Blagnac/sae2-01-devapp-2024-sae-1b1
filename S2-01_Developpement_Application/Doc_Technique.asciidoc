@@ -1,0 +1,608 @@
+:toc: preamble
+:toc-title: Table des Matières
+:toclevels: 4
+:img: ../media/
+:docTech: {img}DocTech/
+:useCases: {docTech}UseCase/
+:diagClass: {docTech}DigClasse/
+:autre: {docTech}/Autre/
+= Documentation Technique application Daily Bank
+
+
+image:{img}image_univ.jpg[image,width=97,height=137]
+
+Université de Toulouse
+
+IUT de Blagnac
+
+Département Informatique
+
+Documentation Technique
+
+SAE 2.01
+
+image:{img}image_doc_tech.jpg[image,width=565,height=374]
+
+____
+*_Nom : BOULOUIHA Yassir, HANKI Wissal, DELAPAGNE Titouan, FIGUERAS
+Clara_*
+____
+
+_Informatique 1^ière^ Année_
+
+Version 2.1
+
+A destination l'entreprise DailyBank
+
+== 1 Le projet DailyBank
+
+=== 1.1 Contexte
+
+L'application DailyBank répond au besoin croissant de compétitivité des agences bancaires. En effet, de nos jours, les banques se numérisent de plus en plus et, afin de rester attrayantes auprès de jeunes consommateurs, les banques traditionnelles se doivent de se doter d'une application mobile pratique, esthétique et ergonomique. L’entreprise DailyBank, comme beaucoup d'autres, doit restructurer son réseau pour s'intégrer dans une stratégie de différenciation.
+
+Ainsi, fin avril 2024, l'agence DailyBank a contacté notre équipe pour moderniser leur application bancaire déjà existante, devenue obsolète. L'objectif principal du projet est de rectifier les lacunes actuelles de l'application, d'assurer la sécurité des données stockées et de redynamiser DailyBank avec cet outil, aujourd'hui essentiel à toute agence moderne. Il nous faut donc développer plusieurs fonctionnalités pour répondre a ce besoin croissant de modernité.
+
+=== 1.2 UseCase global
+
+L'application DailyBank permet de gérer une agence bancaire. Elle dispose donc de différents profils utilisateurs et de différents cas d'utilisation.
+
+image:{img}uc-initialv0.svg[UseCaseV0]
+
+=== 1.3 Diagramme de Classe des données
+
+image:{img}dc-initialv2.svg[DiagClassV2]
+
+
+=== 1.4 Notre équipe
+
+Voici la répartition des tâches de notre équipe de développement.
+
+|=======================
+|version|rôle     |use case   |cas...                 |  Yassir | Titouan  |  Clara  | Wissal
+|1    |Chef d’Agence    |CRUD employé  |C| | | |F
+|1    |Chef d’Agence    |CRUD employé  |R| | | |F
+|1    |Chef d’Agence |CRUD employé  |U| | |F |
+|1    |Chef d’Agence   |CRUD employé  |D| | |F |
+|1    |Guichetier     | Compte | Créer|F| | | 
+|1    |Guichetier     | Compte | Créditer/Débiter|F| | | 
+|1    |Guichetier     | Compte | Effectuer un virement|| F | | 
+|1    |Guichetier     | Compte | Clôturer|| F | | 
+|2    |Chef d’Agence     | Compte | Débit exceptionnel| | | D | 
+|2    |Chef d’Agence     | Emprunt | Simuler emprunt|| | | D
+|2    |Chef d’Agence     | Emprunt | Simuler assurance|| | | D
+|2    |Guichetier     | Compte | Relevé PDF|| | | 
+|2    |Guichetier     | CRUD Prélèvement | C|D| | | 
+|2    |Guichetier     | CRUD Prélèvement | R|D| | | 
+|2    |Guichetier     | CRUD Prélèvement | U|| | | 
+|2    |Guichetier     | CRUD Prélèvement | D|| | | 
+|2    |Batch     | Prélèvements automatiques | || | | 
+|2    |Batch     | Reléves mensuels | || | | 
+
+|=======================
+
+Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a développé la fonctionnalité, il y est indiqué
+
+*	*F* pour fonctionnel ou
+*	*D* pour encore en Développement
+
+== 2 Architecture
+
+=== 2.1 Architecture Générale
+
+L’application sera déployée sur toutes les machines des employés (guichetiers et chefs d’agences) dans toutes les agences. L’application utilise Java 1.8, JavaFX pour l’interface et se connecte à une base de données Oracle.
+
+=== 2.2 Ressources externes
+
+Le fichier `.jar` permet l’exécution par l’utilisateur de l’application. Réferrez-vous à la documentation utilisateur pour connaître les différentes fonctionnalités du point de vue de l’utilisateur. Une base de données Oracle est utilisée par cette application, la connexion est établie dans la classe LogToDatabase.java, package "model.orm".
+
+L'application utilise le framework javafx toute modification de celle-ci requiert l'acquisition préalable de ce dernier. 
+
+=== 2.3 Structure initiale de l'application
+
+==== 2.3.1. Packages
+
+Les packages : dans `src/main/java`
+
+* `application`
+
+** DailyBank : `main()` de départ
+* `application.control`
+
+** Contrôleurs de dialogue et accès aux données : gestion des fonctions
+de l’application. Deux rôles majeurs :
+
+*** Réalise les actions concrètes : accès BD, faire un calcul complexe,
+générer un fichier, …​
+*** Ouvre les autres fenêtres nécessaires : gestion du dialogue.
+* `application.view`
+
+** Contrôleurs associés aux vues fxml.
+
+*** Gestion de la vue affichée : contrôle des saisies réalisées,
+messages d’erreurs pour les contrôles de surface, appel du contrôleur de
+dialogue pour réaliser les actions concrètes.
+* `application.tools`
+
+** Utilitaires pour `application.view` et `application.control`
+* `model.data`
+
+** Classes java mappant les table de la BD. Une table ⇒ 1 classe. On
+peut en ajouter (classes pour jointures, …​)
+* `model.orm`
+
+** Classes d’accès physiques à la BD. Une table ⇒ 1 classe offrant
+différentes méthodes pour accéder à la table : select, insert, delete,
+update, appel de procédure stockée (elles sont données). On peut en
+ajouter.
+* `model.exception`
+
+** Classes des exceptions spécifiques d’accès à la BD, levées par les
+classes de `model.orm`
+
+Les views fxml : dans `src/main/resources`.
+
+* `application.view`
+
+** Vues de l’application : fichiers fxml
+** Fichier css
+
+[[_et_mvc]]
+==== 2.3.2. Modèle MVC
+
+Si on prend le modèle MVC pour l’application entière, on a :
+
+* Modèle :
+
+** `model.orm` : le "vrai" modèle : "contient" les données gérées dans
+l’application, via une BD Oracle.
+** `model.data` : classes nécessaires pour transporter les données
+* Vue :
+
+** `application.view` : toutes les parties visibles de l’utilisateur,
+sans accès aux données, sans calculs/action concrète, sans accès les
+unes aux autres
+* Contrôleur :
+
+** `application.control` : classes de contrôle du "déroulement"
+
+*** Routage entre fenêtres
+*** Accès aux données lorsque de besoin + calculs + accès fichiers + …​
+
+Le reste est juste de l’organisation de code :
+
+* `model.exception` : pour ne pas mélanger classes de code et classes
+d’exception
+* `application.tools` : pour isoler des classes utilisées à plusieurs
+endroits et qui sont utilitaires par rapport aux objectifs de
+l’application.
+
+== 3 Fonctionnalités
+
+=== 3.1 Créer un Compte B.Y
+
+==== 3.1.1 Use Case
+
+image:{useCases}CreerCompte.png[UCCreerCompte]
+
+Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le chef d'Agence.
+
+==== 3.1.2 Diagramme de classes
+
+image:{diagClass}CreerCompte.png[DCCreerCompte]
+
+La classe utilisée pour inserer un compte sur la base de données est la classe `CompteCourant`.
+
+* application.control :  
+** `ComptesManagement`
+** `CompteEditorPane`
+
+* application.view :
+** `ComptesManagementViewController`
+** `CompteEditorPaneViewController`
+
+* model.data :
+** `CompteCourant`
+
+* model.orm :
+** `LogToDataBase`
+
+==== 3.1.3 Code commenté
+
+La fonctionnalité de création de compte est principalement codée dans la fonction `creerNouveauCompte()` de la classe `ComptesManagement`. Cette fonction permet d'insérer un compte dans la base de données en effectuant une première requête pour récupérer le plus grand ID de compte présent dans la table `CompteCourant`, puis en ajoutant 1 pour générer l'ID du nouveau compte à insérer. Ensuite, la seconde requête permet d'insérer le compte dans la base de données. Après cela, la méthode `reloadList()` de la classe `ComptesManagementViewController` est appelée pour recharger la liste des comptes présents dans la fenêtre, permettant ainsi à l'utilisateur de voir et d'interagir directement avec le nouveau compte. après sa création.
+
+`ComptesManagementViewController` va donc appeler `creerNouveauCompte()` de la classe `ComptesManagement` lorsque l'utilisateur cliquera sur "Nouveau Compte" (`ComptesManagementViewController.doNouveauCompte()`). `creerNouveauCompte()` affichera la page permettant de renseigner les informations du nouveau compte en appelant `doCompteEditorDialog()` de la classe `CompteEditorPane`, qui à son tour retourne l'appel de `displayDialog()` de la classe `CompteEditorPaneViewController`, affichant ainsi réellement la fenêtre d'ajout de compte.
+
+
+
+=== 3.2 Créditer un Compte B.Y
+
+==== 3.2.1 UseCase
+
+image:{useCases}CrediterCompte.png[UCCrediterCompte]
+
+Les utilisateurs concernés par cette fonctionnalité sont le Guichetier et le chef d'Agence.
+
+==== 3.2.2 Diagramme de classes
+
+image:{diagClass}Operation.png[DCOperation]
+
+La classe utilisée pour créditer un compte est la classe `Operation`.
+
+Répartition des classes utilisées dans les packages :
+
+* application.control :  
+** `OperationsManagement`
+** `OperationEditorPane`
+
+* application.view :
+** `OperationsManagementViewController`
+** `OperationEditorPaneViewController`
+
+* model.data :
+** `Operation`
+
+* model.orm :
+** `LogToDataBase`
+
+==== 3.2.3 Code commenté
+
+Pour créditer un compte, j'ai d'abord complété la fonction `displayDialog()` dans la classe `OperationEditorPaneViewController`, en particulier pour le cas "CREDIT" du switch case. Cette fonction affiche une fenêtre permettant de récupérer les informations relatives au crédit. Une fois les informations saisies, cette fonction retourne l'opération sous forme d'un objet de type `Operation`.
+
+Le cœur du processus se trouve dans la fonction `enregistrerCredit()` de la classe OperationManagement. Cette fonction reçoit l'opération de crédit à enregistrer via la méthode `doOperationEditorDialog()` de la classe `OperationEditorPane`, qui appelle en retour la fonction `displayDialog()` mentionnée précédemment.
+
+La fonction `enregistrerCredit()` crée une connexion à la base de données à l'aide de la classe LogToDataBase. Dans un premier temps, elle exécute une requête pour obtenir le plus grand ID d'opération présent dans la table `Operation` et ajoute 1, ce qui permet de déterminer l'ID de la nouvelle opération à insérer. Ensuite, elle exécute une deuxième requête pour insérer l'opération de crédit dans la base de données en utilisant les informations contenues dans l'objet `Operation` récupéré. 
+
+=== 3.3 Effectuer un Virement D.T
+
+==== 3.3.1 Use case
+
+image:{useCases}Virement.png["UCVirement"]
+
+Les utilisateurs pouvant opérer un virement sont le Chef d'agence et le Guichetier.
+
+==== 3.3.2 Diagramme de classes
+
+image:{diagclass}Virement.png["DCVirement"]
+
+Les classes utilisées pour effectuer un virement sont les classes CompteCourant et Client.
+
+* application.control :
+** `OperationsManagement`
+** `VirementEditorPane`
+** `DestPickerPane`
+
+* application.view :
+** `OperationsManagementViewController`
+** `VirementEditorPaneViewController`
+** `DestPickerPaneViewController`
+
+* model.data :
+** `CompteCourant`
+** `Client`
+
+* model.orm :
+** `LogToDataBase`
+
+==== 3.3.3 Code commenté
+
+Effectuer un virement est l'une des trois options d'opérations d'un compte. Ainsi La première classe utilisée est `OperationsManagementViewController`. Celle-ci dispose de la methode `doAutre()` lié par le FXML au bouton `Virement depuis ce Compte`. La méthode appelle ensuite `enregistrerVirement()` de la classe `OperationsManagement`.
+
+La méthode `enregistrerVirement()` effectue deux tâches, elle ouvre d'abord une nouvelle instance de `VirementEditorPane`, utilise sa methode `doOperationEditorDialog()` qui elle-même appelle `DisplayDialog()` de la classe `VirementEditorPaneViewController` qui permet d'afficher une fenêtre ou l'on sélectionnera le montant et le compte destinataire. `enregistrerVirement()` se sert ensuite de ces deux données pour effectuer le virement sur la base de données.
+
+Afin de selectionner le compte destinataire du virement la fenêtre `VirementEditorPaneViewController` comprends un bouton lié à la méthode `doChoice`. Celle ci appelle la méthode `chooseDest()` de `VirementEditorPane` qui crée une instance de `DestPickerPane`. Cette classe et `DestPickerPaneViewController` servent à selectionner le compte destinataire parmis tous les clients.
+
+La classe `DestPickerPane` dispose, d'un constructeur permettant de load le fxml de la fenêtre, également de la méthode `chooseDestDialog()` qui appelle simplement `displayDialog()` du controller `DestPickerPaneViewController` permettant d'afficher la fenêtre de choix. La classe dispose aussi de `getlisteComptes()` permettant d'obtenir une `ArrayList` contenant tous les clients de l'agence. Enfin `DestPickerPane` possède une méthode `getComptesDunClient()` qui permet non seulement, d'obtenir une `ArrayList` des ComptesCourants d'un client, mais `Override` également le `toString()` de ces `CompteCourants` pour permettre un meilleur affichage.
+
+Enfin la classe `DestPickerPaneViewController` est très similaire a `ClientsManagement`. Les différences sont que `DestPickerPaneViewController`:
+
+* affiche tous les comptes avec leur client et non simplement les clients
+* ne permet pas de créer, modifier, ou désactiver les clients
+* permet uniquement la selection d'un compte
+
+=== 3.4 Modifier et Cloturer un Compte D.T
+
+==== 3.4.1 Use case
+
+image:{usecases}ModifierEtCloturerCompte.png["UCModifier"]
+
+Les utilisateurs pouvant Modifier et Cloturer un compte sont le Chef d'agence et le Guichetier.
+
+==== 3.4.2 Diagramme de classes
+
+image:{diagClass}CreerCompte.png[DCCreerCompte]
+
+La classe utilisée pour inserer un compte sur la base de données est la classe `CompteCourant`.
+
+Répartition des classes utilisées dans les packages :
+
+* application.control :  
+** `ComptesManagement`
+** `CompteEditorPane`
+
+* application.view :
+** `ComptesManagementViewController`
+** `CompteEditorPaneViewController`
+
+* model.data :
+** `CompteCourant`
+
+* model.orm :
+** `LogToDataBase`
+
+==== 3.4.3 Code commenté
+
+L'objectif de cette fonctionnalité est de créer une fenêtre similaire à celle servant à créer le compte ou la possibilité de modifier les informations autre que le découvert autorisé est impossible. La fenêtre devait également permettre d'ouvrir ou cloturer un compte.
+
+J'ai d'abord dû modifier la classe `ComptesManagementViewController` dans laquelle j'ai créé la méthode `doModifier()`. Celle-ci est liée au bouton `btnModifierCompte` du fichier FXML de la fenêtre `comptemanagement.fxml`. La méthode `doModifier()` se contente de récupérer le compte sélectionné par l'utilisateur et de l'utiliser pour appeler la méthode `editerCompte(CompteCourant cpt)` de la classe `CompteManagement` avec le compte sélectionné en paramêtre.
+
+La méthode `editerCompte()` s'occupera de deux choses, d'abord elle créera un `CompteEditorPane` dont elle appelera la méthode `doCompteEditorDialog()`. Ensuite, après avoir récuperé les données modifiées retournées, elle s'occupera d'enregistrer ces modifications dans la base de données.
+
+La méthode `doCompteEditorDialog()` est dans la classe `CompteEditorPane` et se contente d'appeler la méthode `displayDialog()` de la classe `CompteEditorPaneViewController`.
+
+Enfin la méthode `displayDialog()` remplit les champs avec les données du compte à modifier et désactive les champs qui ne sont pas nécessaires. Lorsque la fenêtre est fermée les données entrées sont récupérée ou non selon si l'utilisateur utilise `annuler` ou `modifier`.
+
+
+
+=== 3.5 Afficher les prélevements automatiques B.Y
+
+==== 3.5.1 Use case
+
+image:{usecases}AfficherPrelevement.png["UCAffPrelev"]
+
+Les utilisateurs pouvant afficher les prélèvements automatiques d'un compte sont le Chef d'agence et le Guichetier.
+
+
+==== 3.5.2 Diagramme de classes
+
+image:{diagClass}Prelevement.png[DCprelevement]
+
+La classe utilisée pour stocker et afficher un prélèvement est la classe `Prelevement`.
+
+Répartition des classes utilisées dans les packages :
+
+* application.control :  
+** `PrelevementsManagement`
+
+* application.view :
+** `PrelevementsManagementViewController`
+
+* model.data :
+** `Prelevement`
+
+* model.orm :
+** `Access_BD_Prelevement`
+
+==== 3.5.3 Code commenté
+
+Pour mettre en place cete fonctionnalité un nouveau fxml `prelevementsmanager.fxml` représentant la fenêtre de gestion des prélevements a été crée, le controller de ce fichier fxml est `PrelevementsManagementViewController`.
+
+Le code permettant d'afficher les prélèvements du compte selectionné se situe dans la classe `PrelevementsManagementViewController` plus particulièrement la méthode `loadList()` qui charge les prélevements à l'aide de la fonction `getPrelevements(CompteCourant cpt)` de la classe `Access_BD_Prelevement`. 
+
+La fonction `getPrelevements(CompteCourant cpt)` recupère les prélèvements liés au compte passé en parametre et retourne une ArrayList de contenant ces mêmes prélèvements (des objets de type `Prelevement`). Si aucun prélèvement n'est trouvé la fonction retourne une ArrayList de prélèvements vide.
+
+Un bouton "Voir Prélèvements" a été ajouté juste en dessous du bouton déjà existant "Voir Opérations" dans le fxml `comptesmanagement.fxml`, l'évènement `doVoirPrelevements()` a été ajouté au controller `ComptesManagementViewController`, cet évenement est lié au clic du bouton "Voir Prélèvemens" nouvellement ajouté .
+
+Lorsque le bouton "Voir Prélèvements" est cliqué l'appel des différentes fonctions et classes précedamment expliquées est fait via `doVoirPrelevements()`
+
+[source,java,linenums]
+----
+@FXML
+private void doVoirPrelevements() {
+	int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+	if (selectedIndice >= 0) {
+		CompteCourant cpt = this.oListCompteCourant.get(selectedIndice);
+		PrelevementsManagement p = new PrelevementsManagement(this.containingStage, this.dailyBankState,
+				this.clientDesComptes, cpt);
+		p.doPrelevementManagementDialog();
+	}
+}
+----
+
+Ce code enregistre le compte qui est selectionné parmi la liste affichée dans la variable `cpt`, ce qui permettra de passer cpt en parametre pour instancier un objet de la classe `PrelevementsManagement` qui preparera la fenetre à afficher en fonction du compte donné. Puis `p.doPrelevementManagementDialog()` va afficher la fenetre en appellant la méthode `displayDialog()` de la classe `PrelevementsManagementViewController`.
+
+=== 3.6 Créer un prélevement automatique B.Y 
+
+==== 3.6.1 Use case
+
+image:{usecases}CreerPrelevement.png["UCAffPrelev"]
+
+Les utilisateurs pouvant créer des prélèvements automatiques sur un compte sont le Chef d'agence et le Guichetier.
+
+==== 3.6.2 Diagramme de classes
+
+image:{diagClass}Prelevement.png[DCprelevement]
+
+La classe utilisée pour insérer un prélèvement sur la base de données est la classe `Prelevement`.
+
+Répartition des classes utilisées dans les packages :
+
+* application.control :  
+** `PrelevementsManagement`
+** `PrelevementEditorPane`
+
+* application.view :
+** `PrelevementsManagementViewController`
+** `PrelevementEditorPaneViewController`
+
+* model.data :
+** `Prelevement`
+
+* model.orm :
+** `Access_BD_Prelevement`
+
+==== 3.6.3 Code commenté
+
+Pour mettre en place cette fonctionnalité j'ai crée un nouveau fxml `prelevementeditorpane.fxml`, ce fichier fxml est lié au controller `PrelevementEditorPaneViewController`. 
+
+**PrelevementEditorPaneViewController** : 
+ Cette classe gère l'interface utilisateur et la manipulation des données pour les prélèvements automatiques.
+ Elle permet d'ajouter, de modifier et de supprimer des prélèvements sur un compte courant.
+ Elle utilise `Access_BD_Prelevement` pour accéder à la base de données.
+ Les alertes d'erreur sont gérées par `AlertUtilities`.
+
+**PrelevementEditorPane**: 
+ Cette classe est responsable de la création et de la configuration de la fenêtre modale pour ajouter,
+ modifier ou supprimer un prélèvement automatique. Elle utilise le `PrelevementEditorPaneViewController`
+ pour contrôler la logique de l'interface utilisateur.
+
+
+**Access_BD_Prelevement** :  
+Au niveau de cette classe, deux méthodes ont été ajoutées :
+
+1. La première méthode, `public int getIdNouvPrelevement()`, permet de récupérer un id de prélèvement qui est utilisé pour l'insertion dans la base de données mais également pour l'affichage de la fenêtre de création d'un prélèvement.
+2. La deuxième nouvelle méthode est `public void insererPrelevement(@NotNull Prelevement prlv, @NotNull CompteCourant cpt)` celle-ci permet d'inserer le prélèvement `prlv` sur le compte `cpt`, les deux étant passés en parametre.
+
+Le code qui va déclancher l'utilisation de toutes ces classes et donc l'ouverture de la fenetre de création de compte est dans `PrelevementsManagementViewController` : 
+
+[source,java,linenums]
+----
+@FXML
+private void doNouveauPrelev() {
+    if (this.compteConcerne.estCloture.equals("N")){
+        PrelevementEditorPane pEditorPane = new PrelevementEditorPane(this.containingStage, this.dailyBankState, this,
+                this.compteConcerne);
+        pEditorPane.doPrelevementEditorPaneDialog(EditionMode.CREATION);
+    }else {
+        AlertUtilities.showAlert(this.containingStage, "Action interdite",
+                "Vous ne pouvez pas établir un prélèvement automatiqué sur un compte clôturé",
+                "", Alert.AlertType.WARNING);
+    }
+}
+----
+
+Ce code vérifie tout d'abors si le compte sur lequel on veut ajouter le prélèvement est cloruré, si il est cloturé on indique qu'il n'est pas possible d'effectuer l'action sur un compte cloturé, et si il n'est pas cloturé on instancie un objet `PrelevementEditorPane` puis via cet objet on appelle `doPrelevementEditorPaneDialog(EditionMode.CREATION)` qui va lancer la fenetre d'ajout d'un nouveau compte nottament puisqu'on a spécifié le mode d'édition en parametre. Les différents modes d'édition que prends en charge la méthode `doPrelevementEditorPaneDialog(EditionMode em)` sont `EditionMode.CREATION` & `EditionMode.MODIFICATION`.
+
+
+=== 3.7 Modifier un prélevement automatique D.T
+
+==== 3.7.1 Use case
+==== 3.7.2 Diagramme de classes
+==== 3.7.3 Code commenté
+
+=== 3.8 Supprimer/Arreter un prélevement automatique D.T
+==== 3.8.1 Use case
+==== 3.8.2 Diagramme de classes
+==== 3.8.3 Code commenté
+
+
+=== 3.9 Générer un relevé pdf F.C
+
+==== 3.9.1 Use case
+==== 3.9.2 Diagramme de classes
+==== 3.9.3 Code commenté
+
+
+=== 3.10 Créer un Employe H.W
+
+==== 3.10.1 Use case
+image:{usecases}usecasecreeremploye.png[UCCrediterCompte]
+
+La classe utilisée pour inserer un compte sur la base de données est la classe `Employe`.
+
+==== 3.10.2 Diagramme de classes
+
+
+* application.control :  
+** `EmployeManagement`
+** `EmployeEditorPane`
+
+* application.view :
+** `EmployeManagementViewController`
+** `EmployeEditorPaneViewController`
+
+* model.data :
+** `Employe`
+
+* model.orm :
+** `Acces_BD_Employe`
+
+==== 3.10.3 Code commenté
+
+Pour afficher la liste des employés dans cette application, j'ai d'abord créé les classes : `EmployeManagement`, `EmployeEditorPane`, `EmployeManagementViewController` et `EmployeEditorPaneViewController`. Lorsqu'un utilisateur souhaite crée  un nouveau employé (en utilisant la méthode `nouveauEmploye()`), il ajoute un employe apres avor remplir le champs qui correspond au nom, prénom, etc... dans les champs de texte appropriés.
+
+
+
+=== 3.11 Afficher Employe H.W
+
+==== 3.11.1 Use case
+image:{useCases}AfficherEmploye.png[UCCrediterCompte]
+
+Les utilisateurs concernés par cette fonctionnalité sont les chefs d'Agence.
+
+
+==== 3.11.2 Diagramme de classes
+
+
+
+La classe utilisée pour créer un employe est la classe `Employe`.
+
+Répartition des classes utilisées dans les packages :
+
+* application.control :  
+** `EmployeManagement`
+** `EmployeEditorPane`
+
+* application.view :
+** `EmployeManagementViewController`
+** `EmployeEditorPaneViewController`
+
+* model.data :
+** `Employe`
+
+* model.orm :
+  ** `Access_BD_Employe`
+
+==== 3.11.3 Code commenté
+
+Pour afficher la liste des employés dans cette application, j'ai d'abord créé les classes : `EmployeManagement`, `EmployeEditorPane`, `EmployeManagementViewController` et `EmployeEditorPaneViewController`. Lorsqu'un utilisateur souhaite rechercher des employés (en utilisant la méthode `doRechercher()`), il peut entrer un nom ou un prénom dans les champs de texte appropriés. Ensuite, la méthode appelle `cmDialogController.getlisteEmployes()` pour récupérer la liste des employés correspondant aux critères de recherche.
+
+J'ai également utilisé la liste observable des employés `oListEmploye` pour stocker les objets de type `Employe`. Cette liste permet de lier dynamiquement ces données à un composant d'interface utilisateur comme `ListView`, assurant ainsi que toute modification de la liste est automatiquement reflétée dans l'interface utilisateur.
+
+=== 3.12 Débit exeptionnel d'un Compte F.C
+
+==== 3.12.1 Use case
+==== 3.12.2 Diagramme de classes
+==== 3.12.3 Code commenté
+
+=== 3.13 Supprimer un employé F.C
+
+==== 3.13.1 Use case
+==== 3.13.2 Diagramme de classes
+==== 3.13.3 Code commenté
+
+=== 3.14 Modifier un employé F.C
+
+==== 3.14.1 Use case
+==== 3.14.2 Diagramme de classes
+==== 3.14.3 Code commenté
+
+=== 3.15  Simulation Emprunt H.W
+
+==== 3.15.1 Use case
+
+image:{useCases}SimulerEmprunt.png[SimulerEmprunt]
+
+Les utilisateurs concernés par cette fonctionnalité sont les chefs d'Agence.
+
+==== 3.15.2 Diagramme de classes
+
+image:{DigClasse}SimulerEmprunt.png[SimulerAssurance]
+
+==== 3.15.3 Code commenté
+
+=== 3.16 Simulation Assurance H.W
+
+==== 3.16.1 Use case
+
+image:{useCases}SimulerAssurance.png[SimulerAssurance]
+
+Les utilisateurs concernés par cette fonctionnalité sont les chefs d'Agence.
+
+==== 3.16.2 Diagramme de classes
+
+image:{DigClasse}SimulerEmprunt.png[SimulerAssurance]
+
+==== 3.16.3 Code commenté
+
+
+=== 3.17 Supprimer Compte ????????

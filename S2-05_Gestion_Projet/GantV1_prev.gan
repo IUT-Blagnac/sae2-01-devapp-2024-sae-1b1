@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Application DailyBank " company="Groupe 1B1" webLink="http://" view-date="2024-04-22" view-index="1" gantt-divider-location="404" resource-divider-location="300" version="3.3.3307" locale="fr_FR">
+    <description/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="221" order="0"/>
+        <field id="tpd4" name="Date de début" width="83" order="1"/>
+        <field id="tpd5" name="Date de fin" width="84" order="2"/>
+        <field id="tpd15" name="Notes" width="20" order="3"/>
+        <option id="taskLabelUp" value="length"/>
+        <option id="taskLabelDown" value="resources"/>
+        <option id="taskLabelLeft" value="name"/>
+        <option id="taskLabelRight" value=""/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#990000 #006633 #000066 #666600 #0000cc #ffff00 #666666 #ccffcc #333333 #006666]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="199" order="0"/>
+        <field id="1" name="Rôle par défaut" width="82" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="5a237eb4f5c94da2870c40473bbe4859" name="Rendus &amp; Oraux" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2024-05-07" duration="30" complete="0" expand="false">
+            <notes><![CDATA[Catégorie regroupant toutes les dates de rendus et Oraux de groupe concernant le projet]]></notes>
+            <task id="2" uid="3c018d0e100746af9439a201de7ac9c4" name="Rendu CdC V2, Doc Tec. V0, Doc User V0, Recette V0" meeting="true" start="2024-05-07" duration="0" complete="0" expand="true"/>
+            <task id="3" uid="6c041659119942f7abe6571b2a808e08" name="Rendu Doc. Util. V1, Doc Tec. V1, Code V1, Recette V1, GantV2 prévu" meeting="true" start="2024-05-31" duration="0" complete="0" expand="true"/>
+            <task id="4" uid="7f5ecb107872403184bd7a1adebfe4c1" name="Rendu GantV2  réalisé Doc. Util. V2, Doc Tec. V2, Code V2, Recette V2" meeting="true" start="2024-06-14" duration="0" complete="0" expand="true"/>
+            <task id="97" uid="f1993e2538bf416fb8f1775fb1e719c8" name="Oraux DEV &amp; GPO" meeting="true" start="2024-06-18" duration="0" complete="0" expand="true"/>
+        </task>
+        <task id="10" uid="9d88829070404a21996f86104c6f8ec1" name="Preparation Projet" color="#666666" meeting="false" start="2024-05-02" duration="3" complete="0" expand="false">
+            <task id="5" uid="a6f6527bc5a7435e8830da8dffd516b2" name="Redaction V0 Doc Utilisateur" meeting="false" start="2024-05-02" duration="1" complete="0" expand="true">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="6" uid="0e59847c74b14c63898b1e84a4d3c38d" name="Redaction V0 Cahier des charges" meeting="false" start="2024-05-02" duration="3" complete="0" expand="true"/>
+            <task id="7" uid="c898fa888106411e810ced9956c42b66" name="Mettre en place le git" meeting="false" start="2024-05-02" duration="1" complete="0" expand="true">
+                <depend id="9" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="8" uid="97d7b0194cb446a18ecaa52bd92d38f6" name="Doc Technique V0" meeting="false" start="2024-05-03" duration="2" complete="0" expand="true"/>
+            <task id="9" uid="70b7156fda554781b9147d6a8a783ec8" name="Recette V0" meeting="false" start="2024-05-03" duration="2" complete="0" expand="true"/>
+        </task>
+        <task id="31" uid="8154569797f4437bb0ebf5c3d683e190" name="Semaine IHM" meeting="false" start="2024-05-13" duration="5" complete="0" expand="true">
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="11" uid="73e6e15819c64d12a6391283210e097f" name="Fonctionnalités" color="#990000" meeting="false" start="2024-05-20" duration="15" complete="0" expand="false">
+            <task id="28" uid="024a559be5234fa2a8a623b73eb03956" name="Chef d'agence" color="#666600" meeting="false" start="2024-05-20" duration="10" complete="0" expand="true">
+                <task id="47" uid="a0aa5f5920e44233b37606c8efae3638" name="V1" meeting="false" start="2024-05-20" duration="5" complete="0" expand="true">
+                    <depend id="49" type="2" difference="0" hardness="Strong"/>
+                    <task id="12" uid="1acef539dd184bec968b3f1de5cd2659" name="Create" color="#999999" meeting="false" start="2024-05-20" duration="5" complete="0" expand="true">
+                        <notes><![CDATA[Fonctionnalité permettant de créer un employé]]></notes>
+                        <task id="13" uid="d838f53e5e37472a8ce71842a1f02bf6" name="Cahier de tests" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="14" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="14" uid="17d2cf2c3626405f8ca535ca6daad699" name="Programmation" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="15" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="15" uid="d7694f32d9ad43d39345b2ce835c9591" name="Documentation" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="16" uid="97e91aa398e24099b00cf6e369176d1b" name="Read" color="#999999" meeting="false" start="2024-05-20" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant d'Afficher les employés depuis un compte de Chef d'agence.]]></notes>
+                        <task id="17" uid="a0697269590341e78f0fd8198fc71170" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="18" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="18" uid="06d0a70406bc439584d8484be26d3ae4" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="19" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="19" uid="1363d092abe244a28020e71dd1976f3b" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="20" uid="044cf913dc254f1bb4de15138ae3f54b" name="Update" color="#999999" meeting="false" start="2024-05-20" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant de mettre à jour les informations d'un employé
+]]></notes>
+                        <task id="21" uid="f8c8a61cb80e49eb89b80774589a39d0" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="22" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="22" uid="7841b7dcf81b443fa7e80b40fce546e1" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="23" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="23" uid="ebb30ac03fee47adaf55f0e64102f7a1" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="24" uid="28b1dbec1415446f9e4c9b6d6be082e7" name="Delete" color="#999999" meeting="false" start="2024-05-20" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant de supprimer un employé]]></notes>
+                        <task id="25" uid="a8292da75e724b658550674930f4d16d" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="26" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="26" uid="0a94d06ec4834685b0763c5cffe605d9" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="27" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="27" uid="c6b264da8ccf407ab717fcfa655ad4ea" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                </task>
+                <task id="49" uid="ce5b5aa73d6a480eb54220b6923c4f2f" name="V2" meeting="false" start="2024-05-27" duration="5" complete="0" expand="true">
+                    <task id="80" uid="e62bca2931374f4fbe6a0b6a394db9ca" name="Debit Exceptionnel Compte" color="#999999" meeting="false" start="2024-05-27" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant au Chef d'agence de faire un débit exceptionnel sur un compte]]></notes>
+                        <task id="81" uid="6dcfe496270d47988c9b5b0cd26207a9" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
+                            <depend id="82" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="82" uid="24807ce8db124e1e9a906fdef3f0788c" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="3" complete="0" expand="true">
+                            <depend id="83" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="83" uid="abfb5ace0f274dbeb50c81e7b509b5d2" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="55" uid="f33b4ab9f90b4dc6af4de3286ce17e85" name="Simulation Emprunt" color="#000000" meeting="false" start="2024-05-27" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant au Chef d'Agence de simuler un emprunt]]></notes>
+                        <task id="56" uid="0fb627a9e1e04534b542f897aad9c946" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
+                            <depend id="57" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="57" uid="d0613a0db7e945e3ac7b2a8774a9f352" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="3" complete="0" expand="true">
+                            <depend id="58" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="58" uid="4a1c32a0e7bc4ca79b5740234dc70c36" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="84" uid="2a3f426f71d64347b0047b3421f361ab" name="Simulation Assurance" color="#999999" meeting="false" start="2024-05-27" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant au Chef d'Agence de simuler une assurence]]></notes>
+                        <task id="85" uid="194438d66e634018802995788ce04197" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
+                            <depend id="86" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="86" uid="29ef6b56285e4c9abf84ab92bdf1463f" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="3" complete="0" expand="true">
+                            <depend id="87" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="87" uid="4652bd42420c434d949d7867abc52b67" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true"/>
+                    </task>
+                </task>
+            </task>
+            <task id="29" uid="f8c8d276c06641738b89676fcc049b11" name="Guichetier" color="#000066" meeting="false" start="2024-05-20" duration="10" complete="0" thirdDate="2024-05-20" thirdDate-constraint="1" expand="true">
+                <task id="48" uid="87d0154dac5f43b78125bd9d0068568a" name="V1" meeting="false" start="2024-05-20" duration="5" complete="0" expand="true">
+                    <depend id="49" type="2" difference="0" hardness="Strong"/>
+                    <depend id="50" type="2" difference="0" hardness="Strong"/>
+                    <task id="30" uid="4365e6f9323a4b938a5569413665cdd2" name="Créer un Compte" meeting="false" start="2024-05-20" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant a un Guichetier de créer un compte client]]></notes>
+                        <task id="32" uid="55bce0c01b7149ea99c404541bbafcf5" name="Cahier de tests" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="33" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="33" uid="2c694f8b1e274e94bdfbe1402e06fca4" name="Programmation" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="34" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="34" uid="58cf383037aa4ac8ae6e7024fd05080e" name="Documentation" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="35" uid="00103711ce8f4bd9bfca39deefca7b3c" name="Créditer/Débiter un Compte" color="#000000" meeting="false" start="2024-05-20" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant a un guichetier de créditer ou débiter un compte client]]></notes>
+                        <task id="36" uid="e15a9da6097d422db1edb6d1b26850c5" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="37" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="37" uid="3476fd545b0f4f6aa21eca230cbb04a1" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="38" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="38" uid="f15b6dcefc1341b591b79214ff3e45f4" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="39" uid="07c92ff725ce4bd585a9b5d3ed773390" name="Effectuer un virement" color="#000000" meeting="false" start="2024-05-20" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant a un guichetier d'effectuer un virement entre deux comptes clients]]></notes>
+                        <task id="40" uid="65a11367a9e84a54b08f59f0fb63f02c" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="41" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="41" uid="5df743736e0340a3a326c4839ee21b6a" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="42" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="42" uid="3c4f839ed62044b094f84cd36715183f" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="43" uid="78747791139b48c89df6c28278f7e601" name="Clôturer un Compte" color="#000000" meeting="false" start="2024-05-20" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant a un guichetier de clôturer un compte client ]]></notes>
+                        <task id="44" uid="34838ef32e7d497588a27840f60109c1" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="45" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="45" uid="b90b7a03c6eb4e6aa2b21ec799bb5561" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="46" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="46" uid="5a59a983e6c64e42b02fb54a7ead9f6b" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                </task>
+                <task id="50" uid="5695e2a749cb4540a8443740e39fbf9c" name="V2" meeting="false" start="2024-05-27" duration="5" complete="0" expand="true">
+                    <depend id="88" type="2" difference="0" hardness="Strong"/>
+                    <task id="59" uid="95641f3689d94f988823603d767cde4d" name="Create" color="#999999" meeting="false" start="2024-05-27" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant de créer un prélèvement]]></notes>
+                        <task id="60" uid="400ca6afb79440e8a377c71c48944291" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
+                            <depend id="61" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="61" uid="69e9adb0631b4a949e968f20d92574c3" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="3" complete="0" expand="true">
+                            <depend id="62" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="62" uid="d941194c8fe94a13aebfd530c0c2705c" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="63" uid="551c53a3cbe14914af778dbdb13eede4" name="Read" color="#999999" meeting="false" start="2024-05-27" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant d'Afficher les prélèvements crées.]]></notes>
+                        <task id="64" uid="77ebd850bac34c848b8f5458f0e1bb96" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
+                            <depend id="65" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="65" uid="9e03c36296c14e98ba9bfee728a02c93" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="3" complete="0" expand="true">
+                            <depend id="66" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="66" uid="6340596c08e6432fae85578a544b2f5a" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="67" uid="e22e5a75c7854049b679d5bc4db73a09" name="Update" color="#999999" meeting="false" start="2024-05-27" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant de mettre à jour les informations liées à un prélevement déjà existant.
+]]></notes>
+                        <task id="68" uid="516758d308ec48acaade1a5e36161d1b" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
+                            <depend id="69" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="69" uid="63dbe294d59e4c88a7e19d4e59e38fdb" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="3" complete="0" expand="true">
+                            <depend id="70" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="70" uid="5c1f74c36dea4d8f982bcd6d2664f47a" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="71" uid="1f18b77a6cf24db69d253d1537b54d18" name="Delete" color="#999999" meeting="false" start="2024-05-27" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant de supprimer un prélèvement existant.]]></notes>
+                        <task id="72" uid="e13bde86d49c4f0dbb65ffee89819457" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
+                            <depend id="73" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="73" uid="7d66d3b178b843e3ba066de5d37d13e3" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="3" complete="0" expand="true">
+                            <depend id="74" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="74" uid="4272f2e7bc074615877b8ff9c9f38dc9" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="76" uid="0537562fb1794a74bc0b3908532c8eb7" name="Relevé de Compte" color="#999999" meeting="false" start="2024-05-27" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant de créer relevé de compte au format PDF.]]></notes>
+                        <task id="77" uid="0e7536ce6e324b11ad3d8b3bd003375f" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
+                            <depend id="78" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="78" uid="2af38c464dbc4c9b970727b52260e5e0" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="3" complete="0" expand="true">
+                            <depend id="79" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="79" uid="51cb5a33ffbd4c44bd23d27ca60792a7" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true"/>
+                    </task>
+                </task>
+            </task>
+            <task id="88" uid="21141d1253dc4e1a9653159618b859e4" name="Batch" color="#006633" meeting="false" start="2024-06-03" duration="5" complete="0" expand="true">
+                <task id="89" uid="6da0121d6cc34f068efa3fe42bb92c0d" name="Prélèvements Auto" color="#999999" meeting="false" start="2024-06-03" duration="5" complete="0" expand="false">
+                    <notes><![CDATA[Fonctionnalité permettant d'exécuter les prélèvements automatiques]]></notes>
+                    <task id="90" uid="f37764f63a7d4e948aa9744a13a8c120" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-06-03" duration="1" complete="0" expand="true">
+                        <depend id="91" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="91" uid="ca06958451514083a60f806d116cae15" name="Programmation" color="#8cb6ce" meeting="false" start="2024-06-04" duration="3" complete="0" expand="true">
+                        <depend id="92" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="92" uid="8759e97fa6f6444e9953d43eb88967cf" name="Documentation" color="#8cb6ce" meeting="false" start="2024-06-07" duration="1" complete="0" expand="true"/>
+                </task>
+                <task id="93" uid="93180d2ef4634827b7b1f709356c0bd2" name="Relevés Mensuels" color="#999999" meeting="false" start="2024-06-03" duration="5" complete="0" expand="false">
+                    <notes><![CDATA[Fonctionnalité permettant de générer les relevés mensuels en PDF]]></notes>
+                    <task id="94" uid="91f1f2b6aa6a4ad49e5e6230ec446095" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-06-03" duration="1" complete="0" expand="true">
+                        <depend id="95" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="95" uid="168c2d67bf6c49a499a4c323cca03a5e" name="Programmation" color="#8cb6ce" meeting="false" start="2024-06-04" duration="3" complete="0" expand="true">
+                        <depend id="96" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="96" uid="0a8509feda1541ad9a5ac943452b28b0" name="Documentation" color="#8cb6ce" meeting="false" start="2024-06-07" duration="1" complete="0" expand="true"/>
+                </task>
+            </task>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Yassir" function="Default:1" contacts="yassir.boulouiha.iut@gmail.com" phone="">
+            <rate name="standard" value="22"/>
+        </resource>
+        <resource id="1" name="Titouan" function="Default:0" contacts="titouan.delaplagne@etu.univ-tlse2.fr" phone="">
+            <rate name="standard" value="22"/>
+        </resource>
+        <resource id="2" name="Clara" function="Default:0" contacts="clara.figueras@etu.univ-tlse2.fr" phone="">
+            <rate name="standard" value="16.83"/>
+        </resource>
+        <resource id="3" name="Wissal" function="Default:0" contacts="wissal.hanki@etu.univ-tlse2.fr" phone="">
+            <rate name="standard" value="16.83"/>
+        </resource>
+    </resources>
+    <allocations>
+        <allocation task-id="7" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="30" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="35" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="80" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="76" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="8" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="39" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="43" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="55" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="84" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="24" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="67" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="71" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="12" resource-id="3" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="16" resource-id="3" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="59" resource-id="3" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="63" resource-id="3" function="Default:0" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>

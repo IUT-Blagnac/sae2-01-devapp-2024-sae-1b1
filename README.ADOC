@@ -1,0 +1,70 @@
+= Readme
+
+Notre équipe est chargée de mettre à jour et d'améliorer l'application bancaire de l'entreprise DailyBank dont les fonctionnalités ne répondent plus aux besoins de cette dernière.
+L'équipe comporte trois membres :
+
+- FIGUERAS Clara
+- HANKI Wissal
+- DELAPLAGNE Titouan 
+
+Menés par un Chef de projet : BOULOUIHA GNAOUI Yassir
+
+Les différentes responsabilités des autres membres à définir plus tard.
+
+==== Répartition des tâches et état d'avancement
+[options="header,footer"]
+|=======================
+|version|rôle     |use case   |cas...                 |  Yassir | Titouan  |  Clara  | Wissal
+|1    |Chef d’Agence    |CRUD employé  |C| | | |F
+|1    |Chef d’Agence    |CRUD employé  |R| | | |F
+|1    |Chef d’Agence |CRUD employé  |U| | |F |
+|1    |Chef d’Agence   |CRUD employé  |D| | |F |
+|1    |Guichetier     | Compte | Créer|F| | | 
+|1    |Guichetier     | Compte | Créditer/Débiter|F| | | 
+|1    |Guichetier     | Compte | Effectuer un virement|| F | | 
+|1    |Guichetier     | Compte | Clôturer|| F | | 
+|2    |Chef d’Agence     | Compte | Débit exceptionnel| | | D | 
+|2    |Chef d’Agence     | Emprunt | Simuler emprunt|| | | F
+|2    |Chef d’Agence     | Emprunt | Simuler assurance|| | | F
+|2    |Guichetier     | Compte | Relevé PDF|| | F| 
+|2    |Guichetier     | CRUD Prélèvement | C|F| | | 
+|2    |Guichetier     | CRUD Prélèvement | R|F| | | 
+|2    |Guichetier     | CRUD Prélèvement | U|| F | | 
+|2    |Guichetier     | CRUD Prélèvement | D|| F | | 
+|2    |Batch     | Prélèvements automatiques | |D| | | 
+|2    |Batch     | Reléves mensuels | || | | 
+
+|=======================
+
+Les lignes sont remplies dans la colonne correspondant à l'étudiant qui a développé la fonctionnalité, il y est indiqué
+
+*	*F* pour fonctionnel ou
+*	*D* pour encore en Développement
+
+==== Livrables
+
+[cols="1,2,2,5",options=header]
+|===
+| Date    | Nom         |  Lien                             | Retour
+| Sem.18  | CDC V1      |         link:/S2-05_Gestion_Projet/CDCUV1.asciidoc[ici]                          |Page de garde: Quelle est la version applicable au document ? quel est le nom du projet / client? Ajoutez les liens hypertexte si possible sur le sommaire. Contexte / pbmatique / objectifs: reprendre l'énoncé en essayant de cibler les parties amenant de la valeur, sans "paraphraser". Approche "agile" des besoins interessante (User Story), mais ne permet pas de masquer le manque d'analyse du besoin, ainsi que la planification par version. Il manque certaine règles de gestion (ex: débit exceptionnel, dans quel cas possible ?). Les contraintes sont trop généralistes, reprendre l'énoncé pour les reformuler (ex: contrainte de language de dev, contrainte de sécurité ??). ajotuez la liste des livrables et leurs échéances.           
+|         |Gantt V1 Prévu|       link:/S2-05_Gestion_Projet/GantV1_prev.pdf[ici]                              |Le découpage des taches semblent bon (approche par brique fonctionnelle, avec test/ dev / documentation) mais dfficilement lisible car sur plusieurs pages. Durée de chaque tache difficilement lisible. Assurez vous d'avoir quelquechose de lisible & cohérent pour la V1 pour pouvoir attaquer les devs semaine prochaine. N'oubliez pas certaines taches pour la fin du projet (soutenance etc ...) meme si aujourdh'ui l'bjectif est d'avoir un GANTT prêt pour la V1
+| 07/05  | CdC V2final|          link:/S2-05_Gestion_Projet/CDCUV2.asciidoc[ici]                           |Alignez la version du CDCU avec celle de l’appli: V2 et pas V1.1. Il manque la date de “release” du document. On attend une identification de la problématique, pas une question. Toujours un manque de ciblage du contexe/ pbmatique / objectifs qui sont trop génralistes. Les commantaires de la version précédente n’ont pas été pris en compte pour l’analyse du besoin, ou l’approche en US masque toujours le manque de profondeur de l’analyse. Les règles de gestion ne sont pas mentionnées par exemple. Il manque toute la partie UC V2, et vous répétez l’existant (UC V0). Les contraintes sont trop générales et manquent de précisions. Certaines sont manquantes (juridique) ou pas comprises.8/20  
+|         | Doc. Tec. V0 |     link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]   |    
+|         | Doc User V0    |     link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici] |Reprenez la page de garde qui doit être homogène avec les autres documents (nom du projet, compo équipe, date ...). Veillez à bien respecter la structuration demandée du document dans les futures versions. Il manque la procédure d'installation & lancement de l'application (et les credentails nécessaires) qui auraient déjà pu être renseignés.
+|         | Recette V0  |        link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]              | 
+| 31/05   | Gantt V1  réalisé    |    link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)   | Le doc est trop petit pour avoir une vue synthetique des activités avec leur enchainement, il faut zoomer. Les acitivtiés ne sont pas effectées. Le découpage ne permet pas de voir l’enchainement des taches annexes de chaque dev (doc pour chaque fonctionnalité, qui la fait …)? la semaine IHM
+|         | Doc. Util. V1 |   link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici]      |Page de garde: la V1.3 est la version logicielle à laquelle la doc est applicable ? ou la version du doc ? indiquer la version logicielle applicable. indiquer les credentials à utiliser. Essayez d’étofferle document avec des exemples concret. Abordez les cas d’erreur (saisie incorrecte …). Attention à l’orthographe. 
+GPO: Le repo GIT devrait être structuré par version de l’application pour une meilleure accessibilité. Les taches du KanBan ne semblent pas complètement en ligne avec les GANTTs. Attention à bien ajouter tous les taggings necessaires, notamment la priorisation (must / should …)
+        
+|         | Doc. Tec. V1 |  link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici]   |     
+|         | Code V1    |    link:S2-01_Developpement_Application/DailyBank/src[ici]    | 
+|         | Recette V1 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici]   | 
+|         | Gantt V2 prévu |  link:/S2-05_Gestion_Projet/GantReelV1-PrevV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité)  | le gANTT a l’air strictement identique au GANTT V1 réalisé. IL n’y a pas eu d’ajustement ? d’ajout ? a reprendre.
+| 14/06   | Gantt V2  réalisé    | link:/S2-05_Gestion_Projet/GantReelV2.pdf[ici] (Telecharger le pdf pour bonne lisibilité) | Il manque des taggings (priorisation) sur les issues, le GIT n’est toujours pas bien structuré. Toujours pas d’affectation de ressources dans le GANTT. 11/20
+|         | Doc. Util. V2 | link:/S2-05_Gestion_Projet/Doc-Utilisateur.asciidoc[ici] |Il ne s’agit pas de la V2.1, mais de la V2. Les cas d’erreurs et leur explications sont quasiment absents., la deuxième partie du document semble être moins fournie que la 1ere. 12,5/20         
+|         | Doc. Tec. V2 | link:/S2-01_Developpement_Application/Doc_Technique.asciidoc[ici] |     
+|         | Code V2    | link:S2-01_Developpement_Application/DailyBank/src[ici] | 
+|         | Recette V2 | link:/S2-01_Developpement_Application/Cahier_Recette.asciidoc[ici] | 
+|         | `jar` projet |  link:/S2-01_Developpement_Application/DailyBank/target/DailyBank-1.0-shaded.jar[ici]  | 
+|         | `JavaDoc` |  link:/S2-01_Developpement_Application/DailyBank/target/Javadoc[ici]  | 
+|===
