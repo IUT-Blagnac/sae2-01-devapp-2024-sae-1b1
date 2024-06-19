@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Application DailyBank " company="Groupe 1B1" webLink="http://" view-date="2024-04-08" view-index="0" gantt-divider-location="345" resource-divider-location="300" version="3.3.3309" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Application DailyBank " company="Groupe 1B1" webLink="http://" view-date="2024-04-15" view-index="0" gantt-divider-location="317" resource-divider-location="300" version="3.3.3309" locale="fr_FR">
     <description/>
     <view zooming-state="default:6" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="186" order="0"/>
-        <field id="tpd4" name="Date de début" width="71" order="1"/>
-        <field id="tpd5" name="Date de fin" width="72" order="2"/>
+        <field id="tpd3" name="Nom" width="170" order="0"/>
+        <field id="tpd4" name="Date de début" width="65" order="1"/>
+        <field id="tpd5" name="Date de fin" width="66" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="taskLabelUp" value="length"/>
         <option id="taskLabelDown" value="resources"/>
@@ -16,8 +16,8 @@
         <option id="color.recent"><![CDATA[#990000 #006633 #000066 #666600 #0000cc #ffff00 #666666 #ccffcc #333333 #006666]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="188" order="0"/>
-        <field id="1" name="Rôle par défaut" width="93" order="1"/>
+        <field id="0" name="Nom" width="195" order="0"/>
+        <field id="1" name="Rôle par défaut" width="101" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -66,60 +66,63 @@
         </task>
         <task id="11" uid="73e6e15819c64d12a6391283210e097f" name="Fonctionnalités" color="#990000" meeting="false" start="2024-05-20" duration="19" complete="0" expand="true">
             <task id="28" uid="024a559be5234fa2a8a623b73eb03956" name="Chef d'agence" color="#666600" meeting="false" start="2024-05-20" duration="19" complete="0" expand="true">
-                <task id="47" uid="a0aa5f5920e44233b37606c8efae3638" name="V1" meeting="false" start="2024-05-20" duration="9" complete="0" expand="false">
+                <task id="47" uid="a0aa5f5920e44233b37606c8efae3638" name="V1" meeting="false" start="2024-05-20" duration="9" complete="0" expand="true">
                     <depend id="49" type="2" difference="0" hardness="Strong"/>
-                    <task id="12" uid="1acef539dd184bec968b3f1de5cd2659" name="Create" color="#999999" meeting="false" start="2024-05-20" duration="9" complete="0" expand="false">
+                    <task id="16" uid="97e91aa398e24099b00cf6e369176d1b" name="Read" color="#999999" meeting="false" start="2024-05-20" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant d'Afficher les employés depuis un compte de Chef d'agence.]]></notes>
+                        <depend id="12" type="2" difference="0" hardness="Strong"/>
+                        <task id="17" uid="a0697269590341e78f0fd8198fc71170" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="18" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="18" uid="06d0a70406bc439584d8484be26d3ae4" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                            <depend id="19" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="19" uid="1363d092abe244a28020e71dd1976f3b" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="12" uid="1acef539dd184bec968b3f1de5cd2659" name="Create" color="#999999" meeting="false" start="2024-05-27" duration="4" complete="0" expand="false">
                         <notes><![CDATA[Fonctionnalité permettant de créer un employé]]></notes>
-                        <task id="13" uid="d838f53e5e37472a8ce71842a1f02bf6" name="Cahier de tests" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                        <task id="13" uid="d838f53e5e37472a8ce71842a1f02bf6" name="Cahier de tests" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true">
                             <depend id="14" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="14" uid="17d2cf2c3626405f8ca535ca6daad699" name="Programmation" meeting="false" start="2024-05-21" duration="7" complete="0" expand="true">
+                        <task id="14" uid="17d2cf2c3626405f8ca535ca6daad699" name="Programmation" meeting="false" start="2024-05-28" duration="2" complete="0" expand="true">
                             <depend id="15" type="2" difference="0" hardness="Strong"/>
                         </task>
                         <task id="15" uid="d7694f32d9ad43d39345b2ce835c9591" name="Documentation" meeting="false" start="2024-05-30" duration="1" complete="0" expand="true"/>
                     </task>
-                    <task id="16" uid="97e91aa398e24099b00cf6e369176d1b" name="Read" color="#999999" meeting="false" start="2024-05-20" duration="9" complete="0" expand="false">
-                        <notes><![CDATA[Fonctionnalité permettant d'Afficher les employés depuis un compte de Chef d'agence.]]></notes>
-                        <task id="17" uid="a0697269590341e78f0fd8198fc71170" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
-                            <depend id="18" type="2" difference="0" hardness="Strong"/>
+                    <task id="24" uid="28b1dbec1415446f9e4c9b6d6be082e7" name="Delete" color="#999999" meeting="false" start="2024-05-20" duration="4" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant de supprimer un employé]]></notes>
+                        <depend id="20" type="2" difference="0" hardness="Strong"/>
+                        <task id="25" uid="a8292da75e724b658550674930f4d16d" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                            <depend id="26" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="18" uid="06d0a70406bc439584d8484be26d3ae4" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="7" complete="0" expand="true">
-                            <depend id="19" type="2" difference="0" hardness="Strong"/>
+                        <task id="26" uid="0a94d06ec4834685b0763c5cffe605d9" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="2" complete="0" expand="true">
+                            <depend id="27" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="19" uid="1363d092abe244a28020e71dd1976f3b" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-30" duration="1" complete="0" expand="true"/>
+                        <task id="27" uid="c6b264da8ccf407ab717fcfa655ad4ea" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-23" duration="1" complete="0" expand="true"/>
                     </task>
-                    <task id="20" uid="044cf913dc254f1bb4de15138ae3f54b" name="Update" color="#999999" meeting="false" start="2024-05-20" duration="9" complete="0" expand="false">
+                    <task id="20" uid="044cf913dc254f1bb4de15138ae3f54b" name="Update" color="#999999" meeting="false" start="2024-05-24" duration="5" complete="0" expand="false">
                         <notes><![CDATA[Fonctionnalité permettant de mettre à jour les informations d'un employé
 ]]></notes>
-                        <task id="21" uid="f8c8a61cb80e49eb89b80774589a39d0" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                        <task id="21" uid="f8c8a61cb80e49eb89b80774589a39d0" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true">
                             <depend id="22" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="22" uid="7841b7dcf81b443fa7e80b40fce546e1" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="7" complete="0" expand="true">
+                        <task id="22" uid="7841b7dcf81b443fa7e80b40fce546e1" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-27" duration="3" complete="0" expand="true">
                             <depend id="23" type="2" difference="0" hardness="Strong"/>
                         </task>
                         <task id="23" uid="ebb30ac03fee47adaf55f0e64102f7a1" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-30" duration="1" complete="0" expand="true"/>
                     </task>
-                    <task id="24" uid="28b1dbec1415446f9e4c9b6d6be082e7" name="Delete" color="#999999" meeting="false" start="2024-05-20" duration="9" complete="0" expand="false">
-                        <notes><![CDATA[Fonctionnalité permettant de supprimer un employé]]></notes>
-                        <task id="25" uid="a8292da75e724b658550674930f4d16d" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
-                            <depend id="26" type="2" difference="0" hardness="Strong"/>
-                        </task>
-                        <task id="26" uid="0a94d06ec4834685b0763c5cffe605d9" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="7" complete="0" expand="true">
-                            <depend id="27" type="2" difference="0" hardness="Strong"/>
-                        </task>
-                        <task id="27" uid="c6b264da8ccf407ab717fcfa655ad4ea" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-30" duration="1" complete="0" expand="true"/>
-                    </task>
                 </task>
                 <task id="49" uid="ce5b5aa73d6a480eb54220b6923c4f2f" name="V2" meeting="false" start="2024-05-31" duration="10" complete="0" expand="true">
-                    <task id="80" uid="e62bca2931374f4fbe6a0b6a394db9ca" name="Debit Exceptionnel Compte" color="#999999" meeting="false" start="2024-05-31" duration="10" complete="0" expand="false">
+                    <task id="80" uid="e62bca2931374f4fbe6a0b6a394db9ca" name="Debit Exceptionnel Compte" color="#999999" meeting="false" start="2024-05-31" duration="5" complete="0" expand="false">
                         <notes><![CDATA[Fonctionnalité permettant au Chef d'agence de faire un débit exceptionnel sur un compte]]></notes>
+                        <depend id="76" type="2" difference="0" hardness="Strong"/>
                         <task id="81" uid="6dcfe496270d47988c9b5b0cd26207a9" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true">
                             <depend id="82" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="82" uid="24807ce8db124e1e9a906fdef3f0788c" name="Programmation" color="#8cb6ce" meeting="false" start="2024-06-03" duration="8" complete="0" expand="true">
+                        <task id="82" uid="24807ce8db124e1e9a906fdef3f0788c" name="Programmation" color="#8cb6ce" meeting="false" start="2024-06-03" duration="3" complete="0" expand="true">
                             <depend id="83" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="83" uid="abfb5ace0f274dbeb50c81e7b509b5d2" name="Documentation" color="#8cb6ce" meeting="false" start="2024-06-13" duration="1" complete="0" expand="true"/>
+                        <task id="83" uid="abfb5ace0f274dbeb50c81e7b509b5d2" name="Documentation" color="#8cb6ce" meeting="false" start="2024-06-06" duration="1" complete="0" expand="true"/>
                     </task>
                     <task id="55" uid="f33b4ab9f90b4dc6af4de3286ce17e85" name="Simulation Emprunt" color="#000000" meeting="false" start="2024-05-31" duration="5" complete="0" expand="false">
                         <notes><![CDATA[Fonctionnalité permettant au Chef d'Agence de simuler un emprunt]]></notes>
@@ -145,48 +148,50 @@
                 </task>
             </task>
             <task id="29" uid="f8c8d276c06641738b89676fcc049b11" name="Guichetier" color="#000066" meeting="false" start="2024-05-20" duration="19" complete="0" thirdDate="2024-05-20" thirdDate-constraint="1" expand="true">
-                <task id="48" uid="87d0154dac5f43b78125bd9d0068568a" name="V1" meeting="false" start="2024-05-20" duration="9" complete="0" expand="false">
+                <task id="48" uid="87d0154dac5f43b78125bd9d0068568a" name="V1" meeting="false" start="2024-05-20" duration="9" complete="0" expand="true">
                     <depend id="49" type="2" difference="0" hardness="Strong"/>
                     <depend id="50" type="2" difference="0" hardness="Strong"/>
-                    <task id="30" uid="4365e6f9323a4b938a5569413665cdd2" name="Créer un Compte" meeting="false" start="2024-05-20" duration="7" complete="0" expand="false">
+                    <task id="30" uid="4365e6f9323a4b938a5569413665cdd2" name="Créer un Compte" meeting="false" start="2024-05-20" duration="3" complete="0" expand="false">
                         <notes><![CDATA[Fonctionnalité permettant a un Guichetier de créer un compte client]]></notes>
+                        <depend id="35" type="2" difference="0" hardness="Strong"/>
                         <task id="32" uid="55bce0c01b7149ea99c404541bbafcf5" name="Cahier de tests" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
                             <depend id="33" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="33" uid="2c694f8b1e274e94bdfbe1402e06fca4" name="Programmation" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                        <task id="33" uid="2c694f8b1e274e94bdfbe1402e06fca4" name="Programmation" meeting="false" start="2024-05-21" duration="1" complete="0" expand="true">
                             <depend id="34" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="34" uid="58cf383037aa4ac8ae6e7024fd05080e" name="Documentation" meeting="false" start="2024-05-24" duration="3" complete="0" expand="true"/>
+                        <task id="34" uid="58cf383037aa4ac8ae6e7024fd05080e" name="Documentation" meeting="false" start="2024-05-22" duration="1" complete="0" expand="true"/>
                     </task>
-                    <task id="35" uid="00103711ce8f4bd9bfca39deefca7b3c" name="Créditer/Débiter un Compte" color="#000000" meeting="false" start="2024-05-20" duration="7" complete="0" expand="false">
+                    <task id="35" uid="00103711ce8f4bd9bfca39deefca7b3c" name="Créditer/Débiter un Compte" color="#000000" meeting="false" start="2024-05-23" duration="4" complete="0" expand="false">
                         <notes><![CDATA[Fonctionnalité permettant a un guichetier de créditer ou débiter un compte client]]></notes>
-                        <task id="36" uid="e15a9da6097d422db1edb6d1b26850c5" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
+                        <task id="36" uid="e15a9da6097d422db1edb6d1b26850c5" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-23" duration="1" complete="0" expand="true">
                             <depend id="37" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="37" uid="3476fd545b0f4f6aa21eca230cbb04a1" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="3" complete="0" expand="true">
+                        <task id="37" uid="3476fd545b0f4f6aa21eca230cbb04a1" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="2" complete="0" expand="true">
                             <depend id="38" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="38" uid="f15b6dcefc1341b591b79214ff3e45f4" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-24" duration="3" complete="0" expand="true"/>
+                        <task id="38" uid="f15b6dcefc1341b591b79214ff3e45f4" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="1" complete="0" expand="true"/>
                     </task>
-                    <task id="39" uid="07c92ff725ce4bd585a9b5d3ed773390" name="Effectuer un virement" color="#000000" meeting="false" start="2024-05-20" duration="9" complete="0" expand="false">
-                        <notes><![CDATA[Fonctionnalité permettant a un guichetier d'effectuer un virement entre deux comptes clients]]></notes>
-                        <task id="40" uid="65a11367a9e84a54b08f59f0fb63f02c" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
-                            <depend id="41" type="2" difference="0" hardness="Strong"/>
-                        </task>
-                        <task id="41" uid="5df743736e0340a3a326c4839ee21b6a" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="7" complete="0" expand="true">
-                            <depend id="42" type="2" difference="0" hardness="Strong"/>
-                        </task>
-                        <task id="42" uid="3c4f839ed62044b094f84cd36715183f" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-30" duration="1" complete="0" expand="true"/>
-                    </task>
-                    <task id="43" uid="78747791139b48c89df6c28278f7e601" name="Clôturer un Compte" color="#000000" meeting="false" start="2024-05-20" duration="7" complete="0" expand="false">
+                    <task id="43" uid="78747791139b48c89df6c28278f7e601" name="Clôturer un Compte" color="#000000" meeting="false" start="2024-05-20" duration="4" complete="0" expand="false">
                         <notes><![CDATA[Fonctionnalité permettant a un guichetier de clôturer un compte client ]]></notes>
+                        <depend id="39" type="2" difference="0" hardness="Strong"/>
                         <task id="44" uid="34838ef32e7d497588a27840f60109c1" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-20" duration="1" complete="0" expand="true">
                             <depend id="45" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="45" uid="b90b7a03c6eb4e6aa2b21ec799bb5561" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="5" complete="0" expand="true">
+                        <task id="45" uid="b90b7a03c6eb4e6aa2b21ec799bb5561" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-21" duration="2" complete="0" expand="true">
                             <depend id="46" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="46" uid="5a59a983e6c64e42b02fb54a7ead9f6b" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-28" duration="1" complete="0" expand="true"/>
+                        <task id="46" uid="5a59a983e6c64e42b02fb54a7ead9f6b" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-23" duration="1" complete="0" expand="true"/>
+                    </task>
+                    <task id="39" uid="07c92ff725ce4bd585a9b5d3ed773390" name="Effectuer un virement" color="#000000" meeting="false" start="2024-05-24" duration="5" complete="0" expand="false">
+                        <notes><![CDATA[Fonctionnalité permettant a un guichetier d'effectuer un virement entre deux comptes clients]]></notes>
+                        <task id="40" uid="65a11367a9e84a54b08f59f0fb63f02c" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-24" duration="1" complete="0" expand="true">
+                            <depend id="41" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="41" uid="5df743736e0340a3a326c4839ee21b6a" name="Programmation" color="#8cb6ce" meeting="false" start="2024-05-27" duration="3" complete="0" expand="true">
+                            <depend id="42" type="2" difference="0" hardness="Strong"/>
+                        </task>
+                        <task id="42" uid="3c4f839ed62044b094f84cd36715183f" name="Documentation" color="#8cb6ce" meeting="false" start="2024-05-30" duration="1" complete="0" expand="true"/>
                     </task>
                 </task>
                 <task id="50" uid="5695e2a749cb4540a8443740e39fbf9c" name="V2" meeting="false" start="2024-05-31" duration="10" complete="0" expand="true">
@@ -233,12 +238,12 @@
                         </task>
                         <task id="70" uid="5c1f74c36dea4d8f982bcd6d2664f47a" name="Documentation" color="#8cb6ce" meeting="false" start="2024-06-11" duration="3" complete="0" expand="true"/>
                     </task>
-                    <task id="76" uid="0537562fb1794a74bc0b3908532c8eb7" name="Relevé de Compte" color="#999999" meeting="false" start="2024-05-31" duration="10" complete="0" expand="false">
+                    <task id="76" uid="0537562fb1794a74bc0b3908532c8eb7" name="Relevé de Compte" color="#999999" meeting="false" start="2024-06-07" duration="5" complete="0" expand="false">
                         <notes><![CDATA[Fonctionnalité permettant de créer relevé de compte au format PDF.]]></notes>
-                        <task id="77" uid="0e7536ce6e324b11ad3d8b3bd003375f" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-05-31" duration="1" complete="0" expand="true">
+                        <task id="77" uid="0e7536ce6e324b11ad3d8b3bd003375f" name="Cahier de tests" color="#8cb6ce" meeting="false" start="2024-06-07" duration="1" complete="0" expand="true">
                             <depend id="78" type="2" difference="0" hardness="Strong"/>
                         </task>
-                        <task id="78" uid="2af38c464dbc4c9b970727b52260e5e0" name="Programmation" color="#8cb6ce" meeting="false" start="2024-06-03" duration="8" complete="0" expand="true">
+                        <task id="78" uid="2af38c464dbc4c9b970727b52260e5e0" name="Programmation" color="#8cb6ce" meeting="false" start="2024-06-10" duration="3" complete="0" expand="true">
                             <depend id="79" type="2" difference="0" hardness="Strong"/>
                         </task>
                         <task id="79" uid="51cb5a33ffbd4c44bd23d27ca60792a7" name="Documentation" color="#8cb6ce" meeting="false" start="2024-06-13" duration="1" complete="0" expand="true"/>

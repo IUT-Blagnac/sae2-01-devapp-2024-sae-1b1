@@ -206,8 +206,8 @@ public class PrelevementEditorPaneViewController {
                     AlertUtilities.showAlert(this.containingStage, "Prélèvement établi",
                             "Prélèvement automatique ajouté",
                             "Le prélèvement numéro " + idPrelevement +
-                                    " a bien été ajouté aux prélèvements automatiques établis sur le compte numéro " +
-                                    this.compteEdite.idNumCompte, Alert.AlertType.INFORMATION);
+                                    " a bien été sur le compte numéro " +
+                                    this.compteEdite.idNumCompte + " a bien été modifié", Alert.AlertType.INFORMATION);
                         break;
                     case MODIFICATION:
                         access.modifierPrelevement(new Prelevement(idPrelevement
